@@ -1,0 +1,176 @@
+
+	Logged in as 'Rajpal Paryani'    Logout    Help   
+
+ 
+Home
+Projects
+Jobs
+Workflows
+Cloud
+Artifacts
+Search
+Administration
+Job: Avengers_Build_EntityService_for_trunk_and_Deployed_on_EC2DEV1_EntityService_150558
+Workspace File	–	Upload and Deploy Co.1906443.log
+ 	
+ 	
+
+TADS Upload
+    app=             [EntityService]
+    release=         [EntityService_20130228142524]
+    releaseFileName= [entity.war]
+    localFile=       [/EC/Build/DEV/Entity/150558//Build/dist/entity.war]
+Uploading...0%
+Uploading...0%
+Uploading...1%
+Uploading...2%
+Uploading...3%
+Uploading...4%
+Uploading...5%
+Uploading...6%
+Uploading...7%
+Uploading...8%
+Uploading...9%
+Uploading...10%
+Uploading...11%
+Uploading...12%
+Uploading...13%
+Uploading...14%
+Uploading...15%
+Uploading...16%
+Uploading...17%
+Uploading...18%
+Uploading...19%
+Uploading...20%
+Uploading...21%
+Uploading...22%
+Uploading...23%
+Uploading...24%
+Uploading...25%
+Uploading...26%
+Uploading...27%
+Uploading...28%
+Uploading...29%
+Uploading...30%
+Uploading...31%
+Uploading...32%
+Uploading...33%
+Uploading...34%
+Uploading...35%
+Uploading...36%
+Uploading...37%
+Uploading...38%
+Uploading...39%
+Uploading...40%
+Uploading...41%
+Uploading...42%
+Uploading...43%
+Uploading...44%
+Uploading...45%
+Uploading...46%
+Uploading...47%
+Uploading...48%
+Uploading...49%
+Uploading...50%
+Uploading...51%
+Uploading...52%
+Uploading...53%
+Uploading...54%
+Uploading...55%
+Uploading...56%
+Uploading...57%
+Uploading...58%
+Uploading...59%
+Uploading...60%
+Uploading...61%
+Uploading...62%
+Uploading...63%
+Uploading...64%
+Uploading...65%
+Uploading...66%
+Uploading...67%
+Uploading...68%
+Uploading...69%
+Uploading...70%
+Uploading...71%
+Uploading...72%
+Uploading...73%
+Uploading...74%
+Uploading...75%
+Uploading...76%
+Uploading...77%
+Uploading...78%
+Uploading...79%
+Uploading...80%
+Uploading...81%
+Uploading...82%
+Uploading...83%
+Uploading...84%
+Uploading...85%
+Uploading...86%
+Uploading...87%
+Uploading...88%
+Uploading...89%
+Uploading...90%
+Uploading...91%
+Uploading...92%
+Uploading...93%
+Uploading...94%
+Uploading...95%
+Uploading...96%
+Uploading...97%
+Uploading...98%
+Uploading...99%
+Uploading...100%
+Uploading...100%
+<response requestId="1">
+    <property>
+      <propertyId>6498875</propertyId>
+      <propertyName>EntityService_Deployed_Release_Name</propertyName>
+      <expandable>1</expandable>
+      <value>EntityService_20130228142524</value>
+    </property>
+  </response>
+TADS Deploy
+    app=     [EntityService]
+    release= [EntityService_20130228142524]
+    Host/Cluster=    [EC2DEV1]
+    DeployOption=    [-c]
+Deploying to host 10.190.2.51
+Deployment Status= The application is updated successfully
+Deployment Output= [setenv.pl:114] =============================================
+[setenv.pl:115] 
+[setenv.pl:116]     Welcome!
+[setenv.pl:117]     TeleNav Automatic Deployer System 
+[setenv.pl:118]         VERSION			= 3.1.01
+[setenv.pl:119]         TADS_HOME		= /usr/local/tads-3.0.
+[setenv.pl:120]         TADS_SERVER		= 10.224.90.51.
+[setenv.pl:121]         TADS_SERVER_PORT	= 8080.
+[setenv.pl:122] 
+[setenv.pl:123] =============================================
+[setenv.pl:124] 
+[PubServer.pm:68] Fetching http://10.224.90.51:8080/tads-ws/download?app=EntityService&release=EntityService_20130228142524&file=install.xml ...
+[War.pm:269] Checking Tomcat environment ...
+[War.pm:357] Checking user ...
+[War.pm:105] Stopping server...
+[War.pm:108] Checking the server environment ...
+[War.pm:357] Checking user ...
+[War.pm:116] Tomcat is not running.
+[War.pm:306] Sending /usr/local/apache-tomcat-7.0.32/webapps/entity to recycle bin
+[War.pm:312] Sending /usr/local/apache-tomcat-7.0.32/webapps/entity.war to recycle bin
+[PubServer.pm:51] Fetching http://10.224.90.51:8080/tads-ws/download?app=EntityService&release=EntityService_20130228142524&file=entity.war to /usr/local/apache-tomcat-7.0.32/webapps/entity.war...
+[War.pm:327] File /usr/local/apache-tomcat-7.0.32/webapps/entity.war downloaded. size=23567094
+[War.pm:335] War file updated.
+[War.pm:25] Starting server ...
+[War.pm:28] Checking server environment ...
+[War.pm:357] Checking user ...
+[War.pm:37] Starting Tomcat at /usr/local/apache-tomcat-7.0.32 ...
+[War.pm:49] Invoking /usr/local/apache-tomcat-7.0.32/bin/startup.sh ...
+[War.pm:55] Wait maximum 30 seconds before the server is started.
+[War.pm:61] Wait for Tomcat to start ...
+[War.pm:90] Tomcat [11650] was started at [ Thu Feb 28 17:25:39 2013]
+[War.pm:343] The application is updated successfully
+# TADS client excution return properties
+tads.client.code=1
+tads.client.msg=The application is updated successfully
+

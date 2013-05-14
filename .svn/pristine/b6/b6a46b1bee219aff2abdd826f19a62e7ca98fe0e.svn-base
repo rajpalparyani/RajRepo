@@ -1,0 +1,28 @@
+Change hostname , add dns entry
+
+sudo hostname ec2d-resource-01
+sudo perl -pi.bak -e "s/HOSTNAME=ec2-avengerscdn-01/HOSTNAME=ec2d-resource-01/g" /etc/sysconfig/network
+sudo /etc/init.d/syslog restart
+
+rpm -ivh http://archive.cloudera.com/cdh4/one-click-install/redhat/5/x86_64/cloudera-cdh-4-0.x86_64.rpm
+yum install -y hadoop-0.20-conf-pseudo
+
+sudo /etc/init.d/hadoop-hdfs-namenode start
+sudo /etc/init.d/hadoop-hdfs-datanode start
+sudo /etc/init.d/hadoop-hdfs-secondarynamenode start
+sudo /etc/init.d/hadoop-0.20-mapreduce-jobtracker start
+sudo /etc/init.d/hadoop-0.20-mapreduce-tasktracker start
+
+sudo mkdir -p /var/lib/hadoop-hdfs/cache/hdfs/dfs/data
+sudo mkdir -p /var/lib/hadoop-hdfs/cache/hdfs/dfs/namesecondary
+sudo mkdir -p /var/lib/hadoop-hdfs/cache/hdfs/dfs/name
+sudo chown -R hdfs.hdfs /var/lib/hadoop-hdfs/
+
+
+
+sudo /etc/init.d/hadoop-0.20-mapreduce-tasktracker stop
+sudo /etc/init.d/hadoop-0.20-mapreduce-jobtracker stop
+sudo /etc/init.d/hadoop-hdfs-secondarynamenode stop
+sudo /etc/init.d/hadoop-hdfs-datanode stop
+sudo /etc/init.d/hadoop-hdfs-namenode stop
+

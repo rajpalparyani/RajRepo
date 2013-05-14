@@ -1,0 +1,1 @@
+find /mnt/file01/Shared/QA/ECAutomation/ECLogs/ -maxdepth 1 -mtime +31 -exec rm -fr {} \;

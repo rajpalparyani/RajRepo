@@ -1,0 +1,78 @@
+
+	Logged in as 'Rajpal Paryani'    Logout    Help   
+
+ 
+Home
+Projects
+Jobs
+Workflows
+Cloud
+Artifacts
+Search
+Administration
+Job: Avengers_Deploy_AvengersMultipleTest_Dev1_243147
+Workspace File	–	Deploy Component.3514105.log
+ 	
+ 		
+
+TADS Deploy
+    app=     [AvengersMultipleTest]
+    release= [20130228182700_av_multiple]
+    Host/Cluster=    [Dev1]
+    DeployOption=    [-c]
+Deploying to host 10.224.79.22
+Deployment Status= AvengersMultipleTest was updated successfully.
+Deployment Output= [setenv.pl:114] =============================================
+[setenv.pl:115] 
+[setenv.pl:116]     Welcome!
+[setenv.pl:117]     TeleNav Automatic Deployer System 
+[setenv.pl:118]         VERSION			= 3.1.01
+[setenv.pl:119]         TADS_HOME		= /usr/local/tads-3.0.
+[setenv.pl:120]         TADS_SERVER		= 10.224.90.51.
+[setenv.pl:121]         TADS_SERVER_PORT	= 8080.
+[setenv.pl:122] 
+[setenv.pl:123] =============================================
+[setenv.pl:124] 
+[PubServer.pm:68] Fetching http://10.224.90.51:8080/tads-ws/download?app=AvengersMultipleTest&release=20130228182700_av_multiple&file=install.xml ...
+[Standalone.pm:269] Checking user ...
+[Standalone.pm:290] Making directory /home/tntuser/work_multiple/download.20130228.183115 ...
+[Standalone.pm:298] Change directory to /home/tntuser/work_multiple/download.20130228.183115.
+[Standalone.pm:303] Downloading ...
+[PubServer.pm:51] Fetching http://10.224.90.51:8080/tads-ws/download?app=AvengersMultipleTest&release=20130228182700_av_multiple&file=work_multiple.zip to install.20130228.183115.zip...
+[Standalone.pm:311] File install.20130228.183115.zip downloaded. size=122502851
+[Base.pm:107] Extracting install.20130228.183115.zip ...
+[Standalone.pm:330] Stopping the server...
+[Standalone.pm:92] Checking user ...
+[Standalone.pm:96] Checking environment ...
+[Standalone.pm:115] Executing command /home/tntuser/work_multiple/work_multiple/shutdown.pl...
+[Standalone.pm:470] Sending SIGQUIT (kill -3) to [625]...
+[Standalone.pm:471] kill -3 [625]...
+Found a running server 625, killing it
+ads
+Deleted All Files for ads from recycledWar file = /usr/local/apache-tomcat-7.0.32/webapps/ads.war 
+War dir = /usr/local/apache-tomcat-7.0.32/webapps/ads 
+AC War file = /usr/local/apache-tomcat-7.0.32/webapps/ads.war 
+AC War dir = /usr/local/apache-tomcat-7.0.32/webapps/ads 
+moved /usr/local/apache-tomcat-7.0.32/webapps/ads to recycled
+moved /usr/local/apache-tomcat-7.0.32/webapps/ads.war to recycled
+entity
+Deleted All Files for entity from recycledWar file = /usr/local/apache-tomcat-7.0.32/webapps/entity.war 
+War dir = /usr/local/apache-tomcat-7.0.32/webapps/entity 
+AC War file = /usr/local/apache-tomcat-7.0.32/webapps/entity.war 
+AC War dir = /usr/local/apache-tomcat-7.0.32/webapps/entity 
+moved /usr/local/apache-tomcat-7.0.32/webapps/entity to recycled
+moved /usr/local/apache-tomcat-7.0.32/webapps/entity.war to recycled
+[Standalone.pm:129] Shutdown script does not support TADS code.
+[Standalone.pm:135] 
+[Standalone.pm:138] Wait for 20 seconds for the shutdown command.
+[Standalone.pm:198] AvengersMultipleTest is stopped successfully.
+[Standalone.pm:249] Backup server directory Server::JavaZipServer=HASH(0x18696b0)->getAppHome() ...
+[Standalone.pm:369] Saving /tmp/1S7uS0LKO3 to /home/tntuser/work_multiple/work_multiple...
+[Standalone.pm:23] Checking user ...
+[Standalone.pm:27] Checking environment ...
+[Standalone.pm:44] Changing current directory to /home/tntuser/work_multiple/work_multiple
+[Standalone.pm:48] Executing command /home/tntuser/work_multiple/work_multiple/startup.pl...
+[Standalone.pm:76] AvengersMultipleTest is running normally.
+[Standalone.pm:387] AvengersMultipleTest was updated successfully.
+[Standalone.pm:390] Clean up /home/tntuser/work_multiple/download.20130228.183115...
+
