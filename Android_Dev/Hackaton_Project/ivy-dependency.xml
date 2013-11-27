@@ -1,0 +1,27 @@
+<ivy-module version="1.0">
+	<info organisation="mobile/apps/branches/7.2.0" module="telenav-global" />
+	<configurations>
+	       <!--app lib contains all jars for compile purpose, plese don't incluse those jars which are not reference in compile-->
+       	       <conf name="app_lib" description="libs packaged to app" />
+       	       <!--contains serchvpl reltaed jars -->
+       	       <conf name="searchvpl_lib" description="libs for searchVPL (widget)" />
+       	       <!--contains ant, unit test jars which are not referenced for compile purpose-->
+    	       <conf name="support_lib" description="libs not packaged to app" />
+    	       <!--contains tnview and car connect related jars-->
+               <conf name="tnview-lib" description="libs used for TnView" />
+	</configurations>
+
+	<dependencies>
+		<!--======================= SpeedxEncoder =======================-->
+		<dependency org="/telenav/client" name="SpeexEncoderJNI" rev="1.0.0.8" conf="app_lib->default">
+			<artifact name="SpeexEncoderJNI" type="source" ext="zip" />
+		</dependency>
+	
+		<!--======================= maitai =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/j2me/core-apps" name="MaiTaiAdapter-android" rev="2.0.1018" conf="app_lib->default">
+			<artifact name="MaiTaiAdapter-android" type="jar" ext="jar" />
+			<artifact name="MaiTaiAdapter-android" type="source" ext="zip" />
+		</dependency>
+		
+	</dependencies>
+</ivy-module>

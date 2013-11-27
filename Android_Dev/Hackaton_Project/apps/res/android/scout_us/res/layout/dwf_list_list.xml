@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/place_list_item_group_background"
+        android:orientation="horizontal"
+        android:id="@+id/dwf0ListTitle"
+        android:paddingBottom="@dimen/dwf0ListPaddingBottom"
+        android:paddingTop="@dimen/dwf0ListPaddingTop" 
+        android:paddingLeft="@dimen/dwf0ListPaddingLeft"
+        android:paddingRight="@dimen/dwf0ListPaddingRight">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/dwf0ListTitleName"
+            android:textColor="@color/placeList0GroupItemBrandNameTextColor"
+            android:textSize="@dimen/placeList0GroupItemBrandNameTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/dwf0ListTitleETA"
+            android:textColor="@color/placeList0GroupItemBrandNameTextColor"
+            android:textSize="@dimen/placeList0GroupItemBrandNameTextSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/dwfListListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@color/placeList0ListViewColor"
+        android:fastScrollEnabled="true"
+        android:overScrollFooter="@null"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false" />
+
+</LinearLayout>

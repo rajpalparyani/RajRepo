@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+
+<project name="build-common" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<!-- =============================================== task definition =============================================== -->
+	<path id="OpenSourceLib.taskdef.classpath">
+		<fileset dir="../OpenSourceLib">
+			<include name="ant-contrib-1.0b3.jar" />
+            		<include name="antenna-bin-0.9.13.jar" />
+            		<include name="findbugs-1.3.9\lib\findbugs-ant.jar" />
+            		<include name="apache-ivy-2.2.0\ivy-2.2.0.jar" />
+           		<include name="javancss-32.53\lib\*.jar" />
+		</fileset>
+	</path>
+	<!-- =============================================== task definition =============================================== -->
+	<taskdef resource="antenna.properties" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<path id="findbugs.taskdef.classpath">
+		<fileset dir="${findbugs_home}/lib">
+			<include name="findbugs-ant.jar" />
+		</fileset>
+	</path>
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs.taskdef.classpath" />
+	<path id="cobertura.taskdef.classpath">
+		<fileset dir="..\OpenSourceLib\cobertura-1.9.4.1">
+			<include name="cobertura.jar"/>
+			<include name="lib\**.*"/>
+		</fileset>
+	</path>
+
+	<!-- ============================================== target ============================================== -->
+	<target name="init" description="--> init the properties">
+		<property name="lib.dir" value="${base.dir}/lib" />
+		<property name="ant.lib.dir" value="lib/ant-lib" />
+		<property name="findbugs.plugin.dir" value="lib/findbugs-plugin" />
+		<property name="classes.dir" value="${base.dir}/classes" />
+		<property name="instrumented-classes.dir" value="${base.dir}/instrumented-classes" />
+		<property name="src.dir" value="${base.dir}/src" />
+		<property name="test.dir" value="${base.dir}/unit_test" />
+		<property name="jar.file" value="${jar.file}" />
+		<property name="testreport.file" value="testreport-${jar.file}" />
+		<property name="findbugs.file" value="findbugs-${jar.file}" />
+		<property name="findbugs.filter" value="${findbugs.filter}" />
+		<property name="findbugs.enable" value="${findbugs.enable}" />
+		<property name="unittest.enable" value="${unittest.enable}" />
+
+		<property name="publish.dir" value="${base.dir}/build" />
+		<property name="retrieve.dir" value="${base.dir}/retrieve" />
+	</target>
+
+	<target name="resolve" description="--> resolve and retrieve dependencies with ivy">
+		<mkdir dir="${lib.dir}" />
+		<mkdir dir="${ant.lib.dir}" />
+		<mkdir dir="${findbugs.plugin.dir}" />
+		<!-- not usually necessary, ivy creates the directory IF there are dependencies -->
+		<mkdir dir="${retrieve.dir}" />
+
+		<ivy:settings file="${ivy.settings}" />
+		<!-- the call to resolve is not mandatory, retrieve makes an implicit call if we don't -->
+		<if>
+			<not>
+				<equals arg1="true" arg2="${disableIvyResolve}" />
+			</not>
+			<then>
+				<ivy:resolve file="${ivy.file}" />
+				<ivy:retrieve pattern="${retrieve.dir}/[artifact]-[revision].[ext]" />
+			</then>
+		</if>
+	</target>
+
+	<target name="load_ant_project">
+		<path id="ant.taskdef.classpath">
+			<fileset dir="${ant.lib.dir}" includes="*.jar" />
+		</path>
+		<!-- ===============================================telenav task definition =============================================== -->
+		<!-- common task definition -->
+		<taskdef name="appConfigGeneratorTask" classname="com.telenav.ant.task.common.AppConfigGeneratorTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="propertiesLoaderTask" classname="com.telenav.ant.task.common.PropertiesLoaderTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="ninePatchBinaryFilesCreatorTask" classname="com.telenav.ant.task.common.NinePatchBinaryFilesCreatorTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="wellFormedXml" classname="com.telenav.ant.task.common.WellFormedXmlTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="createIndexFileTask" classname="com.telenav.ant.task.common.IndexFileCreatorTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="caseStringTask" classname="com.telenav.ant.task.common.CaseStringTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="mergeArgumentsTask" classname="com.telenav.ant.task.common.MergeArgumentsTask" classpathref="ant.taskdef.classpath" />
+
+		<!-- android app task definition -->
+		<!-- rim app task definition -->
+		<taskdef name="rimota" classname="com.telenav.ant.task.app.rim.OtaTask" classpathref="ant.taskdef.classpath" />
+		<!-- android core task definition -->
+		<taskdef name="stringsGeneratorTask" classname="com.telenav.ant.task.core.android.StringsGeneratorTask" classpathref="ant.taskdef.classpath" />
+		<!-- rim core task definition -->
+		<taskdef name="alx" classname="com.telenav.ant.task.core.rim.tasks.AlxTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="jadtool" classname="com.telenav.ant.task.core.rim.tasks.JadtoolTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="rapc" classname="com.telenav.ant.task.core.rim.tasks.RapcTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="sigtool" classname="com.telenav.ant.task.core.rim.tasks.SigtoolTask" classpathref="ant.taskdef.classpath" />
+		<typedef name="jdp" classname="com.telenav.ant.task.core.rim.types.JdpType" classpathref="ant.taskdef.classpath" />
+		<typedef name="entry" classname="com.telenav.ant.task.core.rim.types.EntryPointType" classpathref="ant.taskdef.classpath" />
+		<taskdef name="alx" classname="com.telenav.ant.task.core.rim.tasks.AlxTask" classpathref="ant.taskdef.classpath" />
+		<typedef name="application" classname="com.telenav.ant.task.core.rim.types.ApplicationType" classpathref="ant.taskdef.classpath" />
+		<typedef name="codset" classname="com.telenav.ant.task.core.rim.types.CodSetType" classpathref="ant.taskdef.classpath" />
+		<taskdef name="jadtool" classname="com.telenav.ant.task.core.rim.tasks.JadtoolTask" classpathref="ant.taskdef.classpath" />
+		<typedef name="override" classname="com.telenav.ant.task.core.rim.types.OverrideType" classpathref="ant.taskdef.classpath" />
+	</target>
+
+	<!-- preload -->
+	<target name="preload_dev">
+		<!-- set subproject's name -->
+		<property name="subproject_name" value="telenav-dev-${platform}" />
+
+		<antcall target="preload" />
+	</target>
+
+	<target name="preload_rel">
+	
+		<!-- set subproject's name -->
+		
+		<if>
+			<equals arg1="true" arg2="${release}" />
+			<then>
+				<property name="subproject_name" value="telenav-rel-${platform}" />
+			</then>
+			<else>
+				<property name="subproject_name" value="telenav-rel-${platform}-ci" />
+			</else>
+		</if>
+		
+		<antcall target="preload" />
+
+	</target>
+
+	<target name="preload">
+		<echo>The platform is: ${platform}</echo>
+
+		<echo>The brand name is: ${BRAND_NAME}</echo>
+		<fail unless="BRAND_NAME">
+			.
+			-------------------------Error---------------------------
+			Please import the property file such as att_brand.properties
+			------------------------@TeleNav--------------------------
+		</fail>
+
+		<echo>The build version is: ${version}</echo>
+
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+					Please set the build version!
+			------------------------@TeleNav--------------------------
+		</fail>
+
+		<echo message="the subproject name is: ${subproject_name}" />
+
+		<antcall target="generate_subproject" />
+	</target>
+
+	<target name="generate_subproject">
+		<delete quiet="true" dir="${basedir}/${subproject_name}" />
+		<mkdir dir="${basedir}/${subproject_name}" />
+	</target>
+
+	<target name="propertiesLoader">
+		<propertiesLoaderTask />
+	</target>
+
+	<target name="copy_resource">
+		<available file="${from_dir_path}" type="dir" property="res.dir" />
+		<if>
+			<equals arg1="true" arg2="${res.dir}" />
+			<then>
+				<copy toDir="${to_dir_path}" overwrite="true">
+					<fileSet dir="${from_dir_path}" casesensitive="false">
+						<include name="**/*" />
+						<exclude name="**/Thumbs.db" />
+						<exclude name="**/*.index.gz" />
+					</fileSet>
+				</copy>
+			</then>
+		</if>
+	</target>
+
+	<target name="compile" description="--> compile the project">
+		<echo message="compile..." />
+
+		<available file="${extra.lib.dir}" type="dir" property="extra.lib.present" />
+
+		<if>
+			<equals arg1="true" arg2="${extra.lib.present}" />
+			<then>
+				<path id="compile.classpath">
+					<fileset dir="${lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+					<fileset dir="${extra.lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</then>
+			<else>
+				<path id="compile.classpath">
+					<fileset dir="${lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</else>
+		</if>
+
+		<mkdir dir="${classes.dir}" />
+
+		<condition property="mobile.method">
+			<or>
+				<equals arg1="j2me" arg2="${platform}" />
+				<equals arg1="rim" arg2="${platform}" />
+			</or>
+		</condition>
+
+		<if>
+			<equals arg1="true" arg2="${mobile.method}" />
+			<then>
+				<wtkbuild target="${class.version}" source="${source.version}" destdir="${classes.dir}" classpathref="compile.classpath" fork="true" debug="true" optimize="true" deprecation="false" preverify="false" excludes="${compile.excludes}" bootclasspathref="${platform}.boot.classpath">
+
+					<src path="${src.dir}" />
+				</wtkbuild>
+			</then>
+			<else>
+				<!-- compile android code -->
+				<javac encoding="ascii" target="${class.version}" source="${source.version}" destdir="${classes.dir}" classpathref="compile.classpath" fork="true" debug="true" optimize="true" deprecation="false" excludes="${compile.excludes}" bootclasspathref="${platform}.boot.classpath">
+
+					<src path="${src.dir}" />
+				</javac>
+			</else>
+		</if>
+	</target>
+
+	<target name="findbugs">
+		<echo>copy findbugs plugin ....</echo>
+		<antcall target="copy_findbugs_plugin" />
+
+		<mkdir dir="${publish.dir}" />
+		<echo message="is findbugs enable: ${findbugs.enable}" />
+		<if>
+			<equals arg1="true" arg2="${findbugs.enable}" />
+			<then>
+				<findbugs home="${findbugs_home}" output="xml" excludeFilter="${findbugs.filter}" jvmargs="-Xmx512m" outputFile="${publish.dir}/${findbugs.file}.xml" errorProperty="isFindbugsError" warningsProperty="isFindbugsWarning">
+					<!-- auxClasspath refid="compile.classpath" /-->
+					<class location="${classes.dir}" />
+					<sourcePath path="${src.dir}" />
+				</findbugs>
+			</then>
+			<else>
+				<echoxml file="${publish.dir}/${findbugs.file}.xml">
+				  <findbugs>
+						Nothing
+				  </findbugs>
+				</echoxml>
+			</else>
+		</if>
+	</target>
+
+	<target name="copy_findbugs_plugin">
+		<antcall target="copy_resource">
+			<param name="from_dir_path" value="${findbugs.plugin.dir}" />
+			<param name="to_dir_path" value="${findbugs_home}/plugin" />
+		</antcall>
+	</target>
+
+	<target name="unittest" depends="compile, jar, cobertura-instrument">
+		<!-- compile unit test source -->
+		<mkdir dir="${publish.dir}" />
+		
+		<delete quiet="true" dir="${test.dir}/bin" />
+		<mkdir dir="${test.dir}/bin" />
+		
+		<delete quiet="true" dir="${test.dir}/testreport" />
+		<mkdir dir="${test.dir}/testreport" />
+		
+		<echo message="is unittest enable: ${unittest.enable}" />
+		
+		<if>
+			<equals arg1="true" arg2="${unittest.enable}" />
+			<then>
+			
+			<if>
+				<equals arg1="true" arg2="${extra.lib.present}" />
+				<then>
+					<path id="unittest.compile.classpath">
+						<fileset dir="${lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+						<fileset dir="${extra.lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+						<fileset dir="${publish.dir}">
+							<include name="*.jar" />
+						</fileset>		
+					</path>
+					<path id="unittest.classpath">
+						<fileset dir="${lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+						<fileset dir="${extra.lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+					</path>
+				</then>
+				<else>
+					<path id="unittest.compile.classpath">
+						<fileset dir="${lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+						<fileset dir="${publish.dir}">
+							<include name="*.jar" />
+						</fileset>		
+						<fileset dir="${sdk-folder}">
+							<include name="android.jar" />
+						</fileset>		
+					</path>
+					<path id="unittest.classpath">
+						<fileset dir="${lib.dir}">
+							<include name="*.jar" />
+						</fileset>
+						<fileset dir="${sdk-folder}">
+							<include name="android.jar" />
+						</fileset>		
+					</path>
+				</else>
+			</if>
+			
+			<echo>${sdk-folder}</echo>
+			<echo>${extra.lib.present}</echo>
+			<echo>${test.dir} before javac</echo>
+			<javac 
+				encoding="ascii" 
+				target="${class.version}" 
+				source="${source.version}"
+				srcdir="${test.dir}"
+				includes="**/*.java"
+				destdir="${test.dir}/bin"
+				classpathref="unittest.compile.classpath"
+				fork="true"
+				debug="true">
+			</javac>
+	
+			<!-- clean up old test reports -->			
+			<delete quiet="true" dir="${test.dir}/testreport" />
+			<mkdir dir="${test.dir}/testreport" />
+			
+			<!-- run juit -->
+			<junit
+				printsummary="true"
+				showoutput="true"
+				fork="true"
+				errorproperty="isJunitError"
+				failureproperty="isJunitFailure"
+				maxmemory="512m"
+				timeout="450000">
+				
+				<sysproperty key="net.sourceforge.cobertura.datafile" file="${test.dir}/cobertura/cobertura.ser" />
+	
+				<classpath>
+					<pathelement path="${instrumented-classes.dir}"/>
+					<pathelement path="${classes.dir}"/>
+					<pathelement path="${test.dir}/bin"/>
+					<path refid="unittest.classpath" />
+				</classpath>
+	
+				<!-- test report -->
+				<formatter type="xml" />
+				
+				<!-- tests to include -->
+				<batchtest todir="${test.dir}/testreport">			
+					<fileset dir="${test.dir}">
+					  <include name="**/*Test*.java"/>
+					</fileset>
+				</batchtest>			
+			</junit>
+	
+			<mkdir dir="${test.dir}/cobertura"/>
+			<cobertura-check datafile="${test.dir}/cobertura/cobertura.ser" 
+				branchrate="0" 
+				totallinerate="5" 
+				haltonfailure="false" />
+			<cobertura-report format="xml" 
+				destdir="${test.dir}/cobertura" 
+				srcdir="${src.dir}" 
+				datafile="${test.dir}/cobertura/cobertura.ser"/>
+			
+			</then>
+		</if>
+		<!-- create an empty file in case there is no test report generated -->
+		<touch file="${test.dir}/testreport/nouse.txt" />
+		<zip destfile="${publish.dir}/${testreport.file}.zip">
+			<fileset dir="${test.dir}/testreport" />
+		</zip>
+	</target>
+
+	<target name="cobertura-instrument">
+		<taskdef classpath="cobertura.jar" resource="tasks.properties" classpathref="cobertura.taskdef.classpath"/>
+		<delete file="${test.dir}/cobertura/cobertura.ser"/>
+		<delete dir="${instrumented-classes.dir}"/>
+		<cobertura-instrument datafile="${test.dir}/cobertura/cobertura.ser" todir="${instrumented-classes.dir}">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.class"/>
+			</fileset>
+		</cobertura-instrument>
+	</target>
+	
+	<target name="jar" description="--> make a jar file for this project">
+		<mkdir dir="${publish.dir}" />
+		<jar destfile="${publish.dir}/${jar.file}.jar">
+			<fileset dir="${classes.dir}" />
+			<manifest>
+				<attribute name="Built-By" value="telenav" />
+				<attribute name="Build-Version" value="${product.version}" />
+			</manifest>
+			<zipgroupfileset dir="${base.dir}/lib" includes="*.jar" />
+		</jar>
+	</target>
+	
+	<target name="gen-pure-jar" description="--> make a pure jar file for this project">
+		<mkdir dir="${publish.dir}" />
+		<jar destfile="${publish.dir}/${jar.file}-pure-${platform}.jar">
+			<fileset dir="${classes.dir}">
+				<exclude name="**/com/telenav/app/android/**"/>
+			</fileset>
+			<fileset dir="${src.dir}">
+				<exclude name="**/com/telenav/app/android/**,${compile.excludes}"/>
+			</fileset>
+		</jar>
+		
+		<zip destfile="${publish.dir}/${module.name}-res-${platform}.zip" basedir="${base.dir}" includes="res/,assets/,AndroidManifest.xml"/>
+	</target>
+
+	<target name="publish" description="--> publish this project in the ivy repository">
+		<echo>Module Name is ---------> ${module.name}</echo>
+		<ivy:publish resolver="${ivy.default.publish.resolver}" pubrevision="${product.version}" overwrite="true">
+			<artifacts pattern="${publish.dir}/[artifact].[ext]" />
+		</ivy:publish>
+		<echo message="project ${ant.project.name} released with version ${product.version}" />
+	</target>
+
+	<target name="test_coverage" description="--> running test coverage" if="test_coverage">
+		<property name="test_report_dir" value="test-reports"/>
+        <delete dir="${test_report_dir}"/>
+        <mkdir dir="${test_report_dir}"/>
+		<antcall target="javancss"/>
+		<!--<antcall target="testability_explorer"/>-->
+	</target>
+
+	<target name="javancss" description="--> running Java NCSS">
+		<taskdef name="javancss" classname="javancss.JavancssAntTask"/>
+		<javancss 
+			srcdir="${src.dir}" 
+			generateReport="true" 
+			outputfile="${test_report_dir}/javancss_metrics.xml" 
+			format="xml" />
+	</target>
+
+	<target name="testability_explorer" description="--> running Testability Explorer">
+		<property name="testability.report.file" value="${test_report_dir}/testability.report.xml"/>
+		<property name="testability.error.file" value="${test_report_dir}/testability.error.txt"/>
+		<property name="testability.whitelist" value="com.thirdparties.;com.google."/>
+        <taskdef name="testability" classname="com.google.ant.TestabilityTask"/>
+        <testability filter=""
+            resultfile="${testability.report.file}"
+            errorfile="${testability.error.file}"
+            whitelist="${testability.whitelist}"
+            print="xml"
+            printdepth="2"
+            mincost="1"
+            maxexcellentcost="50"
+            maxacceptablecost="100"
+            worstoffendercount="25"
+            cyclomatic="1"
+            global="10"
+            failproperty="testability.flag">
+            <classpath>
+                <fileset dir="${publish.dir}">
+					<include name="${jar.file}.jar"/>
+                </fileset>
+            </classpath>
+        </testability>
+	</target>
+</project>

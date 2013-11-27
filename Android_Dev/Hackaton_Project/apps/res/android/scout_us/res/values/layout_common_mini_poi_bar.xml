@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="commonMiniPoiBar0ButtonViewMarginBottom">6dp</dimen>
+    <dimen name="commonMiniPoiBar0ButtonViewLayoutWidth">120dp</dimen>
+    
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="commonMiniPoiBar0ButtonViewTextSize">15sp</dimen>
+    <!-- color -->
+    <color name="commonMiniPoiBar0ButtonViewTextColor">#ffffffff</color>
+    <color name="commonMiniPoiBar0DrivetoViewTextColor">#ff262e33</color>
+</resources>

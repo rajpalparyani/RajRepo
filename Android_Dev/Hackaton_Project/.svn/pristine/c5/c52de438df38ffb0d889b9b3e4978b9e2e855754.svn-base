@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+<project name="platform">
+	<!-- ============================================== app properties ======================================== -->
+	
+	<property name="module_list" value="backlight,io,location,media,network,persistent,radio,telephony" />
+	<property name="major.verion" value="1.1" />
+	<property name="product.version" value="${major.verion}.${version}" />
+	<property name="sdk-folder" value="lib\android" />	
+	
+	<!-- ============================================== import build_common.xml ======================================== -->
+	<import file="../build-common.xml" />
+
+	<!-- ============================================== path properties ================================================ -->
+	<path id="android.boot.classpath">
+		<fileset dir="lib/${platform}">
+			<include name="android.jar" />
+		</fileset>
+	</path>
+
+	<path id="j2me.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<!-- =============================================== task definition =============================================== -->
+
+	<target name="publish-all">
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+			Please add the property: 'version'.
+			------------------------@TeleNav--------------------------
+		</fail>
+
+		<delete quiet="true" dir="dist" />
+		<mkdir dir="dist" />
+
+		<antcall target="publish_common" />
+		<antcall target="publish_platform">
+			<param file="android.properties" />
+		</antcall>
+	</target>
+
+	<target name="publish_common">
+		<foreach list="${module_list}" target="copy_common_source" param="module" inheritall="true"  />
+		<antcall target="publish">
+			<!-- run conf -->
+			<param name="base.dir" value="dist/common" />
+			<param name="module.name" value="platform" />
+			<param name="jar.file" value="platform" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="j2me" />
+			<param name="class.version" value="1.5" />
+			<param name="source.version" value="1.5" />
+			<param name="compile.excludes" value="" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="${output}" />
+			
+		</antcall>
+	</target>
+
+	<target name="publish_platform">
+
+		<copy file="dist/common/build/platform.jar" tofile="dist/${platform}/lib/platform.jar" />
+
+		<foreach list="${module_list}" target="copy_platform_source" param="module" inheritall="true" inheritrefs="true" />
+		<antcall target="publish">
+			<!-- run conf -->
+			<param name="base.dir" value="dist/${platform}" />
+			<param name="module.name" value="platform-${platform}" />
+			<param name="jar.file" value="platform-${platform}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="../ivysettings.xml" />
+			<param name="ivy.file" value="ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="${output}" />
+			
+		</antcall>
+	</target>
+
+	<target name="copy_common_source">
+		<copy todir="dist/common/src">
+			<fileset dir="${module}/src">
+				<exclude name="**/rim/**" />
+				<exclude name="**/android/**" />
+				<exclude name="**/j2me/**" />
+				<exclude name="**/j2se/**" />
+			</fileset>
+		</copy>
+		<copy todir="dist/common/test">
+			<fileset dir="${module}/test">
+				<exclude name="**/rim/**" />
+				<exclude name="**/android/**" />
+				<exclude name="**/j2me/**" />
+				<exclude name="**/j2se/**" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="copy_platform_source">
+		<copy todir="dist/${platform}/src">
+			<fileset dir="${module}/src">
+				<include name="**/${platform}/**" />
+			</fileset>
+		</copy>
+		<!-- disable platform specific unit test -->
+<!--		<copy todir="dist/${platform}/test">
+			<fileset dir="${module}/test">
+				<include name="**/${platform}/**" />
+			</fileset>
+		</copy>-->
+	</target>
+
+	<target name="update_svn_version">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+</project>

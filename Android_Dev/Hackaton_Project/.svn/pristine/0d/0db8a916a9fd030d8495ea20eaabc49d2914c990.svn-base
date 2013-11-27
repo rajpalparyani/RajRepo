@@ -1,0 +1,108 @@
+/**
+ *
+ * Copyright 2011 TeleNav, Inc. All rights reserved.
+ * TestTxNodeAddressSerializable.java
+ *
+ */
+package com.telenav.data.serializable.txnode;
+
+import java.util.Vector;
+
+import com.telenav.data.datatypes.address.Address;
+import com.telenav.data.datatypes.address.AddressAssert;
+import com.telenav.data.datatypes.address.Stop;
+import com.telenav.data.datatypes.poi.BizPoi;
+import com.telenav.data.datatypes.poi.Poi;
+import com.telenav.data.serializable.SerializableManager;
+
+import junit.framework.TestCase;
+
+/**
+ *@author yning
+ *@date 2011-6-17
+ */
+public class TxNodeAddressSerializableTest extends TestCase
+{
+    Address stopAddress = null;
+    Address poiAddress = null;
+    String stopAddressFileName = "stop_address";
+    String poiAddressFileName = "poi_address";
+    byte[] stopAddressByte = {48, -99, -101, 58, 7, 20, 29, 3, 6, 0, -125, 56, 1, 4, 0, 0, 12, 24, 115, 116, 111, 112, 95, 97, 100, 100, 114, 101, 115, 115, 0, 16, 56, 55, 54, 53, 52, 51, 50, 49, 18, 117, 110, 105, 116, 95, 116, 101, 115, 116, 18, 102, 97, 107, 101, 95, 100, 97, 116, 97, 16, 49, 50, 51, 52, 53, 54, 55, 56, 2, 85, 1, 8, 28, 56, 7, 115, -112, 3, -25, 56, 93, -12, 4, 2, 0, 0, 0, 14, 26, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 26, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 18, 115, 117, 110, 110, 121, 118, 97, 108, 101, 4, 67, 65, 8, 50, 49, 48, 48, 10, 57, 52, 48, 56, 54, 26, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 0, 0, 0};
+    byte[] poiAddressByte = {48, -99, -101, 58, 7, 20, 29, 3, 4, 0, -125, 56, 1, 4, 0, 0, 12, 22, 112, 111, 105, 95, 97, 100, 100, 114, 101, 115, 115, 0, 16, 56, 55, 54, 53, 52, 51, 50, 49, 18, 117, 110, 105, 116, 95, 116, 101, 115, 116, 18, 102, 97, 107, 101, 95, 100, 97, 116, 97, 16, 49, 50, 51, 52, 53, 54, 55, 56, 2, -123, 2, 6, 12, 60, 10, 0, 0, 0, 0, 4, 2, -1, 2, -1, 2, 65, 2, 1, 2, 60, 14, 8, 57, 48, 48, 48, 16, 49, 50, 51, 52, 53, 54, 55, 56, 8, 49, 48, 48, 48, 18, 83, 116, 97, 114, 98, 117, 99, 107, 115, 8, 50, 48, 52, 54, 8, 56, 48, 48, 48, 22, 102, 111, 111, 100, 47, 99, 111, 102, 102, 101, 101, 2, 85, 1, 8, 28, 56, 7, 115, -112, 3, -25, 56, 93, -12, 4, 2, 0, 0, 0, 14, 26, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 26, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 18, 115, 117, 110, 110, 121, 118, 97, 108, 101, 4, 67, 65, 8, 50, 49, 48, 48, 10, 57, 52, 48, 56, 54, 26, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 0, 0, 0, 0, 0};
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        stopAddress = new Address();
+        Vector categories = new Vector();
+        categories.addElement("unit_test");
+        categories.addElement("fake_data");
+        stopAddress.setCatagories(categories);
+        stopAddress.setCursorAddress(false);
+        stopAddress.setExistedInFavorite(false);
+        stopAddress.setId(10000);
+        stopAddress.setLabel(stopAddressFileName);
+        stopAddress.setPhoneNumber("12345678");
+        stopAddress.setSharedFromPTN("87654321");
+        stopAddress.setStatus(Address.UNCHANGED);
+        stopAddress.setType(Address.TYPE_RECENT_STOP);
+        
+        Stop stop = new Stop();
+        stop.setCity("sunnyvale");
+        stop.setCountry("United States");
+        stop.setFirstLine("1130 kifer rd");
+        stop.setId(2100);
+        stop.setIsGeocoded(false);
+        stop.setLabel("1130 kifer rd");
+        stop.setLat(3737392);
+        stop.setLon(-12201074);
+        stop.setPostalCode("94086");
+        stop.setProvince("CA");
+        stop.setStatus(Stop.ADDED);
+//        stop.setStreetName("1130 kifer rd"); //FIXME: this line won't pass
+        stop.setType(Stop.STOP_RECENT);
+        stopAddress.setStop(stop);
+        
+        poiAddress = new Address();
+        categories = new Vector();
+        categories.addElement("unit_test");
+        categories.addElement("fake_data");
+        poiAddress.setCatagories(categories);
+        poiAddress.setCursorAddress(false);
+        poiAddress.setExistedInFavorite(false);
+        poiAddress.setId(10000);
+        poiAddress.setLabel(poiAddressFileName);
+        poiAddress.setPhoneNumber("12345678");
+        poiAddress.setSharedFromPTN("87654321");
+        poiAddress.setStatus(Address.UNCHANGED);
+        poiAddress.setType(Address.TYPE_RECENT_POI);
+        
+        Poi poi = new Poi();
+        poi.setRating(5);
+        poi.setType(Poi.TYPE_BUSINESS_DETAIL);
+        BizPoi bizPoi = new BizPoi();
+        bizPoi.setBrand("Starbucks");
+        bizPoi.setCategoryId("8000");
+        bizPoi.setCategoryName("food/coffee");
+        bizPoi.setDistance("9000");
+        bizPoi.setPhoneNumber("12345678");
+        bizPoi.setPoiId("2046");
+        bizPoi.setPrice("1000");
+        bizPoi.setStop(stop);
+        
+        poiAddress.setPoi(poi);
+        poi.setBizPoi(bizPoi);
+        
+        SerializableManager.init(new TxNodeSerializableManager());
+        super.setUp();
+    }
+    
+    public void testCreateAddress()
+    {
+        TxNodeAddressSerializable addressSerializable = new TxNodeAddressSerializable();
+        Address address = addressSerializable.createAddress(stopAddressByte);
+        AddressAssert.assertAddress(stopAddress, address);
+        address = addressSerializable.createAddress(poiAddressByte);
+        AddressAssert.assertAddress(poiAddress, address);
+    }
+}

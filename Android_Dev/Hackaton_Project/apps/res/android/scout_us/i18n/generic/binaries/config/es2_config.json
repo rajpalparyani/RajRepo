@@ -1,0 +1,4 @@
+{
+    "graphics_api" : "ogles2",
+    "mipmap" : "software"
+}

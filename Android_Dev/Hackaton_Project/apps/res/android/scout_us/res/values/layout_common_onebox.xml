@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="commonOneboxDsrButtonLayoutWidth">29dp</dimen>
+    <dimen name="commonOneboxDsrButtonLayoutHeight">29dp</dimen>
+    <dimen name="commonOneboxDsrButtonMarginRight">8dp</dimen>
+    <dimen name="commonOneboxBackgroundPadding">2dp</dimen>
+    <dimen name="commonOneboxBackgroundStrokeWidth">1dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="commonOneboxTextViewTextSize">16sp</dimen>
+    <!-- color -->
+	<color name="commonOneboxBackgroundColor">#ffffffff</color>
+	<color name="commonOneboxBackgroundStrokeColor">#ff858b92</color>
+</resources>

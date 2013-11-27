@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="miniPoiBar0ButtonDrive">Drive</string>
+    <string name="miniPoiBar0ButtonMap">Map</string>
+    <string name="miniPoiBar0ButtonInfo">Info</string>
+</resources>

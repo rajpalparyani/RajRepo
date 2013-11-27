@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+		<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  android:paddingLeft = "21dp"  android:paddingRight = "21dp" android:paddingTop = "10dp">
+				<TextView  
+					android:id="@+id/title"  
+					android:layout_width="wrap_content"   
+					android:layout_height="wrap_content"    
+					android:textColor="@color/style_white"  
+					android:textSize="16sp"
+					android:textStyle="bold"
+					android:layout_gravity="left|center"
+				/> 
+				<View
+					android:layout_width = "fill_parent"
+					android:layout_height="5dp" />
+				<TextView  
+					android:id="@+id/content"  
+					android:layout_width="wrap_content"   
+					android:layout_height="wrap_content"    
+					android:textStyle="normal"
+					android:textSize="15sp"
+					android:textColor="@color/style_white"  
+					android:layout_gravity="left|center"
+					android:lineSpacingExtra = "2dp"
+					android:lineSpacingMultiplier = "1.2"  
+				/> 
+				<View
+					android:id="@+id/top_gap"  
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"/>
+				<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+					<ImageView 
+						android:layout_gravity="center_horizontal"
+						android:id="@+id/image" 
+						android:layout_width="wrap_content" 
+						android:layout_height="wrap_content"/>
+				</LinearLayout>
+				 <TextView  
+						android:id="@+id/append_content"  
+						android:layout_width="fill_parent"   
+						android:layout_height="wrap_content"    
+						android:textStyle="normal"
+						android:textSize="15sp"
+						android:textColor="@color/style_white"  
+						android:layout_gravity="left|center"
+						android:lineSpacingExtra = "2dp"
+						android:lineSpacingMultiplier = "1.2"  
+				/> 
+				<View
+					android:id="@+id/bottom_gap"  
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"/>
+				
+		</LinearLayout>
+	</ScrollView>

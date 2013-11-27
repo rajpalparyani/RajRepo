@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<project name="TN7.x_trunk">
+	<property name="output" value="${basedir}/lib" />
+	<property name="apiversion" value="7200000" />
+		
+	<!-- load environment variables -->
+	<property environment="env"/>
+	<property name="wtk.home" value="${env.WTK_HOME}" />
+	<property name="findbugs_home" value="${basedir}/OpenSourceLib/findbugs-1.3.9" />
+	<!-- cache -->
+	<property name="ivy.default.cache" value="${basedir}/.ivy-cache" />
+	
+	<target name="build" depends="init, build_pusu, build_tntracking, build_SearchVpl"/>
+	<target name="build_part_one" depends="init, build_pusu, build_tntracking"/>
+	<target name="build_part_two" depends="build_SearchVpl"/>
+	
+    <target name="init">
+		<echo message="cleaning...." />
+		<property name="unittest.enable" value="true" />
+		<delete includeemptydirs="true" dir="${output}" />
+		<delete includeemptydirs="true" dir="${basedir}/.ivy-cache">
+			<exclude name="com.google.android/**"/>
+		</delete>		
+	</target>
+	
+	<target name="build_utility">
+		<ant antfile="build.xml" target="publish-all" dir="./utility" inheritrefs="true">
+			<property name="version" value="${apiversion}"/>
+		</ant>
+	</target>
+
+	
+	<target name="build_ui">
+		<ant antfile="build.xml" target="publish-all" dir="./ui">
+			<property name="version" value="${apiversion}"/>
+		</ant>
+	</target>
+
+	
+	<target name="build_platform">
+		<ant antfile="build.xml" target="publish-all" dir="./platform">
+			<property name="version" value="${apiversion}"/>
+		</ant>
+	</target>
+
+	
+	<target name="build_services">
+		<ant antfile="build.xml" target="publish-all" dir="./services">
+			<property name="version" value="${apiversion}"/>
+			<property name="unittest.enable" value="true"/>			
+		</ant>
+	</target>
+
+	<target name="build_pusu" depends="retrieve_android_lib, build_utility, build_ui, build_platform, build_services,retrieve_navsdk_lib,retrieve_dependency_lib" />
+
+	<target name="build_tntracking">
+		<ant antfile="build.xml" target="publish-all" dir="./tn-tracking">
+			<property name="version" value="${apiversion}"/>
+		</ant>
+	</target>
+	
+	<target name="build_SearchVpl">
+		<ant antfile="build.xml" target="publish-all" dir="./SearchVpl">
+			<property name="version" value="${apiversion}"/>
+		</ant>
+	</target>
+	
+	<target name="retrieve_navsdk_lib">
+		<ant antfile="build-retreive.xml" target="navsdk.resolve"/>
+	</target>
+	
+	<target name="retrieve_android_lib" description="retrieve android related jar dependencies with ivy">
+		<ant antfile="build-retreive.xml" target="android.resolve"/>
+	</target>		
+	
+	<target name="retrieve_dependency_lib">
+		<ant antfile="build-retreive.xml" target="dependency.resolve"/>
+	</target>
+</project>

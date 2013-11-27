@@ -1,0 +1,336 @@
+/**
+ *
+ * Copyright 2011 TeleNav, Inc. All rights reserved.
+ * JsonPoiSerializableTest.java
+ *
+ */
+package com.telenav.data.serializable.json;
+
+import java.util.Vector;
+
+import junit.framework.TestCase;
+
+import org.json.tnme.JSONObject;
+import org.junit.Assert;
+
+import com.telenav.data.datatypes.address.Stop;
+import com.telenav.data.datatypes.poi.Ad;
+import com.telenav.data.datatypes.poi.BizPoi;
+import com.telenav.data.datatypes.poi.Coupon;
+import com.telenav.data.datatypes.poi.OpenTableInfo;
+import com.telenav.data.datatypes.poi.PoiAssert;
+import com.telenav.data.datatypes.poi.SupplimentInfo;
+import com.telenav.j2me.datatypes.ProtocolBuffer;
+import com.telenav.j2me.framework.protocol.ProtoCacheCitiesReq;
+import com.telenav.j2me.framework.protocol.ProtoLocalAppInfo;
+import com.telenav.j2me.framework.protocol.ProtoProperty;
+
+/**
+ *@author bduan
+ *@date 2011-6-21
+ */
+public class JsonPoiSerializableTest extends TestCase
+{
+    String bizPoiJson = "{\"distance\":\"100 ft\",\"distanceWithUnit\":\"mile\",\"brand\":\"KFC\",\"categoryName\":\"Food\",\"categoryId\":\"1000\",\"poiId\":\"1111\",\"price\":\"6.5$\",\"stop\":{\"streetName\":\"1130 kifer rd\",\"lon\":-12201074,\"zip\":\"94086\",\"province\":\"CA\",\"country\":\"United States\",\"city\":\"sunnyvale\",\"isGeocoded\":false,\"lat\":3737392,\"type\":2,\"label\":\"1130 kifer rd\",\"firstLine\":\"1130 kifer rd\",\"stopId\":2100,\"isSharedAddress\":false},\"phoneNumber\":\"4085056710\"}";
+    String adJson = "{\"adID\":\"1000\",\"adTag\":\"0\",\"adLine\":\"KFC\",\"adSource\":\"ypc\"}";
+    String couponJson = "{\"description\":\"YPC\",\"endDate\":\"2011.06.29\",\"imageData\":\"[B@4b4333\"}";
+    String openTableInfoJson = "{\"isReservable\":true,\"partner\":\"YPC\",\"partnerPoiId\":\"1111\"}";
+    String supplimentInfoJson = "{\"price\":\"13\",\"supportInfo\":\"YPC\"}";
+    String supplimentInfoJson1 = "{\"price\":\"\",\"supportInfo\":\"ADBC\"}";
+    String localAppInfosJson = "{\"localAppInfos\":[{\"Hotel\":[{\"hasHotelAlliance\":\"true\"},{\"hasHotelAlliance\":\"true\"}]},{\"Coffee\":[{\"hasWifi\":\"true\"},{\"hasFreeWater\":\"false\"}]}]}";
+    
+    byte[] imageData = {48, -99, -101, 58, 0, 0, 4, 26, 49, 51, 48, 56, 50, 56, 57, 57, 52, 50, 55, 48, 50, 2, 48, 0, 0};
+    
+    Ad ad;
+    BizPoi bizPoi;
+    Coupon coupon;
+    OpenTableInfo openTableInfo;
+    SupplimentInfo supplimentInfo;
+    SupplimentInfo supplimentInfo1;
+    Vector localAppInfos;
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        ad = new Ad();
+        ad.setAdTag("0");
+        ad.setAdLine("KFC");
+        ad.setAdSource("ypc");
+        ad.setAdID("1000");
+        
+        Stop stop = new Stop();
+        stop.setCity("sunnyvale");
+        stop.setCountry("United States");
+        stop.setFirstLine("1130 kifer rd");
+        stop.setId(2100);
+        stop.setIsGeocoded(false);
+        stop.setLabel("1130 kifer rd");
+        stop.setLat(3737392);
+        stop.setLon(-12201074);
+        stop.setPostalCode("94086");
+        stop.setProvince("CA");
+        stop.setStreetName("1130 kifer rd");
+        stop.setType(Stop.STOP_RECENT);
+        
+        bizPoi = new BizPoi();
+        bizPoi.setBrand("KFC");
+        bizPoi.setCategoryId("1000");
+        bizPoi.setCategoryName("Food");
+        bizPoi.setDistance("100 ft");
+        bizPoi.setDistanceWithUnit("mile");
+        bizPoi.setPhoneNumber("4085056710");
+        bizPoi.setPoiId("1111");
+        bizPoi.setPrice("6.5$");
+        bizPoi.setStop(stop);
+        
+        coupon = new Coupon();
+        coupon.setDescription("YPC");
+        coupon.setEndDate("2011.06.29");
+        coupon.setImageData(imageData);
+        
+        openTableInfo = new OpenTableInfo();
+        openTableInfo.setIsReservable(true);
+        openTableInfo.setPartner("YPC");
+        openTableInfo.setPartnerPoiId("1111");
+        
+        supplimentInfo = new SupplimentInfo();
+        supplimentInfo.setPrice("13");
+        supplimentInfo.setSupportInfo("YPC");
+        
+        supplimentInfo1 = new SupplimentInfo();
+        supplimentInfo1.setPrice("");
+        supplimentInfo1.setSupportInfo("ADBC");
+        
+        localAppInfos = new Vector();
+        
+        ProtoLocalAppInfo.Builder builder = ProtoLocalAppInfo.newBuilder();
+        builder.setName("Hotel");
+        ProtoProperty.Builder propertyBuilder = ProtoProperty.newBuilder();
+        propertyBuilder.setKey("hasHotelAlliance");
+        propertyBuilder.setValue("true");
+        ProtoProperty.Builder propertyBuilder1 = ProtoProperty.newBuilder();
+        propertyBuilder1.setKey("hasTag");
+        propertyBuilder1.setValue("false");
+        
+        Vector propertyVec = new Vector();
+        propertyVec.add(propertyBuilder.build());
+        propertyVec.add(propertyBuilder.build());
+        builder.setProps(propertyVec);
+        localAppInfos.add(builder.build());
+        
+        ProtoLocalAppInfo.Builder builderCoffee = ProtoLocalAppInfo.newBuilder();
+        builderCoffee.setName("Coffee");
+        ProtoProperty.Builder propertyBuilderCoffee = ProtoProperty.newBuilder();
+        propertyBuilderCoffee.setKey("hasWifi");
+        propertyBuilderCoffee.setValue("true");
+        ProtoProperty.Builder propertyBuilderCoffee1 = ProtoProperty.newBuilder();
+        propertyBuilderCoffee1.setKey("hasFreeWater");
+        propertyBuilderCoffee1.setValue("false");
+        
+        propertyVec = new Vector();
+        propertyVec.add(propertyBuilderCoffee.build());
+        propertyVec.add(propertyBuilderCoffee1.build());
+        builderCoffee.setProps(propertyVec);
+        
+        localAppInfos.add(builderCoffee.build());
+        
+        super.setUp();
+    }
+    
+    public void testLocalAppInfosToBytes()
+    {
+        JSONObject jsonObject = new JSONObject();
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        jsonPoiSerializable.localAppInfosToBytes(localAppInfos, jsonObject);
+        assertEquals(localAppInfosJson, jsonObject.toString());
+    }
+    
+    public void testCreateAdFromData()
+    {
+        
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        Ad expectedAd = jsonPoiSerializable.createAd(adJson.getBytes());
+        PoiAssert.assertAd(ad, expectedAd);
+    }
+    
+    public void testCreateAdFromJson()
+    {
+        Ad ad = new Ad();
+        ad.setAdTag("0");
+        ad.setAdLine("KFC");
+        ad.setAdSource("ypc");
+        ad.setAdID("1000");
+        
+        JSONObject jsonObject = null;
+        
+        try
+        {
+            jsonObject = new JSONObject(adJson);
+        }
+        catch (Exception e)
+        {
+            fail(e.toString());
+        }
+        
+        Ad expectedAd = JsonPoiSerializable.createAd(jsonObject);
+        PoiAssert.assertAd(ad, expectedAd);
+    }
+    
+    public void testCreateBizPoiFromData()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        BizPoi expected = jsonPoiSerializable.createBizPoi(bizPoiJson.getBytes());
+        PoiAssert.assertBizPoi(bizPoi, expected);
+    }
+    
+    public void testCreateBizPoiFromJson()
+    {
+        JSONObject jsonObject = null;
+        
+        try
+        {
+            jsonObject = new JSONObject(bizPoiJson);
+        }
+        catch (Exception e)
+        {
+            fail(e.toString());
+        }
+        
+        BizPoi expected = JsonPoiSerializable.createBizPoi(jsonObject);
+        PoiAssert.assertBizPoi(bizPoi, expected);
+    }
+    
+    public void testCreateCouponFromData()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        Coupon expected = jsonPoiSerializable.createCoupon(couponJson.getBytes());
+        assertCoupon(coupon, expected);
+    }
+    
+    public void testCreateCouponFromJson()
+    {
+        JSONObject jsonObject = null;
+
+        try
+        {
+            jsonObject = new JSONObject(couponJson);
+        }
+        catch (Exception e)
+        {
+            fail(e.toString());
+        }
+
+        Coupon expected = JsonPoiSerializable.createCoupon(jsonObject);
+        assertCoupon(coupon, expected);
+    }
+    
+    protected void assertCoupon(Coupon expected, Coupon actual)
+    {
+        if(expected == null)
+        {
+            TestCase.assertNull(actual);
+            return;
+        }
+        else
+        {
+            TestCase.assertNotNull(actual);
+        }
+        TestCase.assertEquals(expected.getDescription(), actual.getDescription());
+        TestCase.assertEquals(expected.getEndDate(), actual.getEndDate());
+        
+        //for json serialize, the imageData can't be serialized.
+        //TestCase.assertEquals(expected.getImageData(), actual.getImageData());
+    }
+    
+    public void testCreateOpenTableInfoFromData()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        OpenTableInfo expected = jsonPoiSerializable.createOpenTableInfo(openTableInfoJson.getBytes());
+        PoiAssert.assertOpenTableInfo(openTableInfo, expected);
+    }
+    
+    public void testCreateOpenTableInfoFromJson()
+    {
+        JSONObject jsonObject = null;
+
+        try
+        {
+            jsonObject = new JSONObject(openTableInfoJson);
+        }
+        catch (Exception e)
+        {
+            fail(e.toString());
+        }
+        
+        OpenTableInfo expected = JsonPoiSerializable.createOpenTableInfo(jsonObject);
+        PoiAssert.assertOpenTableInfo(openTableInfo, expected);
+    }
+    
+    public void testCreateSupplimentInfoFromData()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        SupplimentInfo expected = jsonPoiSerializable.createSupplimentInfo(supplimentInfoJson.getBytes());
+        PoiAssert.assertSupplimentInfo(supplimentInfo, expected);
+    }
+    
+    public void testCreateSupplimentInfoFromData1()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        SupplimentInfo expected = jsonPoiSerializable.createSupplimentInfo(supplimentInfoJson1.getBytes());
+        PoiAssert.assertSupplimentInfo(supplimentInfo1, expected);
+    }
+    
+    public void testCreateSupplimentInfoFromJson()
+    {
+        JSONObject jsonObject = null;
+        
+        try
+        {
+            jsonObject = new JSONObject(supplimentInfoJson);
+        }
+        catch (Exception e)
+        {
+            fail(e.toString());
+        }
+        
+        SupplimentInfo expected = JsonPoiSerializable.createSupplimentInfo(jsonObject);
+        PoiAssert.assertSupplimentInfo(supplimentInfo, expected);
+    }
+    
+    public void testToBytesAd()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        String jsonStr = new String(jsonPoiSerializable.toBytes(ad));
+        Assert.assertEquals(adJson, jsonStr);
+    }
+    
+    public void testToBytesBizPoi()
+    {
+        JsonPoiSerializable jsonPoiSerializable = new JsonPoiSerializable();
+        String jsonStr = new String(jsonPoiSerializable.toBytes(bizPoi));
+        Assert.assertEquals(bizPoiJson, jsonStr);
+    }
+    
+    public void testToBytesCoupon()
+    {
+        JsonPoiSerializable joJsonPoiSerializable = new JsonPoiSerializable();
+        Coupon expected = joJsonPoiSerializable.createCoupon(joJsonPoiSerializable.toBytes(coupon));
+        assertCoupon(coupon, expected);
+    }
+    
+    public void testToBytesOpenTableInfo()
+    {
+        JsonPoiSerializable joJsonPoiSerializable = new JsonPoiSerializable();
+        OpenTableInfo expected = joJsonPoiSerializable.createOpenTableInfo(joJsonPoiSerializable.toBytes(openTableInfo));
+        PoiAssert.assertOpenTableInfo(expected, openTableInfo);
+    }
+    
+    public void testToBytesSupplimentInfo()
+    {
+        JsonPoiSerializable joJsonPoiSerializable = new JsonPoiSerializable();
+        SupplimentInfo expected = joJsonPoiSerializable.createSupplimentInfo(joJsonPoiSerializable.toBytes(supplimentInfo));
+        PoiAssert.assertSupplimentInfo(expected, supplimentInfo);
+    }
+    
+    
+}

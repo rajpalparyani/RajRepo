@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="placeList0AdsItemNumberIndicatorLayoutWidth">40dp</dimen>
+    <dimen name="placeList0AdsItemNumberIndicatorLayoutHeight">40dp</dimen>
+    <dimen name="placeList0AdsItemNumberIndicatorMarginLeft">10dp</dimen>
+    <dimen name="placeList0AdsItemNumberIndicatorMarginRight">10dp</dimen>
+    <dimen name="placeList0AdsItemNumberIndicatorMarginTop">6dp</dimen>
+    <dimen name="placeList0AdsItemNumberIndicatorTextMargin">8dp</dimen>
+    <dimen name="placeList0AdsItemDistancePaddingRight">10dp</dimen>
+    <dimen name="placeList0AdsItemCouponPadding">10dp</dimen>
+    <dimen name="placeList0AdsItemBrandNamePaddingTop">4dp</dimen>
+    <dimen name="placeList0AdsItemCouponLayoutWidth">16dp</dimen>
+    <dimen name="placeList0AdsItemCouponLayoutHeight">16dp</dimen>
+    <dimen name="placeList0AdsItemCouponMarginLeft">4dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="placeList0AdsItemNumberIndicatorTextSize">14sp</dimen>
+    <dimen name="placeList0AdsItemBrandNameTextSize">21sp</dimen>
+    <dimen name="placeList0AdsItemDescTextSize">16sp</dimen>
+    <dimen name="placeList0AdsItemAddressTextSize">16sp</dimen>
+    <dimen name="placeList0AdsItemCategoryTextSize">16sp</dimen>
+    <dimen name="placeList0AdsItemDistanceTextSize">16sp</dimen>
+    <dimen name="placeList0AdsItemIndicatorDescTextSize">10sp</dimen>
+    <!-- color -->
+    <color name="placeList0AdsItemNumberIndicatorTextColor">#ffffffff</color>
+	<color name="placeList0AdsItemBrandNameTextColor">#ff4e6619</color>
+	<color name="placeList0AdsItemDescTextColor">#ff4e6619</color>
+	<color name="placeList0AdsItemAddressTextColor">#ff697886</color>
+	<color name="placeList0AdsItemCategoryTextColor">#ff93a8bb</color>
+	<color name="placeList0AdsItemDistanceTextColor">#ff93a8bb</color>
+	<color name="placeList0AdsItemIndicatorDescTextColor">#ff93a8bb</color>
+</resources>

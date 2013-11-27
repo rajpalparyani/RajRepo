@@ -1,0 +1,35 @@
+<ivy-module version="1.0">
+	<info organisation="mobile/apps/branches/7.2.0" module="telenav-global" revision="working@rajpalp-mbp15.telenav.com" status="integration" publication="20130816115854"/>
+	<configurations>	      
+			   	<conf name="master" transitive="false" visibility="private"/>
+				<conf name="android_8" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_9" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_10" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_11" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_12" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_13" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_14" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_15" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_16" extends="master" transitive="false" visibility="private"/>
+				<conf name="android_17" extends="master" transitive="false" visibility="private"/>
+	</configurations>
+
+	<dependencies>
+	
+		<dependency org="com.google.android" name="android" rev="8" conf="android_8->default"/>
+		<dependency org="com.google.android" name="android" rev="9" conf="android_9->default"/>
+		<dependency org="com.google.android" name="android" rev="10" conf="android_10->default"/>
+		<dependency org="com.google.android" name="android" rev="11" conf="android_11->default"/>
+		<dependency org="com.google.android" name="android" rev="12" conf="android_12->default"/>
+		<dependency org="com.google.android" name="android" rev="13" conf="android_13->default"/>
+		<dependency org="com.google.android" name="android" rev="14" conf="android_14->default"/>
+		<dependency org="com.google.android" name="android" rev="15" conf="android_15->default"/>
+		<dependency org="com.google.android" name="android" rev="16" conf="android_16->default"/>
+		<dependency org="com.google.android" name="android" rev="17" conf="android_17->default"/>
+
+		<!-- exclude javadoc and src  -->
+		<exclude type="source" ext="jar"/>
+		<exclude type="javadoc" ext="jar"/>
+
+	</dependencies>
+</ivy-module>

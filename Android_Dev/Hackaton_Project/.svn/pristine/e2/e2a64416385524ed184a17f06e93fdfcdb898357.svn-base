@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dwfTitle">MeetUp</string>
+    <string name="dwfTip">Meeting up somewhere?\nSee each other on a map on the way there!</string>
+    <string name="dwfInviteFriends">Who?</string>
+    <string name="dwfInviteFriendsHint">e.g. John, 408-111-222...</string>
+    <string name="dwfChoosePlace">Where?</string>
+     <string name="dwfChoosePlaceHint">e.g. sushi,123 main street...</string>
+    <string name="dwfDriveTo">Let\'s drive together to %1$s&lt;br /&gt;&lt;a href=&quot;http://scou.to/a/dwf&quot;&gt;http://scou.to/a/dwf&lt;/a&gt;</string>
+    <string name="dwfMeetAt">Let\'s meet up at %1$s.&lt;br /&gt;Tap &lt;a href=&quot;http://scou.to/a/dwf&quot;&gt;http://scou.to/a/dwf&lt;/a&gt; to see each other\'s ETA on a map.</string>
+    <string name="dwfRequsting">Requesting&#8230;</string>
+    <string name="dwfFriendHost">Host</string>
+    <string name="dwfMe">Me</string>
+    <string name="dwfMeetButton">Invite</string>
+    <string name="dwfLetGoButton">Let\'s go!</string>
+    <string name="dwfFriendInactive">Inactive</string>
+    <string name="dwfFriendJoined">Joined</string>
+    <string name="dwfFriendDriving">Driving</string>
+    <string name="dwfFriendArrived">Arrived</string>
+    <string name="dwfFriendEnd">Leave</string>
+    
+    <string name="dwfFriendMenuLeaveGroup">Stop sharing</string>
+    <string name="dwfFriendMenuAddNew">Invite more</string>
+    
+    <string name="dwfFriendUpdateSecond">Updated %1$s sec ago</string>
+    <string name="dwfFriendUpdateMinute">Updated %1$s min ago</string>
+    <string name="dwfFriendUpdateHour">Updated %1$s hour ago</string>
+    <string name="dwfFriendUpdateSeconds">Updated a few secs ago</string>
+    <string name="dwfFriendUpdateMinutes">Updated %1$s mins ago</string>
+    <string name="dwfFriendUpdateHours">Updated %1$s hours ago</string>
+    
+    <string name="dwfNotificationTicker">Share Location is started.</string>
+    <string name="dwfNotificationTitle">Share Location</string>
+    <string name="dwfNotificationContent">Click to return to app</string>
+    <string name="dwfNotificationTimeoutTitle">Share Location Timeout</string>
+    <string name="dwfNotificationTimeoutContent">Your share location is timeout</string>
+    
+    <string name="dwfFailErrorMessage">Your share location is failed.</string>
+    <string name="dwfNetworkErrorMessage">No network, please try again later.</string>
+
+</resources>

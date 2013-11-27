@@ -1,0 +1,244 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard0expand"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_margin="@dimen/dashboard0LocationLinearLayoutLayoutMargin" >
+
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dashboard0LocationLinearLayoutLayoutHeight" >
+
+            <ImageView
+                android:id="@+id/dashboard0MapViewExpand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#000"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000" >
+
+        <ImageView
+            android:id="@+id/dashboard0LocationScout_expand"
+            android:layout_width="73dp"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:id="@+id/dashboard0mapProvider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="7dp"
+            android:text="©2006-2012 TomTom"
+            android:textColor="#000000"
+            android:textSize="12sp" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/minimap_progress_expand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dashboard0LocationLinearLayoutLayoutHeight"
+            android:background="@color/dashboard0MiniMapBackgroundColor"
+            android:gravity="center" >
+
+            <com.telenav.ui.android.TnCircleProgress
+                android:id="@+id/mapProgress_expand"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/dashboard0DropDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard0LocationLinearLayoutLayoutHeight"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/dashboard0LocationShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/dashboard_share_location_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="9dp"
+                    android:contentDescription="@string/dashboardShareLocation"
+                    android:src="@drawable/dashboard_share_location_icon"
+                    android:duplicateParentState="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="-6dp"
+                    android:text="@string/dashboardShareLocation"
+                    android:textColor="@color/dashboard_dropdown_font"
+                    android:duplicateParentState="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dashboard0LocationAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/dashboard_add_to_my_places_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="9dp"
+                    android:contentDescription="@string/dashboardAddPlace"
+                    android:src="@drawable/dashboard_add_to_my_places_icon"
+                    android:duplicateParentState="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="-6dp"
+                    android:text="@string/dashboardAddPlace"
+                    android:textColor="@color/dashboard_dropdown_font"
+                    android:duplicateParentState="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dashboard0foldButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dashboard0LocationLinearLayoutLayoutHeight"
+            android:background="@drawable/dashboard_location_bg_unfocused"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:contentDescription="@string/dashboardFoldTip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/dashboard0LocationAddressButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.6"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="-3dp"
+                android:layout_marginLeft="@dimen/dashboard0LocationLinearLayoutLayoutAddressMargin"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/dashboard0LocationCityFieldExpand"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/dashboardCurrentCity"
+                    android:textColor="@color/dashboard0LocationCityTextColor"
+                    android:textSize="@dimen/dashboard0LocationCityTextSize" />
+
+                <LinearLayout
+                    android:id="@+id/dashboard0LocationAddressActionButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/dashboard0LocationAddressActionButtonIconExpand"
+                        android:layout_width="@dimen/dashboard0LocationAddressActionButtonSize"
+                        android:layout_height="@dimen/dashboard0LocationAddressActionButtonSize"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="6dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dashboard_arrow_down_icon_unfocused" />
+
+                    <TextView
+                        android:id="@+id/dashboard0LocationAddressFieldExpand"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/dashboardCurrentStreet"
+                        android:textColor="@color/dashboard0LocationStreetTextColor"
+                        android:textSize="@dimen/dashboard0LocationStreetTextSize"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/dashboard0LocationWeatherButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:id="@+id/dashboard0LocationWeatherImageFieldExpand"
+                    android:layout_width="@dimen/dashboard0LocationWeatherImageLayoutWidth"
+                    android:layout_height="@dimen/dashboard0LocationWeatherImageLayoutHeight"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginRight="-5dp"
+                    android:contentDescription="@string/dashboardCurrentCity"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/dashboard_weather_icon_13_unfocused" />
+
+                <TextView
+                    android:id="@+id/dashboard0LocationWeatherTextFieldExpand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-6dp"
+                    android:layout_marginTop="-15dp"
+                    android:singleLine="true"
+                    android:layout_toLeftOf="@+id/dashboard0LocationWeatherImageFieldExpand"
+                    android:contentDescription="@string/dashboardCurrentCity"
+                    android:text="@string/dashboardCurrentTemperature"
+                    android:textColor="@color/dashboard0LocationWeatherTextColor"
+                    android:textSize="@dimen/dashboard0LocationWeatherTextSize"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_map_bg_unfocused" >
+    </LinearLayout>
+
+</FrameLayout>

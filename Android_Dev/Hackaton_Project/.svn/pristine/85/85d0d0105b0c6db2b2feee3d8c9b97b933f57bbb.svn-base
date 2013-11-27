@@ -1,0 +1,42 @@
+<project name="build-android" default="index_all">
+	<!-- ============================================== import build_common.xml ======================================== -->
+
+       <!--  all properties are in build.properties -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<property name="ant.lib.dir" value="../../lib/ant-lib" />
+	<path id="basedir" location="../../"/>
+	<property name="projectPath" refid="basedir"/>
+	<!--  this property should be modified to include new carriers in the future -->
+	<property name="carrier_list" value="cingular,sprint,cmcc,t-mobile-uk,t-mobile-us,ttx,uscc,vivo,scout_us,scout_eu" />
+	<property name="dirpath" value="${projectPath}/res/android/${carrier}/i18n" />
+	<!-- ============================================== path properties ================================================ -->
+	<path id="ant.taskdef.classpath">
+		<fileset dir="${ant.lib.dir}" includes="*.jar" />
+	</path>
+
+
+	<!-- ============================================== target ============================================== -->
+
+	<target name="load_tools_project">
+		
+		<!-- ===============================================tools task definition =============================================== -->
+		<!-- tools task definition -->
+		<taskdef name="ninePatchBinaryFilesCreatorTask" classname="com.telenav.ant.task.common.NinePatchBinaryFilesCreatorTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="createIndexFileTask" classname="com.telenav.ant.task.common.IndexFileCreatorTask" classpathref="ant.taskdef.classpath" />
+	</target>
+	
+	<target name="index_all" depends="load_tools_project" description="generate index files for all carriers">
+		<foreach list="${carrier_list}" target="createIndexFile" param="carrier"	inheritall="true" inheritrefs="true" />
+	</target>
+	
+	<target name="createIndexFile" description="generate index files">
+		<delete quiet="true" dir="${dirpath}">
+			<include name="*.index*" />
+		</delete>
+		<echo>generate index files for ${carrier}</echo>
+		<echo>path is ${dirpath}</echo>
+		<createIndexFileTask dirPath="${dirpath}" />
+		<echo>create index file for ${carrier} successfully</echo>
+ 	</target>
+
+</project>

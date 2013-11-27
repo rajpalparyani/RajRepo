@@ -1,0 +1,6 @@
+{
+ "name": "raj_json",
+ "run_list": [
+   "vim"
+]
+}

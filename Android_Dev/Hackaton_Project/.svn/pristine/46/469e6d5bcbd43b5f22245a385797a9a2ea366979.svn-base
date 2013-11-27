@@ -1,0 +1,1525 @@
+{ 
+    "billboard_labels" :
+    {
+        "default" :
+        {
+            "style" : "billboard_label",
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "font_halo_size" : 3,
+            "text_x": 0,
+            "text_y": 14,
+            "icon_w": 3,
+            "icon_h": 28,
+            "icon_border_w" : 0.2,
+            "render_size" : 16,
+            "cull_bounds_scale" : 1.0,
+            "cull_distance" : 3000.0,
+            "animation_time" : 0.5,
+            "animation_type" : "fading",
+            "always_visible" : false
+        },
+        "highway" :
+        {
+            "priority" : 20.4
+        },
+        "arterial" :
+        {
+            "priority" : 20.3
+        },
+        "street" :
+        {
+            "priority" : 20.2
+        },
+        "other" :
+        {
+            "priority" : 20.1
+        }
+    },
+    "annotations" : 
+    {
+        "default" :
+        {	
+            		"style" : "billboard_icon",
+            		"icon_name" : "US_generic4.png",
+            		"priority" : 22,
+	    		"text_x" : 0,
+	    		"text_y" : -1,
+	    		"icon_x" : 17,
+	    		"icon_y" : 8,
+	    		"icon_w" : 34,
+	    		"icon_h" : 16,            
+	    		"font_face" : "DroidSansPro-Bold",
+            		"font_size" : 30,
+            		"font_halo_size" : 3,
+            		"render_size" : 10,
+            		"text_color" : "#000000ff",
+            		"outline_color" : "#00000000",
+            		"text_alignment" : "center",
+            		"super_group" : "",
+            		"immunity_group" : "shields",
+            		"animation_time" : 1.0,
+            		"animation_type" : "fading",
+            		"always_visible" : false,
+            		"show_in_2d" : true
+        },
+        "highway_USA_1" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USA_1.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -2,
+			"icon_x" : 13,
+			"icon_y" : 13,
+			"icon_w" : 26,
+			"icon_h" : 26,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ffffffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USA_2" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USA_2.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -2,
+			"icon_x" : 13,
+			"icon_y" : 13,
+			"icon_w" : 26,
+			"icon_h" : 26,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ffffffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USA_3" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USA_3.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 16,
+			"icon_y" : 13,
+			"icon_w" : 32,
+			"icon_h" : 26,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ffffffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USB_1" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USB_1.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USB_2" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USB_1.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USB_3" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "USB_3.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USC_1" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "USC_1.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USC_2" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "USC_1.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USC_3" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "USC_3.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 14,
+			"icon_y" : 14,
+			"icon_w" : 28,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_USC_4" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "USC_4.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : -1,
+			"icon_x" : 18,
+			"icon_y" : 14,
+			"icon_w" : 36,
+			"icon_h" : 28,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAA_1" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAA_1.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -3,
+			"icon_x" : 12,
+			"icon_y" : 12,
+			"icon_w" : 24,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAA_2" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAA_2.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -3,
+			"icon_x" : 14,
+			"icon_y" : 12,
+			"icon_w" : 28,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAA_3" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAA_3.png",
+			"priority" : 22.3,
+			"text_x" : 0,
+			"text_y" : -3,
+			"icon_x" : 16,
+			"icon_y" : 12,
+			"icon_w" : 32,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAB_1" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAB_1.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 12,
+			"icon_y" : 11,
+			"icon_w" : 24,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAB_2" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAB_2.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 12,
+			"icon_y" : 11,
+			"icon_w" : 24,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAB_3" :
+        {
+			"style" : "billboard_icon",
+			"icon_name" : "CAB_3.png",
+			"priority" : 22.2,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 12,
+			"icon_y" : 11,
+			"icon_w" : 24,
+			"icon_h" : 24,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#000000ff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAC_1" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "CAC_1.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 16,
+			"icon_y" : 15,
+			"icon_w" : 32,
+			"icon_h" : 32,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ff00ffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAC_2" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "CAC_2.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 16,
+			"icon_y" : 15,
+			"icon_w" : 32,
+			"icon_h" : 32,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ff00ffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        },
+        "highway_CAC_3" :
+        {
+ 			"style" : "billboard_icon",
+			"icon_name" : "CAC_3.png",
+			"priority" : 22.1,
+			"text_x" : 0,
+			"text_y" : 0,
+			"icon_x" : 16,
+			"icon_y" : 15,
+			"icon_w" : 32,
+			"icon_h" : 32,
+			"font_face" : "DroidSansPro-Bold",
+			"font_size" : 30,
+			"render_size" : 10,
+			"text_color" : "#ff00ffff",
+			"outline_color" : "#00000000",
+			"text_alignment" : "center",
+			"super_group" : "",
+			"animation_time" : 0.5,
+            		"animation_type" : "fading",
+			"always_visible" : false,
+			"show_in_2d" : true
+        }
+    },
+    "traffic_annotation" :
+    {
+        "default" :
+        {
+            "style" : "billboard_icon",
+            "icon_x" : 13,
+            "icon_y" : 13,
+            "icon_w" : 26,
+            "icon_h" : 26,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false,
+            "cull_distance" : -1.0
+        },
+        "accident_block_routing" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",
+            "priority" : 42.11
+        },
+        "accident_critical" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",       
+            "priority" : 41.11
+        },
+        "accident_major" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",       
+            "priority" : 40.11
+        },
+        "accident_minor" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",        
+            "priority" : 37.11
+        },
+        "accident_low_impact" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",        
+            "priority" : 36.11
+        },
+        "accident_unknown" :
+        {
+            "icon_name" : "traffic_accident_unfocused@2x.png",       
+            "priority" : 35.11
+        },
+        "speed camera" :
+        {
+            "icon_name" : "traffic_speed_trap_unfocused@2x.png",       
+            "priority" : 39
+        },
+        "speed trap" :
+        {
+            "icon_name" : "traffic_speed_trap_unfocused@2x.png",       
+            "priority" : 39
+        },
+        "traffic camera" :
+        {
+            "icon_name" : "traffic_camera_unfocused@2x.png",
+            "priority" : 38
+        },
+        "police_block_routing" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 42.10
+        },
+        "police_critical" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 41.10
+        },
+        "police_major" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 40.10
+        },
+        "police_minor" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 37.10
+        },
+        "police_low_impact" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 36.10
+        },
+        "police_unknown" :
+        {
+            "icon_name" : "traffic_police_unfocused@2x.png",
+            "priority" : 35.10
+        },
+        "scheduled construction_block_routing" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 42.9
+        },
+        "scheduled construction_critical" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 41.9
+        },
+        "scheduled construction_major" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 40.9
+        },
+        "scheduled construction_minor" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 37.9
+        },
+        "scheduled construction_low_impact" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 36.9
+        },
+        "scheduled construction_unknown" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 35.9
+        },
+        "planned event_block_routing" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 42.8
+        },
+        "planned event_critical" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 41.8
+        },
+        "planned event_major" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 40.8
+        },
+        "planned event_minor" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 37.8
+        },
+        "planned event_low_impact" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 36.8
+        },
+        "planned event_unknown" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 35.8
+        },
+        "construction_block_routing" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 42.7
+        },
+        "construction_critical" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 41.7
+        },
+        "construction_major" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",        
+            "priority" : 40.7
+        },
+        "construction_minor" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",        
+            "priority" : 37.7
+        },
+        "construction_low_impact" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 36.7
+        },
+        "construction_unknown" :
+        {
+            "icon_name" : "traffic_construction_unfocused@2x.png",
+            "priority" : 35.7
+        },
+        "event_block_routing" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 42.6
+        },
+        "event_critical" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 41.6
+        },
+        "event_major" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 40.6
+        },
+        "event_minor" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 37.6
+        },
+        "event_low_impact" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 36.6
+        },
+        "event_unknown" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 35.6
+        },
+        "disabled vehicle_block_routing" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 42.5
+        },
+        "disabled vehicle_critical" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 41.5
+        },        
+        "disabled vehicle_major" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 40.5
+        },
+        "disabled vehicle_minor" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 37.5
+        },
+        "disabled vehicle_low_impact" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 36.5
+        },
+        "disabled vehicle_unknown" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 35.5
+        },
+        "road_hazard_block_routing" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 42.4
+        },
+        "road_hazard_critical" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 41.4
+        },
+        "road_hazard_major" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 40.4
+        },
+        "road_hazard_minor" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 37.4
+        },
+        "road_hazard_low_impact" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 36.4
+        },
+        "road_hazard_unknown" :
+        {
+            "icon_name" : "traffic_hazard_unfocused@2x.png",
+            "priority" : 35.4
+        },
+        "weather_block_routing" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 42.3
+        },
+        "weather_critical" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 41.3
+        },
+        "weather_major" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 40.3
+        },
+        "weather_minor" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 37.3
+        },
+        "weather_low_impact" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 36.3
+        },
+        "weather_unknown" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 35.3
+        },
+        "miscellaneous_block_routing" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 42.2
+        },
+        "miscellaneous_critical" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 41.2
+        },
+        "miscellaneous_major" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 40.2
+        },
+        "miscellaneous_minor" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 37.2
+        },
+        "miscellaneous_low_impact" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 36.2
+        },
+        "miscellaneous_unknown" :
+        {
+            "icon_name" : "traffic_incident_unfocused@2x.png",
+            "priority" : 35.2
+        },
+        "congestion_block_routing" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 42.1
+        },
+        "congestion_critical" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 41.1
+        },
+        "congestion_major" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 40.1
+        },
+        "congestion_minor" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 37.1
+        },
+        "congestion_low_impact" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 36.1
+        },
+        "congestion_unknown" :
+        {
+            "icon_name" : "traffic_congestion_unfocused@2x.png",
+            "priority" : 35.1
+        }        
+    },
+    "city_annotations" :
+    {
+	"default" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : ["", "", "", "", "", "", "", "", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png", "city_dot.png"],
+            "text_x" : 0,
+            "text_y" : -10,
+            "icon_x" : 5.5,
+            "icon_y" : 5.5,
+            "icon_w" : 11,
+            "icon_h" : 11,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "font_halo_size" : 3,
+            "render_size" : 10,
+            "text_alignment" : "center",
+            "super_group" : "",
+            "immunity_group" : "shields",
+            "always_visible" : false,
+            "show_in_map" : "2d",
+            "texcoord_left" : 0.0,
+            "texcoord_bottom" : 0.0,
+            "texcoord_right" : 1.0,
+            "texcoord_top" : 1.0,
+            "animation_time" : 0.2,
+            "animation_type" : "fading",
+            "cull_distance" : -1.0,
+            "text_overall_space" : 1.0
+        },
+        "town_small" :
+        {
+            "icon_name" : ["", "", "", "", "", "", "", "", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png"],
+            "priority" : 11.11
+        },
+        "town_large" :
+        {
+            "icon_name" : ["", "", "", "", "", "", "", "", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png", "town_dot.png"],
+            "priority" : 15.12
+        },        
+        "city_small" :
+        {
+            "priority" : 15.21
+        },         
+        "city_medium" :
+        {
+            "priority" : 15.22
+        },     
+        "city_large" :
+        {
+            "priority" : 15.23
+        },
+        "state_capital_town_small" :
+        {
+            "priority" : 15.31
+        },    
+        "state_capital_town_large" :
+        {
+            "priority" : 15.32
+        },  
+        "state_capital_city_small" :
+        {
+            "priority" : 15.33
+        },      
+        "state_capital_city_medium" :
+        {
+            "priority" : 15.34
+        },   
+        "state_capital_city_large" :
+        {
+            "priority" : 15.35
+        },
+        "capital_town_small" :
+        {
+            "priority" : 17.41
+        },   
+        "capital_town_large" :
+        {
+            "priority" : 17.42
+        },  
+        "capital_city_small" :
+        {
+            "priority" : 17.43
+        },   
+        "capital_city_medium" :
+        {
+            "priority" : 17.44
+        },  
+        "capital_city_large" :
+	{
+            "priority" : 17.45
+        }
+    },
+    "poi_annotations" :
+    {
+        "default" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "",
+            "priority" : 21,
+            "text_x" : 0,
+            "text_y" : 15,
+            "icon_x" : 10,
+            "icon_y" : 10,
+            "icon_w" : 20,
+            "icon_h" : 20,
+            "font_face" : "DroidSansPro",
+            "font_size" : 26,
+            "font_halo_size" : 3,
+            "render_size" : [12.0, 12.0, 11.0, 11.0, 11.0, 11.0, 11.0, 10.0, 10.0, 10.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0],
+            "text_color" : "#00000000",
+            "outline_color" : "#ffffff00",
+            "text_alignment" : "center",
+            "super_group" : "",
+            "immunity_group" : "poi_annotations",
+            "always_visible" : false,
+            "show_in_2d" : true,
+            "texcoord_left" : 0.0,
+            "texcoord_bottom" : 0.0,
+            "texcoord_right" : 1.0,
+            "texcoord_top" : 1.0,
+            "animation_time" : 0.0,
+            "animation_type" : "resizing",
+            "cull_distance" : -1.0
+        },
+        "vehicle_repair_facility" :
+        {
+	        "icon_name" : ""
+        },
+        "petrol_station" :
+        {
+	        "icon_name" : ""
+        },
+        "parking_garage" :
+        {
+	        "icon_name" : ""
+        },
+        "hotel_or_motel" :
+        {
+	        "icon_name" : ""
+        },
+        "restaurant" :
+        {
+	        "icon_name" : ""
+        },
+        "tourist_office" :
+        {
+	        "icon_name" : ""
+        },
+        "museum" :
+        {
+	        "icon_name" : ""
+        },
+        "theatre" :
+        {
+	        "icon_name" : ""
+        },
+        "hospital_or_polyclinic" :
+        {
+	        "icon_name" : ""
+        },
+        "police_station" :
+        {
+	        "icon_name" : ""
+        },
+        "post_office" :
+        {
+	        "icon_name" : ""
+        },
+        "bank" :
+        {
+	        "icon_name" : ""
+        },
+        "supermarkets_and_hypermarkets" :
+        {
+	        "icon_name" : ""
+        },
+        "place_of_worship" :
+        {
+	        "icon_name" : ""
+        },
+        "ferry_terminal" :
+        {
+	        "icon_name" : ""
+        },
+        "airline_access" :
+        {
+	        "icon_name" : ""
+        },
+        "embassy" :
+        {
+	        "icon_name" : ""
+        },
+        "open_parking_area" :
+        {
+	        "icon_name" : ""
+        },
+        "school" :
+        {
+	        "icon_name" : ""
+        },
+        "shopping_centre" :
+        {
+	        "icon_name" : ""
+        },
+        "stadium" :
+        {
+	        "icon_name" : ""
+        },
+        "toll_booth" :
+        {
+	        "icon_name" : ""
+        },
+        "tourist_attraction" :
+        {
+	        "icon_name" : ""
+        },
+        "university_or_college" :
+        {
+	        "icon_name" : ""
+        },
+        "railway_station" :
+        {
+	        "icon_name" : ""
+        },
+        "airport" :
+        {
+	        "icon_name" : ""
+        },
+        "exhibition_or_conference_centre" :
+        {
+	        "icon_name" : ""
+        },
+        "medical_service" :
+        {
+	        "icon_name" : ""
+        },
+        "fire_brigade" :
+        {
+	        "icon_name" : ""
+        },
+        "rest_area" :
+        {
+	        "icon_name" : ""
+        },
+        "golf_course" :
+        {
+	        "icon_name" : ""
+        },
+        "library" :
+        {
+	        "icon_name" : ""
+        },
+        "commuter_rail_station" :
+        {
+	        "icon_name" : ""
+        },
+        "amusement_park" :
+        {
+	        "icon_name" : ""
+        },
+        "automobile_dealership" :
+        {
+	        "icon_name" : ""
+        },
+        "industrial_zone" :
+        {
+	        "icon_name" : ""
+        },
+        "point_address" :
+        {
+	        "icon_name" : ""
+        },
+        "company" :
+        {
+	        "icon_name" : ""
+        },
+        "beach" :
+        {
+	        "icon_name" : ""
+        },
+        "park_and_recreation_area" :
+        {
+	        "icon_name" : ""
+        },
+        "mountain_peak" :
+        {
+	        "icon_name" : ""
+        },
+        "convention_centre" :
+        {
+	        "icon_name" : ""
+        },
+        "commercial_building" :
+        {
+	        "icon_name" : ""
+        },
+        "industrial_building" :
+        {
+	        "icon_name" : ""
+        },
+        "forest_area" :
+        {
+	        "icon_name" : ""
+        },
+        "government_office" :
+        {
+	        "icon_name" : ""
+        },
+        "cemetery" :
+        {
+	        "icon_name" : ""
+        },
+        "building" :
+        {
+	        "icon_name" : ""
+        },
+        "church" :
+        {
+	        "icon_name" : ""
+        },
+        "car_dealer" :
+        {
+	        "icon_name" : ""
+        },
+        "natural_reserve" :
+        {
+	        "icon_name" : ""
+        },
+        "prison" :
+        {
+	        "icon_name" : ""
+        },
+        "public_transport_stop" :
+        {
+	        "icon_name" : ""
+        },
+        "taxi_stand" :
+        {
+	        "icon_name" : ""
+        },
+        "bar_or_pub" :
+        {
+	        "icon_name" : ""
+        }
+    },
+    "traffic" :
+    {
+        "FREE_FLOW" :
+        {
+            "color1" : "#00aa00ff"
+        },
+        "SLOW_SPEED" :
+        {
+            "color1" : "#fcb300ff"
+        },
+        "CONGESTED" :
+        {
+            "color1" : "#de0000ff"
+        },
+        "CLOSED" :
+        {
+            "color1" : "#000000ff"
+        },
+        "UNKNOWN_LEVEL" :
+        {
+            "color1" : "#00000000"
+        }
+    },
+    "edge" :
+    {
+        "default" :
+        {
+            "traffic_texture" : "TrafficTexture.png"
+        }
+    },
+    "route" :
+    {
+        "default" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#00b4ffff",
+            "width1" : [5.0, 3.6, 3.4, 3.2, 3.0, 2.6, 2.4, 2.2, 1.8, 1.6, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4],
+            "texture1" : "RoadTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#0095daff",
+            "width2" : [6.0, 4.8, 4.4, 4.2, 4.0, 3.6, 3.4, 3.2, 2.8, 2.4, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeA":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#a8e68cff",
+            "width1" : [6.0, 4.6, 4.4, 4.2, 4.0, 3.6, 3.4, 3.2, 2.8, 2.6, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4],
+            "texture1" : "RoadTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#ffffffff",
+            "width2" : [7.0, 5.8, 5.4, 5.2, 5.0, 4.6, 4.4, 4.2, 3.8, 3.4, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeB":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#9cbcddff",
+            "width1" : [6.0, 4.6, 4.4, 4.2, 4.0, 3.6, 3.4, 3.2, 2.8, 2.6, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4],
+            "texture1" : "RoadTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#ffffffff",
+            "width2" : [7.0, 5.8, 5.4, 5.2, 5.0, 4.6, 4.4, 4.2, 3.8, 3.4, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeC":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#cc8ea0ff",
+            "width1" : [6.0, 4.6, 4.4, 4.2, 4.0, 3.6, 3.4, 3.2, 2.8, 2.6, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4],
+            "texture1" : "RoadTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#ffffffff",
+            "width2" : [7.0, 5.8, 5.4, 5.2, 5.0, 4.6, 4.4, 4.2, 3.8, 3.4, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeABold":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#009444ff",
+            "width1" : [6.5, 5.1, 4.9, 4.7, 4.5, 4.1, 3.9, 3.7, 3.3, 3.1, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9],
+            "texture1" : "TrafficTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#044d28ff",
+            "width2" : [7.5, 6.3, 5.9, 5.7, 5.5, 5.1, 4.9, 4.7, 4.3, 3.9, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeBBold":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#1e4eacff",
+            "width1" : [6.5, 5.1, 4.9, 4.7, 4.5, 4.1, 3.9, 3.7, 3.3, 3.1, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9],
+            "texture1" : "TrafficTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#18264cff",
+            "width2" : [7.5, 6.3, 5.9, 5.7, 5.5, 5.1, 4.9, 4.7, 4.3, 3.9, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7],
+            "texture2" : "RoadTexture.png"
+        },
+        "routeCBold":
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "route_edge",
+            "color1" : "#8d0022ff",
+            "width1" : [6.5, 5.1, 4.9, 4.7, 4.5, 4.1, 3.9, 3.7, 3.3, 3.1, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9],
+            "texture1" : "TrafficTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#47101aff",
+            "width2" : [7.5, 6.3, 5.9, 5.7, 5.5, 5.1, 4.9, 4.7, 4.3, 3.9, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7, 3.7],
+            "texture2" : "RoadTexture.png"
+        },
+        "trafficAlternateRoute":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "route_edge",
+            "color1": "#e8008bff",
+            "width1" : [6.0, 4.6, 4.4, 4.2, 4.0, 3.6, 3.4, 3.2, 2.8, 2.6, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4],
+            "texture1" : "RoadTexture.png",
+            "draw_group2" : "route_outline",            
+            "color2" : "#ffffffff",
+            "width2" : [7.0, 5.8, 5.4, 5.2, 5.0, 4.6, 4.4, 4.2, 3.8, 3.4, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2],
+            "texture2" : "RoadTexture.png"
+        }
+    },
+    "route_arrows" :
+    {
+        "default" :
+        {
+            "detached_head" : false,
+            "draw_group": "traffic",
+            "length_forward" : 4.0,
+            "length_backward" : 3.0,
+            "outer_color" : "#ffffffff",
+            "inner_color" : "#ff9b00ff",
+            "inner_width" : [7.5, 6.5, 5.5, 5.0, 4.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "outer_width" : [9.0, 8.0, 6.5, 6.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        }
+    },
+    "map" :
+    {
+	"defaults" : 
+        {
+            "show_only_one_tile_level" : false
+        },
+        "label_line_texture" : "RoadTexture.png",        
+    	"traffic_texture" : "TrafficTexture.png",
+        "base_tile_size" : 256,
+        "level_transition_percentage" : 0.0,
+        "max_vbo_vertex" : 300000,
+        "alpha_test_annotation_3d" : 0.05,
+        "arrow_texture" : "arrow.png",
+        "arrow_color"   : "#bbc6d8ff",
+        "draw_grouping" :
+        {
+            "route_draw_groups" : ["route_outline", "route_edge"],
+            
+	   	 "edge_draw_groups" : ["edge2", "edge3", "edge3.5", 
+            	                       "edge4", "edge5", "edge6",
+                                  	"edge7", "edge8", "edge9", 
+                                  	"edge10","edge11","edge12",
+                                  	"traffic"]
+        },
+        "render_order" : ["aerial_image", "polygon", "edge", 
+                          "route", "range_ring", "breadcrumb", 
+                          "bounding_box", "text_2d", "route_arrow", 
+                          "adi_line", "traffic_incident", "landmark", 
+                          "terrain", "text_3d", "annotation_billboard_label", "vehicle", 
+                          "annotation_3d", "annotation_model", "annotation_2d", 
+                          "annotation_screen", 
+                          "scale_bar", "model"]
+    },
+    "flat_labels" :
+    {
+        "default" :
+        {
+            "font_halo_size" : 3
+        },
+        "water" :
+        {
+            "text_overall_space" : [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0, 3.0, 4.0, 4.0, 4.0]
+        },
+        "park" :
+        {
+            "text_overall_space" : 2.0
+        },
+        "country" :
+        {
+            "text_overall_space" : [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 6.0, 6.0, 6.0, 4.0, 3.0, 2.0]
+        },
+        "state" :
+        {
+            "text_overall_space" : [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 6.0, 4.0, 4.0, 4.0, 4.0, 4.0]
+        }
+    },
+    "view":
+    {
+    "defaults" :
+        {
+            "lod_bias" : 0.1,
+            "zoom_bias" : 0.0
+        },
+        "default_fov_per_inch" : 15.0,
+        "default_eye_distance" : 1.0,
+        "default_annotation_scale_2d" : 1.0,
+	"default_annotation_scale_3d" : 1.4,
+        "default_zoom_lower_bound" : 0.0,
+        "default_zoom_upper_bound" : 16.0,
+        "annotation_perspective" : 0.5,   
+        "billboard_perspective" : 0.4,
+        "default_lat" : 37.090210,
+        "default_lon" : -95.712890
+    },
+    "cache" : 
+        {
+            "pruning_speed" : 256,
+            "capacity_bytes" : 524288,
+            "capacity_tiles" : 4,
+            "timeout" : 5,
+            "min_frames" : 1
+        },
+    "cull":
+    {
+        "culls_per_second" : 40,
+        "adds_per_second" : 300
+    },
+    "sky" :
+    {
+        "theta_steps" : 10,
+        "phi_steps" : 36,
+        "sunrise_sunset_turbidity" : 4.0,
+        "day_turbidity" : 2.2,
+        "night_turbidity" : 2.4,
+        "turbidity_per_sun_elevation" : 5.0,
+        "alpha_scale" : 0.95,
+        "lower" : 0,
+        "max_stars" : 4000,
+        "sun_moon_exaggeration" : 4.0
+    },
+    "breadcrumb" :
+    {
+        "record" : false
+    },
+    "scalebar" :
+    {
+        "font_face" : "DroidSansPro",
+        "font_size" : 30,
+        "render_size" : 14,
+        "text_color" : "#001122ff",
+        "outline_color" : "#ffeeddaa",
+        "bar_texture" : "MapBar.png",
+        "bar_halo_texture" : "MapBarHalo.png",
+        "horizontal_alignment" : "center",
+        "vertical_alignment" : "bottom",
+        "text_alignment" : "center",
+        "horizontal_margin" : 10,
+        "vertical_margin" : 8,
+        "text_margin" : 7,
+        "text_y" : 11,
+        "bar_width_maximum" : 80,
+        "bar_height" : 8
+    },
+    "annotations" : 
+    {
+        "sprite" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "EU_generic6.png",
+            "priority" : 30,
+            "icon_x" : 31,
+            "icon_y" : 10,
+            "icon_w" : 63,
+            "icon_h" : 21,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#00000000",
+            "text_alignment" : "center",
+            "show_in_2d" : true,
+            "super_group" : "",
+            "immunity_group" : "sprite_annotation",
+            "always_visible" : true,
+            "text_x" : 0,
+            "text_y" : 0,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "animation_time" : 0.2
+        }
+    },
+    "touch" :
+    {
+        "zoom_sensitivity" : 0.009,
+        "heading_sensitivity" : 0.4,
+        "declination_sensitivity" : 0.25,
+        "friction_factor" : 2.0
+    }
+}

@@ -1,0 +1,194 @@
+<ivy-module version="1.0">
+	<info organisation="mobile/apps/branches/7.2.0" module="telenav-global" />
+	<configurations>
+	       <!--app lib contains all jars for compile purpose, plese don't incluse those jars which are not reference in compile-->
+       	       <conf name="app_lib" description="libs packaged to app" />
+       	       <!--contains serchvpl reltaed jars -->
+       	       <conf name="searchvpl_lib" description="libs for searchVPL (widget)" />
+       	       <!--contains ant, unit test jars which are not referenced for compile purpose-->
+    	       <conf name="support_lib" description="libs not packaged to app" />
+    	       <!--contains tnview and car connect related jars-->
+               <conf name="tnview-lib" description="libs used for TnView" />
+	</configurations>
+	
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="apk" />
+		<artifact name="${module.name}-unsigned" type="jar" ext="apk" />
+		<!--<artifact name="${module.name}-test" type="jar" ext="apk" />
+		<artifact name="${module.name}-test-unsigned" type="jar" ext="apk" />-->
+		<artifact name="findbugs-${module.name}" type="source" ext="xml" />
+		<artifact name="proguard-${module.name}" type="source" ext="map" />
+		<artifact name="${MD_MANDATORY_PROGRAM_CODE}-i18n-ota" type="source" ext="zip" />
+		<artifact name="testreport-${module.name}" type="source" ext="zip" />
+	</publications>
+
+	<dependencies>
+		<dependency org="com.google.android" name="android" rev="4.1.1.4" conf="support_lib->default"/>
+<!-- 		<dependency org="com.google.android" name="android" rev="4.0.1.2" conf="support_lib->default"/>
+		<dependency org="com.google.android" name="android" rev="2.2.1" conf="support_lib->default"/>
+		<dependency org="com.google.android" name="android" rev="2.3.1" conf="support_lib->default"/> -->
+		<dependency org="org.easymock" name="easymock" rev="3.0" conf="support_lib->default" />
+		
+		<!-- ==================== unit test ====================== -->
+		<dependency org="junit" name="junit" rev="4.8.1" conf="support_lib->default" />
+		<dependency org="org" name="objenesis" rev="1.2" conf="support_lib->default" />
+		<dependency org="org/powermock" name="powermock-easymock" rev="1.4.8-full" conf="support_lib->default" />
+		<dependency org="org/javassist" name="javassist" rev="3.12.0.GA" conf="support_lib->default" />
+		<dependency org="org/objectweb" name="asm" rev="3.0" conf="support_lib->default" />
+		<dependency org="org/objectweb" name="asm-tree" rev="3.0" conf="support_lib->default" />
+		<dependency org="net/sourceforge" name="cobertura" rev="1.9.4.1" conf="support_lib->default" />
+		<dependency org="net/sf" name="cglib" rev="2.2" conf="support_lib->default" />
+		<dependency org="org/apache" name="jakarta-oro" rev="2.0.8" conf="support_lib->default" />
+		<dependency org="log4j" name="log4j" rev="1.2.9" conf="support_lib->default" />
+		<dependency org="org/json" name="json-lib-j2me" rev="1.0.0" conf="support_lib->default" />
+		
+		<!--======================= utility =======================-->
+		<dependency org="mobile/utility/trunk" name="logger" rev="+" conf="app_lib->default">
+			<artifact name="logger" type="jar" ext="jar" />
+			<artifact name="logger" type="source" ext="zip" />
+			
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="cache" rev="+" conf="app_lib->default">
+			<artifact name="cache" type="jar" ext="jar" />
+			<artifact name="cache" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="threadpool" rev="+" conf="app_lib->default">
+			<artifact name="threadpool" type="jar" ext="jar" />
+			<artifact name="threadpool" type="source" ext="zip" />
+			
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="util" rev="+" conf="app_lib->default">
+			<artifact name="util" type="jar" ext="jar" />
+			<artifact name="util" type="source" ext="zip" />
+			
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="json" rev="+" conf="app_lib->default">
+			<artifact name="json" type="jar" ext="jar" />
+			<artifact name="json" type="source" ext="zip" />	
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="mvc" rev="+" conf="app_lib->default">
+			<artifact name="mvc" type="jar" ext="jar" />
+			<artifact name="mvc" type="source" ext="zip" />
+		</dependency>
+		<!--======================= platform =======================-->
+		<dependency org="mobile/platform/trunk" name="platform" rev="+" conf="app_lib->default">
+			<artifact name="platform" type="jar" ext="jar" />
+			<artifact name="platform" type="source" ext="zip" />
+			<artifact name="platform-${platform}" type="jar" ext="jar" />
+			<artifact name="platform-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= ui =======================-->
+		<dependency org="mobile/ui/trunk" name="graphics" rev="+" conf="app_lib->default">
+			<artifact name="graphics" type="jar" ext="jar" />
+			<artifact name="graphics" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/ui/trunk" name="coreui" rev="+" conf="app_lib->default">
+			<artifact name="coreui-${platform}" type="jar" ext="jar" />
+			<artifact name="coreui-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= services =======================-->
+		<dependency org="mobile/services/trunk" name="datatypes" rev="+" conf="app_lib->default">
+			<artifact name="datatypes" type="jar" ext="jar" />
+			<artifact name="datatypes" type="source" ext="zip" />	
+		</dependency>
+		<dependency org="mobile/services/trunk" name="audio" rev="+" conf="app_lib->default">
+			<artifact name="audio" type="jar" ext="jar" />
+			<artifact name="audio" type="source" ext="zip" />	
+		</dependency>
+		<dependency org="mobile/services/trunk" name="comm" rev="+" conf="app_lib->default">
+			<artifact name="comm" type="jar" ext="jar" />
+			<artifact name="comm" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/services/trunk" name="gps" rev="+" conf="app_lib->default">
+			<artifact name="gps" type="jar" ext="jar" />
+			<artifact name="gps" type="source" ext="zip" />	
+		</dependency>
+		<dependency org="mobile/services/trunk" name="i18n" rev="+" conf="app_lib->default">
+			<artifact name="i18n" type="jar" ext="jar" />
+			<artifact name="i18n" type="source" ext="zip" />
+			
+		</dependency>
+	
+		<dependency org="mobile/services/trunk" name="map" rev="+" conf="app_lib->default">
+			<artifact name="map" type="jar" ext="jar" />
+			<artifact name="map" type="source" ext="zip" />
+		
+		</dependency>
+		<!--======================= tn-tracking =======================-->
+		<dependency org="mobile/apps/trunk" name="tn-tracking" rev="+" conf="app_lib->default">
+			<artifact name="tn-tracking-${platform}" type="jar" ext="jar" />
+			<artifact name="tn-tracking-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= browser-sdk =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/mobile/apps/trunk" name="browser-sdk" rev="2.2.99242" conf="app_lib->default">
+			<artifact name="browser-sdk-${platform}" type="jar" ext="jar" />
+			<artifact name="browser-sdk-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= ant =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/mobile/apps/trunk" name="ant-project" rev="1.1.1035" conf="support_lib->default">
+			<artifact name="ant-project" type="jar" ext="jar" />
+		</dependency>
+		<!--======================= findbugs =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/mobile/apps/trunk" name="findbugs-project" rev="1.1.10018" conf="support_lib->default">
+			<artifact name="findbugs-project" type="jar" ext="jar" />
+		</dependency>
+		<!--======================= opengl map =======================-->
+		<!--======================= SpeedxEncoder =======================-->
+		<dependency org="telenav/client" name="SpeexEncoderJNI" rev="1.0.0.8" conf="app_lib->default">
+			<artifact name="SpeexEncoderJNI" type="source" ext="zip" />
+		</dependency>
+		<!--======================= protobuf =======================-->
+		<dependency org="telenav" name="protobuf-javame" rev="1.0.0.20" conf="app_lib->default">
+			<artifact name="protobuf-javame" type="jar" ext="jar" />
+		</dependency>
+		<dependency org="telenav" name="protocol-java" rev="1.1.0.270" conf="app_lib->default">
+			<artifact name="protocol-java" type="jar" ext="jar" />
+		</dependency>
+		<!--======================= Search-VPL =======================-->
+		<dependency org="mobile/apps/trunk" name="SearchVpl" rev="+" conf="searchvpl_lib->default">
+			<artifact name="searchVpl-scout-us-pure-${platform}" type="jar" ext="jar" />
+			<artifact name="searchVpl-scout-us-res-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= maitai =======================-->
+		<dependency org="arlington/telenav/tnclient/TNStudio/release/j2me/core-apps" name="MaiTaiAdapter-android" rev="2.0.1018" conf="app_lib->default">
+			<artifact name="MaiTaiAdapter-${platform}" type="jar" ext="jar" />
+			<artifact name="MaiTaiAdapter-${platform}" type="source" ext="zip" />
+		</dependency>
+		
+		<!-- Ford Applink -->
+		<dependency org="telenav/client/trunk" name="CarConnectAdapters" rev="1.006.22128" conf="tnview-lib->default">
+			<artifact name="CarConnectAdapters-android"  ext="zip" /> 
+		</dependency>
+		
+		<dependency org="telenav/client/trunk" name="FordApplinkSDK" rev="4.0.15834" conf="tnview-lib->default">
+			<artifact name="FordApplinkSDK-android"  ext="zip" /> 
+		</dependency>
+
+		<!--======================= Foundation=======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="Foundation" rev="1.1.98548" conf="app_lib->default">
+			<artifact name="Foundation-${platform}" ext="zip" /> 
+		</dependency>
+		
+		<!--======================= Event Manager =======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="EventManager" rev="1.4.99417" conf="app_lib->default">
+			<artifact name="EventManager-${platform}" ext="zip" /> 
+		</dependency>
+		<!--======================= NavigationSDKBase=======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="NavigationSDKBase" rev="2.1.100005" conf="app_lib->default">
+			<artifact name="NavigationSDKBase-${platform}" ext="zip" /> 
+		</dependency>
+		<!--=======================Tnlink =======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="CarConnectSDK" rev="2.004.16957" conf="app_lib->default">
+			<artifact name="CarConnectSDK-${platform}" ext="zip" /> 
+		</dependency>
+		<!--======================= NavigationSDK =======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="NavigationSDK" rev="2.1.100141" conf="app_lib->default">
+			<artifact name="NavigationSDK-${platform}" ext="zip" /> 
+		</dependency>
+		<!--======================= Protobuf =======================-->
+		<dependency org="/arlington/telenav/client/trunk" name="Protobuf" rev="2.4.1.94716" conf="app_lib->default">
+			<artifact name="Protobuf-${platform}" ext="zip" /> 
+		</dependency>
+		
+	</dependencies>
+</ivy-module>

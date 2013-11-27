@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- width, height, margin and padding -->
+    <dimen name="dwf0SliderItemWidth">88dp</dimen>
+    <dimen name="dwf0SliderItemPaddingLeft">8dp</dimen>
+    <dimen name="dwf0SliderItemPaddingRight">6dp</dimen>
+    <dimen name="dwf0SliderItemNamePaddingBottom">3dp</dimen>
+    <dimen name="dwf0SliderItemImageWidth">24dp</dimen>
+    <dimen name="dwf0SliderItemImageHeight">24dp</dimen>
+    <dimen name="dwf0SliderItemImagePaddingTop">3dp</dimen>
+    <dimen name="dwf0SliderItemEtaPaddingTop">6dp</dimen>
+    <dimen name="dwf0SliderItemStatusIndicatorWidth">10dp</dimen>
+    <dimen name="dwf0SliderItemStatusIndicatorHeight">10dp</dimen>
+    
+    <dimen name="dwf0SliderEmptyItemWidth">120dp</dimen>
+    <dimen name="dwf0SliderEmptyItemPaddingTop">6dp</dimen>
+    <dimen name="dwf0SliderEmptyItemPaddingLeft">6dp</dimen>
+    <dimen name="dwf0SliderEmptyItemPaddingRight">6dp</dimen>
+    <dimen name="dwf0SliderEmptyItemProgressbarWidth">30dp</dimen>
+    <dimen name="dwf0SliderEmptyItemProgressbarHeight">30dp</dimen>
+    <dimen name="dwf0SliderEmptyItemProgressbarMargin">15dp</dimen>
+    
+    <dimen name="dwf0SliderItemDestWidth">120dp</dimen>
+    <dimen name="dwf0SliderItemDestPadding">6dp</dimen>
+    <dimen name="dwf0SliderItemDestIconWidth">14dp</dimen>
+    <dimen name="dwf0SliderItemDestIconHeight">14dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+	<dimen name="dwf0SliderItemNameTextSize">12sp</dimen>
+	<dimen name="dwf0SliderItemEtaTextSize">15sp</dimen>
+    <!-- color -->
+    <color name="dwf0SliderItemBackground">#ff484848</color>
+    <color name="dwf0SliderArrivedItemBackground">#ff282d30</color>
+    <color name="dwf0SliderItemNameTextColor">#ffc9cdc0</color>
+    <color name="dwf0SliderItemEtaTextColor">#ffc9cdc0</color>
+    <color name="dwf0SliderArrivedItemEtaTextColor">#ffffffff</color>
+    <color name="dwf0SliderEmptyItemBackground">#ff484848</color>
+    
+    <!-- value -->
+</resources>

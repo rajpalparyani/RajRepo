@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="22" />
+
+    <LinearLayout
+        android:id="@+id/commonMiniPoiBar0MapView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commonMiniPoiBar0ButtonViewMarginBottom"
+        android:layout_weight="242"
+        android:background="@drawable/common_mini_poi_bar_button_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/list_expand_icon_map_unfocused"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/miniPoiBar0ButtonMap"
+            android:textColor="@color/commonMiniPoiBar0ButtonViewTextColor"
+            android:textSize="@dimen/commonMiniPoiBar0ButtonViewTextSize"
+            android:paddingLeft="@dimen/placeList0MiniPoiBarBottomButtonPadding"
+            android:textStyle="bold" />
+                
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10" />
+
+    <LinearLayout
+        android:id="@+id/commonMiniPoiBar0InfoView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commonMiniPoiBar0ButtonViewMarginBottom"
+        android:layout_weight="242"
+        android:background="@drawable/common_mini_poi_bar_button_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:id="@+id/commonMiniPoiBar0InfoIconPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/common_mini_bar_info_button_icon"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/commonMiniPoiBar0InfoTextPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/miniPoiBar0ButtonInfo"
+            android:textColor="@color/common_mini_poi_bar_info_button_foreground"
+            android:textSize="@dimen/commonMiniPoiBar0ButtonViewTextSize"
+            android:paddingLeft="@dimen/placeList0MiniPoiBarBottomButtonPadding"
+            android:textStyle="bold" />
+      
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10" />
+
+    <LinearLayout
+        android:id="@+id/commonMiniPoiBar0DriveView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commonMiniPoiBar0ButtonViewMarginBottom"
+        android:layout_weight="242"
+        android:background="@drawable/common_mini_poi_bar_driverto_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/list_expand_icon_car_unfocused"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/placeList0MiniPoiBarBottomButtonDrivePadding"
+            android:text="@string/miniPoiBar0ButtonDrive"
+            android:textColor="@color/commonMiniPoiBar0DrivetoViewTextColor"
+            android:textSize="@dimen/commonMiniPoiBar0ButtonViewTextSize"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="22" />
+
+</LinearLayout>

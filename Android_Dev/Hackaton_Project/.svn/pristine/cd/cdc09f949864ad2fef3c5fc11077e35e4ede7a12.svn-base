@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="placeList0NormalItemNumberIndicatorLayoutWidth">40dp</dimen>
+    <dimen name="placeList0NormalItemNumberIndicatorLayoutHeight">40dp</dimen>
+    <dimen name="placeList0NormalItemNumberIndicatorPaddingTop">3dp</dimen>
+    <dimen name="placeList0NormalItemNumberIndicatorMargin">10dp</dimen>
+    <dimen name="placeList0NormalItemNumberIndicatorMarginTop">6dp</dimen>
+    <dimen name="placeList0NormalItemBrandNamePaddingTop">4dp</dimen>
+    <dimen name="placeList0NormalItemRatingBarLayoutWidth">15dp</dimen>
+    <dimen name="placeList0NormalItemRatingBarLayoutHeight">15dp</dimen>
+    <dimen name="placeList0NormalItemDistancePaddingRight">10dp</dimen>
+    <dimen name="placeList0NormalItemRatingBarMarginLeft">10dp</dimen>
+    <dimen name="placeList0NormalItemCouponLayoutWidth">16dp</dimen>
+    <dimen name="placeList0NormalItemCouponLayoutHeight">16dp</dimen>
+    <dimen name="placeList0NormalItemCouponMarginLeft">4dp</dimen>
+    <dimen name="placeList0NormalItemCouponPadding">10dp</dimen>
+    <dimen name="placeList0GroupItemBrandNameMarginTop">5dp</dimen>
+    <dimen name="placeList0MiniPoiBarBottomButtonPadding">6dp</dimen>
+    <dimen name="placeList0MiniPoiBarBottomButtonDrivePadding">1dp</dimen>
+    <dimen name="placeList0EditItemIconPadding">6dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="placeList0NormalItemNumberIndicatorTextSize">16sp</dimen>
+    <dimen name="placeList0NormalItemBrandNameTextSize">21sp</dimen>
+    <dimen name="placeList0NormalItemDescTextSize">16sp</dimen>
+    <dimen name="placeList0NormalItemAddressTextSize">16sp</dimen>
+    <dimen name="placeList0NormalItemCategoryTextSize">16sp</dimen>
+    <dimen name="placeList0NormalItemPriceTextSize">16sp</dimen>
+    <dimen name="placeList0NormalItemDistanceTextSize">16sp</dimen>
+    <dimen name="placeList0GroupItemBrandNameTextSize">16sp</dimen>
+    <!-- color -->
+    <color name="placeList0NormalItemNumberIndicatorTextColor">#ffffffff</color>
+	<color name="placeList0NormalItemBrandNameTextColor">#ff1b1f22</color>
+	<color name="placeList0NormalItemAddressTextColor">#ff858b92</color>
+	<color name="placeList0NormalItemDescTextColor">#ff858b92</color>
+	<color name="placeList0NormalItemCategoryTextColor">#ff93a8bb</color>
+	<color name="placeList0NormalItemPriceTextColor">#ff93a8bb</color>
+	<color name="placeList0NormalItemDistanceTextColor">#ff93a8bb</color>
+	<color name="placeList0MiniPoiBarFirstLineTextColor">#fffedd00</color>
+	<color name="placeList0MiniPoiBarSecondTextColor">#ffffffff</color>
+	<color name="placeList0MiniPoiBarLastLineTextColor">#ffafb4ba</color>
+	<color name="placeList0GroupItemBrandNameTextColor">#ff788a9a</color>
+	
+	
+	<!-- Unique ids -->
+    <item type="id" name="TAG_SELECTED_VIEW"></item>
+    <item type="id" name="TAG_UNSELECTED_VIEW"></item>
+    <item type="id" name="TAG_LAST_SELECTED_ITEM_VIEW"></item>
+    <item type="id" name="TAG_SELECTED_ITEM_INDEX"></item>
+    <item type="id" name="TAG_ITEM_INDEX"></item>
+</resources>

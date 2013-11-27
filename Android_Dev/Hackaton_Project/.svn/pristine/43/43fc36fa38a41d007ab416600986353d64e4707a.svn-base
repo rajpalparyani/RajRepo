@@ -1,0 +1,19 @@
+platform=android
+
+# compile version
+source_version=1.5
+class_version=1.5
+
+precomp_symbols=ANDROID,DEBUG,EMULATOR
+proguard_file=proguard_config-android.pro
+
+#Add for carconnect tnlink
+ENABLE_TNLINK=true
+CarConnectBuildType=real
+
+# exclude specfic packages and files here
+compile_excludes=\
+	**/rim/**, \
+	**/j2se/**, \
+	**/j2me/**, \
+	**/test/**, \

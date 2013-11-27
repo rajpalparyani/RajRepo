@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/parentlayout" style="@style/upsellbackground"
+	android:orientation="vertical">
+
+	 <include layout="@layout/common_title" />
+
+	<ImageView android:id="@+id/screensplitline"
+		android:layout_width="fill_parent" android:layout_height="13dp"
+		android:adjustViewBounds="true" android:scaleType="fitXY" />
+
+	<ScrollView 
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="10"
+        android:orientation="vertical"
+        android:fillViewport="true">
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+			<TextView android:id="@+id/upsellsubtitle" style="@style/upselllable"
+				android:layout_marginBottom="0dp" android:layout_marginLeft="18dp"
+				android:layout_marginRight="18dp" android:lineSpacingExtra="2dp"
+				android:layout_marginTop="23dp"  android:gravity="left"
+				android:layout_gravity="left" />
+			
+			<View android:id="@+id/gap_view"
+                    style="@style/weightbyheight"
+                    android:layout_height="28dp" />
+
+			<LinearLayout android:id="@+id/upselloptions" style="@style/layoutfillparent"
+				android:layout_marginLeft="40dp" android:layout_marginRight="40dp"
+				android:orientation="vertical">
+
+				<TextView android:id="@+id/upselllearnmore" style="@style/upselllink" />
+
+				<View style="@style/weightbyheight" android:layout_height="15dp" />
+
+				<LinearLayout android:id="@+id/car_connect"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					<ImageView 
+						android:layout_gravity="center_horizontal"
+						android:id="@+id/car_connect_image" 
+						android:layout_width="wrap_content" 
+						android:layout_height="wrap_content"/>	
+					<View
+						style="@style/weightbyheight"
+						android:layout_height="15dp" />
+				</LinearLayout>
+				
+				<Button android:id="@+id/firstchoice" style="@style/upsellbutton" />
+
+				<View style="@style/weightbyheight" android:layout_height="15dp" />
+
+				<Button android:id="@+id/secondchoice" style="@style/upsellbutton" />
+
+				<View style="@style/weightbyheight" android:layout_height="15dp" />
+
+				<Button android:id="@+id/thirdchoice" style="@style/upsellbutton" />
+
+				<View style="@style/weightbyheight" android:layout_height="28dp" />
+
+				<LinearLayout android:id="@+id/thankyou" style="@style/layoutwrapcontent"
+					android:layout_gravity="center|fill" android:orientation="horizontal">
+
+					<TextView android:id="@+id/thanksleft" style="@style/upselllable"
+						android:layout_width="0dp" android:layout_height="fill_parent"
+						android:layout_gravity="left" android:layout_weight="6"
+						android:gravity="left" android:textSize="16sp" />
+
+					<ImageView android:id="@+id/thanksright"
+						android:layout_width="0dp" android:layout_height="fill_parent"
+						android:layout_gravity="right" android:layout_weight="1" />
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+	<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp" android:layout_marginBottom="8dp" android:layout_marginTop="8dp">  
+        <TextView
+			android:id="@+id/upsellrecurringinfo"
+			style="@style/upselllink"
+			android:layout_gravity="left"
+			android:gravity="left"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:textSize="13sp"/>
+    </LinearLayout>  
+</LinearLayout>

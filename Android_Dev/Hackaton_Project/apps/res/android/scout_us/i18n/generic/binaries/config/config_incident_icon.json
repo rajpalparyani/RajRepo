@@ -1,0 +1,197 @@
+{
+    "traffic_annotation" :
+    {
+        "accident_severe" :
+        {
+            "icon_name" : "traffic1.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "accident_major" :
+        {
+            "icon_name" : "traffic2.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "accident_minor" :
+        {
+            "icon_name" : "traffic3.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "congestion_severe" :
+        {
+            "icon_name" : "traffic_conegstion.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "congestion_major" :
+        {
+            "icon_name" : "traffic_conegstion.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "congestion_minor" :
+        {
+            "icon_name" : "traffic_conegstion.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "construction_severe" :
+        {
+            "icon_name" : "traffic_construction.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "construction_major" :
+        {
+            "icon_name" : "traffic_construction.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "construction_minor" :
+        {
+            "icon_name" : "traffic_construction.png",
+            "icon_x" : 17,
+            "icon_y" : 17,
+            "icon_w" : 34,
+            "icon_h" : 34
+        },
+        "disabled_car_severe" :
+        {
+            "icon_name" : "traffic1.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "disabled_car_major" :
+        {
+            "icon_name" : "traffic2.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "disabled_car_minor" :
+        {
+            "icon_name" : "traffic3.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "event_severe" :
+        {
+            "icon_name" : "traffic1.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "event_major" :
+        {
+            "icon_name" : "traffic2.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "event_minor" :
+        {
+            "icon_name" : "traffic3.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "misc_severe" :
+        {
+            "icon_name" : "traffic1.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "misc_major" :
+        {
+            "icon_name" : "traffic2.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "misc_minor" :
+        {
+            "icon_name" : "traffic3.png",
+            "icon_x" : 16,
+            "icon_y" : 16,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "camera_severe" :
+        {
+            "icon_name" : "traffic_cam.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "camera_major" :
+        {
+            "icon_name" : "traffic_cam.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "camera_minor" :
+        {
+            "icon_name" : "traffic_cam.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "speed_trap_severe" :
+        {
+            "icon_name" : "traffic_police.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "speed_trap_major" :
+        {
+            "icon_name" : "traffic_police.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        },
+        "speed_trap_minor" :
+        {
+            "icon_name" : "traffic_police.png",
+            "icon_x" : 16,
+            "icon_y" : 0,
+            "icon_w" : 32,
+            "icon_h" : 32
+        }
+    }
+}

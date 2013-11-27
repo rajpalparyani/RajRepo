@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:telenav="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us">
+
+    <color name="white_theme_color">#FFD5DDE1</color>
+
+    <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowBackground">@color/white_theme_color</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog" />
+    
+    <style name="ftuebtn">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#ff241f21</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:background">@drawable/common_ftue_button</item>
+    </style>
+
+    <style name="ftueunabledbtn" parent="@style/ftuebtn">
+        <item name="android:textColor">#66241f21</item>
+        <item name="android:enabled">false</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+
+    <style name="ftuelink">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ftuedeclare">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:gravity">left</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="ftuelable">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="TextApperance.MapDownloadManager" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#505c67</item>
+    </style>
+    
+    <style name="TextApperance.MapDownloadManager.Tab" parent="@style/TextApperance.MapDownloadManager">
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="TextApperance.MapDownloadManager.Button" parent="@style/TextApperance.MapDownloadManager">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#1a2228</item>
+    </style>
+
+    <style name="TextApperance.MapDownloadManager.Button.Delete" parent="@style/TextApperance.MapDownloadManager.Button">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    
+    <style name="ftuetitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/style_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#241f21</item>
+    </style>
+
+    <style name="ftuesuccessthankyou">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ftuesuccessdescription">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ftueeditview">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="tnBackground">ftue_text_view_unfocused.9.png</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorHint">#999999</item>
+    </style>
+
+    <style name="ftueunablededitview" parent="@style/ftueeditview">
+        <item name="android:textColor">#666666</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="upselllable">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="upselllink" parent="@style/upselllable">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="upsellbutton" parent="@style/upselllable">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#241f21</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">65dp</item>
+    </style>
+
+    <style name="weightbyheight">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="layoutwrapcontent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layoutfillparent">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="layoutcenter">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="upsellbackground">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">#241f21</item>
+    </style>
+
+    <style name="drowdownItemOneLine">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/style_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">#484848</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    
+    <style name="ftueautocompleteview" parent="@style/ftueeditview">
+        <item name="android:dropDownHeight">wrap_content</item>
+        <item name="android:popupBackground">#444444</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="commonBottomButtonLayoutWidth">199dp</dimen>
+    <dimen name="commonBottomButtonLayoutHeight">64dp</dimen>
+    <dimen name="commonBottomButtonPadding">9dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="commonBottomButtonTextSize">15sp</dimen>
+    <!-- color -->
+	<color name="commonBottomButtonForegroundUnfocused">#ff505c67</color>
+    <color name="commonBottomButtonForegroundDisabled">#aa241f21</color>
+    <color name="commonBottomButtonForegroundFocused">#ff505c67</color>
+</resources>

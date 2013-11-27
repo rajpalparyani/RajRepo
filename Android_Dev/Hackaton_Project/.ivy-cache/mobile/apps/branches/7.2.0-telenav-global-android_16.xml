@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="mobile/apps/branches/7.2.0"
+		module="telenav-global"
+		revision="working@rajpalp-mbp15.telenav.com"
+		conf="android_16"
+		confs="master, android_8, android_9, android_10, android_11, android_12, android_13, android_14, android_15, android_16, android_17"
+		date="20130816124952"/>
+	<dependencies>
+		<module organisation="com.google.android" name="android">
+			<revision name="16" status="release" pubdate="20130711173756" resolver="public" artresolver="retrieve-android-resolver" homepage="" downloaded="true" searched="true" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="successful" details="" size="458" time="8" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/com.google.android/android/ivy-16.xml" searched="true" original-local-location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/com.google.android/android/ivy-16.xml.original" origin-is-local="false" origin-location="http://hqb-nexus-01:8081/nexus/content/groups/public/com/google/android/android/16/android-16.pom"/>
+				<caller organisation="mobile/apps/branches/7.2.0" name="telenav-global" conf="android_16, master" rev="16" rev-constraint-default="16" rev-constraint-dynamic="16" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="android" type="jar" ext="jar" status="successful" details="" size="18382981" time="6596" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/com.google.android/android/jars/android-16.jar">
+						<origin-location is-local="false" location="http://hqb-nexus-01:8081/nexus/content/groups/public/com/google/android/android/16/android-16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

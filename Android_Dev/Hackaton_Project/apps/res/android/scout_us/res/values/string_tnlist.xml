@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tnlistHeader0HintNormal">Pull down to sync</string>
+    <string name="inProgress">Loading More&#8230;</string>
+    <string name="tnListFooter0HintNormal">More</string>
+    <string name="tnListHeader0LastTime">Last synced: </string>
+    <string name="tnListFooter0HintReady">Release to more</string>
+    <string name="tnListHeader0HintReady">Release to sync</string>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:telenav="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+   <include layout="@layout/common_title" />
+   
+    <ImageView
+        android:id="@+id/screensplitline"
+        android:layout_width="fill_parent"
+        android:layout_height="13dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <ScrollView
+        android:id="@+id/parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/layoutcenter"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:orientation="vertical" >
+
+            <View
+                style="@style/weightbyheight"
+                android:layout_height="31dp" />
+
+            <TextView
+                android:id="@+id/declaration"
+                style="@style/ftuedeclare"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                style="@style/weightbyheight"
+                android:layout_height="17dp" />
+
+            <TextView
+                android:id="@+id/phonenumber"
+                style="@style/ftuedeclare"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:visibility="gone" />
+              
+            <com.telenav.ui.android.TnXmlEditText
+                android:id="@+id/ptn"
+                style="@style/ftueeditview"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:inputType="number"
+                android:maxLength="10" />
+
+            <View
+                style="@style/weightbyheight"
+                android:layout_height="68dp" />
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/ftueunabledbtn"
+                android:layout_width="fill_parent"
+            />
+
+            <View
+                style="@style/weightbyheight"
+                android:layout_height="187dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="/mobile/utility/trunk"
+		module="logger"
+		revision="working@rajpalp-mbp15.telenav.com"
+		conf="default"
+		confs="default"
+		date="20130816125050"/>
+	<dependencies>
+		<module organisation="net/sf" name="cglib">
+			<revision name="2.2" status="release" pubdate="20130816125050" resolver="retrieve-artifact-repository-url" artresolver="retrieve-file-resolver" downloaded="false" searched="true" default="true" conf="default, *" position="4">
+				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/net/sf/cglib/ivy-2.2.xml" searched="true"/>
+				<caller organisation="/mobile/utility/trunk" name="logger" conf="default" rev="2.2" rev-constraint-default="2.2" rev-constraint-dynamic="2.2" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="cglib" type="jar" ext="jar" status="successful" details="" size="278682" time="250" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/net/sf/cglib/jars/cglib-2.2.jar">
+						<origin-location is-local="false" location="http://tar1.telenav.com:8080/repository/net/sf/cglib/2.2/cglib-2.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org/javassist" name="javassist">
+			<revision name="3.12.0.GA" status="release" pubdate="20130816125050" resolver="retrieve-artifact-repository-url" artresolver="retrieve-file-resolver" downloaded="false" searched="true" default="true" conf="default, *" position="3">
+				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/javassist/javassist/ivy-3.12.0.GA.xml" searched="true"/>
+				<caller organisation="/mobile/utility/trunk" name="logger" conf="default" rev="3.12.0.GA" rev-constraint-default="3.12.0.GA" rev-constraint-dynamic="3.12.0.GA" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="javassist" type="jar" ext="jar" status="successful" details="" size="633312" time="434" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/javassist/javassist/jars/javassist-3.12.0.GA.jar">
+						<origin-location is-local="false" location="http://tar1.telenav.com:8080/repository/org/javassist/javassist/3.12.0.GA/javassist-3.12.0.GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org/powermock" name="powermock-easymock">
+			<revision name="1.4.8-full" status="release" pubdate="20130816125050" resolver="retrieve-artifact-repository-url" artresolver="retrieve-file-resolver" downloaded="false" searched="true" default="true" conf="default, *" position="2">
+				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/powermock/powermock-easymock/ivy-1.4.8-full.xml" searched="true"/>
+				<caller organisation="/mobile/utility/trunk" name="logger" conf="default" rev="1.4.8-full" rev-constraint-default="1.4.8-full" rev-constraint-dynamic="1.4.8-full" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="powermock-easymock" type="jar" ext="jar" status="successful" details="" size="456317" time="337" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/powermock/powermock-easymock/jars/powermock-easymock-1.4.8-full.jar">
+						<origin-location is-local="false" location="http://tar1.telenav.com:8080/repository/org/powermock/powermock-easymock/1.4.8-full/powermock-easymock-1.4.8-full.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org" name="objenesis">
+			<revision name="1.2" status="release" pubdate="20130816125050" resolver="retrieve-artifact-repository-url" artresolver="retrieve-file-resolver" downloaded="false" searched="true" default="true" conf="default, *" position="1">
+				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/objenesis/ivy-1.2.xml" searched="true"/>
+				<caller organisation="/mobile/utility/trunk" name="logger" conf="default" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="objenesis" type="jar" ext="jar" status="successful" details="" size="36034" time="233" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/objenesis/jars/objenesis-1.2.jar">
+						<origin-location is-local="false" location="http://tar1.telenav.com:8080/repository/org/objenesis/1.2/objenesis-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org/easymock" name="easymock">
+			<revision name="3.0" status="release" pubdate="20130816125050" resolver="retrieve-artifact-repository-url" artresolver="retrieve-file-resolver" downloaded="false" searched="true" default="true" conf="default, *" position="0">
+				<metadata-artifact status="no" details="" size="0" time="0" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/easymock/easymock/ivy-3.0.xml" searched="true"/>
+				<caller organisation="/mobile/utility/trunk" name="logger" conf="default" rev="3.0" rev-constraint-default="3.0" rev-constraint-dynamic="3.0" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="easymock" type="jar" ext="jar" status="successful" details="" size="111698" time="599" location="/Users/rajpalp/workspace/RajRepo/Android_Dev/Hackaton_Project/.ivy-cache/org/easymock/easymock/jars/easymock-3.0.jar">
+						<origin-location is-local="false" location="http://tar1.telenav.com:8080/repository/org/easymock/easymock/3.0/easymock-3.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

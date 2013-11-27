@@ -1,0 +1,190 @@
+
+03-06 09:03:11.355: I/TELENAV_7.2.0.3008(13048): ---syncCserver---parseServiceMapping:
+03-06 09:03:11.359: I/System.out(13048): Alias: routing.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.359: I/System.out(13048): Alias: routing.http , suffixURL : /nav-map-cserver/telenav-server-pb
+03-06 09:03:11.359: I/System.out(13048): Action: Streaming_Map , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Map , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Dynamic_Route , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Get_Extra_Edge , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Check_Deviation , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Static_Route , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Reverse_Route , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Decimated_Route , alias : routing.http
+03-06 09:03:11.359: I/System.out(13048): Action: Traffic_Summary , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Alerts_Moving_Map , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Avoid_Selected_Seg_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Min_Delay_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Selected_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Avoid_Incidents_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Static_Avoid_Selected_Seg_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Static_Min_Delay_Reroute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Incident_Report , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Commute_Alert_Details , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Reverse_Geocoding , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: CheckSelected_Deviation , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Chunked_Dynamic_Route , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Chunk_CheckSelected_Deviation , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Chunk_Selection_Route , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Decimated_MultiRoute , alias : routing.http
+03-06 09:03:11.363: I/System.out(13048): Action: Traffic_Avoid_Selected_Seg_Deci_Reroute , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: Traffic_Min_Delay_Deci_Reroute , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: Traffic_Static_Avoid_Selected_Seg_Deci_Reroute , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: Traffic_Static_Min_Delay_Deci_Reroute , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: Get_Extra_Info , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: Selection_Route , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: TrafficMap , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Action: GET_ETA , alias : routing.http
+03-06 09:03:11.367: I/System.out(13048): Alias: mislog.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.367: I/System.out(13048): Alias: mislog.http , suffixURL : /log-cserver/telenav-server-pb
+03-06 09:03:11.367: I/System.out(13048): Action: MISReporting , alias : mislog.http
+03-06 09:03:11.367: I/System.out(13048): Alias: resource.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.367: I/System.out(13048): Alias: resource.http , suffixURL : /resource-cserver/telenav-server-pb
+03-06 09:03:11.367: I/System.out(13048): Action: GetMissingAudio , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: SwitchLocale , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: SwitchRegion , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: SyncResource , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: CellTower , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: GetServiceLocator , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: Startup , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: LocationSearch , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: CacheCities , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: CombinationSyncResource , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: SyncServiceLocator , alias : resource.http
+03-06 09:03:11.367: I/System.out(13048): Action: SyncClientSettingData , alias : resource.http
+03-06 09:03:11.371: I/System.out(13048): Alias: poi.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.371: I/System.out(13048): Alias: poi.http , suffixURL : /poi_service/telenav-server-pb
+03-06 09:03:11.371: I/System.out(13048): Action: ShareAddress , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: OneBox , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: SearchPoi , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: ValidateAirport , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: ValidateAddress , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: bannerAds , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: SentAddress , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: BillBoardAds , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Action: I18NWeather , alias : poi.http
+03-06 09:03:11.371: I/System.out(13048): Alias: login.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.371: I/System.out(13048): Alias: login.http , suffixURL : /login_startup_service/telenav-server-pb
+03-06 09:03:11.371: I/System.out(13048): Action: Login , alias : login.http
+03-06 09:03:11.371: I/System.out(13048): Action: Purchase , alias : login.http
+03-06 09:03:11.371: I/System.out(13048): Action: Cancel , alias : login.http
+03-06 09:03:11.371: I/System.out(13048): Action: forgetPin , alias : login.http
+03-06 09:03:11.371: I/System.out(13048): Action: Get_Account_Status , alias : login.http
+03-06 09:03:11.371: I/System.out(13048): Action: SyncPurchased , alias : login.http
+03-06 09:03:11.374: I/System.out(13048): Action: SendPTNVerificationCode , alias : login.http
+03-06 09:03:11.374: I/System.out(13048): Action: ConfirmPurchase , alias : login.http
+03-06 09:03:11.374: I/System.out(13048): Action: DeclinePurchase , alias : login.http
+03-06 09:03:11.374: I/System.out(13048): Action: GetFlowType , alias : login.http
+03-06 09:03:11.374: I/System.out(13048): Alias: login.https , URL : http://hqs-fptn72csvr02.telenav.com/login_startup_service/telenav-server-pb
+03-06 09:03:11.374: I/System.out(13048): Alias: login.https , suffixURL : 
+03-06 09:03:11.374: I/System.out(13048): Alias: dsr.http , URL : http://s-tn6dsrc.telenav.com:8812/dsr
+03-06 09:03:11.374: I/System.out(13048): Alias: dsr , URL : socket://s-tn6dsrc.telenav.com:8811
+03-06 09:03:11.374: I/System.out(13048): Alias: dsr.http , suffixURL : 
+03-06 09:03:11.374: I/System.out(13048): Alias: common.http , URL : http://hqs-fptn72csvr02.telenav.com
+03-06 09:03:11.374: I/System.out(13048): Alias: common.http , suffixURL : /common-cserver/telenav-server-pb
+03-06 09:03:11.374: I/System.out(13048): Action: SyncNewStops , alias : common.http
+03-06 09:03:11.374: I/System.out(13048): Action: SyncPreference , alias : common.http
+03-06 09:03:11.374: I/System.out(13048): Action: Feedback , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: FetchAllStops , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: Logging , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: AutoSuggestList , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: Dsm , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: ConfirmRecentStops , alias : common.http
+03-06 09:03:11.378: I/System.out(13048): Action: SyncNewStops_Global , alias : common.http
+03-06 09:03:11.382: I/System.out(13048): Action: FetchAllStops_Global , alias : common.http
+03-06 09:03:11.382: I/System.out(13048): Alias: postlocation.http , URL : http://s-tn60-rim-poi.telenav.com:8080/post_location
+03-06 09:03:11.382: I/System.out(13048): Alias: postlocation.http , suffixURL : 
+03-06 09:03:11.382: I/System.out(13048): Alias: dim.http , URL : http://hqs-tnrim.telenav.com:80/telenavCServer
+03-06 09:03:11.382: I/System.out(13048): Alias: dim.http , suffixURL : 
+03-06 09:03:11.382: I/System.out(13048): Action: GetToken , alias : dim.http
+03-06 09:03:11.382: I/System.out(13048): Action: GetPTN , alias : dim.http
+03-06 09:03:11.382: I/System.out(13048): Action: GetEncryptionPtn , alias : dim.http
+03-06 09:03:11.382: I/System.out(13048): Alias: ecommerce.http , URL : http://hqs-fp72ecommerce.telenav.com
+03-06 09:03:11.382: I/System.out(13048): Alias: ecommerce.http , suffixURL : 
+03-06 09:03:11.382: I/System.out(13048): Alias: clientRes.http , URL : http://d-ota.telenav.com/resources
+03-06 09:03:11.382: I/System.out(13048): Alias: clientRes.http , suffixURL : 
+03-06 09:03:11.382: I/System.out(13048): Alias: vectorMap.http , URL : http://hqs-vectortilecdn.telenav.com/US_TA_10M9_V2
+03-06 09:03:11.386: I/System.out(13048): Alias: vectorMap.http , suffixURL : 
+03-06 09:03:11.386: I/System.out(13048): Alias: trafficTile.socket , URL : http://hqs-tn50.telenav.com
+03-06 09:03:11.386: I/System.out(13048): Alias: trafficTile.socket , suffixURL : 
+03-06 09:03:11.386: I/System.out(13048): Alias: addons.http , URL : http://telenav.rotator.hadj7.adjuggler.net/servlet/ajrotator/147404/0/vh?z=telenav
+03-06 09:03:11.390: I/System.out(13048): Alias: addons.http , suffixURL : 
+03-06 09:03:11.390: I/System.out(13048): Alias: aceTemplate.http , URL : http://hqs-fptn72csvr02.telenav.com/poi_service/html/acTemplate.do?clientInfo=%7B%22locale%22%3A%22en_US%22%2C%22platform%22%3A%22ANDROID%22%2C%22buildNumber%22%3A%223008%22%2C%22version%22%3A%227.2.0%22%2C%22deviceCarrier%22%3A%22SCOUTUSPROG%22%2C%22programCode%22%3A%22SCOUTUSPROG%22%2C%22device%22%3A%22crespo%22%2C%22productType%22%3A%22SCOUT_FREE%22%7D&width=480&height=800
+03-06 09:03:11.390: I/System.out(13048): Alias: aceTemplate.http , suffixURL : 
+03-06 09:03:11.390: I/System.out(13048): Alias: maitaiAuthenticate.http , URL : http://api.telenav.com/tnapi/services/auth/authenticate
+03-06 09:03:11.390: I/System.out(13048): Alias: maitaiAuthenticate.http , suffixURL : 
+03-06 09:03:11.390: I/System.out(13048): Alias: maitaiLookup.http , URL : http://api.telenav.com/tnapi/services/tnurl/lookupUrl
+03-06 09:03:11.390: I/System.out(13048): Alias: maitaiLookup.http , suffixURL : 
+03-06 09:03:11.390: I/System.out(13048): Alias: feedbacksurvey.http , URL : http://hqs-fptn72csvr02.telenav.com/poi_service/html/feedback.do?clientInfo=%7B%22locale%22%3A%22en_US%22%2C%22platform%22%3A%22ANDROID%22%2C%22buildNumber%22%3A%223008%22%2C%22version%22%3A%227.2.0%22%2C%22deviceCarrier%22%3A%22SCOUTUSPROG%22%2C%22programCode%22%3A%22SCOUTUSPROG%22%2C%22device%22%3A%22crespo%22%2C%22productType%22%3A%22SCOUT_FREE%22%7D&width=480&height=800
+03-06 09:03:11.390: I/System.out(13048): Alias: feedbacksurvey.http , suffixURL : 
+03-06 09:03:11.390: I/TELENAV_7.2.0.3008(13048): server locator version: 1.0.03-1.0.01
+03-06 09:03:11.410: I/TELENAV_7.2.0.3008(13048): ACT_COMBINATION_SYNC_RESOURCE -- hasRemainder: false
+03-06 09:03:11.464: D/dalvikvm(13048): GC_EXTERNAL_ALLOC freed 199K, 50% free 3888K/7687K, external 3125K/3144K, paused 27ms
+03-06 09:03:11.484: I/TELENAV_7.2.0.3008(13048): Monitoring GPS in thread 18
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048): protobuf : 
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048): ProtoSyncResourceResp
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048): {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     airport: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     audioFormat: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     audioInventory: []
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     bizCategory: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     bizCategoryVersion: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     carIcon: []
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     clientSetting: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     commonBarCollection: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     commonBarCollectionDel: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     dsrSdp: null
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     errorMessage: 
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):     serviceMapping: 
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                   {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                       serviceVersion: 1.0.03-1.0.01
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                       serviceItems: [
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: [Streaming_Map,Map,Dynamic_Route,Get_Extra_Edge,Check_Deviation,Static_Route,Reverse_Route,Decimated_Route,Traffic_Summary,Traffic_Alerts_Moving_Map,Traffic_Avoid_Selected_Seg_Reroute,Traffic_Min_Delay_Reroute,Traffic_Selected_Reroute,Traffic_Avoid_Incidents_Reroute,Traffic_Static_Avoid_Selected_Seg_Reroute,Traffic_Static_Min_Delay_Reroute,Traffic_Incident_Report,Commute_Alert_Details,Reverse_Geocoding,CheckSelected_Deviation,Chunked_Dynamic_Route,Chunk_CheckSelected_Deviation,Chunk_Selection_Route,Decimated_MultiRoute,Traffic_Avoid_Selected_Seg_Deci_Reroute,Traffic_Min_Delay_Deci_Reroute,Traffic_Static_Avoid_Selected_Seg_Deci_Reroute,Traffic_Static_Min_Delay_Deci_Reroute,Get_Extra_Info,Selection_Route,TrafficMap,GET_ETA]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlEntry: [routing.http]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceDomainName: /nav-map-cserver/telenav-server-pb
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceItemType: routing
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       },
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: [MISReporting]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlEntry: [mislog.http]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceDomainName: /log-cserver/telenav-server-pb
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceItemType: mislog
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       },
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: [GetMissingAudio,SwitchLocale,SwitchRegion,SyncResource,CellTower,GetServiceLocator,Startup,LocationSearch,CacheCities,CombinationSyncResource,SyncServiceLocator,SyncClientSettingData]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlEntry: [resource.http]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceDomainName: /resource-cserver/telenav-server-pb
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceItemType: resource
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       },
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: [ShareAddress,OneBox,SearchPoi,ValidateAirport,ValidateAddress,bannerAds,SentAddress,BillBoardAds,I18NWeather]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlEntry: [poi.http]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceDomainName: /poi_service/telenav-server-pb
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceItemType: poi
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       },
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: [Login,Purchase,Cancel,forgetPin,Get_Account_Status,SyncPurchased,SendPTNVerificationCode,ConfirmPurchase,DeclinePurchase,GetFlowType]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlEntry: [login.http]
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceDomainName: /login_startup_service/telenav-server-pb
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           serviceItemType: login
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       },
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                       {
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           actions: []
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048):                                           urlItem: [http://hqs-fptn72csvr02.telenav.com/login_startup_service/telenav-ser
+03-06 09:03:11.511: I/TELENAV_7.2.0.3008(13048): CombinationSyncResource --   End Read Data :1330995791516 , Elapse Time : 1309
+03-06 09:03:11.515: I/TELENAV_7.2.0.3008(13048): handle(1007011). current state: ~6016, next state: 6003, action: -1
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): Reverse_Geocoding -- Length : 29
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): request job Reverse_Geocoding is cancelled.
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): protobuf : 
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): ProtoReverseGeocodingResp
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): {
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048):     errorMessage: 
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048):     stop: null
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048):     status: 2
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): }
+03-06 09:03:11.601: I/TELENAV_7.2.0.3008(13048): Reverse_Geocoding --   End Read Data :1330995791603 , Elapse Time : 2957

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- width, height, margin and padding -->
+    <dimen name="dwf0ListDrivePaddingBottom">6dp</dimen>
+    <dimen name="dwf0ListDrivePaddingLeft">17dp</dimen>
+    <dimen name="dwf0ListDrivePaddingRight">17dp</dimen>
+    <dimen name="dwf0ListDrivePaddingTop">6dp</dimen>
+    <dimen name="dwf0ListDriveDistancePaddingLeft">6dp</dimen>
+    <dimen name="dwf0ListDriveDistancePaddingRight">6dp</dimen>
+    <dimen name="dwf0ListDriveButtonPaddingLeft">15dp</dimen>
+    <dimen name="dwf0ListDriveButtonPaddingRight">15dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+
+    <!-- color -->
+    <color name="dwf0ListDriveButtonTextColor">#ff262e33</color>
+    
+    <!-- value -->
+    <string name="dwf0ListDriveButtonText">Drive</string>
+</resources>

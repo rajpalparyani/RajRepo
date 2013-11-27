@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<project name="build-retreive-navsdk" xmlns:ivy="antlib:org.apache.ivy.ant">
+	 <path id="OpenSourceLib.taskdef.classpath">
+		<fileset dir="./OpenSourceLib">
+			<include name="ant-contrib-1.0b3.jar" />
+            		<include name="antenna-bin-0.9.13.jar" />
+            		<include name="findbugs-1.3.9\lib\findbugs-ant.jar" />
+            		<include name="apache-ivy-2.2.0\ivy-2.2.0.jar" />
+           		<include name="javancss-32.53\lib\*.jar" />
+           		<include name="junit-4.5.jar" />
+           		<include name="cobertura-1.9.4.1\cobertura.jar"/>
+           		<include name="cobertura-1.9.4.1\lib\*.jar"/>
+		</fileset>
+	</path>
+	<property name="ivy.settings.dependency" value="ivysettings-dependency.xml"/>
+	<property name="ivy.file.dependency" value="ivy-dependency.xml"/>
+	
+	<property name="ivy.settings.navsdk" value="ivysettings.xml"/>
+	<property name="ivy.file.navsdk" value="ivy.xml"/>
+	
+	<property name="ivy.settings.android" value="ivysettings-android.xml"/>
+	<property name="ivy.file.android" value="ivy-android.xml"/>
+	<property name="android.retrieve.dir" value="${basedir}/android/android-sdk" />	
+	
+	<property name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+	<property name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+	<property name="retrieve.repository.file" value="${output}" />
+	<!-- cache -->
+	<property name="ivy.default.cache" value="/.ivy-cache" />
+	<property name="publish.repository.file" value="${output}" />	
+	
+	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<!-- ============================================== target ============================================== -->
+	<target name="dependency.resolve" description="--> resolve and retrieve dependencies with ivy">
+		<ivy:settings file="${ivy.settings.dependency}" />
+		<!-- the call to resolve is not mandatory, retrieve makes an implicit call if we don't -->
+	      	<ivy:resolve file="${ivy.file.dependency}" />
+                <ivy:retrieve pattern="lib/arlington/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+	</target>
+	
+	<target name="navsdk.resolve" description="--> resolve and retrieve dependencies with ivy">
+		<ivy:settings file="${ivy.settings.navsdk}" />
+		<!-- the call to resolve is not mandatory, retrieve makes an implicit call if we don't -->
+	      	<ivy:resolve file="${ivy.file.navsdk}" />
+                <ivy:retrieve pattern="lib/arlington/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+	</target>	
+
+	<target name="android.resolve" description="--> resolve and retrieve dependencies with ivy">
+		<ivy:settings file="${ivy.settings.android}" />
+		<!-- the call to resolve is not mandatory, retrieve makes an implicit call if we don't -->
+	      	<ivy:resolve file="${ivy.file.android}" />
+        	<ivy:retrieve pattern="${android.retrieve.dir}/[revision]/[artifact].[ext]" />
+	</target>		
+</project>

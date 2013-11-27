@@ -1,0 +1,197 @@
+/**
+ *
+ * Copyright 2012 TeleNav, Inc. All rights reserved.
+ * CarConnectHostManager.java
+ *
+ */
+package com.telenav.carconnect.host;
+
+import android.content.Context;
+import android.content.Intent;
+import com.telenav.data.datatypes.address.Address;
+
+/**
+ * Claqss to manage CarConnect host environment and provide API for rest TN client components to interact with CarConnect component.
+ * 
+ *@author chihlh
+ *@date Mar 1, 2012
+ */
+public class CarConnectHostManager
+{
+    
+    
+    private final static CarConnectHostManager sInstance = new CarConnectHostManager();
+    
+    public static CarConnectHostManager getInstance()
+    {
+        return sInstance;
+    }
+    
+    private CarConnectHostManager()
+    {    
+    }
+    
+    public static final String INTENT_EXTRA_CAR_CONNECT = "com.telenav.intent.extra.CAR_CONNECT"; // special action for car connect only;
+    
+    /**
+     * start to monitor external devices
+     *  
+     */
+    public synchronized void startMonitor(Context ctx)
+    {
+    }
+    
+    /**
+     *
+     */
+    public boolean isLocationAlwaysOn()
+    {
+        return false;
+    }
+    
+    /**
+     * stop the monitor process
+     */
+    public synchronized void stopMonitor()
+    {
+    }
+    
+    
+    
+    /**
+     * Start the host environment and waiting for connection. It is suppose to be called when app is started for the first time.
+     * This is Asynchronous call. the method will return immediately and will not block. 
+     */
+    public synchronized void startHost(Context ctx)
+    {
+    }
+    
+
+    /**
+     * stop the host environment
+     * 
+     */
+    public synchronized void stopHost()
+    {
+    }
+    
+    /**
+     * start car connect session. It is supposed only be called from the onCarConnected call back
+     *  
+     */
+    public synchronized void startCarConnect()
+    {
+    }
+    
+    /**
+     * Stop carconnect session
+     * 
+     */
+    public synchronized void stopCarConnect()
+    {
+    }
+    
+    /**
+     * Capture biz logic when the carconnect component issue attemptToConnect event. 
+     * Typically, this is done if user does not have account or account state is unknown.
+     * @param waitForReady - indicate if need to wait for app is ready. Typically, this is flag is set if the app is launched by carconnect
+     */
+    public synchronized void attemptToConnect(boolean waitForReady)
+    {
+    }
+    
+    /**
+     * Callback for upsell page return.
+     */
+    public void upsellCallBack(boolean startNav)
+    {
+    }
+    
+    /**
+     * Check the received intent is for car connect or not
+     */
+    public boolean isIntentForCarConnect(Intent intent)
+    {
+        return false;
+    }
+    
+        
+    /**
+     * request navigation in CarConnect
+     */
+    public synchronized void requestNav(Address address)
+    {
+    }
+    
+    /**
+     * transfer navigation in CarConnect
+     */
+    public synchronized void transferNav(Address address)
+    {
+    }
+    
+    /**
+     * lock the screen
+     */
+    public synchronized void lockScreen()
+    {
+    }
+    
+    /**
+     * unlock the screen
+     */
+    public synchronized void unlockScreen()
+    {
+    }
+    
+    /**
+     * Capture business logic when there is CarConnect compatible device that is paired & low level connected with the phone 
+     */
+    public synchronized void deviceInRange()
+    {
+    }
+    
+    /**
+     * Capture business logic when there is CarConnect compatible device that is low level disconnected with the phone 
+     */
+    public synchronized void deviceOutRange()
+    {
+    }
+    
+    /**
+     * test if the CarConnect is active and in connect session.
+     */
+    public boolean isConnected()
+    {
+		return false;
+    }
+    
+    public boolean isLaunchedForCarConnect()
+    {
+        return false;
+    }
+    
+    /**
+     * Start car connect specific upsell page
+     */
+    public void startUpsell()
+    {
+    }
+    
+    /**
+     * Check whether the user has account to use carconnect
+     * @return
+     */
+    public boolean checkAccount()
+    {
+        return false;
+    }
+    
+    /**
+     * log the mis log for poi search event
+     */
+    public synchronized void logPoiSearch(String searchId)
+    {
+    }   
+}
+

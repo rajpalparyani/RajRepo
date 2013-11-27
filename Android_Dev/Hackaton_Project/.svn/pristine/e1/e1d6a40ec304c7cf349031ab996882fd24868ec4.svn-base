@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+<project name="ui">
+	<!-- ============================================== app properties ======================================== -->
+	
+	<property name="module_list" value="core" />
+	<property name="major.verion" value="1.1" />
+	<property name="product.version" value="${major.verion}.${version}" />
+	<property name="sdk-folder" value="lib\android" />
+	<!-- ============================================== import build_common.xml ======================================== -->
+	<import file="../build-common.xml" />
+
+	<!-- ============================================== path properties ================================================ -->
+	<path id="android.boot.classpath">
+		<fileset dir="lib/${platform}">
+			<include name="android.jar" />
+		</fileset>
+	</path>
+
+	<path id="rim.boot.classpath">
+		<fileset dir="lib/${platform}">
+			<include name="net_rim_api.jar" />
+		</fileset>
+	</path>
+
+	<path id="j2me.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<path id="j2se.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<!-- =============================================== task definition =============================================== -->
+
+	<target name="publish-all">
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+			Please add the property: 'version'.
+			------------------------@TeleNav--------------------------
+		</fail>
+
+		<antcall target="publish_common" />
+	</target>
+
+	<target name="publish_common">
+		<antcall target="publish_graphics">
+			<param file="android.properties" />
+		</antcall>
+
+		<antcall target="publish_module">
+			<param file="android.properties" />
+		</antcall>
+	</target>
+
+	<target name="publish_module">
+		<foreach list="${module_list}" target="publish_platform" param="module" inheritall="true" inheritrefs="true" />
+	</target>
+
+	<target name="publish_graphics">
+		<antcall target="publish">
+			<!-- run conf -->
+			<param name="base.dir" value="graphics" />
+			<param name="module.name" value="graphics" />
+			<param name="jar.file" value="graphics" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="j2me" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="graphics/ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="${output}" />
+		
+		</antcall>
+	</target>
+
+	<target name="publish_platform">
+		<antcall target="publish">
+			<!-- run conf -->
+			<param name="base.dir" value="${module}" />
+			<param name="module.name" value="${module}ui" />
+			<param name="jar.file" value="${module}ui-${platform}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="../ivysettings.xml" />
+			<param name="ivy.file" value="${module}/ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="${output}" />
+			
+		</antcall>
+	</target>
+
+	<target name="update_svn_version">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+</project>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dwfBackground"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dwfBackground2"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/add_place_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_yellow_item_unfocused"
+                android:padding="@dimen/dwfMargin"
+                android:text="@string/dwfTip" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dwfDriveWithFriendTipMarginBottom"
+                android:layout_marginLeft="@dimen/dwfMargin"
+                android:layout_marginRight="@dimen/dwfMargin"
+                android:layout_marginTop="@dimen/dwfDriveWithFriendTipMarginTop"
+                android:text="@string/dwfInviteFriends"
+                android:textColor="@color/dwfTip2ForegroundColor"
+                android:textSize="@dimen/dwfLableTextSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dwfMargin"
+                android:layout_marginRight="@dimen/dwfMargin"
+                android:background="@drawable/ftue_text_view_unfocused"
+                android:orientation="horizontal"
+                android:id="@+id/dwfContact" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:id="@+id/dwfContactContainer" >
+
+                    <com.telenav.ui.android.DwfReceiverGridContainer
+                        android:id="@+id/dwfReceiverGridContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <com.telenav.ui.android.TnAutoCompleteTextView
+                            android:id="@+id/dwfAutoCompleteTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:dropDownWidth="@dimen/dwfContactAutoCompleteTextViewDropDownWidth"
+                            android:imeOptions="actionDone"
+                            android:maxLength="30"
+                            android:hint="@string/dwfInviteFriendsHint"
+                            android:textColorHint="@color/dwfHintTextColor"
+                            android:minWidth="@dimen/dwfContactAutoCompleteTextViewMinWidth"
+                            android:singleLine="true" 
+                            android:textSize="@dimen/dwfEditTextSize"/>
+                    </com.telenav.ui.android.DwfReceiverGridContainer>
+
+                    <View
+                        android:id="@+id/dwfReceiverBottomSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/dwfSeparatorColor" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/dwfContactButton"
+                    android:layout_width="@dimen/dwfContactButtonLayoutHeight"
+                    android:layout_height="@dimen/dwfContactButtonLayoutHeight"
+                    android:layout_gravity="bottom"
+                    android:contentDescription="@string/dwfDriveTo"
+                    android:src="@drawable/searchbox_icon_contact_unfocused" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dwfDriveWithFriendTipMarginBottom"
+                    android:layout_marginLeft="@dimen/dwfMargin"
+                    android:layout_marginRight="@dimen/dwfMargin"
+                    android:layout_marginTop="@dimen/dwfDriveWithFriendTipMarginTop"
+                    android:text="@string/dwfChoosePlace"
+                    android:textColor="@color/dwfTip2ForegroundColor"
+                    android:textSize="@dimen/dwfLableTextSize" />
+
+                <TextView
+                    android:id="@+id/dwfChoosePlace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginBottom="@dimen/dwfDriveWithFriendTipMarginBottom"
+                    android:layout_marginLeft="@dimen/dwfMargin"
+                    android:layout_marginRight="@dimen/dwfMargin"
+                    android:background="@drawable/ftue_text_view_unfocused"
+                    android:clickable="true"
+                    android:hint="@string/dwfChoosePlaceHint"
+                    android:textColorHint="@color/dwfHintTextColor"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/dwfLocationTextColor"
+                    android:textSize="@dimen/dwfEditTextSize" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dwfBackground"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/dwfSeparator2MarginBottom"
+                    android:background="@color/dwfSeparator2Color" />
+
+                <EditText
+                    android:id="@+id/dwfSms"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dwfMargin"
+                    android:layout_marginRight="@dimen/dwfMargin"
+                    android:background="@drawable/drive_with_friends_sms_box_unfocused"
+                    android:inputType="none"
+                    android:textColor="@color/dwfLocationTextColor"
+                    android:textSize="@dimen/dwfEditTextSize" />
+
+                <LinearLayout
+                    android:id="@+id/dwfInviteButton"
+                    android:layout_width="@dimen/dwfButtonLayoutWidth"
+                    android:layout_height="@dimen/dwfButtonLayoutHeight"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dwfButtonMarginTop"
+                    android:layout_marginBottom="@dimen/dwfDriveWithFriendTipMarginTop"
+                    android:background="@drawable/big_radian_yellow_button"
+                    android:clickable="true"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/dwfInviteButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/dwf_invite_button_icon"
+                        android:drawablePadding="@dimen/dwfButtonDrawablePadding"
+                        android:duplicateParentState="true"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/dwfLetGoButton"
+                        android:textColor="@color/dwf_button_foreground"
+                        android:textSize="@dimen/dwfButtonTextSize"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

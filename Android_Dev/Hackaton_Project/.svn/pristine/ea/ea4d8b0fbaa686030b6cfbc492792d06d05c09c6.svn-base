@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project name="i18n2ExcelPropertiesProject" default="pro_to_excel">
+	<property file="build.properties"/>
+	<taskdef resource="antenna.properties" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	<path id="basedir" location="../../"/>
+	<property name="projectPath" refid="basedir"/>
+	<property name="documentsPath" value="${projectPath}\documents\i18n2excel"/>
+	<property name="resPath" value="${projectPath}\res\android"/>
+	<path id="compile.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="java.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="dist">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="merge" >
+		<foreach list="${carrier_list}" target="generate_all" param="carrier_list_item"/>	
+	</target>
+	
+	<target name="pro_to_excel" >
+		<foreach list="${carrier_list}" target="Properties_To_Excel" param="carrier_list_item"/>
+	</target>
+	
+	<target name="excel_to_pro" >
+		<foreach list="${carrier_list}" target="Excel_To_Properties" param="carrier_list_item"/>
+	</target>
+	
+	<target name="Properties_To_Excel">
+		<propertycopy name="carrierExcelPath" from="${carrier_list_item}_Excel"/>
+		<property name="outputPath" value="${documentsPath}\${carrierExcelPath}"/>
+		<propertycopy name="locales" from="${carrier_list_item}_Locales"/>
+		<antcall target="I18n2ExcelProperties" inheritAll="true" inheritRefs="true" >
+			<param name="propertiesPath" value="${resPath}\${carrier_list_item}\i18n"/>
+			<param name="outputPath" value="${outputPath}"/>
+			<param name="outputFormat" value="excel"/>
+		</antcall>
+	</target>
+	
+	
+	<target name="Excel_To_Properties">
+		<propertycopy name="carrierExcelPath" from="${carrier_list_item}_Excel"/>
+		<property name="excelPath" value="${documentsPath}\${carrierExcelPath}"/>
+		<propertycopy name="locales" from="${carrier_list_item}_Locales"/>
+		<antcall target="I18n2ExcelProperties">
+			<param name="outputPath" value="${resPath}\${carrier_list_item}\i18n\"/>
+			<param name="outputFormat" value="properties"/>
+		</antcall>
+	</target>
+	
+	<target name="generate_all">
+		<propertycopy name="carrierExcelPath" from="${carrier_list_item}_Excel"/>
+		<property name="excelPath" value="${documentsPath}\${carrierExcelPath}"/>
+		<propertycopy name="locales" from="${carrier_list_item}_Locales"/>
+		<antcall target="I18n2ExcelProperties">
+			<param name="propertiesPath" value="${resPath}\${carrier_list_item}\i18n"/>
+			<param name="outputFormat" value="excel"/>
+			<param name="outputPath" value="${excelPath}"/>
+		</antcall>
+	</target>
+	
+	<target name="I18n2ExcelProperties" description="-DexcelPath -DpropertiesPath -DoutputPath[excel: *.xlsx | properties: will be a directory] -DoutputFormat[excel|properties] -Dlocales[en_US-zh_CN...]">
+		<java classname="com.telenav.tools.i18n2excelproperties.I18n2ExcelProperties" classpathref="java.classpath">
+         <arg value="${excelPath}"/>
+		 <arg value="${propertiesPath}"/>
+		 <arg value="${outputPath}"/>
+		 <!-- outputFormat: excel | properties -->
+		 <arg value="${outputFormat}"/>
+		 <arg value="${locales}"/>
+       </java>
+	</target>
+
+	<target name="build_jar" description="--> compile the project">
+		<delete quiet="true" dir="bin" />
+		<mkdir dir="bin" />
+		<mkdir dir="dist" />
+		
+		<javac encoding="ascii" target="1.5" source="1.5" destdir="bin" classpathref="compile.classpath" fork="true" debug="true" optimize="true" deprecation="false">
+			<src path="src" />
+		</javac>
+
+		<jar destfile="dist/i18n2excelproperties.jar" basedir="bin" includes="**/*" />
+	</target>
+</project>

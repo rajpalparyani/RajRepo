@@ -1,0 +1,7 @@
+{
+    "resource_proxy" :
+    {
+        "comment" : "This is for android proxy factory. Available values for proxy are 'default' and 'cn_wrapper'",
+        "proxy" : "default"
+    }
+}

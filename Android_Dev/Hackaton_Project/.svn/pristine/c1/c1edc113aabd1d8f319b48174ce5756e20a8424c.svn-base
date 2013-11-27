@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+
+<project name="env_setup" default="setup">
+	<!-- =============================================== task definition =============================================== -->
+	<taskdef resource="antenna.properties" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<property name="preverify_classpath" value="../lib/${platform}/${api_version}/net_rim_api.jar;" />
+
+	<target name="setup">
+		<if>
+			<equals arg1="windows" arg2="${os.path}" />
+			<then>
+				<propertyregex property="root" input="${europa_path}" regexp="\\" replace="/" casesensitive="false" />
+			</then>
+			<else>
+				<property name="root" value="${europa_path}" />
+			</else>
+		</if>
+				
+		<echo message="root : ${root}" />
+		<filter token="app_path" value="${root}" />
+		<filter token="classpath_exclude" value="${eclipse_classpath_exclude}" />
+		<filter token="stub_src" value="${eclipse_stub_src}" />
+		<copy toDir="${platform}_workspace" filtering="true" overwrite="yes">
+			<fileset dir="${platform}">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<!-- added for Car Connect -->
+		<delete dir="${platform}_workspace/telenav-dev-android/stub_src" quiet="true"/>
+		<if>
+			<not>
+				<equals arg1="${CarConnectBuildType}" arg2="real"/>
+			</not>
+			<then>
+				<copy  file="${app_path}/src/com/telenav/carconnect/host/CarConnectHostManager.stub"
+					toFile="${platform}_workspace/telenav-dev-android/stub_src/com/telenav/carconnect/host/CarConnectHostManager.java" 
+					overwrite="true"/>
+			</then>
+			<else>
+			<if>
+				<not>
+					<equals arg1="${ENABLE_TNLINK}" arg2="true" />
+				</not>
+				<then>
+					<copy  file="${app_path}/src/com/telenav/carconnect/host/TnLinkProviderManager.stub"
+					toFile="${platform}_workspace/telenav-dev-android/stub_src/com/telenav/carconnect/host/TnLinkProviderManager.java" 
+					overwrite="true"/>
+				</then>
+			</if>
+			</else>
+		</if>
+		<antcall target="copy_jars" />
+		<antcall target="copy_widget_src" />
+	</target>
+
+	<target name="copy_widget_src">
+		<property name="widget.src.eclipse.dir" value="${platform}_workspace/telenav-dev-android/widgetSrc" />
+		<delete quiet="true" dir="${widget.src.eclipse.dir}" />
+		<if>
+			<equals arg1="true" arg2="${needwidget}"/>
+			<then>
+				<copy toDir="${widget.src.eclipse.dir}" overwrite="true">
+					<fileSet dir="${widget.src.tmp.dir}">
+						<include name="**/*.java" />
+						<exclude name="**/R.java" />
+						<exclude name="**/TeleNav.java" />
+					</fileSet>
+				</copy>
+			</then>
+			<else>
+				<mkdir dir="${widget.src.eclipse.dir}"/>
+			</else>
+		</if>
+	</target>
+	
+	<target name="copy_jars">
+		<mkdir dir="${platform}_workspace\tmp_bin" />
+		<unzip dest="${platform}_workspace\tmp_bin">
+			<fileset dir="${platform}_workspace\telenav-dev-${platform}\lib">
+				<include name="*.jar" />
+				<include name="*.zip" />
+			</fileset>
+		</unzip>
+		
+		<delete quiet="true">
+			<fileset dir="${platform}_workspace\telenav-dev-${platform}\lib">
+				<include name="*.jar" />
+				<include name="*.zip" />
+			</fileset>
+		</delete>
+		<mkdir dir="${platform}_workspace\telenav-dev-${platform}\lib" />
+		<jar destfile="${platform}_workspace\telenav-dev-${platform}\lib\pusu.jar">
+			<fileset dir="${platform}_workspace\tmp_bin">
+				<exclude name="com\telenav\navsdk\**"/>
+				<exclude name="com\telenav\tnlink\**"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoBillBoardAds*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoBillBoardAdsReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoBillBoardAdsResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCheckSelectedDeviationReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimateRoute*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimatedMultiRouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimatedMultiRouteResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimatedRouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimatedRouteResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDynamicAudio*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDynamicRouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoETAReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoETAReqItem*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoETAResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoETAResult*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoExtraEdgeReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoExtraEdgeResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMapSection*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMapTile*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMapTileResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMultiRoute*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMultiRouteResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoRoute*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoRouteAudio*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoRoutesResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoRouteSegment*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSegmentAudio*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSelectionRouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoStaticRouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficAvoidIncidentsRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficAvoidSelectedSegRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficMinDelayRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficSelectedRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficStaticAvoidSelectedSegRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficStaticMinDelayRerouteReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoPoi*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCommuteAlert*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoDecimatedMultiRouteWithSegment*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoOneBox*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficAlertsMovingMapReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficAlertsMovingMapResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficIncident.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficMapTile*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficSegment*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficSummary*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficSummaryReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficSummaryResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficTile*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficTileEdge*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficTileReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTrafficTileResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoValidateAddressReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoValidateAddressResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoReverseGeocodingReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoReverseGeocodingResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMap.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMapReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMapResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSentAddress*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSentAddressReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSentAddressResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoSegmentNavInfo*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoOpenTableInfo*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMovieItem*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMovieListReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoMovieListResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCarIcon*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCarOwnServiceReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCarOwnServiceResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoTheaterItem*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoUgcReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoUgcResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoStreetsReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoStreetsResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCheckMspStatusReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoCheckMspStatusResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoGetIntersectionsReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoGetIntersectionsResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoGetStreetsReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoGetStreetsResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoIntersectionsReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoIntersectionsResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoLocationSearchReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoLocationSearchResp*.*"/>				
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoShareAddressReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoShareAddressResp*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoStopSessionReq*.*"/>
+				<exclude name="com\telenav\j2me\framework\protocol\ProtoStopSessionResp*.*"/>							
+			</fileset>
+		</jar>
+		
+		<delete quiet="true" dir="${platform}_workspace\tmp_bin" />
+
+		<if>
+			<equals arg1="rim" arg2="${platform}" />
+			<then>
+				<antcall target="preverify_jar" />
+			</then>
+		</if>
+	</target>
+
+	<target name="preverify_jar">
+		<echo message="preverifying.... " />
+		<property name="out_lib" value="preverify" />
+		<exec dir="${platform}_workspace\\telenav-dev-${platform}\lib" executable="${rim_sdk}/bin/preverify">
+			<arg line=" -classpath ${preverify_classpath}" />
+			<arg line=" -d tmp" />
+			<arg line=" pusu.jar" />
+		</exec>
+		<delete quiet="true" dir="${platform}_workspace\\telenav-dev-${platform}\lib\pusu.jar" />
+		<copy file="${platform}_workspace\\telenav-dev-${platform}\lib\tmp\pusu.jar" tofile="${platform}_workspace\\telenav-dev-${platform}\lib\pusu.jar" />
+		<delete quiet="true" dir="${platform}_workspace\\telenav-dev-${platform}\lib\tmp" />
+	</target>
+</project>

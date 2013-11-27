@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/add_place_category_item_background"
+    android:checkMark="@drawable/add_place_category_item_indicator"
+    android:drawableLeft="@drawable/list_icon_folder_unfocused"
+    android:drawablePadding="@dimen/common_side_margin"
+    android:gravity="center_vertical"
+    android:paddingBottom="21dp"
+    android:paddingLeft="@dimen/common_side_margin"
+    android:paddingRight="@dimen/common_side_margin"
+    android:paddingTop="21dp"
+    android:textColor="@color/addplaceCategoryItemText"
+    android:textSize="19sp" />

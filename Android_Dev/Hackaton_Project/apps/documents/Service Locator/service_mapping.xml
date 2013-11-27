@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+    "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+   <import resource="classpath*:serviceLocator/actions/actions.xml"/>
+
+   <bean id="basic_service_mapping" class="com.telenav.cserver.resource.datatypes.ServiceMapping">
+        <property name="version">
+            <value>1.0.05</value>
+        </property>
+        <property name="actionVersion" ref="actionVersion"/>
+
+        <property name="serviceMapping">
+            <list>
+	      	 	<ref bean="routing_service" />
+	        	<ref bean="resource_service" />
+				<ref bean="mislog_service" />
+	         	<ref bean="poi_service" />
+			 	<ref bean="login_service" />
+			 	<ref bean="login_https_service" />
+	          <ref bean="dsr_service" />
+	          <ref bean="common_service" />
+	          <ref bean="dim_service" />
+	          <ref bean="ecommerce_service" />
+	          <ref bean="clientRes_service" />
+	          <ref bean="vectorMap_service" />
+			  <ref bean="addons" />
+    	    </list>
+        </property>
+   </bean>
+
+
+   <bean id="login_https_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>login_https</value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+	        <map>
+		        <entry key="login.https" value="https://tn7x-login.telenav.com:443/login_startup_service/telenav-server-pb"/>
+	        </map>
+        </property>
+        <property name="actions">
+        	<list></list>
+        </property>
+   </bean>
+
+    <bean id="ecommerce_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value></value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+        <map>
+	        <entry key="ecommerce.http" value="https://ecommerce.telenav.com"/>
+        </map>
+        </property>
+       <property name="actions" ref="ecommerce_actions"/>
+   </bean>
+
+   <bean id="dim_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>dim</value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+        <map>
+	        <entry key="dim.http" value="http://headers.telenav.com/telenavCServer?nodeType=json;deviceside=true;ConnectionUID=WAP2 trans"/>
+        </map>
+        </property>
+       <property name="actions" ref="dim_actions"/>
+   </bean>
+
+   <bean id="routing_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>routing</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/nav-map-cserver/telenav-server-pb</value>
+        </property>
+        <property name="urlMap">
+        <map>
+	        <entry key="routing.http" value="http://tn7x-routing.telenav.com:80"/>
+        </map>
+        </property>
+       <property name="actions" ref="routing_actions"/>
+   </bean>
+
+    <bean id="resource_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>resource</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/resource-cserver/telenav-server-pb</value>
+        </property>
+         <property name="urlMap">
+        <map>
+	        <entry key="resource.http" value="http://tn7x-resource.telenav.com:80"/>
+        </map>
+        </property>
+       <property name="actions" ref="resource_actions_without_mislog"/>
+
+   </bean>
+
+   <bean id="mislog_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>mislog</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/log-cserver/telenav-server-pb</value>
+        </property>
+         <property name="urlMap">
+        <map>
+	        <entry key="mislog.http" value="http://tn7x-resource.telenav.com:80"/>
+        </map>
+        </property>
+       <property name="actions" ref="mislog_actions"/>
+   </bean>
+
+   <bean id="poi_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>poi</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/poi_service/telenav-server-pb</value>
+        </property>
+         <property name="urlMap">
+	        <map>
+		        <entry key="poi.http" value="http://tn7x-poi.telenav.com"/>
+	        </map>
+        </property>
+       <property name="actions" ref="cs_poi_actions"/>
+
+   </bean>
+
+
+    <bean id="dsr_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>dsr</value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+	        <map>
+		        <entry key="dsr.http" value="http://tn62-dsrc.telenav.com:8081/dsr"/>
+		        <entry key="dsr" value="socket://tn62-dsrc.telenav.com:8080"/>
+				<!--currently use tn62 dsr -->
+	        </map>
+        </property>
+       <property name="actions" ref="dsr_actions"/>
+
+   </bean>
+
+   <bean id="login_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>login</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/login_startup_service/telenav-server-pb</value>
+        </property>
+         <property name="urlMap">
+	        <map>
+		        <entry key="login.http" value="http://tn7x-login.telenav.com:80"/>
+	        </map>
+        </property>
+       <property name="actions" ref="cs_login_actions"/>
+
+   </bean>
+
+   <bean id="common_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>common</value>
+        </property>
+         <property name="serviceDomainName">
+            <value>/common-cserver/telenav-server-pb</value>
+        </property>
+         <property name="urlMap">
+        <map>
+	        <entry key="common.http" value="http://tn7x-common.telenav.com:80"/>
+        </map>
+        </property>
+       <property name="actions" ref="common_actions"/>
+
+   </bean>
+
+
+   <bean id="clientRes_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>clientRes</value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+                <map>
+			<entry key="clientRes.http" value="http://clientresourcecdn.telenav.com"/>
+                </map>
+        </property>
+        <property name="actions" ref="clientRes_actions"/>
+   </bean>
+
+
+   <bean id="vectorMap_service"
+         class="com.telenav.cserver.resource.datatypes.ServiceItem">
+        <property name="type">
+            <value>vectorMap</value>
+        </property>
+         <property name="serviceDomainName">
+            <value></value>
+        </property>
+         <property name="urlMap">
+                <map>
+                        <entry key="vectorMap.http" value="http://vectortilecdn.telenav.com/US_TA_10M9_V2"/>
+                </map>
+        </property>
+        <property name="actions" ref="vectorMap_actions"/>
+   </bean>
+
+   <bean id="addons" 
+         class="com.telenav.cserver.resource.datatypes.ServiceItem"> 
+        <property name="type"> 
+            <value>addons</value> 
+        </property> 
+         <property name="serviceDomainName"> 
+            <value></value> 
+        </property> 
+         <property name="urlMap"> 
+            <map> 
+               <entry key="addons.http" value="http://telenav.rotator.hadj7.adjuggler.net/servlet/ajrotator/147404/0/vh?z=telenav"/> 
+            </map> 
+        </property> 
+        <property name="actions" ref="cs_addons_actions"/> 
+   </bean>
+
+</beans>

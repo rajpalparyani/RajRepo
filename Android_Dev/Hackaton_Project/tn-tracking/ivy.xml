@@ -1,0 +1,48 @@
+<ivy-module version="1.0">
+	<info organisation="/mobile/apps/trunk" module="tn-tracking" />
+
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="jar" />
+		<artifact name="${module.name}" type="source" ext="zip" />
+<!--		<artifact name="testreport-${module.name}" type="source" ext="zip" />-->
+	</publications>
+
+	<dependencies>
+		<dependency org="junit" name="junit" rev="4.8.1" />
+		<dependency org="org/easymock" name="easymock" rev="3.0" />
+		<dependency org="org" name="objenesis" rev="1.2" />
+		<dependency org="org/powermock" name="powermock-easymock" rev="1.4.8-full" />
+		<dependency org="org/objectweb" name="asm" rev="3.0"/>
+		<dependency org="org/objectweb" name="asm-tree" rev="3.0" />
+		<dependency org="net/sourceforge" name="cobertura" rev="1.9.4.1" />
+		<dependency org="net/sf" name="cglib" rev="2.2" />
+		<dependency org="org/apache" name="jakarta-oro" rev="2.0.8"/>
+		<dependency org="log4j" name="log4j" rev="1.2.9"/>
+
+		<dependency org="mobile/utility/trunk" name="logger" rev="+">
+			<artifact name="logger" type="jar" ext="jar" />
+			<artifact name="logger" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="json" rev="+">
+			<artifact name="json" type="jar" ext="jar" />
+			<artifact name="json" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="util" rev="+">
+			<artifact name="util" type="jar" ext="jar" />
+			<artifact name="util" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/platform/trunk" name="platform" rev="+">
+			<artifact name="platform" type="jar" ext="jar" />
+			<artifact name="platform" type="source" ext="zip" />
+			<artifact name="platform-${platform}" type="jar" ext="jar" />
+			<artifact name="platform-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= protobuf =======================-->
+		<dependency org="telenav" name="protobuf-javame" rev="+">
+			<artifact name="protobuf-javame" type="jar" ext="jar" />
+		</dependency>
+		<dependency org="telenav" name="protocol-java" rev="1.1+">
+			<artifact name="protocol-java" type="jar" ext="jar" />
+		</dependency>
+	</dependencies>
+</ivy-module>

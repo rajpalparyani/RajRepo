@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry excluding="com/telenav/app/j2me/|com/telenav/app/j2se/|com/telenav/app/rim/" kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/pusu.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

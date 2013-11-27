@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<project name="telenav-global">
+	<!-- ================================================== app properties ======================================== -->
+	<property name="output" value="${basedir}/../lib" />
+	<property name="apiversion" value="7200000" />
+	<property name="product.version" value="${version}" />
+
+	<!-- =============================================== task definition =============================================== -->
+	<target name="unit_test">
+	        <delete quiet="true" dir="${basedir}/lib/retrieve_backup"/> 
+		<antcall target="unit_test_delegate">
+			<param file="android.properties" />
+			<param file="scout_us_brand.properties" />
+			<param name="findbugs.enable" value="false" />
+			<param name="unittest.enable" value="true" />
+			<param name="test_coverage" value="true" />
+			<param name="version" value="1000" />
+			<param name="release" value="true" />
+		</antcall>
+	</target>
+	
+	<target name="publish-all" depends="" >
+	        <delete quiet="true" dir="${basedir}/dist"/>
+		<delete quiet="true" dir="${basedir}/lib/retrieve_backup"/>
+		<antcall target="publish_platform">
+			<param file="android.properties" />
+			<param file="scout_us_brand.properties" />
+			<param name="needwidget" value="true" />
+		</antcall>
+	</target>
+
+	<target name="publish_platform">
+		<ant antfile="build-${platform}.xml" target="publish-platform" />
+	</target>
+
+	<target name="build_dev">
+		<ant antfile="build-${platform}.xml" target="build_dev" />
+	</target>
+	
+	<target name="build_lib">
+		<ant antfile="build.xml" target="build" dir="../" />
+	</target>
+	
+	<target name="build_lib_no_widget">
+		<ant antfile="build.xml" target="build_part_one" dir="../" />
+	</target>
+	
+	<target name="unit_test_delegate">
+		<ant antfile="build-${platform}.xml" target="unit_test" />
+	</target>
+	
+	<target name="update_svn_version" if="release">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+
+	<!--  These tasks are only for dev -->
+	<target name="findbugs_dev">
+	        <delete quiet="true" dir="${basedir}/lib/retrieve_backup"/> 
+		<antcall target="findbugs_delegate">
+			<param file="android.properties" />
+			<param file="scout_us_brand.properties" />
+			<param name="findbugs.enable" value="true" />
+			<param name="unittest.enable" value="true" />
+			<param name="test_coverage" value="true" />
+			<param name="version" value="1000" />
+			<param name="release" value="true" />
+		</antcall>
+	</target>
+
+	 <target name="findbugs_delegate">
+		<ant antfile="build-${platform}.xml" target="findbugs_dev" />
+	 </target>
+	 
+	<target name="unittest_dev">
+	        <delete quiet="true" dir="${basedir}/lib/retrieve_backup"/> 
+		<antcall target="unittest_dev_delegate">
+			<param file="android.properties" />
+			<param file="scout_us_brand.properties" />
+			<param name="findbugs.enable" value="true" />
+			<param name="unittest.enable" value="true" />
+			<param name="test_coverage" value="true" />
+			<param name="version" value="1000" />
+			<param name="release" value="true" />
+		</antcall>
+	</target>
+	
+	<target name="unittest_dev_delegate">
+		<ant antfile="build-${platform}.xml" target="unittest_dev" />
+	</target>
+	
+	<target name="test">
+		<exec  executable="cmd" failonerror="true">         
+			<arg line="pause" />
+		</exec> 
+		<ant antfile="build-android.xml" target="copy_navsdk_libs" />
+	</target>
+
+</project>

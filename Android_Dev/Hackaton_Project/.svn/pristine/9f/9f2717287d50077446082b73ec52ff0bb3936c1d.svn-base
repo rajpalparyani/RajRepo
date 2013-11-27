@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<project name="SearchVpl">
+	<!-- ============================================== app properties ======================================== -->
+	<property name="product.version" value="${version}" />
+        <property name="isVpl" value="true" />
+
+
+	<!-- =============================================== task definition =============================================== -->
+
+	<target name="publish-all">
+		<antcall target="publish_platform">
+			<param file="android.properties" />
+			<param file="scout_us_brand.properties" />
+		</antcall>
+	</target>
+
+	<target name="publish_platform">
+		<ant antfile="build-${platform}.xml" target="publish-platform" />
+	</target>
+
+	<target name="build_dev">
+	        <path id="ivy.cache.path" location="../.ivy-cache" />
+                <property name="ivy.default.cache" refid="ivy.cache.path" />
+                <path id="lib" location="../lib"/>
+	        <property name="output" refid="lib"/>
+		<ant antfile="build-${platform}.xml" target="build_dev" />
+	</target>
+
+	
+
+	<target name="update_svn_version" if="release">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+</project>

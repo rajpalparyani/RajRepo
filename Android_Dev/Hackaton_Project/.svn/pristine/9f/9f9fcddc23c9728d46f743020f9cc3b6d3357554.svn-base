@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telenav.ui.android.PlaceListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:scout="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/placeList0NormalItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/place_list_item_background"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <LinearLayout
+            android:id="@+id/placeList0NormalItemNumberIndicatorViewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/placeList0NormalItemNumberIndicatorMarginTop"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/placeList0NormalItemNumberIndicator"
+                android:layout_width="@dimen/placeList0NormalItemNumberIndicatorLayoutWidth"
+                android:layout_height="@dimen/placeList0NormalItemNumberIndicatorLayoutHeight"
+                android:background="@drawable/search_results_number_icon_unfocused"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="@dimen/placeList0NormalItemNumberIndicatorPaddingTop"
+                android:singleLine="true"
+                android:textColor="@color/placeList0NormalItemNumberIndicatorTextColor"
+                android:textSize="@dimen/placeList0NormalItemNumberIndicatorTextSize"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/placeList0NormalItemAds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="@string/placeListAdsIndicatorDesc"
+                android:textColor="@color/placeList0AdsItemIndicatorDescTextColor"
+                android:textSize="@dimen/placeList0AdsItemIndicatorDescTextSize"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/placeList0NormalItemIndicatorRightMarginView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="654"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/placeList0NormalItemBrandNamePaddingTop" >
+
+            <TextView
+                android:id="@+id/placeList0NormalItemBrandName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingTop="@dimen/placeList0NormalItemBrandNamePaddingTop"
+                android:singleLine="true"
+                android:textColor="@color/placeList0NormalItemBrandNameTextColor"
+                android:textSize="@dimen/placeList0NormalItemBrandNameTextSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/placeList0NormalItemDesc"
+                    android:layout_width="0dp"
+                    android:layout_weight="496"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0NormalItemDescTextColor"
+                    android:textSize="@dimen/placeList0NormalItemDescTextSize"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="88"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/placeList0NormalItemCoupon"
+                        android:layout_width="@dimen/placeList0NormalItemCouponLayoutWidth"
+                        android:layout_height="@dimen/placeList0NormalItemCouponLayoutHeight"
+                        android:contentDescription="@string/placeListResult"
+                        android:src="@drawable/search_list_results_icon_coupon_unfocused"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="@dimen/placeList0NormalItemCouponPadding"
+                        android:layout_height="fill_parent" />
+
+                    <ImageView
+                        android:id="@+id/placeList0NormalItemDeals"
+                        android:layout_width="@dimen/placeList0NormalItemCouponLayoutWidth"
+                        android:layout_height="@dimen/placeList0NormalItemCouponLayoutHeight"
+                        android:contentDescription="@string/placeListResult"
+                        android:src="@drawable/search_list_results_icon_deals_unfocused"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/placeList0NormalItemAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/placeList0NormalItemAddressTextColor"
+                android:textSize="@dimen/placeList0NormalItemAddressTextSize" />
+
+            <LinearLayout
+                android:id="@+id/placeList0NormalItemCategoryViewGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/placeList0NormalItemCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0NormalItemCategoryTextColor"
+                    android:textSize="@dimen/placeList0NormalItemCategoryTextSize"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/placeList0NormalItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0NormalItemPriceTextColor"
+                    android:textSize="@dimen/placeList0NormalItemPriceTextSize"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/placeList0NormalItemDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal|right"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0NormalItemDistanceTextColor"
+                    android:textSize="@dimen/placeList0NormalItemDistanceTextSize"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+    </LinearLayout>
+
+    <!-- View with mini poi bar -->
+
+    <LinearLayout
+        android:id="@+id/placeList0NormalSelectedItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_shelf"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22" />
+
+            <LinearLayout
+                android:id="@+id/placeList0NormalSelectedItemNumberIndicatorViewGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/placeList0NormalItemNumberIndicatorMarginTop"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/placeList0NormalSelectedItemNumberIndicator"
+                    android:layout_width="@dimen/placeList0NormalItemNumberIndicatorLayoutWidth"
+                    android:layout_height="@dimen/placeList0NormalItemNumberIndicatorLayoutHeight"
+                    android:background="@drawable/search_results_number_icon_unfocused"
+                    android:gravity="center_horizontal|top"
+                    android:paddingTop="@dimen/placeList0NormalItemNumberIndicatorPaddingTop"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0NormalItemNumberIndicatorTextColor"
+                    android:textSize="@dimen/placeList0NormalItemNumberIndicatorTextSize"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/placeList0NormalSelectedItemAds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="@string/placeListAdsIndicatorDesc"
+                    android:textColor="@color/placeList0AdsItemIndicatorDescTextColor"
+                    android:textSize="@dimen/placeList0AdsItemIndicatorDescTextSize"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/placeList0NormalSelectedItemIndicatorRightMarginView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="654"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/placeList0NormalItemBrandNamePaddingTop" >
+
+                <TextView
+                    android:id="@+id/placeList0NormalSelectedItemBrandName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:paddingTop="@dimen/placeList0NormalItemBrandNamePaddingTop"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0MiniPoiBarFirstLineTextColor"
+                    android:textSize="@dimen/placeList0NormalItemBrandNameTextSize" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/placeList0NormalSelectedItemDesc"
+                        android:layout_width="0dp"
+                        android:layout_weight="496"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="@color/placeList0NormalItemDescTextColor"
+                        android:textSize="@dimen/placeList0NormalItemDescTextSize"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="88"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/placeList0NormalSelectedItemCoupon"
+                            android:layout_width="@dimen/placeList0NormalItemCouponLayoutWidth"
+                            android:layout_height="@dimen/placeList0NormalItemCouponLayoutHeight"
+                            android:contentDescription="@string/placeListResult"
+                            android:src="@drawable/search_list_results_icon_coupon_unfocused"
+                            android:visibility="gone" />
+
+                        <View
+                            android:layout_width="@dimen/placeList0NormalItemCouponPadding"
+                            android:layout_height="fill_parent" />
+
+                        <ImageView
+                            android:id="@+id/placeList0NormalSelectedItemDeals"
+                            android:layout_width="@dimen/placeList0NormalItemCouponLayoutWidth"
+                            android:layout_height="@dimen/placeList0NormalItemCouponLayoutHeight"
+                            android:contentDescription="@string/placeListResult"
+                            android:src="@drawable/search_list_results_icon_deals_unfocused"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/placeList0NormalSelectedItemAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0MiniPoiBarSecondTextColor"
+                    android:textSize="@dimen/placeList0NormalItemAddressTextSize" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/placeList0NormalSelectedItemCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/placeList0NormalItemCategoryTextColor"
+                        android:textSize="@dimen/placeList0NormalItemCategoryTextSize" />
+
+                    <TextView
+                        android:id="@+id/placeList0NormalSelectedItemPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/placeList0NormalItemPriceTextColor"
+                        android:textSize="@dimen/placeList0NormalItemPriceTextSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/placeList0NormalSelectedItemDistance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|right"
+                        android:singleLine="true"
+                        android:textColor="@color/placeList0MiniPoiBarLastLineTextColor"
+                        android:textSize="@dimen/placeList0NormalItemDistanceTextSize"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22" />
+        </LinearLayout>
+
+        <include layout="@layout/common_mini_poi_bar" />
+    </LinearLayout>
+
+</com.telenav.ui.android.PlaceListItem>

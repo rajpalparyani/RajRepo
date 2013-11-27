@@ -1,0 +1,250 @@
+/**
+ *
+ * Copyright 2011 TeleNav, Inc. All rights reserved.
+ * JsonAddressSerializableTest.java
+ *
+ */
+package com.telenav.data.serializable.json;
+
+
+import java.util.Vector;
+
+import org.json.tnme.JSONObject;
+import org.junit.Assert;
+
+import com.telenav.data.datatypes.address.Address;
+import com.telenav.data.datatypes.address.AddressAssert;
+import com.telenav.data.datatypes.address.Stop;
+import com.telenav.data.datatypes.address.StopAssert;
+import com.telenav.data.datatypes.poi.BizPoi;
+import com.telenav.data.datatypes.poi.Poi;
+
+import junit.framework.TestCase;
+
+/**
+ *@author qli (qli@telenav.cn)
+ *@date 2011-6-20
+ */
+public class JsonAddressSerializableTest extends TestCase
+{
+    Address address = null;
+    Address stopAddress = null;
+    Address poiAddress = null;
+    Stop expectedStop = null;
+    String stopAddressFileName = "stop_address";
+    String poiAddressFileName = "Bank of America";
+    String addressStr = "{\"id\":10000,\"existedInFavorite\":false,\"selectedIndex\":0,\"sharedFromUser\":\"\",\"phoneNumber\":\"12345678\",\"status\":0,\"label\":\"stop_address\",\"type\":3,\"sharedFromPTN\":\"87654321\",\"category\":[\"category_one\",\"category_two\"]}";
+    String stopAddressStr = "{\"id\":10000,\"stop\":{\"zip\":\"94086\",\"lon\":-12201074,\"isGeocoded\":false,\"stopId\":2100,\"province\":\"CA\",\"firstLine\":\"1130 kifer rd\",\"label\":\"1130 kifer rd\",\"type\":2,\"lat\":3737392,\"streetName\":\"1130 kifer rd\",\"country\":\"United States\",\"city\":\"sunnyvale\"},\"existedInFavorite\":false,\"selectedIndex\":0,\"sharedFromUser\":\"\",\"phoneNumber\":\"12345678\",\"status\":0,\"label\":\"stop_address\",\"type\":3,\"sharedFromPTN\":\"87654321\",\"category\":[\"category_one\",\"category_two\"]}";
+    String poiAddressStr = "{\"poi\":{\"hasPoiMenu\":false,\"stop\":{\"zip\":\"94085\",\"lon\":-12200871,\"isGeocoded\":false,\"stopId\":0,\"province\":\"CA\",\"firstLine\":\"921 E ARQUES AVE\",\"label\":\"BizPoi_Stop_Label\",\"type\":2,\"lat\":3738092,\"streetName\":\"921 E ARQUES AVE\",\"country\":\"United States\",\"city\":\"sunnyvale\"},\"hasAdsMenu\":false,\"hasPoiExtraAttributes\":false,\"hasPoiDetails\":false,\"hasReviews\":true,\"type\":196,\"isRatingEnable\":true,\"hasDeals\":false,\"isSponsorPoi\":false,\"bizPoi\":{\"stop\":{\"zip\":\"94085\",\"lon\":-12200871,\"isGeocoded\":false,\"stopId\":0,\"province\":\"CA\",\"firstLine\":\"921 E ARQUES AVE\",\"label\":\"BizPoi_Stop_Label\",\"type\":2,\"lat\":3738092,\"streetName\":\"921 E ARQUES AVE\",\"country\":\"United States\",\"city\":\"sunnyvale\"},\"brand\":\"Bank of America\",\"categoryName\":\"atm\",\"distance\":\"288\",\"poiId\":\"3411857023\",\"phoneNumber\":\"8006228731\",\"distanceWithUnit\":\"0.2 mi\",\"categoryId\":\"374\"},\"categoryLogo\":\"/tnimages/logo/cat-bank.png\",\"isAdsPoi\":false,\"rating\":36,\"rated\":false,\"usePreviousRating\":0,\"brandLogo\":\"/tnimages/logo/~Bank-of-America.png\",\"popularity\":0,\"rateNumber\":9},\"id\":0,\"stop\":{\"zip\":\"94085\",\"lon\":-12200871,\"isGeocoded\":false,\"stopId\":0,\"province\":\"CA\",\"firstLine\":\"921 E ARQUES AVE\",\"label\":\"BizPoi_Stop_Label\",\"type\":2,\"lat\":3738092,\"streetName\":\"921 E ARQUES AVE\",\"country\":\"United States\",\"city\":\"sunnyvale\"},\"existedInFavorite\":false,\"selectedIndex\":1,\"sharedFromUser\":\"\",\"phoneNumber\":\"8006228731\",\"status\":1,\"label\":\"Bank of America\",\"type\":2,\"sharedFromPTN\":\"87654321\"}";
+    String stopDataStr = "{\"zip\":\"94086\",\"lon\":-12201074,\"isGeocoded\":false,\"stopId\":2100,\"province\":\"CA\",\"firstLine\":\"1130 kifer rd\",\"lastLine\":\"test_lastLine\",\"crossStreet\":\"test_crossStreet\",\"streetNumber\":\"1130\",\"label\":\"1130 kifer rd\",\"type\":2,\"lat\":3737392,\"streetName\":\"1130 kifer rd\",\"country\":\"United States\",\"city\":\"sunnyvale\"}";
+    String stopErrorStr = "{\"zip\":\"94086\",\"lon\":-12201074,\"isGeocoded\":false,\"stopId\":\"string id\",\"province\":\"CA\",\"firstLine\":\"1130 kifer rd\",\"label\":\"1130 kifer rd\",\"type\":2,\"lat\":3737392,\"streetName\":\"1130 kifer rd\",\"country\":\"United States\",\"city\":\"sunnyvale\"}";
+    byte[] addressBytes = {123, 34, 99, 97, 116, 101, 103, 111, 114, 121, 34, 58, 91, 34, 99, 97, 116, 101, 103, 111, 114, 121, 95, 111, 110, 101, 34, 44, 34, 99, 97, 116, 101, 103, 111, 114, 121, 95, 116, 119, 111, 34, 93, 44, 34, 105, 100, 34, 58, 49, 48, 48, 48, 48, 44, 34, 115, 101, 108, 101, 99, 116, 101, 100, 73, 110, 100, 101, 120, 34, 58, 48, 44, 34, 115, 116, 97, 116, 117, 115, 34, 58, 48, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 85, 115, 101, 114, 34, 58, 34, 34, 44, 34, 116, 121, 112, 101, 34, 58, 51, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 115, 116, 111, 112, 95, 97, 100, 100, 114, 101, 115, 115, 34, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 80, 84, 78, 34, 58, 34, 56, 55, 54, 53, 52, 51, 50, 49, 34, 44, 34, 101, 120, 105, 115, 116, 101, 100, 73, 110, 70, 97, 118, 111, 114, 105, 116, 101, 34, 58, 102, 97, 108, 115, 101, 44, 34, 112, 104, 111, 110, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 49, 50, 51, 52, 53, 54, 55, 56, 34, 125};
+    byte[] addressCategoryNullBytes = {123, 34, 105, 100, 34, 58, 49, 48, 48, 48, 48, 44, 34, 115, 101, 108, 101, 99, 116, 101, 100, 73, 110, 100, 101, 120, 34, 58, 48, 44, 34, 115, 116, 97, 116, 117, 115, 34, 58, 48, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 85, 115, 101, 114, 34, 58, 34, 34, 44, 34, 116, 121, 112, 101, 34, 58, 51, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 115, 116, 111, 112, 95, 97, 100, 100, 114, 101, 115, 115, 34, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 80, 84, 78, 34, 58, 34, 56, 55, 54, 53, 52, 51, 50, 49, 34, 44, 34, 101, 120, 105, 115, 116, 101, 100, 73, 110, 70, 97, 118, 111, 114, 105, 116, 101, 34, 58, 102, 97, 108, 115, 101, 44, 34, 112, 104, 111, 110, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 49, 50, 51, 52, 53, 54, 55, 56, 34, 125};
+    byte[] stopAddressBytes = {123, 34, 99, 97, 116, 101, 103, 111, 114, 121, 34, 58, 91, 34, 99, 97, 116, 101, 103, 111, 114, 121, 95, 111, 110, 101, 34, 44, 34, 99, 97, 116, 101, 103, 111, 114, 121, 95, 116, 119, 111, 34, 93, 44, 34, 105, 100, 34, 58, 49, 48, 48, 48, 48, 44, 34, 115, 101, 108, 101, 99, 116, 101, 100, 73, 110, 100, 101, 120, 34, 58, 48, 44, 34, 115, 116, 97, 116, 117, 115, 34, 58, 48, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 85, 115, 101, 114, 34, 58, 34, 34, 44, 34, 116, 121, 112, 101, 34, 58, 51, 44, 34, 115, 116, 111, 112, 34, 58, 123, 34, 115, 116, 114, 101, 101, 116, 78, 97, 109, 101, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 108, 111, 110, 34, 58, 45, 49, 50, 50, 48, 49, 48, 55, 52, 44, 34, 122, 105, 112, 34, 58, 34, 57, 52, 48, 56, 54, 34, 44, 34, 112, 114, 111, 118, 105, 110, 99, 101, 34, 58, 34, 67, 65, 34, 44, 34, 99, 111, 117, 110, 116, 114, 121, 34, 58, 34, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 34, 44, 34, 99, 105, 116, 121, 34, 58, 34, 115, 117, 110, 110, 121, 118, 97, 108, 101, 34, 44, 34, 105, 115, 71, 101, 111, 99, 111, 100, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 108, 97, 116, 34, 58, 51, 55, 51, 55, 51, 57, 50, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 102, 105, 114, 115, 116, 76, 105, 110, 101, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 115, 116, 111, 112, 73, 100, 34, 58, 50, 49, 48, 48, 44, 34, 105, 115, 83, 104, 97, 114, 101, 100, 65, 100, 100, 114, 101, 115, 115, 34, 58, 102, 97, 108, 115, 101, 125, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 115, 116, 111, 112, 95, 97, 100, 100, 114, 101, 115, 115, 34, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 80, 84, 78, 34, 58, 34, 56, 55, 54, 53, 52, 51, 50, 49, 34, 44, 34, 101, 120, 105, 115, 116, 101, 100, 73, 110, 70, 97, 118, 111, 114, 105, 116, 101, 34, 58, 102, 97, 108, 115, 101, 44, 34, 112, 104, 111, 110, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 49, 50, 51, 52, 53, 54, 55, 56, 34, 125};
+    byte[] poiAddressBytes = {123, 34, 105, 100, 34, 58, 48, 44, 34, 112, 111, 105, 34, 58, 123, 34, 114, 97, 116, 101, 78, 117, 109, 98, 101, 114, 34, 58, 57, 44, 34, 105, 115, 83, 112, 111, 110, 115, 111, 114, 80, 111, 105, 34, 58, 102, 97, 108, 115, 101, 44, 34, 98, 105, 122, 80, 111, 105, 34, 58, 123, 34, 112, 104, 111, 110, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 56, 48, 48, 54, 50, 50, 56, 55, 51, 49, 34, 44, 34, 115, 116, 111, 112, 34, 58, 123, 34, 115, 116, 114, 101, 101, 116, 78, 97, 109, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 108, 111, 110, 34, 58, 45, 49, 50, 50, 48, 48, 56, 55, 49, 44, 34, 122, 105, 112, 34, 58, 34, 57, 52, 48, 56, 53, 34, 44, 34, 112, 114, 111, 118, 105, 110, 99, 101, 34, 58, 34, 67, 65, 34, 44, 34, 99, 111, 117, 110, 116, 114, 121, 34, 58, 34, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 34, 44, 34, 99, 105, 116, 121, 34, 58, 34, 115, 117, 110, 110, 121, 118, 97, 108, 101, 34, 44, 34, 105, 115, 71, 101, 111, 99, 111, 100, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 108, 97, 116, 34, 58, 51, 55, 51, 56, 48, 57, 50, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 66, 105, 122, 80, 111, 105, 95, 83, 116, 111, 112, 95, 76, 97, 98, 101, 108, 34, 44, 34, 102, 105, 114, 115, 116, 76, 105, 110, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 115, 116, 111, 112, 73, 100, 34, 58, 48, 44, 34, 105, 115, 83, 104, 97, 114, 101, 100, 65, 100, 100, 114, 101, 115, 115, 34, 58, 102, 97, 108, 115, 101, 125, 44, 34, 99, 97, 116, 101, 103, 111, 114, 121, 78, 97, 109, 101, 34, 58, 34, 97, 116, 109, 34, 44, 34, 99, 97, 116, 101, 103, 111, 114, 121, 73, 100, 34, 58, 34, 51, 55, 52, 34, 44, 34, 100, 105, 115, 116, 97, 110, 99, 101, 87, 105, 116, 104, 85, 110, 105, 116, 34, 58, 34, 48, 46, 50, 32, 109, 105, 34, 44, 34, 112, 111, 105, 73, 100, 34, 58, 34, 51, 52, 49, 49, 56, 53, 55, 48, 50, 51, 34, 44, 34, 98, 114, 97, 110, 100, 34, 58, 34, 66, 97, 110, 107, 32, 111, 102, 32, 65, 109, 101, 114, 105, 99, 97, 34, 44, 34, 100, 105, 115, 116, 97, 110, 99, 101, 34, 58, 34, 50, 56, 56, 34, 125, 44, 34, 114, 97, 116, 105, 110, 103, 34, 58, 51, 54, 44, 34, 104, 97, 115, 82, 101, 118, 105, 101, 119, 115, 34, 58, 102, 97, 108, 115, 101, 44, 34, 104, 97, 115, 65, 100, 115, 77, 101, 110, 117, 34, 58, 102, 97, 108, 115, 101, 44, 34, 114, 97, 116, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 104, 97, 115, 80, 111, 105, 68, 101, 116, 97, 105, 108, 115, 34, 58, 102, 97, 108, 115, 101, 44, 34, 104, 97, 115, 68, 101, 97, 108, 115, 34, 58, 102, 97, 108, 115, 101, 44, 34, 104, 97, 115, 80, 111, 105, 69, 120, 116, 114, 97, 65, 116, 116, 114, 105, 98, 117, 116, 101, 115, 34, 58, 102, 97, 108, 115, 101, 44, 34, 112, 111, 112, 117, 108, 97, 114, 105, 116, 121, 34, 58, 48, 44, 34, 116, 121, 112, 101, 34, 58, 49, 57, 54, 44, 34, 115, 116, 111, 112, 34, 58, 123, 34, 115, 116, 114, 101, 101, 116, 78, 97, 109, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 108, 111, 110, 34, 58, 45, 49, 50, 50, 48, 48, 56, 55, 49, 44, 34, 122, 105, 112, 34, 58, 34, 57, 52, 48, 56, 53, 34, 44, 34, 112, 114, 111, 118, 105, 110, 99, 101, 34, 58, 34, 67, 65, 34, 44, 34, 99, 111, 117, 110, 116, 114, 121, 34, 58, 34, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 34, 44, 34, 99, 105, 116, 121, 34, 58, 34, 115, 117, 110, 110, 121, 118, 97, 108, 101, 34, 44, 34, 105, 115, 71, 101, 111, 99, 111, 100, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 108, 97, 116, 34, 58, 51, 55, 51, 56, 48, 57, 50, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 66, 105, 122, 80, 111, 105, 95, 83, 116, 111, 112, 95, 76, 97, 98, 101, 108, 34, 44, 34, 102, 105, 114, 115, 116, 76, 105, 110, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 115, 116, 111, 112, 73, 100, 34, 58, 48, 44, 34, 105, 115, 83, 104, 97, 114, 101, 100, 65, 100, 100, 114, 101, 115, 115, 34, 58, 102, 97, 108, 115, 101, 125, 44, 34, 105, 115, 82, 97, 116, 105, 110, 103, 69, 110, 97, 98, 108, 101, 34, 58, 116, 114, 117, 101, 44, 34, 117, 115, 101, 80, 114, 101, 118, 105, 111, 117, 115, 82, 97, 116, 105, 110, 103, 34, 58, 48, 44, 34, 104, 97, 115, 80, 111, 105, 77, 101, 110, 117, 34, 58, 102, 97, 108, 115, 101, 44, 34, 105, 115, 65, 100, 115, 80, 111, 105, 34, 58, 102, 97, 108, 115, 101, 125, 44, 34, 115, 101, 108, 101, 99, 116, 101, 100, 73, 110, 100, 101, 120, 34, 58, 49, 44, 34, 115, 116, 97, 116, 117, 115, 34, 58, 49, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 85, 115, 101, 114, 34, 58, 34, 34, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 115, 116, 111, 112, 34, 58, 123, 34, 115, 116, 114, 101, 101, 116, 78, 97, 109, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 108, 111, 110, 34, 58, 45, 49, 50, 50, 48, 48, 56, 55, 49, 44, 34, 122, 105, 112, 34, 58, 34, 57, 52, 48, 56, 53, 34, 44, 34, 112, 114, 111, 118, 105, 110, 99, 101, 34, 58, 34, 67, 65, 34, 44, 34, 99, 111, 117, 110, 116, 114, 121, 34, 58, 34, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 34, 44, 34, 99, 105, 116, 121, 34, 58, 34, 115, 117, 110, 110, 121, 118, 97, 108, 101, 34, 44, 34, 105, 115, 71, 101, 111, 99, 111, 100, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 108, 97, 116, 34, 58, 51, 55, 51, 56, 48, 57, 50, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 66, 105, 122, 80, 111, 105, 95, 83, 116, 111, 112, 95, 76, 97, 98, 101, 108, 34, 44, 34, 102, 105, 114, 115, 116, 76, 105, 110, 101, 34, 58, 34, 57, 50, 49, 32, 69, 32, 65, 82, 81, 85, 69, 83, 32, 65, 86, 69, 34, 44, 34, 115, 116, 111, 112, 73, 100, 34, 58, 48, 44, 34, 105, 115, 83, 104, 97, 114, 101, 100, 65, 100, 100, 114, 101, 115, 115, 34, 58, 102, 97, 108, 115, 101, 125, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 66, 97, 110, 107, 32, 111, 102, 32, 65, 109, 101, 114, 105, 99, 97, 34, 44, 34, 115, 104, 97, 114, 101, 100, 70, 114, 111, 109, 80, 84, 78, 34, 58, 34, 56, 55, 54, 53, 52, 51, 50, 49, 34, 44, 34, 101, 120, 105, 115, 116, 101, 100, 73, 110, 70, 97, 118, 111, 114, 105, 116, 101, 34, 58, 102, 97, 108, 115, 101, 44, 34, 112, 104, 111, 110, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 56, 48, 48, 54, 50, 50, 56, 55, 51, 49, 34, 125};
+    byte[] expectedStopBytes = {123, 34, 115, 116, 114, 101, 101, 116, 78, 97, 109, 101, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 108, 111, 110, 34, 58, 45, 49, 50, 50, 48, 49, 48, 55, 52, 44, 34, 122, 105, 112, 34, 58, 34, 57, 52, 48, 56, 54, 34, 44, 34, 99, 114, 111, 115, 115, 83, 116, 114, 101, 101, 116, 34, 58, 34, 116, 101, 115, 116, 95, 99, 114, 111, 115, 115, 83, 116, 114, 101, 101, 116, 34, 44, 34, 112, 114, 111, 118, 105, 110, 99, 101, 34, 58, 34, 67, 65, 34, 44, 34, 99, 111, 117, 110, 116, 114, 121, 34, 58, 34, 85, 110, 105, 116, 101, 100, 32, 83, 116, 97, 116, 101, 115, 34, 44, 34, 99, 105, 116, 121, 34, 58, 34, 115, 117, 110, 110, 121, 118, 97, 108, 101, 34, 44, 34, 104, 111, 117, 115, 101, 78, 117, 109, 98, 101, 114, 34, 58, 34, 49, 49, 51, 48, 34, 44, 34, 105, 115, 71, 101, 111, 99, 111, 100, 101, 100, 34, 58, 102, 97, 108, 115, 101, 44, 34, 108, 97, 116, 34, 58, 51, 55, 51, 55, 51, 57, 50, 44, 34, 116, 121, 112, 101, 34, 58, 50, 44, 34, 108, 97, 98, 101, 108, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 102, 105, 114, 115, 116, 76, 105, 110, 101, 34, 58, 34, 49, 49, 51, 48, 32, 107, 105, 102, 101, 114, 32, 114, 100, 34, 44, 34, 115, 116, 111, 112, 73, 100, 34, 58, 50, 49, 48, 48, 44, 34, 105, 115, 83, 104, 97, 114, 101, 100, 65, 100, 100, 114, 101, 115, 115, 34, 58, 102, 97, 108, 115, 101, 125};
+    JSONObject stopDataJson = null;
+    JSONObject stopErrorJson = null;
+
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        Vector categories = new Vector();
+        categories.addElement("category_one");
+        categories.addElement("category_two");
+        
+        address = new Address();
+        address.setCatagories(categories);
+        address.setCursorAddress(false);
+        address.setExistedInFavorite(false);
+        address.setId(10000);
+        address.setLabel(stopAddressFileName);
+        address.setPhoneNumber("12345678");
+        address.setSharedFromPTN("87654321");
+        address.setSource(Address.SOURCE_RECENT_PLACES);
+        address.setStatus(Address.UNCHANGED);
+        address.setType(Address.TYPE_RECENT_STOP);
+        
+        stopAddress = new Address();
+        stopAddress.setCatagories(categories);
+        stopAddress.setCursorAddress(false);
+        stopAddress.setExistedInFavorite(false);
+        stopAddress.setId(10000);
+        stopAddress.setLabel(stopAddressFileName);
+        stopAddress.setPhoneNumber("12345678");
+        stopAddress.setSharedFromPTN("87654321");
+        stopAddress.setSource(Address.SOURCE_RECENT_PLACES);
+        stopAddress.setStatus(Address.UNCHANGED);
+        stopAddress.setType(Address.TYPE_RECENT_STOP);
+        
+        Stop stop = new Stop();
+        stop.setCity("sunnyvale");
+        stop.setCountry("United States");
+        stop.setFirstLine("1130 kifer rd");
+        stop.setId(2100);
+        stop.setIsGeocoded(false);
+        stop.setLabel("1130 kifer rd");
+        stop.setLat(3737392);
+        stop.setLon(-12201074);
+        stop.setPostalCode("94086");
+        stop.setProvince("CA");
+        stop.setStreetName("1130 kifer rd");
+        stop.setType(Stop.STOP_RECENT);
+        stopAddress.setStop(stop);
+        
+        poiAddress = new Address();
+        poiAddress.setCursorAddress(false);
+        poiAddress.setExistedInFavorite(false);
+        poiAddress.setId(0);
+        poiAddress.setLabel(poiAddressFileName);
+        poiAddress.setPhoneNumber("8006228731");
+        poiAddress.setSharedFromPTN("87654321");
+        poiAddress.setSource(Address.SOURCE_RECENT_PLACES);
+        poiAddress.setStatus(Address.ADDED);
+        poiAddress.setType(Address.TYPE_RECENT_POI);
+        poiAddress.setSelectedIndex(1);
+        
+        Poi poi = new Poi();
+        poi.setRating(36);
+        poi.setRatingNumber(9);
+        poi.setType(Poi.TYPE_POI);
+        poi.setIsRatingEnable(true);
+        BizPoi bizPoi = new BizPoi();
+        bizPoi.setBrand("Bank of America");
+        bizPoi.setCategoryId("374");
+        bizPoi.setCategoryName("atm");
+        bizPoi.setDistance("288");
+        bizPoi.setPhoneNumber("8006228731");
+        bizPoi.setPoiId("3411857023");
+        bizPoi.setDistanceWithUnit("0.2 mi");
+        Stop poiStop = new Stop();
+        poiStop.setCity("sunnyvale");
+        poiStop.setCountry("United States");
+        poiStop.setFirstLine("921 E ARQUES AVE");
+        poiStop.setId(0);
+        poiStop.setIsGeocoded(false);
+        poiStop.setLabel("BizPoi_Stop_Label");
+        poiStop.setLat(3738092);
+        poiStop.setLon(-12200871);
+        poiStop.setPostalCode("94085");
+        poiStop.setProvince("CA");
+        poiStop.setStreetName("921 E ARQUES AVE");
+        poiStop.setType(Stop.STOP_RECENT);
+        bizPoi.setStop(poiStop);
+        
+        poiAddress.setPoi(poi);
+        poi.setStop(poiStop);
+        poi.setBizPoi(bizPoi);
+        
+        
+        expectedStop = new Stop();
+        expectedStop.setCity("sunnyvale");
+        expectedStop.setCountry("United States");
+        expectedStop.setFirstLine("1130 kifer rd");
+        expectedStop.setId(2100);
+        expectedStop.setIsGeocoded(false);
+        expectedStop.setLabel("1130 kifer rd");
+        expectedStop.setLat(3737392);
+        expectedStop.setLon(-12201074);
+        expectedStop.setPostalCode("94086");
+        expectedStop.setProvince("CA");
+        expectedStop.setStreetName("1130 kifer rd");
+        expectedStop.setType(Stop.STOP_RECENT);
+        expectedStop.setCrossStreetName("test_crossStreet");
+        expectedStop.setHouseNumber("1130");
+        stopDataJson = new JSONObject(stopDataStr);
+        stopErrorJson = new JSONObject(stopErrorStr);
+        super.setUp();
+    }
+    
+    public void testCreateAddress()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Address actual = addressSerializable.createAddress(addressStr.getBytes());
+        AddressAssert.assertAddress(address, actual);
+    }
+    
+    public void testCreateAddressHasStop()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Address address = addressSerializable.createAddress(stopAddressStr.getBytes());
+        AddressAssert.assertAddress(stopAddress, address);
+    }
+    
+    public void testCreateAddressHasPoi()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Address address = addressSerializable.createAddress(poiAddressStr.getBytes());
+        AddressAssert.assertAddress(poiAddress, address);
+    }
+    
+    public void testCreateAddressException()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Address address = addressSerializable.createAddress("This is not json data%%%%%%%URLDecoder exception".getBytes());
+        assertNull(address);
+    }
+    
+    public void testStaticCreateStop()
+    {
+        Stop actualStop = JsonAddressSerializable.createStop(stopDataJson);
+        StopAssert.assertStop(expectedStop, actualStop);
+    }
+    
+    public void testStaticCreateStopException()
+    {
+        Stop actualStop = JsonAddressSerializable.createStop(stopErrorJson);
+        assertNull(actualStop);
+    }
+    
+    public void testCreateStop()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Stop actualStop = addressSerializable.createStop(stopDataStr.getBytes());
+        StopAssert.assertStop(expectedStop, actualStop);
+    }
+    
+    public void testCreateStopException()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Stop actualStop = addressSerializable.createStop("This is not json data".getBytes());
+        assertNull(actualStop);
+    }
+    
+    public void testToBytesAddress()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Assert.assertArrayEquals(addressBytes, addressSerializable.toBytes(address));
+    }
+    
+    public void testToBytesAddressCategoriesNull()
+    {
+        address.setCatagories(null);
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        Assert.assertArrayEquals(addressCategoryNullBytes, addressSerializable.toBytes(address));
+    }
+    
+    public void testToBytesAddressHasStop()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        byte[] bytes = addressSerializable.toBytes(stopAddress);
+        Assert.assertArrayEquals(stopAddressBytes, addressSerializable.toBytes(stopAddress));
+    }
+    
+    public void testToBytesAddressHasPoi()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        byte[] bytes = addressSerializable.toBytes(poiAddress);
+        Assert.assertArrayEquals(poiAddressBytes, addressSerializable.toBytes(poiAddress));
+    }
+    
+    public void testToBytesStop()
+    {
+        JsonAddressSerializable addressSerializable = new JsonAddressSerializable();
+        byte[] bytes = addressSerializable.toBytes(expectedStop);
+        //TODO lastLineAudio byte[] object can't be serialized by json. ignore lastLine value of stop.
+        Assert.assertArrayEquals(expectedStopBytes, addressSerializable.toBytes(expectedStop));
+    }
+
+}

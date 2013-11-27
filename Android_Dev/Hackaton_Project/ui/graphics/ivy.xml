@@ -1,0 +1,16 @@
+<ivy-module version="1.0">
+	<info organisation="/mobile/ui/trunk" module="${module.name}" />
+
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="jar" />
+		<artifact name="${module.name}" type="source" ext="zip" />
+
+	</publications>
+
+	<dependencies>
+		<dependency org="/mobile/utility/trunk" name="logger" rev="+">
+			<artifact name="logger" type="jar" ext="jar" />
+			<artifact name="logger" type="source" ext="zip" />
+		</dependency>
+	</dependencies>
+</ivy-module>

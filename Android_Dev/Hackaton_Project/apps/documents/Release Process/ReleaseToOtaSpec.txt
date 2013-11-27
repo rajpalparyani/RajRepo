@@ -1,0 +1,11 @@
+How to release all the apk file to ota?
+1). Connect to d-devota-01.telenav.com. [tnuser/tndev]
+2). Cd to /usr/local/apache-tomcat-6.0.24-ota/webapps/ota/android/TN7.0.1 and run "sh ota.sh 710xxxx"
+3). Cd to /usr/local/apache-tomcat-6.0.24-ota/webapps/ota/android/TN7.0.1/widget and run "sh ota_widget.sh 10xx"
+
+
+How to release the i18n resource to StageOta(Just for QA-FP)?
+1). Connect to 192.168.117.116  [tnuser/tndev]
+2). Cd to /home/tnuser/ota/resources, and run "sh fpindexer_allChange.sh 7.x.x 7xxxxxx"
+
+Now the sync i18n URL in QA-FP is like this: http://d-ota.telenav.com/resources/7.1.1/ANDROID/SNNAVPROG/i18n/i18n.index.gz

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout android:orientation="vertical" android:id="@+id/learning_list_parent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@color/style_dark_title_bg"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+  	  <include layout="@layout/common_title" />
+
+    	<ImageView
+	        android:id="@+id/screensplitline"
+	        android:layout_width="fill_parent"
+	        android:layout_height="13dp"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY" />
+    	<View
+	        android:layout_width="fill_parent"
+	        android:layout_height="31dp" />
+    	
+	  	 <ListView android:layout_width="fill_parent"   
+	         android:layout_height="wrap_content" 
+	         android:cacheColorHint="#00000000"  
+	         android:id="@+id/learning_list"  
+	   	/>  
+   </LinearLayout> 
+    

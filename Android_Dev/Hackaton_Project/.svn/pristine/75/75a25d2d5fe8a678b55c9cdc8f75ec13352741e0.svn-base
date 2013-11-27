@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="placeList0BottomButtonMarginTopBottom">9dp</dimen>
+    <dimen name="placeList0SearchNearLocationTextSize">25dp</dimen>
+    <dimen name="placeList0FeedbackTextSize">16sp</dimen>
+    <dimen name="placeList0FeedbackPaddingTopBottom">4dp</dimen>
+    <dimen name="placeList0SearchNearLocationPaddingTop">21dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    
+    <!-- color -->
+    <color name="placeList0Background">#ffffffff</color>
+    <color name="placeList0ListViewColor">#00000000</color>
+    <color name="placeList0SearchNearLocationTextColor">#ffffffff</color>
+    <color name="placeList0BottomDivider">#ffb1b1b1</color>
+    <color name="placeList0BottomBackground">#ffdddddd</color>
+    <color name="placeList0FeedbackBackground">#ff828282</color>
+    <color name="placeList0FeedbackDescriptionColor">#ffffffff</color>
+    <color name="placeList0FeedbackLinkColor">#fffedd00</color>
+    
+</resources>

@@ -1,0 +1,518 @@
+/**
+ *
+ * Copyright 2011 TeleNav, Inc. All rights reserved.
+ * TxNodePoiSerializableTest.java
+ *
+ */
+package com.telenav.data.serializable.txnode;
+
+
+import java.util.Arrays;
+
+import junit.framework.Assert;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.telenav.data.datatypes.address.Stop;
+import com.telenav.data.datatypes.poi.Ad;
+import com.telenav.data.datatypes.poi.BizPoi;
+import com.telenav.data.datatypes.poi.Coupon;
+import com.telenav.data.datatypes.poi.OneBoxSearchBean;
+import com.telenav.data.datatypes.poi.OpenTableInfo;
+import com.telenav.data.datatypes.poi.Poi;
+import com.telenav.data.datatypes.poi.ReviewDetail;
+import com.telenav.data.datatypes.poi.SupplimentInfo;
+import com.telenav.data.serializable.SerializableManager;
+
+/**
+ * @author htzheng
+ * @date 2011-6-27
+ */
+public class TxNodePoiSerializableTest
+{
+	private TxNodePoiSerializable txNodePoiSerializable;
+	
+	private Ad ad = new Ad();//for test Ad
+	private byte[] bytes_Ad;
+	
+	private BizPoi bizPoi = new BizPoi();//for test BizPoi
+	private byte[] bytes_BizPoi;
+
+	private Coupon coupon = new Coupon();
+	private byte[] bytes_Coupon;
+	
+	private OpenTableInfo openTableInfo = new OpenTableInfo();
+	private byte[] bytes_OpenTableInfo;
+	
+	private ReviewDetail reviewDetail = new ReviewDetail();
+	private byte[] bytes_ReviewDetail;
+	
+	private SupplimentInfo supplimentInfo = new SupplimentInfo();
+	private byte[] bytes_SupplimentInfo;
+	
+	private OneBoxSearchBean oneBoxSearchBean = new OneBoxSearchBean();
+	private byte[] bytes_OneBoxSearchBean;
+	
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception
+	{
+		SerializableManager.init(new TxNodeSerializableManager());
+		txNodePoiSerializable = new TxNodePoiSerializable();
+		
+		init(ad);
+		init(bizPoi);
+		init(coupon);
+		init(openTableInfo);
+		init(reviewDetail);
+		init(supplimentInfo);
+		init(oneBoxSearchBean);
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception
+	{
+		ad = null;
+		
+		bizPoi = null;
+		
+		coupon = null;
+		
+		openTableInfo = null;
+		
+		supplimentInfo = null;
+		
+		oneBoxSearchBean = null;
+	}
+	
+	//Test AD
+	@Test
+	public void testCreateAd_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createAd(node));
+	}
+
+	@Test
+	public void testCreateAd_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		Ad ad = txNodePoiSerializable.createAd(bytes);
+		assertEmpty(ad);
+	}
+	
+	@Test
+	public void testCreateAd_HasData()
+	{
+		Ad actualAd = txNodePoiSerializable.createAd(bytes_Ad);
+		assertEquals(ad, actualAd);
+	}
+	
+	//Test BizPoi
+	
+	@Test
+	public void testCreateBizPoi_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createBizPoi(node));
+	}
+	
+	@Test
+	public void testCreateBizPoi_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		BizPoi bizPoi = txNodePoiSerializable.createBizPoi(bytes);
+		assertEmpty(bizPoi);
+	}
+	
+	
+	@Test
+	public void testCreateBizPoi_HasData()
+	{
+		BizPoi actualBizPoi = txNodePoiSerializable.createBizPoi(bytes_BizPoi);
+		assertEquals(bizPoi, actualBizPoi);
+	}
+	
+	//Test Coupon
+	
+	@Test
+	public void testCreateCoupon_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createCoupon(node));
+	}
+	
+	@Test
+	public void testCreateCoupon_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		Coupon coupon = txNodePoiSerializable.createCoupon(bytes);
+		assertEmpty(coupon);
+	}
+	
+	@Test
+	public void testCreateCoupon_HasData()
+	{
+		Coupon actualCoupon = txNodePoiSerializable.createCoupon(bytes_Coupon);
+		assertEquals(coupon, actualCoupon);
+	}
+	
+	//Test OpenTableInfo
+	
+	@Test
+	public void testCreateOpenTableInfo_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createOpenTableInfo(node));
+	}
+	
+	@Test
+	public void testCreateOpenTableInfo_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		OpenTableInfo oti = txNodePoiSerializable.createOpenTableInfo(bytes);
+		assertEmpty(oti);
+	}
+	
+	@Test
+	public void testCreateOpenTableInfo_HasData()
+	{
+		OpenTableInfo actualOti = txNodePoiSerializable.createOpenTableInfo(bytes_OpenTableInfo);
+		assertEquals(openTableInfo, actualOti);
+	}
+	
+	//Test SupplimentInfo
+	
+	@Test
+	public void testCreateSupplimentInfo_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createSupplimentInfo(node));
+	}
+	
+	@Test 
+	public void testCreateSupplimentInfo_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		SupplimentInfo si = txNodePoiSerializable.createSupplimentInfo(bytes);
+		assertEmpty(si);
+	}
+	
+	@Test
+	public void testCreateSupplimentInfo_HasData()
+	{
+		SupplimentInfo actualSi = txNodePoiSerializable.createSupplimentInfo(bytes_SupplimentInfo);
+		assertEquals(supplimentInfo, actualSi);
+	}
+	
+	//Test Review Detail
+	
+	@Test
+	public void testCreateReviewDetail_NullNode()
+	{
+		Node node = null;
+		Assert.assertNull(TxNodePoiSerializable.createReviewDetail(node));
+	}
+	
+	@Test 
+	public void testCreateReviewDetail_EmptyBytesArray()
+	{
+		byte[] bytes = new byte[0];
+		ReviewDetail rd = txNodePoiSerializable.createReviewDetail(bytes);
+		assertEmpty(rd);
+	}
+	
+	@Test
+	public void testCreateReviewDetail_HasData()
+	{
+		ReviewDetail actualRd = txNodePoiSerializable.createReviewDetail(bytes_ReviewDetail);
+		assertEquals(reviewDetail, actualRd);
+	}
+	
+	//Test OneBoxSearchBean
+	
+	@Test
+	public void testCreateOneboxSearchBean_NullData()
+	{
+		Assert.assertNull(txNodePoiSerializable.createOneBoxSearchBean(null));
+	}
+	
+	@Test
+	public void testCreateOneBoxSearchBean_EmptyData()
+	{
+		byte[] bytes = new byte[0];
+		OneBoxSearchBean ob = txNodePoiSerializable.createOneBoxSearchBean(bytes);
+		assertEmpty(ob);
+	}
+	
+	@Test
+	public void testCreateOneBoxSearchBean_HasData()
+	{
+		OneBoxSearchBean actualOb = txNodePoiSerializable.createOneBoxSearchBean(bytes_OneBoxSearchBean);
+		assertEquals(oneBoxSearchBean, actualOb);
+	}
+	
+	private void init(Ad ad)
+	{
+		if (ad == null)
+		{
+			return;
+		}
+		
+		ad.setAdID("12345");
+		ad.setAdLine("starbucks");
+		ad.setAdSource("google");
+		ad.setAdTag("coffee");
+		
+		bytes_Ad = txNodePoiSerializable.toBytes(ad);
+	}
+	
+	private void assertEmpty(Ad ad)
+	{
+		Assert.assertTrue(ad == null
+				|| (ad.getAdID() == null && ad.getAdLine() == null
+						&& ad.getAdSource() == null && ad.getAdTag() == null));
+	}
+	
+	private void assertEquals(Ad expected, Ad actuals)
+	{
+		if (expected == null && actuals == null)
+		{
+			Assert.fail();
+		}
+		else if (expected == null && actuals != null)
+		{
+			Assert.fail();
+		}
+		else if (expected != null && actuals == null)
+		{
+			Assert.fail();
+		}
+		
+
+		Assert.assertTrue(expected.getAdID().equalsIgnoreCase(actuals.getAdID())
+				&& expected.getAdLine().equalsIgnoreCase(actuals.getAdLine())
+				&& expected.getAdSource().equalsIgnoreCase(actuals.getAdSource())
+				&& expected.getAdTag().equalsIgnoreCase(actuals.getAdTag()));
+	}
+	
+	private void init(BizPoi bizPoi)
+	{
+		if (bizPoi == null)
+		{
+			return;
+		}
+		
+		bizPoi.setBrand("Test1");
+		bizPoi.setCategoryId("Test2");
+		bizPoi.setCategoryName("Test3");
+		bizPoi.setDistance("10");
+		bizPoi.setDistanceWithUnit("10m");
+		bizPoi.setPhoneNumber("5555218135");
+		bizPoi.setPoiId("1000");
+		bizPoi.setPrice("0");
+		
+		Stop stop = new Stop();
+		stop.setCity("Sunnyvale");
+		stop.setCountry("United States");
+		stop.setCrossStreetName("Wolf Rd");
+		stop.setFirstLine("1130 Kifer Rd");
+		stop.setIsGeocoded(false);
+		stop.setLat(3737392);
+		stop.setLon(-12201074);
+		stop.setPostalCode("94086");
+		stop.setProvince("CA");
+		stop.setSharedAddress(false);
+		stop.setType(Stop.STOP_RECENT);
+		bizPoi.setStop(stop);
+		
+		bytes_BizPoi = txNodePoiSerializable.toBytes(bizPoi);
+	}
+	
+	private void assertEmpty(BizPoi bizPoi)
+	{
+		Assert.assertTrue(bizPoi == null
+						|| (bizPoi.getBrand() == null
+								&& bizPoi.getCategoryId() == null
+								&& bizPoi.getCategoryName() == null
+								&& bizPoi.getDistance() == null
+								&& bizPoi.getDistanceWithUnit() == null
+								&& bizPoi.getPhoneNumber() == null
+								&& bizPoi.getPoiId() == null
+								&& bizPoi.getPrice() == null && bizPoi
+								.getStop() == null));
+		
+	}
+	
+	private void assertEquals(BizPoi expected, BizPoi actuals)
+	{
+		Assert.assertTrue(actuals.getBrand().equalsIgnoreCase(expected.getBrand())
+				&& actuals.getCategoryId().equalsIgnoreCase(expected.getCategoryId())
+				&& actuals.getCategoryName().equalsIgnoreCase(expected.getCategoryName())
+				&& actuals.getDistance().equalsIgnoreCase(expected.getDistance())
+				&& actuals.getPhoneNumber().equalsIgnoreCase(expected.getPhoneNumber())
+				&& actuals.getPoiId().equalsIgnoreCase(expected.getPoiId())
+				&& actuals.getPrice().equalsIgnoreCase(expected.getPrice())
+				&& actuals.getStop().equalsIgnoreCase(expected.getStop()));
+
+	}
+	
+	private void init(Coupon coupon)
+	{
+		if (coupon == null)
+		{
+			return;
+		}
+		
+		coupon.setDescription("coupon");
+		coupon.setEndDate("2011/7/5");
+		coupon.setImageData(new byte[]{1,2,3});
+		
+		bytes_Coupon = txNodePoiSerializable.toBytes(coupon);
+	}
+	
+	private void assertEmpty(Coupon coupon)
+	{
+		Assert.assertTrue(coupon == null
+						|| (coupon.getDescription() == null
+								&& coupon.getEndDate() == null
+								&& coupon.getImageData() == null));
+		
+	}
+	
+	private void assertEquals(Coupon expected, Coupon actuals)
+	{
+		Assert.assertTrue(actuals.getDescription().equals(expected.getDescription())
+				&& actuals.getEndDate().equals(expected.getEndDate())
+				&& Arrays.toString(actuals.getImageData()).equals(Arrays.toString(expected.getImageData())));
+		
+	}
+	
+	private void init(OpenTableInfo oti)
+	{
+		if (oti == null)
+		{
+			return;
+		}
+		
+		oti.setPartner("telenav");
+		oti.setPartnerPoiId("att");
+		oti.setIsReservable(true);
+		
+		bytes_OpenTableInfo = txNodePoiSerializable.toBytes(oti);
+	}
+	
+	private void assertEmpty(OpenTableInfo oti)
+	{
+		
+		Assert.assertTrue((oti == null) ||
+				oti.getPartner() == null
+				&& oti.getPartnerPoiId() == null
+				&& oti.getIsReservable() == false);
+	}
+	
+	private void assertEquals(OpenTableInfo expected, OpenTableInfo actuals)
+	{
+		Assert.assertTrue(actuals.getPartner().equals(expected.getPartner())
+				&& actuals.getPartnerPoiId().equals(expected.getPartnerPoiId())
+				&& (actuals.getIsReservable() == expected.getIsReservable()));
+	}
+	
+	private void init(ReviewDetail rd)
+	{
+		if (rd == null)
+		{
+			return;
+		}
+		
+		rd.setPoiId(12345);
+		rd.setRating("good");
+		rd.setReviewerName("zhtsuc");
+		rd.setReviewId(123);
+		rd.setReviewText("that's good");
+		rd.setType(Poi.TYPE_REVIEW_DETAIL);
+		rd.setUpdateDate("2011/7/6");
+		
+		bytes_ReviewDetail = txNodePoiSerializable.toBytes(rd);
+	}
+	
+	private void assertEmpty(ReviewDetail rd)
+	{
+		Assert.assertTrue((rd == null)
+				|| (rd.getPoiId() == 0
+						&& rd.getRating() == null
+						&& rd.getReviewerName() == null
+						&& rd.getReviewId() == 0
+						&& rd.getReviewText() == null
+						&& rd.getType() == 0
+						&& rd.getUpdateDate() == null));
+	}
+	
+	private void assertEquals(ReviewDetail expected, ReviewDetail actuals)
+	{
+		Assert.assertTrue(actuals.getPoiId() == expected.getPoiId()
+				&& actuals.getRating().equals(expected.getRating())
+				&& actuals.getReviewerName().equals(expected.getReviewerName())
+				&& actuals.getReviewId() == expected.getReviewId()
+				&& actuals.getType() == expected.getType()
+				&& actuals.getUpdateDate().equals(expected.getUpdateDate()));
+	}
+	
+	private void init(SupplimentInfo si)
+	{
+		if (si == null)
+		{
+			return;
+		}
+		
+		si.setPrice("9.0");
+		si.setSupportInfo("5555218135");
+		
+		bytes_SupplimentInfo = txNodePoiSerializable.toBytes(si);
+	}
+	
+	private void assertEmpty(SupplimentInfo si)
+	{
+		Assert.assertTrue(si.getPrice() == null
+				&& si.getSupportInfo() == null);
+	}
+	
+	private void assertEquals(SupplimentInfo expected, SupplimentInfo actuals)
+	{
+		Assert.assertTrue(actuals.getPrice().equals(expected.getPrice())
+				&& actuals.getSupportInfo().equals(expected.getSupportInfo()));
+	}
+	
+	private void init(OneBoxSearchBean ob)
+	{
+		if (ob == null)
+		{
+			return;
+		}
+		
+		ob.setKey("12345");
+		ob.setContent("this is one box search bean");
+		
+		bytes_OneBoxSearchBean = txNodePoiSerializable.toBytes(ob);
+	}
+	
+	private void assertEmpty(OneBoxSearchBean ob)
+	{
+		Assert.assertTrue(ob.getKey() == null
+				&& ob.getContent() == null);
+	}
+	
+	private void assertEquals(OneBoxSearchBean expected, OneBoxSearchBean actuals)
+	{
+		Assert.assertTrue(actuals.getKey().equals(expected.getKey())
+				&& actuals.getContent().equals(expected.getContent()));
+	}
+	
+}

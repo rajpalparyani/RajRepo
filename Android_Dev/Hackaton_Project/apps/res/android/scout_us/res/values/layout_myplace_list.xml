@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="myplacelist0BottomButtonMargin">11dp</dimen>
+    <dimen name="myplacelist0BottomButtonMarginTopBottom">9dp</dimen>
+    <dimen name="myplacelist0BottomButtonDrawablePadding">8dp</dimen>
+    <dimen name="myplacelist0BottomButtonLeftPadding">15dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="myplacelist0SearchNearLocationTextSize">25dp</dimen>
+    <dimen name="myplace0EmptyFirstLineTextSize">22sp</dimen>
+    <dimen name="myplace0EmptySecondLineTextSize">15sp</dimen>
+    <dimen name="myplace0EmptyThirdLineTextSize">15sp</dimen>
+    
+    <!-- color -->
+    <color name="myplacelist0Background">#ffffffff</color>
+    <color name="myplacelist0ListViewColor">#00000000</color>
+    <color name="myplacelist0ListViewDivider">#ffe2e1e1</color>
+    <color name="myplacelist0SearchNearLocationTextColor">#ffffffff</color>
+    <color name="myplace0EmptyFirstLineTextColor">#ff1b1f22</color>
+    <color name="myplace0EmptySecondLineTextColor">#ff747b83</color>
+    <color name="myplace0EmptyThirdLineTextColor">#ff747b83</color>
+    
+</resources>

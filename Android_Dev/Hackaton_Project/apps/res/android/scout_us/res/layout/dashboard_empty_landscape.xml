@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fake_Dashboard_landscape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5.8"
+        android:background="#FF0000"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:background="#FF00FF" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/fake_mapview_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_landscape"
+            android:layout_above="@+id/fake_drive_landscape"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="11dp"
+            android:background="#00FFFF" >
+        </TextView>
+
+        
+         <TextView
+            android:id="@+id/fake_drive_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginBottom="10dp"
+        	android:layout_alignParentBottom="true"
+            android:background="#FF00FF" >
+        </TextView>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+        android:layout_height="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+        android:background="#FFF00F" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#33ddFF" >
+
+        <include layout="@layout/dashboard0place_empty_landscape" />
+    </LinearLayout>
+
+</LinearLayout>

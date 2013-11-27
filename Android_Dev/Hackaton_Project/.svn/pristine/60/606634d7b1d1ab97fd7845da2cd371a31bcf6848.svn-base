@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<project name="ValidateEnv">
+	<!-- ============================================== app properties ======================================== -->
+        <property file="./../../../../../../build/build_root.properties" />
+	<property name="major.verion" value="1.1" />
+	<property name="product.version" value="${major.verion}.${version}" />
+	<!-- ============================================== import build_common.xml ======================================== -->
+	<!--<import file="build-common.xml" />-->
+	<import file="build-j2se.xml" />
+
+	<!-- ============================================== path properties ================================================ -->
+	<path id="android.boot.classpath">
+		<fileset dir="libs/${platform}">
+			<include name="android.jar" />
+		</fileset>
+	</path>
+
+	<path id="rim.boot.classpath">
+		<fileset dir="libs/${platform}">
+			<include name="net_rim_api.jar" />
+		</fileset>
+	</path>
+
+	<path id="j2me.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<path id="j2se.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<!-- =============================================== task definition =============================================== -->
+
+	<target name="publish-all">
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+			Please add the property: 'version'.
+			------------------------@TeleNav--------------------------
+		</fail>
+
+		<antcall target="publish_platform">
+			<param file="j2se.properties" />
+		</antcall>
+	</target>
+
+	<target name="publish_platform">
+		<antcall target="publish">
+			<!-- run conf -->
+			<param name="base.dir" value="${basedir}" />
+			<param name="module.name" value="ValidateEnv-${platform}" />
+			<param name="jar.file" value="ValidateEnv-${platform}" />
+			<param name="publish.include.files" value="${publish_include_files}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+                        <!-- manifest conf -->
+			<param name="main.class" value="${main_class}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-url-resolver" />
+			<param name="retrieve.repository.file" value="//${TN70_publish_server}/release" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="//${TN70_publish_server}/release" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/.ivy-cache" />
+		</antcall>
+	</target>
+
+	<target name="update_svn_version">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+</project>

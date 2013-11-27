@@ -1,0 +1,12 @@
+Connect 192.168.117.216 with SSH
+tnuser/telenav70
+go to directory with file browser
+/home/tnuser/apache-tomcat-6.0.18/webapps/resource-cserver/WEB-INF/classes/device/ATT/ANDROID/7_0_01/ATT_NAV/default/normal/en_US
+
+Then replace sdp_common.xml, and don't forget to higher the version in server_driven_parameter.xml
+
+And don't forget to use below url to refresh c-server
+
+http://192.168.117.216:8080/resource-cserver/resource-management?action=refresh
+
+http://192.168.117.216:9999/ , for web test

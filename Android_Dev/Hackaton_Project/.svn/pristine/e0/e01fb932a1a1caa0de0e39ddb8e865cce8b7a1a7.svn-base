@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/mini_search_container" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:orientation="vertical"
+	android:paddingLeft="8dip" 
+	android:paddingRight="8dip" 
+	android:paddingTop="10dip"
+	android:paddingBottom="10dip" 
+	android:gravity="center_vertical"	
+	android:layout_marginLeft="@dimen/widget_land_marginLeft"
+	android:layout_marginRight="@dimen/widget_land_marginRight"
+	android:layout_marginTop="@dimen/mini_land_marginTop"
+	android:layout_marginBottom="@dimen/mini_land_marginBottom"	
+	android:background="@drawable/widgets_bg_unfocused">
+
+	<LinearLayout
+		android:visibility="gone"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 		
+		android:orientation="horizontal" 
+		android:gravity="center_vertical"
+		android:paddingRight="10dip"
+		android:paddingBottom="5dip">
+		<ImageView
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:src="@drawable/widgets_pin_icon_unfocused">
+		</ImageView>
+			
+		<TextView 
+			android:id="@+id/Address"
+	        android:layout_width="wrap_content"
+			android:layout_height="fill_parent" 
+	        android:layout_weight="0.5"
+	        android:paddingLeft="10dip"
+	        android:paddingRight="10dip"
+	        android:gravity="left|center_vertical"
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:editable="false"
+	        android:focusable="false"
+	        android:inputType="none"
+			android:textSize="14dip"
+	        android:textStyle="bold"
+			android:clickable="false" 
+			android:textColor="@color/commonLabel"/>
+			
+		<ImageView
+			android:layout_width="2dip" 
+			android:layout_height="fill_parent"			
+			android:layout_marginLeft="5dip" 
+			android:layout_marginRight="8dip" 
+			android:src="@drawable/widgets_vline_unfocused">
+		</ImageView>
+		<ImageButton 
+			android:id="@+id/search"
+			android:layout_width="32dip" 
+			android:layout_height="32dip"			
+			android:src="@drawable/widgets_tab_search_icon_focused"
+			android:background="@android:color/transparent">
+		</ImageButton>
+		<ImageView
+			android:layout_width="2dip" 
+			android:layout_height="fill_parent"			
+			android:layout_marginLeft="8dip" 
+			android:layout_marginRight="8dip" 
+			android:src="@drawable/widgets_vline_unfocused">
+		</ImageView>
+		<ImageButton android:id="@+id/cat"
+			android:layout_width="32dip" 
+			android:layout_height="32dip"			
+			android:src="@xml/widget_cat_tab_btn_bg"
+			android:background="@xml/widget_common_btn_bg">
+		</ImageButton>
+	</LinearLayout>
+	
+	<RelativeLayout
+		android:id="@+id/onebox"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:paddingTop="0dip"
+		android:paddingBottom="0dip"			
+		android:background="@xml/widget_onebox_bg"
+		android:clickable="true" >
+		
+		<ImageView
+			android:id="@+id/magnify"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"				
+			android:src="@drawable/widgets_searchbox_search_icon_unfocused">
+		</ImageView>
+		
+		<TextView 
+			android:id="@+id/input"
+	        android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/magnify"
+			android:layout_centerVertical="true"	
+			android:paddingLeft="10dip"	        
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:editable="false"
+	        android:focusable="true"
+	        android:inputType="none"
+			android:textSize="14dip"
+	        android:textStyle="normal"	        
+	        android:textColor="@color/around"
+	        android:textColorHint="#808080"	        
+			android:clickable="false" >
+		</TextView>		
+	</RelativeLayout>
+	
+</LinearLayout>

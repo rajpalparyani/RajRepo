@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="recent0SearchBoxMargin">11dp</dimen>
+    <dimen name="recent0SearchBoxMarginTopBottom">9dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="recent0EmptyFirstLineTextSize">22sp</dimen>
+    <dimen name="recent0EmptySecondLineTextSize">15sp</dimen>
+    <dimen name="recent0EmptyThirdLineTextSize">15sp</dimen>
+
+    <!-- color -->
+    <color name="recent0Background">#ffffffff</color>
+    <color name="recent0ListViewColor">#00000000</color>
+    <color name="recent0ListViewDivider">#ffe5e4e3</color>
+    <color name="recent0EmptyFirstLineTextColor">#ff1b1f22</color>
+    <color name="recent0EmptySecondLineTextColor">#ff747b83</color>
+    <color name="recent0EmptyThirdLineTextColor">#ff747b83</color>
+
+</resources>

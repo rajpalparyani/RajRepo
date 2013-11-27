@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/placeList0Background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbox_bg_unfocused"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/placeList0BottomButtonMarginTopBottom"
+        android:paddingLeft="@dimen/common_side_margin"
+        android:paddingRight="@dimen/common_side_margin"
+        android:paddingTop="@dimen/placeList0BottomButtonMarginTopBottom" >
+
+        <include layout="@layout/common_onebox" />
+
+        <TextView
+            android:id="@+id/placeList0SearchNearLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="@dimen/placeList0SearchNearLocationPaddingTop"
+            android:paddingBottom="@dimen/commonBottomButtonPadding"
+            android:singleLine="true"
+            android:textColor="@color/bottom_button_foreground"
+            android:textSize="@dimen/commonBottomButtonTextSize"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/placeList0SearchAlongContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/placeList0BottomButtonMarginTopBottom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+            
+            <com.telenav.ui.android.CommonBottom
+                android:id="@+id/placeList0CommonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                
+            <include
+                android:id="@+id/placeList0SearchAlongUpAheadView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                layout="@layout/common_bottom_left_button" />
+
+            <include
+                android:id="@+id/placeList0SearchAlongUpDestinationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                layout="@layout/common_bottom_right_button" />
+             </com.telenav.ui.android.CommonBottom>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.telenav.ui.android.TnListView
+            android:id="@+id/placeList0ListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="@color/placeList0ListViewColor"
+            android:fastScrollEnabled="true"
+            android:overScrollFooter="@null" />
+        
+            <LinearLayout
+                android:id="@+id/placeList0SortByContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/placeList0BottomBackground"
+                android:orientation="vertical"
+                android:gravity="bottom" >
+            
+            <com.telenav.ui.android.CommonBottom
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/commonBottomContainer"
+                android:orientation="vertical"  >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/placeList0BottomDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/placeList0BottomButtonMarginTopBottom"
+                    android:layout_marginLeft="@dimen/common_side_margin"
+                    android:layout_marginRight="@dimen/common_side_margin"
+                    android:layout_marginTop="@dimen/placeList0BottomButtonMarginTopBottom"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <include
+                        android:id="@+id/placeList0SortByBestMatchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        layout="@layout/common_bottom_left_button" />
+
+                    <include
+                        android:id="@+id/placeList0SortByDistanceView"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        layout="@layout/common_bottom_right_button" />
+                </LinearLayout>
+            </com.telenav.ui.android.CommonBottom>
+
+            </LinearLayout>
+     </LinearLayout>
+
+</LinearLayout>

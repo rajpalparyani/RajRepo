@@ -1,0 +1,16 @@
+http://jira.telenav.com:8080/browse/SPEECHSVC-154
+http://jira.telenav.com:8080/browse/SPEECHSVC-143
+http://jira.telenav.com:8080/browse/SPEECHSVC-133
+http://jira.telenav.com:8080/browse/SPEECHSVC-132
+http://jira.telenav.com:8080/browse/SPEECHSVC-131
+http://jira.telenav.com:8080/browse/SPEECHSVC-129
+http://jira.telenav.com:8080/browse/SPEECHSVC-122
+http://jira.telenav.com:8080/browse/SPEECHSVC-121
+http://jira.telenav.com:8080/browse/SPEECHSVC-113
+http://jira.telenav.com:8080/browse/SPEECHSVC-108
+http://jira.telenav.com:8080/browse/SPEECHSVC-105
+http://jira.telenav.com:8080/browse/SPEECHSVC-89
+http://jira.telenav.com:8080/browse/SPEECHSVC-80
+http://jira.telenav.com:8080/browse/SPEECHSVC-66
+http://jira.telenav.com:8080/browse/SPEECHSVC-61
+http://jira.telenav.com:8080/browse/SPEECHSVC-57

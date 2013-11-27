@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="share_sms">SMS</string>
+    <string name="share_email">Email</string>
+    <string name="share_twitter">Twitter</string>
+    <string name="share_facebook">Facebook</string>
+    <string name="share_more">More</string>
+    
+    <string name="share_location_subject_format">Scouted: %1$s</string>
+    <string name="share_location_short_content_format">I used Scout to find %1$s%2$s. Drive there with free maps and directions. %3$s</string>
+    <string name="share_location_short_content_twitter_format">Discovered via @Scout: %1$s. Drive there: %2$s</string>
+    <string name="share_location_content_prefix">Scouted:</string>
+    <string name="share_location_content_suffix_1">Get the Scout app on your</string>
+    <string name="share_location_content_suffix_2">Android</string>
+    <string name="share_location_content_suffix_3">,</string>
+    <string name="share_location_content_suffix_4">iPhone</string>
+    <string name="share_location_content_suffix_5">or other mobile devices.</string>
+	<string name="iphone_download_url">https://itunes.apple.com/us/app/scout-by-telenav/id467816643?mt=8</string>
+	<string name="android_download_url">https://play.google.com/store/apps/details?id=com.telenav.app.android.scout_us</string>
+	<string name="share_eta_on_content_format">On my way %1$s. ETA: around %2$s. Scout my real-time arrival:  %3$s</string>
+    <string name="share_eta_off_content_format">On my way %1$s. Will be there around %2$s. using Scout: http://m.scout.me/app</string>
+    <string name="share_location_title">Share Location Via</string>
+    
+    <string name="share_scout_title">Share Scout Via</string>
+    <string name="share_scout_sms_content">I discovered this awesome navigation app, Scout. You should try it too. http://m.scout.me/app</string>
+    <string name="share_scout_email_subject">I discovered this awesome app, Scout.  You should try it too.</string>
+    <string name="share_scout_email_content">Hey, I\'ve been using the Scout personalized GPS navigation app and loving it. I thought you might like it too.  Learn about Scout here: http://m.scout.me/app</string>
+    <string name="share_scout_facebook_title">I\'m using Scout and loving it! You should try it too.</string>
+    <string name="share_scout_facebook_URL">http://m.scout.me/app</string>
+    <string name="share_scout_facebook_detail">Scout is a personalized GPS navigation and traffic app. Scout helps you power through your daily commute, find fun things to do and places to go, and get there with accurate voice-guided directions.</string>
+    <string name="share_scout_twitter_content">I discovered this awesome navigation app, Scout. You should try it too. http://m.scout.me/app</string>
+    
+    
+</resources>

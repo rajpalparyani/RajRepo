@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.telenav.searchwidget.android.CatchBackLineaLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout"
+	android:layout_width="fill_parent"
+	android:layout_height="60dip"
+	android:paddingLeft="9dip" 
+	android:paddingRight="9dip" 
+	android:paddingTop="10dip"
+	android:paddingBottom="10dip"
+	android:orientation="horizontal"
+	android:background="@drawable/widgets_bg_unfocused">
+	<RelativeLayout
+	    android:id="@+id/onebox_container"
+		  android:layout_width="fill_parent"
+		  android:layout_height="fill_parent" 
+		  android:layout_weight="1"
+		  android:paddingLeft="0dip"
+		  android:paddingTop="0dip"
+		  android:paddingBottom="0dip"			
+		  android:clickable="false" >
+		  <com.telenav.searchwidget.android.AndroidEditTextView
+			  android:id="@+id/input" 
+		    android:layout_width="fill_parent"
+			  android:layout_height="fill_parent"
+			  android:layout_weight="1.0"
+			  android:paddingLeft="10dip"
+			  android:paddingRight="30dip"
+			  android:paddingTop="0dip"
+			  android:paddingBottom="0dip"
+			  android:gravity="left|center_vertical"
+			  android:textSize="14dip"
+			  android:singleLine="true"
+			  android:background="@xml/widget_onebox_bg"
+			  android:imeOptions="actionSearch"/>
+		<ImageView
+		    android:id="@+id/cancel" 
+		    android:layout_width="wrap_content" 
+		    android:layout_height="fill_parent" 
+		    android:paddingRight="10dip"
+		    android:clickable="true" 
+		    android:visibility="gone"
+		    android:src="@drawable/widgets_clear_icon_unfocused" 
+		    android:layout_alignParentTop="true"
+		    android:layout_alignParentRight="true"/>
+	</RelativeLayout>	
+		<ImageButton
+			 android:id="@+id/search"
+			 android:layout_width="40dip"
+			 android:layout_height="40dip"	
+			 android:layout_toRightOf="@id/onebox_container"
+			 android:layout_marginLeft="10dip"	
+			 android:src="@xml/widget_search_btn"	
+		         android:background="@xml/widget_search_btn_bg"		
+			 android:clickable="true">
+		</ImageButton>
+</com.telenav.searchwidget.android.CatchBackLineaLayout>

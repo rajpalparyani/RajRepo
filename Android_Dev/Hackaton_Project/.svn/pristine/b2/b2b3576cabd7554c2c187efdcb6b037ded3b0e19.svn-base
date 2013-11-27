@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/onebox_background"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/commonOneboxDsrButton_landscape"
+            android:layout_width="@dimen/commonOneboxDsrButtonLayoutWidth"
+            android:layout_height="@dimen/commonOneboxDsrButtonLayoutHeight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/commonOneboxDsrButtonMarginRight"
+            android:clickable="true"
+            android:contentDescription="@string/oneboxDsrDesc"
+            android:onClick="onClick"
+            android:src="@drawable/inputbox_mic_icon" />
+
+        <TextView
+            android:id="@+id/commonOneboxTextView_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:hint="@string/oneboxSearchHint"
+            android:maxLength="100"
+            android:onClick="onClick"
+            android:singleLine="true"
+            android:textColor="#999999"
+            android:textSize="@dimen/commonOneboxTextViewTextSize" />
+    </LinearLayout>
+
+</merge>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_places_icon_nothing_unfocused" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/myplace0EmptyFirstLineText"
+        android:textColor="@color/myplace0EmptyFirstLineTextColor"
+        android:textSize="@dimen/myplace0EmptyFirstLineTextSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/myplace0EmptySecondLineText"
+        android:textColor="@color/myplace0EmptySecondLineTextColor"
+        android:textSize="@dimen/myplace0EmptySecondLineTextSize" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/myplace0EmptyThirdLineText1"
+            android:textColor="@color/myplace0EmptyThirdLineTextColor"
+            android:textSize="@dimen/myplace0EmptyThirdLineTextSize" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_places_icon_nothing_heart_unfocused" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/myplace0EmptyThirdLineText2"
+            android:textColor="@color/myplace0EmptyThirdLineTextColor"
+            android:textSize="@dimen/myplace0EmptyThirdLineTextSize" />
+    </LinearLayout>
+
+</LinearLayout>

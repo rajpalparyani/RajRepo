@@ -1,0 +1,36 @@
+#============This is for manually definition resource============
+MD_MANDATORY_CLIENT_VERSION=7.6.0
+MD_MANDATORY_PRODUCT_NAME=SCOUT_FREE
+MD_MANDATORY_PROGRAM_CODE=SCOUTUSPROG
+MD_DEFAULT_LOCALE=en_US
+MD_DEFAULT_REGION=US
+MD_IS_NEED_DETECT_REGION=false
+MD_IS_NEED_PTN_VERIFICATION=true
+MD_API_KEY=AQAAATFIee+Af/////////8AAAABAAAAAQEAAAAQI5hrf/tYzYw/haxlO8c+egEAAAAOAwAAAIEAAAC5AAAAAgA=
+
+#============This is for copy i18n resource============
+BRAND_NAME=scout_us
+MD_locales-list=en_US
+
+#============This is for the whole application property============
+MD_APPLICATION_VERSION=1.6.0
+
+#===========This is for the release apk file name===========
+jar_name=tn76-android-scout-us
+
+#===========This is for the CarConnect Support name===========
+CarConnectBuildType=real
+
+#==================Below is for Android========================
+ACTIVITY_PACKAGE=scout_us
+ACTIVITY_NAME=TeleNav
+WIDGET_CARRIER=searchVpl-scout-us
+NAVSERVICE_NAME=NavServiceAN
+MD_APP_NAME=Scout
+TARGET_API_VERSION=10
+#==================Below is for shortcut=================================
+IS_NEED_SHORTCUT=true
+MD_MAPS_SHORTCUT_NAME=My Maps
+MD_NAV_SHORTCUT_NAME=My Nav
+MD_PLACES_SHORTCUT_NAME=Nearby
+

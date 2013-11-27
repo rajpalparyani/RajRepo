@@ -1,0 +1,30 @@
+<project name="build-android">
+	<!-- ============================================== import build_common.xml ======================================== -->
+
+	<property name="ant.lib.dir" value="../../lib/ant-lib" />
+	<!-- ============================================== path properties ================================================ -->
+	<path id="ant.taskdef.classpath">
+		<fileset dir="${ant.lib.dir}" includes="*.jar" />
+	</path>
+
+
+	<!-- ============================================== target ============================================== -->
+
+	<target name="load_tools_project">
+		
+		<!-- ===============================================tools task definition =============================================== -->
+		<!-- tools task definition -->
+		<taskdef name="ninePatchBinaryFilesCreatorTask" classname="com.telenav.ant.task.common.NinePatchBinaryFilesCreatorTask" classpathref="ant.taskdef.classpath" />
+		<taskdef name="generaterNinepathResClassTask" classname="com.telenav.ant.task.common.NinePatchResGeneratorTask" classpathref="ant.taskdef.classpath" />
+	</target>
+
+	
+   	<target name="generaterNinepathResClassTask" description="generate a class of ninePatchRes class" depends="load_tools_project">
+		<generaterNinepathResClassTask dirpath="${dirPath}" resultPath="${resultPath}/" />
+	</target>
+   	
+   	<target name="ninePatchBundle" description="generate a batch of .image files" depends="load_tools_project">
+		<ninePatchBinaryFilesCreatorTask filepath="${ninepatch_src_dir}" filepath2="${ninepatch_src_dir2}" resultPath="${ninepatch_out_dir}/" />
+	</target>
+	
+</project>

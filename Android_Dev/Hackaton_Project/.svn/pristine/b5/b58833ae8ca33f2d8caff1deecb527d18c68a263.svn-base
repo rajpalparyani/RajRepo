@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dwf0SliderEmptyItemWidth"
+    android:layout_height="wrap_content"
+    android:background="@color/dwf0SliderEmptyItemBackground"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dwf0SliderEmptyItemPaddingLeft"
+    android:paddingRight="@dimen/dwf0SliderEmptyItemPaddingRight"
+    android:paddingTop="@dimen/dwf0SliderEmptyItemPaddingTop" >
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="@dimen/dwf0SliderEmptyItemProgressbarWidth"
+        android:layout_height="@dimen/dwf0SliderEmptyItemProgressbarHeight"
+        android:layout_margin="@dimen/dwf0SliderEmptyItemProgressbarMargin" />
+
+</LinearLayout>

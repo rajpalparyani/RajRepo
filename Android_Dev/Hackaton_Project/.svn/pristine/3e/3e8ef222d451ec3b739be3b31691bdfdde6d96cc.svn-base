@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="myplaceTitle">My Places</string>
+    <string name="myplaceAdd">Add</string>
+    <string name="myplaceEdit">Edit</string>
+    <string name="myplaceSort">Sort</string>
+    <string name="myplaceCommandAddToFolder">Add to a folder</string>
+    
+    <string name="myplace0EmptyFirstLineText">You have no saved places yet</string>
+    <string name="myplace0EmptySecondLineText">Scout places you like.</string>
+    <string name="myplace0EmptyThirdLineText1">Tap the&#160;</string>
+    <string name="myplace0EmptyThirdLineText2">&#160;icon to save.</string>
+</resources>

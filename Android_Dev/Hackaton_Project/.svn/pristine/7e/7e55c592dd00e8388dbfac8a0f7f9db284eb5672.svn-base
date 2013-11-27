@@ -1,0 +1,31 @@
+<ivysettings>
+	<settings defaultResolver="${ivy.default.retrieve.resolver}"/>
+	<caches defaultCacheDir="${ivy.default.cache}" />
+	<resolvers>
+		<filesystem name="retrieve-artifact-repository-file">
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision]-trunk.[ext]"/>
+		</filesystem>
+		<url name="retrieve-artifact-repository-url">
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[artifact]-[revision]-trunk.[ext]"/>
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[artifact]-[revision]-release.[ext]"/>			
+		</url>
+		<chain name="retrieve-url-resolver" dual="true">
+			<resolver ref="retrieve-artifact-repository-url"/>
+		</chain>
+		
+		<chain name="retrieve-file-resolver" dual="true">
+			<resolver ref="retrieve-artifact-repository-file"/>
+			<resolver ref="retrieve-artifact-repository-url"/>
+		</chain>
+
+		<filesystem name="publish-artifact-repository-file">
+			<artifact pattern="${publish.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+		</filesystem>
+		
+		<chain name="publish-file-resolver" dual="true">
+			<resolver ref="publish-artifact-repository-file"/>
+		</chain>
+	</resolvers>
+</ivysettings>
+

@@ -1,0 +1,524 @@
+{
+    "traffic" :
+    {
+        "fast" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "traffic",
+            "color1" : "#00aa00ff",
+            "width1" : [14.0, 9.0, 7.0, 5.2, 3.2, 3.2, 2.6, 2.2, 1.4, 1.2, 1.2, 1.2, 1.2, 0.0, 0.0, 0.0, 0.0]
+        },
+        "medium" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "traffic",
+            "color1" : "#ff8c00ff",
+            "width1" : [14.0, 9.0, 7.0, 5.2, 3.2, 3.2, 2.6, 2.2, 1.4, 1.2, 1.2, 1.2, 1.2, 0.0, 0.0, 0.0, 0.0]
+        },
+        "slow" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "traffic",
+            "color1" : "#eb0000ff",
+            "width1" : [14.0, 9.0, 7.0, 5.2, 3.2, 3.2, 2.6, 2.2, 1.4, 1.2, 1.2, 1.2, 1.2, 0.0, 0.0, 0.0, 0.0]
+        }
+    },
+    "route":
+    {
+        "routeA":
+        {
+            "dashed": false,
+            "outlined": true,
+            "draw_group1": "traffic",
+            "color1": "#54d18eff",
+            "width1": [5.2, 4.7, 4.3, 3.95, 3.6, 3.3, 3.05, 2.8, 2.6, 2.4, 2.2, 2.05, 1.9, 1.8, 1.7, 1.6, 1.5]
+        },
+        "routeB":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#8095ffff",
+            "width1": [5.2, 4.7, 4.3, 3.95, 3.6, 3.3, 3.05, 2.8, 2.6, 2.4, 2.2, 2.05, 1.9, 1.8, 1.7, 1.6, 1.5]
+        },
+        "routeC":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#e6688bff",
+            "width1": [5.2, 4.7, 4.3, 3.95, 3.6, 3.3, 3.05, 2.8, 2.6, 2.4, 2.2, 2.05, 1.9, 1.8, 1.7, 1.6, 1.5]
+        },
+        "routeABold":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#00ab00ff",
+            "width1": [7.75, 7.075, 6.475, 5.95, 5.425, 4.975, 4.6, 4.225, 3.925, 3.625, 3.325, 3.1, 2.875, 2.725, 2.575, 2.425, 2.275]
+        },
+        "routeBBold":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#263fbfff",
+            "width1": [7.75, 7.075, 6.475, 5.95, 5.425, 4.975, 4.6, 4.225, 3.925, 3.625, 3.325, 3.1, 2.875, 2.725, 2.575, 2.425, 2.275]
+        },
+        "routeCBold":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#b30033ff",
+            "width1": [7.75, 7.075, 6.475, 5.95, 5.425, 4.975, 4.6, 4.225, 3.925, 3.625, 3.325, 3.1, 2.875, 2.725, 2.575, 2.425, 2.275]
+        },
+        "trafficAlternateRoute":
+        {
+            "dashed": false,
+            "outlined": false,
+            "draw_group1": "traffic",
+            "color1": "#e8008bff",
+            "width1": [5.2, 4.7, 4.3, 3.95, 3.6, 3.3, 3.05, 2.8, 2.6, 2.4, 2.2, 2.05, 1.9, 1.8, 1.7, 1.6, 1.5]
+        }
+    },
+    "traffic_annotation" :
+    {
+        "accident_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_accident.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "accident_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_accident.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "accident_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_accident.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "congestion_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_congestion.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "congestion_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_congestion.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "congestion_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_congestion.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "construction_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_construction.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "construction_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_construction.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "construction_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_construction.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 60,
+            "icon_h" : 60,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "disabled_car_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic1.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "disabled_car_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic2.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "disabled_car_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic3.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "event_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic1.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "event_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic2.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "event_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic3.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "misc_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic1.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "misc_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic2.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 40,
+            "icon_h" : 40,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "misc_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic3.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 45,
+            "icon_h" : 45,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "camera_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_cam.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 45,
+            "icon_h" : 45,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "camera_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_cam.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 45,
+            "icon_h" : 45,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "camera_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_cam.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 50,
+            "icon_h" : 50,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "speed_trap_severe" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_police.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 90,
+            "icon_h" : 90,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "speed_trap_major" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_police.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 90,
+            "icon_h" : 90,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        },
+        "speed_trap_minor" :
+        {
+            "style" : "billboard_icon",
+            "icon_name" : "traffic_police.png",
+            "priority" : 20,
+            "icon_x" : 20,
+            "icon_y" : 0,
+            "icon_w" : 90,
+            "icon_h" : 90,
+            "font_face" : "DroidSansPro",
+            "font_size" : 20,
+            "render_size" : 14,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffff7f",
+            "text_alignment" : "center",
+            "always_visible" : false
+        }
+    },
+    "map" :
+    {
+        "base_tile_size" : 256,
+        "cache_capacity" : 4,
+        "zoom_levels_to_draw" : 3,
+        "max_vbo_vertex" : 131072,
+        "defaults" :
+        {
+            "show_landmarks" : true
+        }
+    },
+    "view":
+    {
+        "default_eye_distance" : 1.0,
+        "default_fov" : 65.0,
+        "default_zoom_lower_bound" : -5.0,
+        "default_zoom_upper_bound" : 16.0,
+        "default_declination_3d" : -45.0,        
+        "default_vertical_offset" : 0.0
+    },
+    "breadcrumb" :
+    {
+        "record" : false
+    }
+}
+

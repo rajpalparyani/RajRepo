@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="commonAppName">Scout</string>
+    <string name="commonExiting">Exiting&#8230;</string>
+
+    <string name="commonDone">Done</string>
+    <string name="commonSubmit">Submit</string>
+    <string name="commonGo">Go</string>
+    
+    <string name="commonShare">Share</string>
+    <string name="commonNoResultsFirstLine">Oops, no results found</string>
+    <string name="commonNoResultsSecondLine">No match found for \"%1$s\".</string>
+    <string name="commonNoResultsThirdLine">Please try a different search.</string>
+    
+</resources>

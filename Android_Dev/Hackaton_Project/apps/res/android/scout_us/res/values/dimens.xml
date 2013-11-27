@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_side_margin">11dp</dimen>
+    <dimen name="common_transparent_stroke">1.0dip</dimen>
+    <dimen name="common_round_corner_radius">2.0dip</dimen>
+    <dimen name="common_stroke">1.0px</dimen>
+    <dimen name="common_margin">8dp</dimen>
+    <dimen name="common_height">48dp</dimen>
+    <dimen name="common_inner_margin">4dp</dimen>
+    <dimen name="complete_icon_size">20dp</dimen>
+    <dimen name="common_title_height">50dp</dimen>
+    <dimen name="common_min_screen_width">320dp</dimen>
+</resources>

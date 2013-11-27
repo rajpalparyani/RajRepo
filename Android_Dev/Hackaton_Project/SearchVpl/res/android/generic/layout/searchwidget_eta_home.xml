@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/etaHome"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="0.45" 
+		android:paddingLeft="2dip"
+		android:paddingRight="0dip"
+		android:gravity="left"
+		android:orientation="horizontal">
+        <TextView 
+			android:id="@+id/toStr" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:paddingRight="3dip" 
+			android:paddingTop="4dip"
+			android:gravity="left|bottom"
+			android:singleLine="true"
+			android:inputType="none" 
+			android:textSize="@dimen/text_size_small" 
+			android:textStyle="bold"
+			android:focusable="true" 
+			android:textColor="@color/toColor"
+			android:text="Time to Home">
+		</TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.55"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingLeft="2dip"
+        android:paddingBottom="0dip" >
+
+        <TextView
+            android:id="@+id/etaHomeHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom"
+            android:inputType="none"
+            android:singleLine="true"
+            android:text="00"
+            android:textColor="@color/nearbyColor"
+            android:textSize="@dimen/text_size_big"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/homeHourStr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/etaHomeHour"
+            android:layout_toRightOf="@id/etaHomeHour"
+            android:gravity="bottom"
+            android:inputType="none"
+            android:paddingRight="4dip"
+            android:paddingLeft="4dip"
+            android:singleLine="true"
+            android:text=":"
+            android:textColor="@color/nearbyColor"
+            android:textSize="@dimen/text_size_big"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/etaHomeMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/etaHomeHour"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/homeHourStr"
+            android:gravity="bottom"
+            android:inputType="none"
+            android:singleLine="true"
+            android:text="00"
+            android:textColor="@color/nearbyColor"
+            android:textSize="@dimen/text_size_big"
+            android:textStyle="bold" >
+        </TextView>
+    </RelativeLayout>
+
+</LinearLayout>

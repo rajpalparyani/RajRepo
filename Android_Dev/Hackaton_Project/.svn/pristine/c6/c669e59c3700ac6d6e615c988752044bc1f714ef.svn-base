@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recent0Background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:id="@+id/recent0FilterContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbox_bg_unfocused"
+        android:paddingBottom="@dimen/recent0SearchBoxMarginTopBottom"
+        android:paddingLeft="@dimen/recent0SearchBoxMargin"
+        android:paddingRight="@dimen/recent0SearchBoxMargin"
+        android:paddingTop="@dimen/recent0SearchBoxMarginTopBottom" >
+    </LinearLayout>
+
+    <com.telenav.ui.android.TnListView
+        android:id="@+id/recent0ListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@color/recent0ListViewColor"
+        android:fastScrollEnabled="true"
+        android:overScrollFooter="@null"
+        android:listSelector="#00000000" />
+
+</LinearLayout>

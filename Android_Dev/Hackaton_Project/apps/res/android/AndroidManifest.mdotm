@@ -1,0 +1,9 @@
+
+		<!-- ##Mdotm Receiver, don't remove## -->	
+		<receiver android:name="com.telenav.app.android.scout_us.MdotmReceiver"  android:exported="true">
+                    <intent-filter>
+                        <action android:name="com.android.vending.INSTALL_REFERRER" />
+                    </intent-filter>
+                </receiver>
+		<!-- ##Mdotm Receiver, don't remove## -->
+		

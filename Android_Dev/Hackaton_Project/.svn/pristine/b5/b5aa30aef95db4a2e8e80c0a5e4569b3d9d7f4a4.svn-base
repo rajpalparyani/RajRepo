@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="recent0EmptyFirstLineText">You have no recents yet</string>
+    <string name="recent0EmptySecondLineText">Just drive. Scout remembers where</string>
+    <string name="recent0EmptyThirdLineText">you\'ve been.</string>
+
+</resources>

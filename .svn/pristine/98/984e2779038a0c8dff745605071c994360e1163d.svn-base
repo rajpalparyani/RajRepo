@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="telenav"
+		module="TelenavNavigator"
+		revision="working@rajpalp-mbp15.telenav.com"
+		conf="default"
+		confs="default"
+		date="20130617143655"/>
+	<dependencies>
+		<module organisation="telenav" name="MonkeyTalk">
+			<revision name="1.0.50" status="release" pubdate="20130606150705" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="35">
+				<metadata-artifact status="successful" details="" size="374" time="7" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MonkeyTalk/ivy-1.0.50.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MonkeyTalk/ivy-1.0.50.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MonkeyTalk/MonkeyTalk-ios-sdk6.0-1.0.50-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="1.0.50" rev-constraint-default="1.0.50" rev-constraint-dynamic="1.0.50" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="MonkeyTalk" type="zip" ext="zip" status="successful" details="" size="19968533" time="1706" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MonkeyTalk/zips/MonkeyTalk-1.0.50.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MonkeyTalk/MonkeyTalk-ios-sdk6.0-1.0.50-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="SpeechService">
+			<revision name="1.1.21238" status="release" pubdate="20130610213100" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="32">
+				<metadata-artifact status="successful" details="" size="870" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SpeechService/ivy-1.1.21238.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SpeechService/ivy-1.1.21238.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/SpeechService/SpeechService-ios-sdk6.0-1.1.21238-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="1.1.+" rev-constraint-default="1.1.+" rev-constraint-dynamic="1.1.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="SpeechService" type="zip" ext="zip" status="successful" details="" size="1474079" time="144" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SpeechService/zips/SpeechService-1.1.21238.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/SpeechService/SpeechService-ios-sdk6.0-1.1.21238-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="AudioEndPointing">
+			<revision name="1.0.81353" status="release" pubdate="20130603185825" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="34">
+				<metadata-artifact status="successful" details="" size="486" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioEndPointing/ivy-1.0.81353.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioEndPointing/ivy-1.0.81353.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/AudioEndPointing/AudioEndPointing-ios-sdk6.0-1.0.81353-trunk.xml"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.0.81353" rev-constraint-default="1.0.81353" rev-constraint-dynamic="1.0.81353" callerrev="1.1.21238"/>
+				<artifacts>
+					<artifact name="AudioEndPointing" type="zip" ext="zip" status="successful" details="" size="15575" time="12" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioEndPointing/zips/AudioEndPointing-1.0.81353.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/AudioEndPointing/AudioEndPointing-ios-sdk6.0-1.0.81353-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="AudioSpeexEncoder">
+			<revision name="1.2.3.93911" status="release" pubdate="20130603183303" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="33">
+				<metadata-artifact status="successful" details="" size="490" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioSpeexEncoder/ivy-1.2.3.93911.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioSpeexEncoder/ivy-1.2.3.93911.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/AudioSpeexEncoder/AudioSpeexEncoder-ios-sdk6.0-1.2.3.93911-trunk.xml"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.2.3.93911" rev-constraint-default="1.2.3.93911" rev-constraint-dynamic="1.2.3.93911" callerrev="1.1.21238"/>
+				<artifacts>
+					<artifact name="AudioSpeexEncoder" type="zip" ext="zip" status="successful" details="" size="642843" time="68" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AudioSpeexEncoder/zips/AudioSpeexEncoder-1.2.3.93911.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/AudioSpeexEncoder/AudioSpeexEncoder-ios-sdk6.0-1.2.3.93911-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="ScoutFoundation">
+			<revision name="1.4.21365" status="release" pubdate="20130613152708" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="31">
+				<metadata-artifact status="successful" details="" size="397" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.21365.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.21365.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/ScoutFoundation/ScoutFoundation-ios-sdk6.0-1.4.21365-trunk.xml"/>
+				<caller organisation="telenav" name="UserService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="6.0.21351"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="1.4.+" rev-constraint-default="1.4.+" rev-constraint-dynamic="1.4.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<caller organisation="telenav" name="AdService" conf="default" rev="1.4.18890" rev-constraint-default="1.4.18890" rev-constraint-dynamic="1.4.+" callerrev="2.4.18908"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="2.5.21363"/>
+				<caller organisation="telenav" name="EntityService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="2.5.21222"/>
+				<artifacts>
+					<artifact name="ScoutFoundation" type="zip" ext="zip" status="successful" details="" size="2985485" time="284" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/zips/ScoutFoundation-1.4.21365.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/ScoutFoundation/ScoutFoundation-ios-sdk6.0-1.4.21365-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.4.21202" status="release" pubdate="20130610140617" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" evicted="latest-revision" evicted-reason="" downloaded="true" searched="true" default="false" conf="default, *" position="-1">
+				<metadata-artifact status="successful" details="" size="397" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.21202.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.21202.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/ScoutFoundation/ScoutFoundation-ios-sdk6.0-1.4.21202-trunk.xml"/>
+				<evicted-by rev="1.4.21365"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="1.1.21238"/>
+				<caller organisation="telenav" name="UserService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="6.0.21351"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="2.5.21363"/>
+				<caller organisation="telenav" name="EntityService" conf="default" rev="1.4.21202" rev-constraint-default="1.4.21202" rev-constraint-dynamic="1.4.+" callerrev="2.5.21222"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.4.18890" status="release" pubdate="20130507180525" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" evicted="latest-revision" evicted-reason="" downloaded="true" searched="true" default="false" conf="default, *" position="-1">
+				<metadata-artifact status="successful" details="" size="397" time="11" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.18890.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ScoutFoundation/ivy-1.4.18890.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/ScoutFoundation/ScoutFoundation-ios-sdk6.0-1.4.18890-trunk.xml"/>
+				<evicted-by rev="1.4.21365"/>
+				<caller organisation="telenav" name="AdService" conf="default" rev="1.4.18890" rev-constraint-default="1.4.18890" rev-constraint-dynamic="1.4.+" callerrev="2.4.18908"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="UserService">
+			<revision name="6.0.21351" status="release" pubdate="20130613111426" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="30">
+				<metadata-artifact status="successful" details="" size="481" time="28" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/UserService/ivy-6.0.21351.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/UserService/ivy-6.0.21351.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/UserService/UserService-ios-sdk6.0-6.0.21351-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="6.0.+" rev-constraint-default="6.0.+" rev-constraint-dynamic="6.0.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="UserService" type="zip" ext="zip" status="successful" details="" size="1877927" time="210" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/UserService/zips/UserService-6.0.21351.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/UserService/UserService-ios-sdk6.0-6.0.21351-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MapMatching">
+			<revision name="2.1.20923" status="release" pubdate="20130606120930" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="28">
+				<metadata-artifact status="successful" details="" size="540" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapMatching/ivy-2.1.20923.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapMatching/ivy-2.1.20923.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MapMatching/MapMatching-ios-sdk6.0-2.1.20923-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.1.+" rev-constraint-default="2.1.+" rev-constraint-dynamic="2.1.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="MapMatching" type="zip" ext="zip" status="successful" details="" size="872977" time="90" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapMatching/zips/MapMatching-2.1.20923.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MapMatching/MapMatching-ios-sdk6.0-2.1.20923-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="NavEngine">
+			<revision name="4.3.20792" status="release" pubdate="20130604171440" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="29">
+				<metadata-artifact status="successful" details="" size="475" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavEngine/ivy-4.3.20792.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavEngine/ivy-4.3.20792.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/NavEngine/NavEngine-ios-sdk6.0-4.3.20792-trunk.xml"/>
+				<caller organisation="telenav" name="MapMatching" conf="default" rev="4.3.20792" rev-constraint-default="4.3.20792" rev-constraint-dynamic="4.3.20792" callerrev="2.1.20923"/>
+				<artifacts>
+					<artifact name="NavEngine" type="zip" ext="zip" status="successful" details="" size="5496689" time="513" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavEngine/zips/NavEngine-4.3.20792.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/NavEngine/NavEngine-ios-sdk6.0-4.3.20792-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MapEngine">
+			<revision name="2.2.21482" status="release" pubdate="20130617133223" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="20">
+				<metadata-artifact status="successful" details="" size="545" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapEngine/ivy-2.2.21482.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapEngine/ivy-2.2.21482.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MapEngine/MapEngine-ios-sdk6.0-2.2.21482-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.2.+" rev-constraint-default="2.2.+" rev-constraint-dynamic="2.2.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="MapEngine" type="zip" ext="zip" status="successful" details="" size="5500421" time="515" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapEngine/zips/MapEngine-2.2.21482.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MapEngine/MapEngine-ios-sdk6.0-2.2.21482-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MapDisplayGraphics">
+			<revision name="2.3.20516" status="release" pubdate="20130530141321" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="21">
+				<metadata-artifact status="successful" details="" size="1429" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapDisplayGraphics/ivy-2.3.20516.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapDisplayGraphics/ivy-2.3.20516.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MapDisplayGraphics/MapDisplayGraphics-ios-sdk6.0-2.3.20516-trunk.xml"/>
+				<caller organisation="telenav" name="MapEngine" conf="default" rev="2.3.20516" rev-constraint-default="2.3.20516" rev-constraint-dynamic="2.3.20516" callerrev="2.2.21482"/>
+				<artifacts>
+					<artifact name="MapDisplayGraphics" type="zip" ext="zip" status="successful" details="" size="89255893" time="8074" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapDisplayGraphics/zips/MapDisplayGraphics-2.3.20516.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MapDisplayGraphics/MapDisplayGraphics-ios-sdk6.0-2.3.20516-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="TnUrl">
+			<revision name="1.1.97262" status="release" pubdate="20130516181443" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="27">
+				<metadata-artifact status="successful" details="" size="549" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TnUrl/ivy-1.1.97262.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TnUrl/ivy-1.1.97262.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/TnUrl/TnUrl-ios-sdk6.0-1.1.97262-trunk.xml"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.1.97262" rev-constraint-default="1.1.97262" rev-constraint-dynamic="1.1.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="TnUrl" type="zip" ext="zip" status="successful" details="" size="1009286" time="102" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TnUrl/zips/TnUrl-1.1.97262.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/TnUrl/TnUrl-ios-sdk6.0-1.1.97262-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="SQLite">
+			<revision name="3.3071400.92908" status="release" pubdate="20130528193152" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="26">
+				<metadata-artifact status="successful" details="" size="385" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SQLite/ivy-3.3071400.92908.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SQLite/ivy-3.3071400.92908.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/SQLite/SQLite-ios-sdk6.0-3.3071400.92908-trunk.xml"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="3.3071400.92908" rev-constraint-default="3.3071400.92908" rev-constraint-dynamic="3.3071400.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="SQLite" type="zip" ext="zip" status="successful" details="" size="2281604" time="216" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SQLite/zips/SQLite-3.3071400.92908.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/SQLite/SQLite-ios-sdk6.0-3.3071400.92908-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Png">
+			<revision name="1.5.2.97863" status="release" pubdate="20130528202258" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="25">
+				<metadata-artifact status="successful" details="" size="543" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Png/ivy-1.5.2.97863.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Png/ivy-1.5.2.97863.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Png/Png-ios-sdk6.0-1.5.2.97863-trunk.xml"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.5.2.97863" rev-constraint-default="1.5.2.97863" rev-constraint-dynamic="1.5.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="Png" type="zip" ext="zip" status="successful" details="" size="725667" time="77" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Png/zips/Png-1.5.2.97863.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Png/Png-ios-sdk6.0-1.5.2.97863-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Jpeg">
+			<revision name="8.3.73081" status="release" pubdate="20130528204017" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="24">
+				<metadata-artifact status="successful" details="" size="375" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Jpeg/ivy-8.3.73081.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Jpeg/ivy-8.3.73081.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Jpeg/Jpeg-ios-sdk6.0-8.3.73081-trunk.xml"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="8.3.73081" rev-constraint-default="8.3.73081" rev-constraint-dynamic="8.3.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="Jpeg" type="zip" ext="zip" status="successful" details="" size="1152419" time="115" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Jpeg/zips/Jpeg-8.3.73081.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Jpeg/Jpeg-ios-sdk6.0-8.3.73081-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Curl">
+			<revision name="7.24.0.96384" status="release" pubdate="20130528213442" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="23">
+				<metadata-artifact status="successful" details="" size="549" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Curl/ivy-7.24.0.96384.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Curl/ivy-7.24.0.96384.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Curl/Curl-ios-sdk6.0-7.24.0.96384-trunk.xml"/>
+				<caller organisation="telenav" name="TnUrl" conf="default" rev="7.24.0.96384" rev-constraint-default="7.24.0.96384" rev-constraint-dynamic="7.24.+" callerrev="1.1.97262"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="7.24.0.96384" rev-constraint-default="7.24.0.96384" rev-constraint-dynamic="7.24.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="Curl" type="zip" ext="zip" status="successful" details="" size="2569420" time="245" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Curl/zips/Curl-7.24.0.96384.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Curl/Curl-ios-sdk6.0-7.24.0.96384-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="CJSON">
+			<revision name="1.0.93078" status="release" pubdate="20130613195549" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="22">
+				<metadata-artifact status="successful" details="" size="464" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CJSON/ivy-1.0.93078.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CJSON/ivy-1.0.93078.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/CJSON/CJSON-ios-sdk6.0-1.0.93078-trunk.xml"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.0.93078" rev-constraint-default="1.0.93078" rev-constraint-dynamic="1.0.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="CJSON" type="zip" ext="zip" status="successful" details="" size="42815" time="14" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CJSON/zips/CJSON-1.0.93078.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/CJSON/CJSON-ios-sdk6.0-1.0.93078-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="EntityService">
+			<revision name="2.5.21222" status="release" pubdate="20130610160719" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="18">
+				<metadata-artifact status="successful" details="" size="580" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/EntityService/ivy-2.5.21222.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/EntityService/ivy-2.5.21222.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/EntityService/EntityService-ios-sdk6.0-2.5.21222-trunk.xml"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="2.5.21222" rev-constraint-default="2.5.21222" rev-constraint-dynamic="2.5.+" callerrev="1.1.21238"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.5.+" rev-constraint-default="2.5.+" rev-constraint-dynamic="2.5.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="EntityService" type="zip" ext="zip" status="successful" details="" size="881053" time="91" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/EntityService/zips/EntityService-2.5.21222.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/EntityService/EntityService-ios-sdk6.0-2.5.21222-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MicroSearchService">
+			<revision name="1.9.20953" status="release" pubdate="20130613000143" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="19">
+				<metadata-artifact status="successful" details="" size="749" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroSearchService/ivy-1.9.20953.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroSearchService/ivy-1.9.20953.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroSearchService/MicroSearchService-ios-sdk6.0-1.9.20953-trunk.xml"/>
+				<caller organisation="telenav" name="EntityService" conf="default" rev="1.9.20953" rev-constraint-default="1.9.20953" rev-constraint-dynamic="1.9.+" callerrev="2.5.21222"/>
+				<artifacts>
+					<artifact name="MicroSearchService" type="zip" ext="zip" status="successful" details="" size="5582859" time="521" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroSearchService/zips/MicroSearchService-1.9.20953.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroSearchService/MicroSearchService-ios-sdk6.0-1.9.20953-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MapService">
+			<revision name="2.5.21363" status="release" pubdate="20130613150751" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="3">
+				<metadata-artifact status="successful" details="" size="713" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapService/ivy-2.5.21363.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapService/ivy-2.5.21363.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MapService/MapService-ios-sdk6.0-2.5.21363-trunk.xml"/>
+				<caller organisation="telenav" name="MapMatching" conf="default" rev="2.5.20922" rev-constraint-default="2.5.20922" rev-constraint-dynamic="2.5.+" callerrev="2.1.20923"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.5.+" rev-constraint-default="2.5.+" rev-constraint-dynamic="2.5.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<caller organisation="telenav" name="MapEngine" conf="default" rev="2.5.21363" rev-constraint-default="2.5.21363" rev-constraint-dynamic="2.5.+" callerrev="2.2.21482"/>
+				<artifacts>
+					<artifact name="MapService" type="zip" ext="zip" status="successful" details="" size="4881110" time="459" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MapService/zips/MapService-2.5.21363.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MapService/MapService-ios-sdk6.0-2.5.21363-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.5.20922" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, *" position="-1">
+				<evicted-by rev="2.5.21363"/>
+				<caller organisation="telenav" name="MapMatching" conf="default" rev="2.5.20922" rev-constraint-default="2.5.20922" rev-constraint-dynamic="2.5.+" callerrev="2.1.20923"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MicroMapDisplayService">
+			<revision name="1.9.17755" status="release" pubdate="20130517163532" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="17">
+				<metadata-artifact status="successful" details="" size="672" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroMapDisplayService/ivy-1.9.17755.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroMapDisplayService/ivy-1.9.17755.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroMapDisplayService/MicroMapDisplayService-ios-sdk6.0-1.9.17755-trunk.xml"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.9.17755" rev-constraint-default="1.9.17755" rev-constraint-dynamic="1.9.17755" callerrev="2.5.21363"/>
+				<artifacts>
+					<artifact name="MicroMapDisplayService" type="zip" ext="zip" status="successful" details="" size="4614710" time="434" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroMapDisplayService/zips/MicroMapDisplayService-1.9.17755.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroMapDisplayService/MicroMapDisplayService-ios-sdk6.0-1.9.17755-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MicroRoutingService">
+			<revision name="1.9.20954" status="release" pubdate="20130613000133" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="4">
+				<metadata-artifact status="successful" details="" size="751" time="13" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroRoutingService/ivy-1.9.20954.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroRoutingService/ivy-1.9.20954.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroRoutingService/MicroRoutingService-ios-sdk6.0-1.9.20954-trunk.xml"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.9.20954" rev-constraint-default="1.9.20954" rev-constraint-dynamic="1.9.+" callerrev="2.5.21363"/>
+				<artifacts>
+					<artifact name="MicroRoutingService" type="zip" ext="zip" status="successful" details="" size="11253578" time="1057" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroRoutingService/zips/MicroRoutingService-1.9.20954.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroRoutingService/MicroRoutingService-ios-sdk6.0-1.9.20954-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="CRegExLib">
+			<revision name="1.9.20887" status="release" pubdate="20130605195152" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="16">
+				<metadata-artifact status="successful" details="" size="466" time="8" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CRegExLib/ivy-1.9.20887.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CRegExLib/ivy-1.9.20887.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/CRegExLib/CRegExLib-ios-sdk6.0-1.9.20887-trunk.xml"/>
+				<caller organisation="telenav" name="MicroSearchService" conf="default" rev="1.9.20887" rev-constraint-default="1.9.20887" rev-constraint-dynamic="1.9.+" callerrev="1.9.20953"/>
+				<caller organisation="telenav" name="MicroRoutingService" conf="default" rev="1.9.20887" rev-constraint-default="1.9.20887" rev-constraint-dynamic="1.9.+" callerrev="1.9.20954"/>
+				<caller organisation="telenav" name="MicroMapDisplayService" conf="default" rev="1.9.14035" rev-constraint-default="1.9.14035" rev-constraint-dynamic="1.9.+" callerrev="1.9.17755"/>
+				<artifacts>
+					<artifact name="CRegExLib" type="zip" ext="zip" status="successful" details="" size="1119446" time="112" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/CRegExLib/zips/CRegExLib-1.9.20887.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/CRegExLib/CRegExLib-ios-sdk6.0-1.9.20887-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.9.14035" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, *" position="-1">
+				<evicted-by rev="1.9.20887"/>
+				<caller organisation="telenav" name="MicroMapDisplayService" conf="default" rev="1.9.14035" rev-constraint-default="1.9.14035" rev-constraint-dynamic="1.9.+" callerrev="1.9.17755"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="MicroCommon">
+			<revision name="1.9.18724" status="release" pubdate="20130607171152" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="9">
+				<metadata-artifact status="successful" details="" size="558" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroCommon/ivy-1.9.18724.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroCommon/ivy-1.9.18724.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroCommon/MicroCommon-ios-sdk6.0-1.9.18724-trunk.xml"/>
+				<caller organisation="telenav" name="MicroSearchService" conf="default" rev="1.9.18724" rev-constraint-default="1.9.18724" rev-constraint-dynamic="1.9.+" callerrev="1.9.20953"/>
+				<caller organisation="telenav" name="MicroRoutingService" conf="default" rev="1.9.18724" rev-constraint-default="1.9.18724" rev-constraint-dynamic="1.9.+" callerrev="1.9.20954"/>
+				<caller organisation="telenav" name="MicroMapDisplayService" conf="default" rev="1.9.18724" rev-constraint-default="1.9.18724" rev-constraint-dynamic="1.9.+" callerrev="1.9.17755"/>
+				<artifacts>
+					<artifact name="MicroCommon" type="zip" ext="zip" status="successful" details="" size="2333377" time="222" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/MicroCommon/zips/MicroCommon-1.9.18724.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/MicroCommon/MicroCommon-ios-sdk6.0-1.9.18724-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="NavProtocol">
+			<revision name="1.0.20942" status="release" pubdate="20130607170625" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="15">
+				<metadata-artifact status="successful" details="" size="563" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavProtocol/ivy-1.0.20942.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavProtocol/ivy-1.0.20942.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/NavProtocol/NavProtocol-ios-sdk6.0-1.0.20942-trunk.xml"/>
+				<caller organisation="telenav" name="MicroCommon" conf="default" rev="1.0.20942" rev-constraint-default="1.0.20942" rev-constraint-dynamic="1.0.+" callerrev="1.9.18724"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.0.18420" rev-constraint-default="1.0.18420" rev-constraint-dynamic="1.0.+" callerrev="2.3.20516"/>
+				<artifacts>
+					<artifact name="NavProtocol" type="zip" ext="zip" status="successful" details="" size="2349975" time="225" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/NavProtocol/zips/NavProtocol-1.0.20942.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/NavProtocol/NavProtocol-ios-sdk6.0-1.0.20942-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.0.18420" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, *" position="-1">
+				<evicted-by rev="1.0.20942"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.0.18420" rev-constraint-default="1.0.18420" rev-constraint-dynamic="1.0.+" callerrev="2.3.20516"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="TMDB">
+			<revision name="1.9.20326" status="release" pubdate="20130528230849" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="10">
+				<metadata-artifact status="successful" details="" size="720" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TMDB/ivy-1.9.20326.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TMDB/ivy-1.9.20326.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/TMDB/TMDB-ios-sdk6.0-1.9.20326-trunk.xml"/>
+				<caller organisation="telenav" name="CRegExLib" conf="default" rev="1.9.20326" rev-constraint-default="1.9.20326" rev-constraint-dynamic="1.9.+" callerrev="1.9.20887"/>
+				<caller organisation="telenav" name="MicroCommon" conf="default" rev="1.9.20326" rev-constraint-default="1.9.20326" rev-constraint-dynamic="1.9.+" callerrev="1.9.18724"/>
+				<artifacts>
+					<artifact name="TMDB" type="zip" ext="zip" status="successful" details="" size="46977753" time="4272" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TMDB/zips/TMDB-1.9.20326.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/TMDB/TMDB-ios-sdk6.0-1.9.20326-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="TinyXML">
+			<revision name="1.2.144638" status="release" pubdate="20130528220042" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="14">
+				<metadata-artifact status="successful" details="" size="382" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TinyXML/ivy-1.2.144638.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TinyXML/ivy-1.2.144638.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/TinyXML/TinyXML-ios-sdk6.0-1.2.144638-trunk.xml"/>
+				<caller organisation="telenav" name="TMDB" conf="default" rev="1.2.144638" rev-constraint-default="1.2.144638" rev-constraint-dynamic="1.2.+" callerrev="1.9.20326"/>
+				<artifacts>
+					<artifact name="TinyXML" type="zip" ext="zip" status="successful" details="" size="298133" time="38" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/TinyXML/zips/TinyXML-1.2.144638.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/TinyXML/TinyXML-ios-sdk6.0-1.2.144638-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Foundation">
+			<revision name="1.1.98548" status="release" pubdate="20130613195829" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="11">
+				<metadata-artifact status="successful" details="" size="474" time="11" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Foundation/ivy-1.1.98548.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Foundation/ivy-1.1.98548.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Foundation/Foundation-ios-sdk6.0-1.1.98548-trunk.xml"/>
+				<caller organisation="telenav" name="NavProtocol" conf="default" rev="1.1.98548" rev-constraint-default="1.1.98548" rev-constraint-dynamic="1.1.+" callerrev="1.0.20942"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.1.98548" rev-constraint-default="1.1.98548" rev-constraint-dynamic="1.1.+" callerrev="1.1.21238"/>
+				<caller organisation="telenav" name="TnUrl" conf="default" rev="1.1.98548" rev-constraint-default="1.1.98548" rev-constraint-dynamic="1.1.+" callerrev="1.1.97262"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.1.98548" rev-constraint-default="1.1.98548" rev-constraint-dynamic="1.1.+" callerrev="2.3.20516"/>
+				<caller organisation="telenav" name="TMDB" conf="default" rev="1.1.98548" rev-constraint-default="1.1.98548" rev-constraint-dynamic="1.1.+" callerrev="1.9.20326"/>
+				<artifacts>
+					<artifact name="Foundation" type="zip" ext="zip" status="successful" details="" size="3165569" time="299" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Foundation/zips/Foundation-1.1.98548.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Foundation/Foundation-ios-sdk6.0-1.1.98548-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="ThreadPool">
+			<revision name="1.0.95762" status="release" pubdate="20130613195931" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="12">
+				<metadata-artifact status="successful" details="" size="473" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ThreadPool/ivy-1.0.95762.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ThreadPool/ivy-1.0.95762.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/ThreadPool/ThreadPool-ios-sdk6.0-1.0.95762-trunk.xml"/>
+				<caller organisation="telenav" name="Foundation" conf="default" rev="1.0.95762" rev-constraint-default="1.0.95762" rev-constraint-dynamic="1.0.+" callerrev="1.1.98548"/>
+				<artifacts>
+					<artifact name="ThreadPool" type="zip" ext="zip" status="successful" details="" size="20618" time="13" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/ThreadPool/zips/ThreadPool-1.0.95762.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/ThreadPool/ThreadPool-ios-sdk6.0-1.0.95762-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Boost">
+			<revision name="1.51.0.98578" status="release" pubdate="20130613194412" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="13">
+				<metadata-artifact status="successful" details="" size="470" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Boost/ivy-1.51.0.98578.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Boost/ivy-1.51.0.98578.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Boost/Boost-ios-sdk6.0-1.51.0.98578-trunk.xml"/>
+				<caller organisation="telenav" name="ThreadPool" conf="default" rev="1.51.0.98578" rev-constraint-default="1.51.0.98578" rev-constraint-dynamic="1.51.+" callerrev="1.0.95762"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.51.0.93058" rev-constraint-default="1.51.0.93058" rev-constraint-dynamic="1.51.0.93058" callerrev="1.1.21238"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.51.0.98578" rev-constraint-default="1.51.0.98578" rev-constraint-dynamic="1.51.+" callerrev="2.3.20516"/>
+				<caller organisation="telenav" name="TMDB" conf="default" rev="1.51.0.98578" rev-constraint-default="1.51.0.98578" rev-constraint-dynamic="1.51.+" callerrev="1.9.20326"/>
+				<artifacts>
+					<artifact name="Boost" type="zip" ext="zip" status="successful" details="" size="18810971" time="1726" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Boost/zips/Boost-1.51.0.98578.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Boost/Boost-ios-sdk6.0-1.51.0.98578-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.51.0.93058" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, *" position="-1">
+				<evicted-by rev="1.51.0.98578"/>
+				<caller organisation="telenav" name="SpeechService" conf="default" rev="1.51.0.93058" rev-constraint-default="1.51.0.93058" rev-constraint-dynamic="1.51.0.93058" callerrev="1.1.21238"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Protobuf">
+			<revision name="2.4.1.96257" status="release" pubdate="20130528200810" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="6">
+				<metadata-artifact status="successful" details="" size="553" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Protobuf/ivy-2.4.1.96257.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Protobuf/ivy-2.4.1.96257.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Protobuf/Protobuf-ios-sdk6.0-2.4.1.96257-trunk.xml"/>
+				<caller organisation="telenav" name="NavProtocol" conf="default" rev="2.4.1.96257" rev-constraint-default="2.4.1.96257" rev-constraint-dynamic="2.4.+" callerrev="1.0.20942"/>
+				<caller organisation="telenav" name="MicroSearchService" conf="default" rev="2.4.1.96257" rev-constraint-default="2.4.1.96257" rev-constraint-dynamic="2.4.+" callerrev="1.9.20953"/>
+				<caller organisation="telenav" name="MicroRoutingService" conf="default" rev="2.4.1.96257" rev-constraint-default="2.4.1.96257" rev-constraint-dynamic="2.4.+" callerrev="1.9.20954"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="2.4.1.96257" rev-constraint-default="2.4.1.96257" rev-constraint-dynamic="2.4.+" callerrev="2.3.20516"/>
+				<caller organisation="telenav" name="MicroMapDisplayService" conf="default" rev="2.4.1.96257" rev-constraint-default="2.4.1.96257" rev-constraint-dynamic="2.4.+" callerrev="1.9.17755"/>
+				<artifacts>
+					<artifact name="Protobuf" type="zip" ext="zip" status="successful" details="" size="15840816" time="1450" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Protobuf/zips/Protobuf-2.4.1.96257.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Protobuf/Protobuf-ios-sdk6.0-2.4.1.96257-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Zlib">
+			<revision name="1.2.93118" status="release" pubdate="20130528190902" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="7">
+				<metadata-artifact status="successful" details="" size="462" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Zlib/ivy-1.2.93118.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Zlib/ivy-1.2.93118.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Zlib/Zlib-ios-sdk6.0-1.2.93118-trunk.xml"/>
+				<caller organisation="telenav" name="Curl" conf="default" rev="1.2.93118" rev-constraint-default="1.2.93118" rev-constraint-dynamic="1.2.+" callerrev="7.24.0.96384"/>
+				<caller organisation="telenav" name="Protobuf" conf="default" rev="1.2.93118" rev-constraint-default="1.2.93118" rev-constraint-dynamic="1.2.+" callerrev="2.4.1.96257"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.2.93118" rev-constraint-default="1.2.93118" rev-constraint-dynamic="1.2.+" callerrev="2.3.20516"/>
+				<caller organisation="telenav" name="Png" conf="default" rev="1.2.93118" rev-constraint-default="1.2.93118" rev-constraint-dynamic="1.2.+" callerrev="1.5.2.97863"/>
+				<artifacts>
+					<artifact name="Zlib" type="zip" ext="zip" status="successful" details="" size="309075" time="38" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Zlib/zips/Zlib-1.2.93118.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Zlib/Zlib-ios-sdk6.0-1.2.93118-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="PlatformHacks">
+			<revision name="1.0.93082" status="release" pubdate="20130614142337" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="8">
+				<metadata-artifact status="successful" details="" size="393" time="9" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/PlatformHacks/ivy-1.0.93082.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/PlatformHacks/ivy-1.0.93082.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/PlatformHacks/PlatformHacks-ios-sdk6.0-1.0.93082-trunk.xml"/>
+				<caller organisation="telenav" name="Curl" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1.0.+" callerrev="7.24.0.96384"/>
+				<caller organisation="telenav" name="Protobuf" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="2.4.1.96257"/>
+				<caller organisation="telenav" name="Boost" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1.0.+" callerrev="1.51.0.98578"/>
+				<caller organisation="telenav" name="AudioEndPointing" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.0.81353"/>
+				<caller organisation="telenav" name="AudioSpeexEncoder" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.2.3.93911"/>
+				<caller organisation="telenav" name="NavEngine" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1.0.+" callerrev="4.3.20792"/>
+				<caller organisation="telenav" name="Zlib" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.2.93118"/>
+				<caller organisation="telenav" name="CJSON" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.0.93078"/>
+				<caller organisation="telenav" name="MapDisplayGraphics" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1.0.+" callerrev="2.3.20516"/>
+				<caller organisation="telenav" name="TMDB" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.9.20326"/>
+				<caller organisation="telenav" name="Png" conf="default" rev="1.0.93082" rev-constraint-default="1.0.93082" rev-constraint-dynamic="1+" callerrev="1.5.2.97863"/>
+				<artifacts>
+					<artifact name="PlatformHacks" type="zip" ext="zip" status="successful" details="" size="3458" time="11" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/PlatformHacks/zips/PlatformHacks-1.0.93082.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/PlatformHacks/PlatformHacks-ios-sdk6.0-1.0.93082-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="Stemmer">
+			<revision name="1.2.144638" status="release" pubdate="20130201210330" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="5">
+				<metadata-artifact status="successful" details="" size="343" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Stemmer/ivy-1.2.144638.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Stemmer/ivy-1.2.144638.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/Stemmer/Stemmer-ios-sdk6.0-1.2.144638-trunk.xml"/>
+				<caller organisation="telenav" name="MicroSearchService" conf="default" rev="1.2.144638" rev-constraint-default="1.2.144638" rev-constraint-dynamic="1.2.+" callerrev="1.9.20953"/>
+				<caller organisation="telenav" name="MicroRoutingService" conf="default" rev="1.2.144638" rev-constraint-default="1.2.144638" rev-constraint-dynamic="1.2.+" callerrev="1.9.20954"/>
+				<artifacts>
+					<artifact name="Stemmer" type="zip" ext="zip" status="successful" details="" size="1343853" time="134" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/Stemmer/zips/Stemmer-1.2.144638.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/Stemmer/Stemmer-ios-sdk6.0-1.2.144638-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="SBJson">
+			<revision name="1.0.90218" status="release" pubdate="20130204135951" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" evicted="latest-revision" evicted-reason="" downloaded="true" searched="true" default="false" conf="default, *" position="-1">
+				<metadata-artifact status="successful" details="" size="334" time="11" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SBJson/ivy-1.0.90218.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SBJson/ivy-1.0.90218.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/SBJson/SBJson-ios-sdk6.0-1.0.90218-trunk.xml"/>
+				<evicted-by rev="3.2.95975"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.0.90218" rev-constraint-default="1.0.90218" rev-constraint-dynamic="1.0.90218" callerrev="2.5.21363"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="3.2.95975" status="release" pubdate="20130215135037" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="2">
+				<metadata-artifact status="successful" details="" size="340" time="10" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SBJson/ivy-3.2.95975.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SBJson/ivy-3.2.95975.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/SBJson/SBJson-ios-sdk6.0-3.2.95975-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="3.2.+" rev-constraint-default="3.2.+" rev-constraint-dynamic="3.2.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<caller organisation="telenav" name="MapService" conf="default" rev="1.0.90218" rev-constraint-default="1.0.90218" rev-constraint-dynamic="1.0.90218" callerrev="2.5.21363"/>
+				<caller organisation="telenav" name="BrowserSDK" conf="default" rev="3.2.95975" rev-constraint-default="3.2.95975" rev-constraint-dynamic="3.2.+" callerrev="2.2.98929"/>
+				<artifacts>
+					<artifact name="SBJson" type="zip" ext="zip" status="successful" details="" size="651806" time="72" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/SBJson/zips/SBJson-3.2.95975.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/SBJson/SBJson-ios-sdk6.0-3.2.95975-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="BrowserSDK">
+			<revision name="2.2.98929" status="release" pubdate="20130527035238" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="1">
+				<metadata-artifact status="successful" details="" size="470" time="12" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/BrowserSDK/ivy-2.2.98929.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/BrowserSDK/ivy-2.2.98929.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/BrowserSDK/BrowserSDK-ios-sdk6.0-2.2.98929-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.2.98929" rev-constraint-default="2.2.98929" rev-constraint-dynamic="2.2.98929" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="BrowserSDK" type="zip" ext="zip" status="successful" details="" size="1992357" time="202" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/BrowserSDK/zips/BrowserSDK-2.2.98929.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/BrowserSDK/BrowserSDK-ios-sdk6.0-2.2.98929-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="telenav" name="AdService">
+			<revision name="2.4.18908" status="release" pubdate="20130507180927" resolver="retrieve-url-trunk" artresolver="retrieve-url-trunk" downloaded="true" searched="true" default="false" conf="default, *" position="0">
+				<metadata-artifact status="successful" details="" size="477" time="22" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AdService/ivy-2.4.18908.xml" searched="true" original-local-location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AdService/ivy-2.4.18908.xml.original" origin-is-local="false" origin-location="http://tar1.telenav.com/repository/telenav/client//trunk/AdService/AdService-ios-sdk6.0-2.4.18908-trunk.xml"/>
+				<caller organisation="telenav" name="TelenavNavigator" conf="default" rev="2.4.+" rev-constraint-default="2.4.+" rev-constraint-dynamic="2.4.+" callerrev="working@rajpalp-mbp15.telenav.com"/>
+				<artifacts>
+					<artifact name="AdService" type="zip" ext="zip" status="successful" details="" size="310504" time="48" location="/Users/rajpalp/work/Projects/ScoutAvengers/TelenavNavigator/modules/ios-sdk6.0/tmp/ivy-cache/telenav/AdService/zips/AdService-2.4.18908.zip">
+						<origin-location is-local="false" location="http://tar1.telenav.com/repository/telenav/client//trunk/AdService/AdService-ios-sdk6.0-2.4.18908-trunk.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

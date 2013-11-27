@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="drivingshare0ContentLeftPadding">15dp</dimen>
+    <dimen name="drivingshare0ContentRigntPadding">15dp</dimen>
+    <dimen name="drivingshare0ContentTopPadding">9dp</dimen>
+    <dimen name="drivingshare0SubTitleBottomPadding">7dp</dimen>
+    <dimen name="drivingshare0ContentBottomPadding">9dp</dimen>
+    <dimen name="drivingshare0ItemMargin">8dp</dimen>
+    <dimen name="drivingshare0SwitcherMarginLeft">10dp</dimen>
+    <dimen name="drivingshare0SwitcherMarginRight">3dp</dimen>
+    <dimen name="drivingshare0SwitcherMarginTop">6dp</dimen>
+    <dimen name="drivingshare0SubTitleHorizontalMargin">6dp</dimen>
+    <dimen name="drivingshare0SubTitleSplitLineHeight">2dp</dimen>
+    <dimen name="drivingshare0TextViewSwitcherGap">20dp</dimen>
+    <!-- weight -->
+    
+    <!-- text size -->
+    <dimen name="drivingshare0SubTitleSize">14sp</dimen>
+    <dimen name="drivingshare0ItemFirstLineSize">19sp</dimen>
+    <dimen name="drivingshare0ItemSecondLineSize">14sp</dimen>
+    <!-- color -->
+    <color name="drivingshare0ContentBackgroundColor">#fff8f7f7</color>
+    <color name="drivingshare0SubTitleColor">#ff717171</color>
+    <color name="drivingshare0ItemFirstLineColor">#ff000000</color>
+    <color name="drivingshare0ItemSecondLineColor">#ff343434</color>
+    <color name="drivingshare0SubTitleSplitLine">#ffc8c8c8</color>
+    
+</resources>

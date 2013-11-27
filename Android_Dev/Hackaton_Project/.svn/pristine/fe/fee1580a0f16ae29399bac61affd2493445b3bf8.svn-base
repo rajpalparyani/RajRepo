@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dwfReceiverGridItemLayoutPadding"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/dwfReceiverGridItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/dwf_receiver_grid_item_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dwfReceiverGridItemPadding"
+            android:paddingRight="@dimen/dwfReceiverGridItemPadding"
+            android:singleLine="true"
+            android:textColor="@color/dwfLocationTextColor"
+            android:textSize="@dimen/dwfTip2TextSize" />
+
+        <ImageView
+            android:id="@+id/dwfReceiverGridItemEnableImage"
+            android:layout_width="@dimen/dwfReceiverGridItemLayoutWidth"
+            android:layout_height="@dimen/dwfReceiverGridItemLayoutWidth"
+            android:layout_toRightOf="@+id/dwfReceiverGridItemText"
+            android:clickable="true"
+            android:contentDescription="@string/dwfDriveTo"
+            android:scaleType="fitXY"
+            android:src="@drawable/drive_with_friends_name_icon_unfocused" />
+
+        <ImageView
+            android:id="@+id/dwfReceiverGridItemDisableImage"
+            android:layout_width="@dimen/dwfReceiverGridItemLayoutWidth"
+            android:layout_height="@dimen/dwfReceiverGridItemLayoutWidth"
+            android:layout_toRightOf="@+id/dwfReceiverGridItemText"
+            android:background="#ffb1b1b1"
+            android:clickable="true"
+            android:contentDescription="@string/dwfDriveTo"
+            android:scaleType="fitXY"
+            android:src="@drawable/drive_with_friends_name_cancel_icon_unfocused"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+</LinearLayout>

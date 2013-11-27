@@ -1,0 +1,582 @@
+6000:
+N/A
+About
+About TeleNav GPS Navigator
+Support Info
+Your PIN Number
+Diagnostic Tools
+Phone Number
+Service Plan Code
+GPS Status
+Network Status
+Location Permission
+Netguard Settings
+Data Roaming Status
+Airplane Mode
+Data Service
+Battery Level
+Latitude
+Longitude
+Fix Time
+Number of Satellites
+Accuracy
+meters
+Enabled
+Disabled
+Home
+Refresh
+Getting GPS...
+Refreshing...
+Sending Request...
+Will send PIN with text message
+Empty PTN or network error
+
+10001:
+Search address or business
+Home
+Contacts
+Favorites
+Recents
+Places
+Airports
+<bold>Set Home Location</bold>
+Enter your home address:
+Save
+Try Again
+449 Royal Rd.
+San Diego, CA
+Airport code or name
+Submit
+Please use a valid address.
+Validating address...
+Edit
+Delete
+Delete your Home Address?
+Cancel
+Current
+Cannot get current location.
+Work
+Address
+Delete your Work Address?
+Add to Favorites
+Select Location
+Set up Home
+Set up Work
+Getting current location...
+Verifying address...
+HR
+MIN
+Here Now
+DELAY
+Region
+New region is detected, Do you want to switch region?
+New region is detected
+Detecting region...
+Region switch failed
+Switching region...
+
+10002:
+Airport code or name
+Submit
+Validating airport...
+Airport not found, please try again later.
+You must enter 3 or more letters
+Did you mean?
+5000:
+Scout
+OK
+Back
+Cancel
+Yes
+No
+Delete
+Save
+Exit
+Done
+Go
+Accept
+Loading...
+Retry
+Edit
+Call
+Rate
+Unable to reach server. Please try again later.
+No GPS signal. Please move to an open area.
+Getting GPS...
+There is no cell coverage in this area.
+GPS not available
+kph
+mph
+km
+mi
+m
+ft
+N
+NE
+E
+SE
+S
+SW
+W
+NW
+lat
+lon
+Map
+Drive To
+Map
+Search
+App
+Turns
+Traffic
+Extras
+Current Location
+Settings
+Feedback
+Address,Business or Category
+Searching for ${0} ...
+Received Addresses
+Share
+To play audio through a Bluetooth headset, please ensure the headset is paired with your device and is powered on.
+Bluetooth On
+Bluetooth Off
+Nav
+Route
+Places
+End Trip
+Directions
+Add to Favorites
+Change Location
+About
+Business
+Address
+Search for a business or category
+Dashboard
+
+10003:
+Contact has no phone number entered, please select a different contact.
+Contact has no address entered, please select a different contact.
+was not found. Would you like to use 
+instead?
+Yes
+No
+Not found, please try again.
+Which address?
+Which number?
+Home:
+Work:
+Fax home:
+Fax work:
+Mobile:
+
+16000:
+Places
+Drive
+Time to Home
+Time to Work
+Set up
+Home
+Work
+Locating you...
+Scouting...
+Give us feedback
+We want to hear what you have to say!
+Resume Trip
+
+15000:
+Say a Command
+Examples:
+"Find gas station"
+"Drive Home"
+"Drive to Las Vegas, Nevada"
+Thinking...
+Finish
+Searching...
+Searching nearby...
+around
+Searching up ahead...
+Searching near destination...
+I didn't get that, say a command
+
+70001:
+Edit Category
+Rename Category:
+Done
+Save
+Delete Category
+Are you sure you want to delete this category?
+All favorites in this category will be deleted.
+Category name already exists, please use a different name.
+Delete
+Cancel
+Category name cannot be empty.
+saved favorites.
+Category updated
+Category deleted
+<bold>New Category</bold>
+Add
+Enter category name
+The name of category can not be empty.
+Category added
+
+75000:
+Edit Favorite
+Categories
+Delete
+Done
+Are you sure you want to delete this favorite?
+Yes
+The label you have entered is already in use, please use a different label.
+Create Favorite
+Cancel
+Favorite label cannot be empty.
+Address has been saved successfully.
+Categorize Favorite
+No Category
+New Category
+Favorite Added
+Favorite updated
+Favorite deleted
+Lat:
+Lon:
+
+95000:
+Upgrade
+Upgrade Now
+Remind Me Later
+Don't Ask Me Again
+Upgrade now?
+Please turn on GPS in location settings.
+
+90000:
+MY EXTRAS
+Movies
+Weather
+Leave Now Alerts
+Post Location
+Preference
+
+35000:
+Favorites
+Type to filter favorites list
+Network connection error, please check your signal and try again.
+Synchronizing favorite...
+Delete category
+Rename category
+Edit Favorites
+or Category
+Done
+Add
+New Favorite
+Assign label
+Edit
+No Favorite found.
+
+90001:
+Feedback
+Type feedback...
+Submit
+Network connection error, please check your signal and try again.
+Feedback has been submitted, thank you for taking the time to give us feedback on our product.
+
+20001:
+Terms of Use
+Login...
+Network connection error, please check your signal and try again.
+Caution: Do not input data or queries while driving.
+You assume all risks associated with the use of this product.
+Would you like to purchase TeleNav GPS Navigator?
+Purchase
+Login
+In order to use TeleNav GPS Navigator, you must have an TeleNav GPS mobile phone. Please enter the number of your TeleNav GPS handset below.
+Unavailable account, please purchase.
+The phone number you have entered is invalid, please enter a valid phone number.
+Will send PIN with text message
+Sending Request...
+Exit TeleNav GPS Navigator?
+Login failed, please check your signal and try again.
+For security purposes, we have sent a code to the phone number ${0}. Please enter it below.
+Incorrect code. Please try again.
+2011 TeleNav, Inc.
+
+25001:
+Drive To
+Call
+Share
+Map Summary
+of
+Save
+Nearby
+Address has been saved to Favorites.
+Traffic Incident Details
+Getting Address
+No Search Result
+Address has been deleted from Favorites.
+
+30001:
+Turn
+Street
+Dist
+Traffic Summary
+Minimize All Delays
+MPH
+Getting Route...
+Voice
+Directions & Traffic
+Traffic Only
+Directions Only
+None
+Route Settings
+Navigate
+Directions
+Distance
+Arrival
+Route A 
+Route B 
+Route C
+Time Remaining: 
+Getting traffic summary...
+Avoid
+(Navigation Only)
+Do you wish to end this trip and clear the directions?
+End Trip
+Getting Turn Maps...
+Getting GPS
+Getting Route
+Your origin and destination are too close.
+start
+Do you wish to end this trip and clear the directions?
+Up ahead
+Near Destination
+Report Traffic Camera
+Report Speed Trap
+Would you like to end the detour and resume your trip or exit Navigation mode?
+End Detour
+Detour
+Resume Trip to:
+Near ${0}
+One lane closed.
+${0} lanes closed.
+Road closed.
+Traffic information is not available.
+Rerouting...
+No better route found, please continue on your current route.
+From: 
+To: 
+Route Settings
+Origin:
+Destination:
+Route Settings:
+Voice Settings:
+Get Route
+Turns
+Traffic
+Map
+NA
+Incidents: 
+Delay: 
+Last update: 
+ago
+Arrive at
+<bold>Bear Left</bold> to
+<bold>Bear Right</bold> to
+Continue on
+Enter Highway
+Exit Highway to
+Exit the Roundabout
+Merge to Highway
+Go to the Roundabout
+Start at
+Turn <bold>Hard Left</bold> to
+Turn <bold>Hard Right</bold> to
+Turn <bold>Left</bold> to
+Turn <bold>Right</bold> to
+Turn <bold>Slight Left</bold> to
+Turn <bold>Slight Right</bold> to
+Make a U-Turn to
+of
+and
+New Route
+Current Route
+New Route
+Added Distance:
+Reduced Distance:
+Detour ETA:
+Approaching destination
+Continue
+Destination Added to Favorites
+Destination Deleted from Favorites
+WEAK GPS
+OVER SPEED LIMIT
+Arrive at
+Bear left to
+Bear right to
+Continue on
+Enter highway
+Exit highway to
+Exit the roundabout
+Merge to highway
+Go to the roundabout
+Start at
+Turn hard left to
+Turn hard right to
+Turn left to
+Turn right to
+Turn slight left to
+Turn slight right to
+Make a u-turn to
+Next
+Previous
+Back to TeleNav GPS Navigator
+MAX SPEED
+Advertisement
+Traffic Delay Detected
+Delay
+ROUTE SETTINGS
+Avoid Segment
+KPH
+Ignore
+
+10001:
+Drive To
+View Map
+Search Nearby
+Share Address
+ATM
+Car Retail
+Car Rental
+Food/Coffee
+Gas
+Gas by price
+Grocery
+Lodging
+Medical
+Movie
+Nightlife
+Parking
+Shopping
+Taxis
+Wi-Fi
+More...
+More Category
+Sample Title
+Sample Address
+Type Address or Bussiness Name/Category
+Search Results
+No gps signal, please try again later.
+No match found for ${0}, Please try again.
+Best Match
+Distance
+Rating
+Sort by Popularity
+Did you mean?
+Search parameter is invalid!
+Find
+Up Ahead
+Near Destination
+Drive To
+Call ${0}
+Map
+Save
+Rate it
+Share
+<bold>Loading More</bold>
+Sort Type
+Do you wish to end this trip and clear the directions?
+End Trip
+Exit
+Clear Search History
+Clear all search history?
+Sponsored item
+(${0})
+By price(Any)
+By price(Plus)
+By price(Premium)
+By price(Diesel)
+By price(Regular)
+Any
+Places Along Route
+Near
+of
+Not What you expected?
+Feedback
+
+80000:
+Settings
+Save
+Cancel
+Do you want to Save the changes you have made?
+Optional
+Please enter first name.
+Please enter last name.
+Please enter a valid email address.
+Changing language, please wait...
+Unable to change language at this time, please try again later.
+
+60000:
+Recent Places
+Find
+Permanently delete all recent places?
+Delete
+Cancel
+No recent places found.
+Syncing...
+Delete All
+Are you sure you want to delete this place?
+
+10000:
+Set Home Location
+Enter your home address:
+Save
+Street number and name
+City, State or ZIP
+Validating address...
+Your home address has been set successfully.
+Please enter address
+Please enter city and state
+is not a valid address. Please try again.
+Submit
+Home Address
+Work Address
+Address
+Your work address has been set successfully.
+
+50000:
+Share Address
+Share via SMS Text
+Share via Email
+Post Location
+Select From Contacts
+Enter Phone Number
+Recipient ${0}
+Done
+Please type in phone number
+<bold>Label:</bold>
+<bold>Send To:</bold>
+Send
+Please enter at least one recipient.
+Message sent successfully.
+Optional
+Sending address...
+Please enter a valid address.
+Sent Addresses
+Loading...
+Sent on
+Recipients:
+at
+Unable to send message, please try again later.
+You can send a message to a maximum of 10 recipients.
+
+120000:
+Downloading files for first-time use...
+Setting Up Scout
+
+40000:
+TeleNav GPS Navigator
+Get where you're going with turn-by-turn voice and GPS driving directions.
+TeleNav GPS Navigator Premium, subscribe now and your first 30 days are free.
+Sign up
+Find Out More
+<white>TeleNav GPS</white> Navigator
+Sync Purchase Status...
+
+

@@ -1,0 +1,16 @@
+ID:SPEECHSVC-154,Summary: [Crashlytics]  EmbeddedTTS.m line 152 -[EmbeddedTTS loadDictionary],TYPE:Bug,STATUS:Open
+ID:SPEECHSVC-143,Summary: Change minimum deployment target to 6.0,TYPE:Task,STATUS:Open
+ID:SPEECHSVC-133,Summary: V1RecognitionRequestHandler uses of CountDownLatch without timeout,TYPE:Task,STATUS:Resolved
+ID:SPEECHSVC-132,Summary: Concord code review summary,TYPE:Sub-task,STATUS:Open
+ID:SPEECHSVC-131,Summary: Remove Legacy logging from SpeechService,TYPE:Task,STATUS:Resolved
+ID:SPEECHSVC-129,Summary: Add more test cases to backend Speech Service,TYPE:Task,STATUS:In Progress
+ID:SPEECHSVC-122,Summary: LM - Add What can I say as first use case for INFORM_USER,TYPE:Task,STATUS:Closed
+ID:SPEECHSVC-121,Summary: Server-side - Add What can I say as first use case for INFORM_USER,TYPE:Task,STATUS:Resolved
+ID:SPEECHSVC-113,Summary: DSR "Drive to [address]" with multiple results returns POI search result,TYPE:Bug,STATUS:Open
+ID:SPEECHSVC-108,Summary: Review Speech Service Code,TYPE:Task,STATUS:Closed
+ID:SPEECHSVC-105,Summary: [Speech] Integrate the speech proto having new commands with the client code.,TYPE:Task,STATUS:Open
+ID:SPEECHSVC-89,Summary: Voice search for Telenav is frequently misrecognized on Avengers architecture only,TYPE:Bug,STATUS:Open
+ID:SPEECHSVC-80,Summary: Speech Service Local Integration Tests,TYPE:Task,STATUS:Open
+ID:SPEECHSVC-66,Summary: Review value object as input parameters of speechService,TYPE:Task,STATUS:Open
+ID:SPEECHSVC-61,Summary: [Speech] Refactor fragile code in Local Speech Service,TYPE:Task,STATUS:Open
+ID:SPEECHSVC-57,Summary: Speech Service Local Functional Tests,TYPE:Task,STATUS:Open

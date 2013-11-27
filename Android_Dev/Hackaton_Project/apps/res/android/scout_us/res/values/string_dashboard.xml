@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dashboardAdsMainText">Sync your favorites</string>
+    <string name="dashboardAdsDescText">Register for Scout.me today.</string>
+	
+    <string name="dashboardHomeMainText">Home</string>
+    <string name="dashboardHomeDescText">Set Up</string>
+    
+    <string name="dashboardWorkMainText">Work</string>
+    <string name="dashboardWorkDescText">Set Up</string>
+    
+    <string name="dashboardResumeMainText">RESUME TRIP</string>
+    <string name="dashboardResumeAddrLabel">N/A</string>
+    <string name="dashboardResumeDescText">N/A</string>
+    
+    <string name="dashboardRecents">Recents</string>
+    
+    <string name="dashboardDriveWithFriends">MeetUp</string>
+    
+    <string name="dashboardCurrentCity">N/A</string>
+    <string name="dashboardCurrentStreet">N/A</string>
+    <string name="dashboardCurrentTemperature">N/A</string>
+    
+    <string name="dashboardShareLocation">Share Location</string>
+    <string name="dashboardAddPlace">Add to My Places</string>
+    <string name="dashboardShareLocationLandcape">Share\nLocation</string>
+    <string name="dashboardAddPlaceLandscape">Add to\nMy Places</string>
+    
+    <string name="dashboardPlaceCoffee">Coffee</string>
+    <string name="dashboardPlaceFood">Food</string>
+    <string name="dashboardPlaceGas">Gas</string>
+    <string name="dashboardPlaceAtm">ATM</string>
+    <string name="dashboardPlaceMore">More</string>
+    
+    <string name="dashboardPersonalTip">Personal</string>
+    <string name="dashboardFavoriteTip">Favorite</string>
+    <string name="dashboardRecentTip">Recent</string>
+    <string name="dashboardFoldTip">Fold</string>
+    <string name="dashboardRecordFeedback">Record Feedback</string>
+    
+    <string name="dashboardBadgeNumber">1</string>
+</resources>

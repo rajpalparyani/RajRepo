@@ -1,0 +1,14 @@
+
+		<!-- ##Car Connect/Ford Applink registration, don't remove## -->	
+		<receiver android:name="com.telenav.carconnect.host.AndroidCarHookReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+		<service android:name="com.telenav.carconnect.host.AndroidCarConnectionService"/>
+		<service
+            android:name="com.telenav.carconnect.host.CarConnectRestartService"
+            android:process=":RestartService" />
+		<!-- ##Car Connect/Ford Applink registration, don't remove## -->
+		

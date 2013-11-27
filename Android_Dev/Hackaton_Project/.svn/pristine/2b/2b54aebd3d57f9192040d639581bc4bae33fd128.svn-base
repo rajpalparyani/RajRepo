@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AutomatedFeedback</string>
+    <string name="action_report">Report an issue</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="activity_dialog">Record Feedback</string>
+    <string name="activity_read_log">Read logs</string>
+    <string name="activity_screen_shot">Screenshots</string>
+    <string name="activity_send_mail">Send mail</string>
+
+</resources>

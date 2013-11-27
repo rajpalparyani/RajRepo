@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:endColor="@color/commonOneboxBackgroundColor" android:startColor="@color/commonOneboxBackgroundColor" android:type="linear" />
+
+            <padding android:bottom="@dimen/commonOneboxBackgroundPadding" android:left="@dimen/commonOneboxBackgroundPadding" android:right="@dimen/commonOneboxBackgroundPadding" android:top="@dimen/commonOneboxBackgroundPadding" />
+
+            <corners android:radius="2dp" />
+        </shape>
+        
+    </item>
+
+</selector>

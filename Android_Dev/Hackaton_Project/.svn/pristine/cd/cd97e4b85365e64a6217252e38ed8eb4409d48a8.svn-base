@@ -1,0 +1,6 @@
+QA FQ Env
+
+192.168.86.22
+tnuser/telenav70
+cd /home/tnuser/logs/browser/tn60_login
+tail -f browser.log

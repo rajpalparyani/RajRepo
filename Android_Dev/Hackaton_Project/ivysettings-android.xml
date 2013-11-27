@@ -1,0 +1,15 @@
+<ivysettings>
+	<settings defaultResolver="retrieve-android-resolver"/>
+	<caches defaultCacheDir="${ivy.default.cache}" />
+	<resolvers>
+		
+		<chain name="retrieve-android-resolver" dual="true">
+			<ibiblio name="public"
+             root="http://hqb-nexus-01:8081/nexus/content" m2compatible="true" checksums=""
+             pattern="groups/public/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]" 
+			/>	
+		</chain>
+		
+	</resolvers>
+</ivysettings>
+

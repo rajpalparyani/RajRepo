@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telenav.ui.android.PlaceListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:scout="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/placeList0CategoryItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/place_list_item_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/placeList0NormalItemNumberIndicatorMarginTop"
+        android:paddingBottom="@dimen/placeList0NormalItemNumberIndicatorMarginTop" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/placeList0CategoryItemNumberIndicator"
+                android:layout_width="@dimen/placeList0NormalItemNumberIndicatorLayoutWidth"
+                android:layout_height="@dimen/placeList0NormalItemNumberIndicatorLayoutHeight"
+                android:background="@drawable/search_results_number_icon_unfocused"
+                android:singleLine="true"
+                android:textColor="@color/placeList0NormalItemNumberIndicatorTextColor"
+                android:textSize="@dimen/placeList0NormalItemNumberIndicatorTextSize"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="654"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/placeList0CategoryItemBrandName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/placeList0NormalItemBrandNameTextColor"
+                android:textSize="@dimen/placeList0NormalItemBrandNameTextSize" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+    </LinearLayout>
+</com.telenav.ui.android.PlaceListItem>

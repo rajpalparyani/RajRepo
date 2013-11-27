@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:telenav="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:id="@+id/addplace_prompt_label_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_yellow_item_unfocused"
+        android:orientation="horizontal" >
+
+        <View
+            android:id="@+id/addplace_prompt_left_place_holder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <TextView
+            android:id="@+id/addplace_prompt_label"
+            style="@style/add_place_label"
+            android:layout_width="0dp"
+            android:layout_height="39dp"
+            android:layout_weight="676" />
+
+        <View
+            android:id="@+id/addplace_prompt_left_place_holder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+    </LinearLayout>
+
+    <com.telenav.ui.android.TnListView
+        android:id="@+id/addplaceListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/addplaceListViewBackground"
+        android:cacheColorHint="@color/addplaceListViewBackground"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:overScrollFooter="@null"
+        android:fastScrollEnabled="true" />
+
+</LinearLayout>

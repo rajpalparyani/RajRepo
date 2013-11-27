@@ -1,0 +1,668 @@
+{  
+    "billboard_labels" :
+    {
+        "default" :
+        {
+            "icon_name" : "DEFSIGN_night.png",
+            "text_color" : "#e6f3ffff",
+            "outline_color": "#000000ff"
+        }
+    },    
+    "vehicle" :
+    {
+        "radius_texture" : "radius.png",
+        "adi_line" :
+        {
+            "color" : "#C03319ff",
+            "width" : [1.9, 1.75, 1.62, 1.49, 1.38, 1.29, 1.2, 1.12, 1.05, 0.98, 0.92, 0.87, 0.82, 0.78, 0.74, 0.71, 0.68]
+        }
+    },
+    "polygon" :
+    {
+        "turnindicator" :
+        {
+            "color" : "#ff00ffff",
+            "draw_group" : "poly2"
+        },
+        "unknown" :
+        {
+            "color" : "#ff00ff00",
+            "draw_group" : "poly2"
+        },
+        "geopolitical" :
+        {
+            "color" : "#dededeff",
+            "draw_group" : "poly0"
+        },
+        "park" :
+        {
+            "color" : "#293b11ff",
+            "draw_group" : "poly1"
+        },
+        "woodland" :
+        {
+            "color" : "#293b11ff",
+            "draw_group" : "poly1"    
+        },
+        "golf_course" :
+        {
+            "color" : "#52662eff"
+        },
+        "golf_course_ground" :
+        {
+            "color" : "#52662eff"
+        },
+        "campus" :
+        {
+            "color" : "#a6959cff",
+            "draw_group" : "poly1"
+        },
+        "military" :
+        {
+            "color" : "#515459ff",
+            "draw_group" : "poly1"
+        },
+        "water" :
+        {
+            "color" : "#1c1e51ff",
+            "draw_group" : "poly2"
+        },
+        "interior" :
+        {
+            "color" : "#9d9595ff",
+            "draw_group" : "poly2"
+        },
+        "building" :
+        {
+            "color" : "#282d2eff",
+            "draw_group" : "poly2"
+        },
+        "cemetery" :
+        {
+            "color" : "#807f6cff"
+        },
+        "cemetery_ground" :
+        {
+            "color" : "#807f6cff"
+        },
+        "shopping_centre" :
+        {
+            "color" : "#282d2eff"
+        },
+        "shopping_center_ground" :
+        {
+            "color" : "#282d2eff"
+        },
+        "industrial_area" :
+        {
+            "color" : "#282d2eff"
+        },
+        "industrial_harbor_area" :
+        {
+            "color" : "#282d2eff"
+        },
+        "stadium_ground" :
+        {
+            "color" : "#70803cff"
+        },
+        "aircraft_road" :
+        {
+            "color" : "#464646ff",
+            "draw_group" : "poly2"
+        },
+        "airport" :
+        {
+            "color" : "#2e3440ff",
+            "draw_group" : "poly2"
+        },
+        "island" :
+        {
+            "color" : "#180226ff",
+            "draw_group" : "poly1"
+        },
+        "builtup" :
+        {
+            "color" : "#180226ff",
+            "draw_group" : "poly1"
+        },
+        "beach" :
+        {
+            "color" : "#807e4cff",
+            "draw_group" : "poly1"
+        }
+    },
+    "edge" :
+    {
+        "stateborder" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge2",
+            "color1" : "#565a3fff"
+        },
+        "nationborder" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge2",
+            "color1" : "#565a3fff"
+        },
+        "chinaborder" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge2",
+            "color1" : "#aaaaaaff"
+        },
+        "chinadisputedborder" :
+        {
+            "dashed" : true,
+            "outlined" : false,
+            "draw_group1" : "edge2",
+            "color1" : "#00000000",
+            "draw_group2" : "edge2",
+            "color2" : "#aaaaaafff",
+            "on_length_factor" : 3.0,
+            "off_length_factor" : 2.0
+        },
+        "waterline" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge3",
+            "color1" : "#1c1e51ff"
+        },
+        "canal" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge3",
+            "color1" : "#1c1e51ff"
+        },
+        "dateline" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "draw_group1" : "edge10",
+            "color1" : "#862f2fff"
+        },
+        "ferryboat" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "textured" : true,
+            "draw_group1" : "edge3.5",
+            "color1" : "#1c1e51ff",
+            "texture1" : "FerryTexture.png"
+        },
+        "rail" :
+        {
+            "dashed" : false,
+            "outlined" : false,
+            "textured" : true,
+            "draw_group1" : "edge3.5",
+            "color1" : "#a6a6a6ff",
+            "texture1" : "RailRoadTexture.png"
+        },
+        "smallstreet" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge4",
+            "color1" : "#2e292bff",
+            "draw_group2" : "edge3",
+            "color2" : "#1f1a1cff"
+        },
+        "street" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge5",
+            "color1" : "#332d2fff",
+            "draw_group2" : "edge4",
+            "color2" : "#1f1a1cff"
+        },
+        "intersection" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge5",
+            "color1" : "#ffffffff",
+            "draw_group2" : "edge4",
+            "color2" : "#ab9e89ff"
+        },
+        "ramp" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge6",
+            "color1" : "#8c7e7eff",
+            "draw_group2" : "edge4",
+            "color2" : "#1f1a1cff"
+        },
+        "highwayramp" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge6",
+            "color1" : "#8c7e7eff",
+            "draw_group2" : "edge4",
+            "color2" : "#1f1a1cff"
+        },
+        "arterial" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge7",
+            "color1" : ["#6e6e6eff", "#6e6e6eff", "#6e6e6eff", "#6e6e6eff", "#6e6e6eff", "#666666ff", "#666666ff", "#585858ff", "#585858ff", "#585858ff", "#585858ff", "#585858ff", "585858ff", "#585858ff", "#585858ff", "#585858ff", "#585858ff"],
+            "draw_group2" : "edge6",
+            "color2" : "#1f1a1cff"
+        },
+        "highway" :
+        {
+            "dashed" : false,
+            "outlined" : true,
+            "draw_group1" : "edge9",
+            "color1" : ["#666666ff", "#666666ff", "#666666ff", "#666666ff", "#666666ff", "#b8b8b8ff", "#b8b8b8ff", "#b3b3b3ff", "#b3b3b3ff", "#b3b3b3ff", "#b3b3b3ff", "#000000ff", "000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "draw_group2" : "edge8",
+            "color2" : ["#b3b3b3ff", "#b3b3b3ff", "#b3b3b3ff", "#b3b3b3ff", "#b3b3b3ff", "#1f1a1cff", "#1f1a1cff", "#1f1a1cff", "#1f1a1cff", "#1f1a1cff", "#1f1a1cff", "#666666ff", "#666666ff", "#666666ff", "#666666ff", "#666666ff", "#666666ff"]
+        }
+    },
+    "route":
+    {
+        "routeA":
+        {            
+            "color1" : "#a8e68cff",            
+            "color2" : "#1a1a1aff"
+        },
+        "routeB":
+        {
+            "color1" : "#9cbcddff",            
+            "color2" : "#1a1a1aff"
+        },
+        "routeC":
+        {
+            "color1" : "#cc8ea0ff",           
+            "color2" : "#1a1a1aff"
+        },
+        "routeABold":
+        {
+            "color1" : "#009444ff",            
+            "color2" : "#ffffffff"
+        },
+        "routeBBold":
+        {
+            "color1" : "#1e4eacff",            
+            "color2" : "#ffffffff"
+        },
+        "routeCBold":
+        {
+            "color1" : "#8d0022ff",           
+            "color2" : "#ffffffff"
+        }
+    },
+    "flat_labels" :
+    {
+        "highway" :
+        {
+            "style" : "flat_feature",
+            "priority" : 14,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : "#000000ff",
+            "outline_color" : "#ffffffff",
+            "always_visible" : false
+        },
+        "arterial" :
+        {
+            "style" : "flat_feature",
+            "priority" : 13,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#ffffffff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        },
+        "street" :
+        {
+            "style" : "flat_feature",
+            "priority" : 12,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#ffffffff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        },
+        "ferryboat" :
+        {
+            "style" : "flat_feature",
+            "priority" : 11,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#739fffff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        },
+        "water" :
+        {
+            "style" : "flat_point",
+            "priority" : 10.12,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#739fffff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        },
+        "park" :
+        {
+            "style" : "flat_point",
+            "priority" : 10.13,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#c6ff66ff",
+            "outline_color" : "#101706ff",
+            "always_visible" : false
+        },
+        "country" :
+        {
+            "style" : "flat_point",
+            "priority" : 18,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : "#ffffff7f",
+            "outline_color" : "#ffffff00",
+            "always_visible" : false
+        },
+        "state" :
+        {
+            "style" : "flat_point",
+            "priority" : 16,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#ffffff7f",
+            "outline_color" : "#ffffff00",
+            "always_visible" : false
+        },
+        "town_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 11.11,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#b2b2b2ff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        },
+        "town_large" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.12,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : ["#bfbfbf7f", "#bfbfbf7f", "#bfbfbf7f", "#bfbfbf7f", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },        
+        "city_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.21,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },         
+        "city_medium" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.22,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },     
+        "city_large" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.23,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },
+        "state_capital_town_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.31,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : "#febc007f",
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },    
+        "state_capital_town_large" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.32,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },  
+        "state_capital_city_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.33,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },      
+        "state_capital_city_medium" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.34,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },   
+        "state_capital_city_large" :
+        {
+            "style" : "flat_point",
+            "priority" : 15.35,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },
+        "capital_town_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 17.41,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : "#d40e8c7f",
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },   
+        "capital_town_large" :
+        {
+            "style" : "flat_point",
+            "priority" : 17.42,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },  
+        "capital_city_small" :
+        {
+            "style" : "flat_point",
+            "priority" : 17.43,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },   
+        "capital_city_medium" :
+        {
+            "style" : "flat_point",
+            "priority" : 17.44,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },  
+        "capital_city_large" :
+	{
+            "style" : "flat_point",
+            "priority" : 17.45,
+            "flip" : true,
+            "font_face" : "DroidSansPro-Bold",
+            "font_size" : 30,
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "always_visible" : false
+        },
+        "other" :
+        {
+            "style" : "flat_point",
+            "priority" : 10.11,
+            "flip" : true,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "text_color" : "#c7bcb0ff",
+            "outline_color" : "#000000ff",
+            "always_visible" : false
+        }
+    },
+    "city_annotations" :
+    {
+    	"town_small" :
+        {
+            "text_color" : "#b2b2b2ff",
+            "outline_color" : "#000000ff",
+            "font_face" : "DroidSansPro"
+        },
+        "town_large" :
+        {
+            "text_color" : ["#bfbfbf7f", "#bfbfbf7f", "#bfbfbf7f", "#bfbfbf7f", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff", "#bfbfbfff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro"
+        },        
+        "city_small" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro"
+        },         
+        "city_medium" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro"
+        },     
+        "city_large" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro"
+        },
+        "state_capital_town_small" :
+        {
+            "text_color" : "#febc007f",
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },    
+        "state_capital_town_large" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },  
+        "state_capital_city_small" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },      
+        "state_capital_city_medium" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },   
+        "state_capital_city_large" :
+        {
+            "text_color" : ["#febc007f", "#febc007f", "#febc007f", "#febc007f", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff", "#febc00ff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },
+        "capital_town_small" :
+        {
+            "text_color" : "#d40e8c7f",
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },   
+        "capital_town_large" :
+        {
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },  
+        "capital_city_small" :
+        {
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },   
+        "capital_city_medium" :
+        {
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        },  
+        "capital_city_large" :
+	{
+            "text_color" : ["#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8c7f", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff", "#d40e8cff"],
+            "outline_color" : ["#00000000", "#00000000", "#00000000", "#00000000", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff", "#000000ff"],
+            "font_face" : "DroidSansPro-Bold"
+        }
+    },
+    "view" :
+    {
+        "ground_color" : "#231e1fff"
+    }
+}

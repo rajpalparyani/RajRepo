@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<project name="utility">
+	<!-- ============================================== app properties ======================================== -->
+
+	<property name="module_list" value="logger,cache,json,mvc,threadpool,util" />
+	<property name="major.verion" value="1.1" />
+	<property name="product.version" value="${major.verion}.${version}" />
+	<property name="sdk-folder" value="lib\android" />
+	<!-- ============================================== import build_common.xml ======================================== -->
+	<import file="../build-common.xml" />
+	<!-- ============================================== path properties ================================================ -->
+	<path id="android.boot.classpath">
+		<!-- XXXX -->
+	</path>
+	<path id="j2me.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<!-- =============================================== task definition =============================================== -->
+
+	<target name="publish-all">
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+			Please add the property: 'version'.
+			------------------------@TeleNav--------------------------
+		</fail>
+		<antcall target="publish_common" />
+	</target>
+
+	<target name="publish_common">
+		<foreach list="${module_list}" target="publish_module" param="module" inheritall="true" inheritrefs="true" />
+	</target>
+
+	<target name="publish_module">
+		<antcall target="publish" inheritrefs="true">
+			<!-- run conf -->
+			
+			<param name="base.dir" value="${module}" />
+			<param name="module.name" value="${module}" />
+			<param name="jar.file" value="${module}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="false" />
+			<!-- compile conf -->
+			<param name="platform" value="android" />
+			<param name="class.version" value="1.5" />
+			<param name="source.version" value="1.5" />
+			<param name="compile.excludes" value="" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="${module}/ivy.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<param name="ivy.default.publish.resolver" value="publish-file-resolver" />
+			<param name="publish.repository.file" value="${output}" />
+		</antcall>
+	</target>
+
+	<target name="update_svn_version">
+		<echo file="${versionfile}" message="${version}" />
+		<exec executable="svn">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="Hudson Change release build number" />
+			<arg value="-N" />
+			<arg value="${versionfile}" />
+		</exec>
+	</target>
+</project>

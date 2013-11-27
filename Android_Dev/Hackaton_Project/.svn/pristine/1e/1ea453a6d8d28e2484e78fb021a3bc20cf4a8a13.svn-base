@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telenav.ui.android.PlaceListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:scout="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/placeList0GroupItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/place_list_item_group_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/placeList0GroupItemBrandNameMarginTop"
+        android:paddingBottom="@dimen/placeList0GroupItemBrandNameMarginTop" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="654"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/placeList0GroupItemBrandName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/placeList0GroupItemBrandNameTextColor"
+                android:textSize="@dimen/placeList0GroupItemBrandNameTextSize"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+    </LinearLayout>
+</com.telenav.ui.android.PlaceListItem>

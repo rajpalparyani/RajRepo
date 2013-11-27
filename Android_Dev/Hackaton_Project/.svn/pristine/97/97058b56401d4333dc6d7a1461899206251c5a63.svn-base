@@ -1,0 +1,50 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <body>
+        <form>
+            <fieldset>
+                <legend>TextField</legend> 
+                First name: <input type="text" name="fname" value="test words?.,_!@#$%^&*()-+="/><br/>
+                Last name: <input type="text" name="lname" value="international 中文"/><br/> 
+                Password: <input type="password" name="psw" value="123456"/><br/> 
+            </fieldset>
+            <br />
+
+            <fieldset>
+                <legend>Radio</legend> 
+                Male:
+                <input type="radio" checked="checked" name="Sex" value="male" />
+                <br />
+                Female
+                <input type="radio" name="Sex" value="female" />
+            </fieldset>
+            <br />
+
+            <fieldset>
+                <legend>CheckBox</legend> 
+                Do you like:
+                <br />
+                Water
+                <input type="checkbox" name="checkBoxName" value="Water">
+                <br />
+                Tea
+                <input type="checkbox" name="checkBoxName" value="Tea">
+                <br />
+                Milk
+                <input type="checkbox" name="checkBoxName" value="Milk">
+            </fieldset>
+            <br />
+
+            <fieldset>
+                <legend>Option</legend> 
+                <select name="cars">
+                    <option value ="volvo">Volvo</option>
+                    <option value ="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </fieldset>
+            <br/><br/><input type="button" value="Button" onClick="window.demo.clickOnAndroid()"/>
+        </form>
+    </body>
+</html>

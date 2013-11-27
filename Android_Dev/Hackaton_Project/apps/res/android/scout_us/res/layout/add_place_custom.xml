@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:telenav="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/addplaceCustomAddressFieldBackground"
+            android:orientation="horizontal"
+            android:paddingBottom="21dp"
+            android:paddingTop="23dp" >
+
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/addplaceCustomIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/placeList0NormalItemNumberIndicatorPaddingTop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="@dimen/common_side_margin" >
+                
+                <LinearLayout
+                    android:id="@+id/addplaceCustomFilterContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                 />
+
+                <TextView
+                    android:id="@+id/addplaceCustomFirstLine"
+                    style="@style/add_place_custom_address_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:paddingLeft="@dimen/addplaceCustomAddressPaddingLeft"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/addplaceCustomSecondLine"
+                    style="@style/add_place_custom_address_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:paddingLeft="@dimen/addplaceCustomAddressPaddingLeft"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/addplaceCustomCategoryList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/addplaceCategoryListBackground"
+                android:cacheColorHint="@color/addplaceCategoryListShadow"
+                android:fastScrollEnabled="true"
+                android:overScrollFooter="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

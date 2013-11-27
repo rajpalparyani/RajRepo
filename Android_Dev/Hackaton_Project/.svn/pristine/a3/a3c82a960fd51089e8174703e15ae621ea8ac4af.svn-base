@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- width, height, margin and padding -->
+    <dimen name="dwf0ListItemPaddingBottom">11dp</dimen>
+    <dimen name="dwf0ListItemPaddingLeft">17dp</dimen>
+    <dimen name="dwf0ListItemPaddingRight">17dp</dimen>
+    <dimen name="dwf0ListItemPaddingTop">11dp</dimen>
+    <dimen name="dwf0ListItemIndicatorWidth">10dp</dimen>
+    <dimen name="dwf0ListItemIndicatorHeight">10dp</dimen>
+    <dimen name="dwf0ListItemImageMarginLeft">8dp</dimen>
+    <dimen name="dwf0ListItemImageMarginRight">8dp</dimen>
+    <dimen name="dwf0ListEmptyItemWidth">30dp</dimen>
+    <dimen name="dwf0ListEmptyItemHeight">30dp</dimen>
+    <dimen name="dwf0ListEmptyItemMargin">15dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+	<dimen name="dwf0ListItemNameTextSize">16sp</dimen>
+	<dimen name="dwf0ListItemStatusTextSize">14sp</dimen>
+	<dimen name="dwf0ListItemEtaTextSize">14sp</dimen>
+	<dimen name="dwf0ListEmptyItemTextSize">20sp</dimen>
+    <!-- color -->
+    <color name="dwf0ListItemNameTextColor">#ff666666</color>
+    <color name="dwf0ListItemStatusTextColor">#ff666666</color>
+    <color name="dwf0ListItemEtaTextColor">#ff666666</color>
+    <color name="dwf0ListEmptyItemTextColor">#ff93a8bb</color>
+    
+</resources>

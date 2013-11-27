@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"  xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" >
+		<View
+	        android:layout_weight="34"
+	        android:layout_height="fill_parent"
+	        android:layout_width="0dp" />
+		<ImageView android:layout_gravity="left|top" android:id="@+id/item_icon" 
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+		<View
+	        android:layout_weight="30"
+	        android:layout_height="fill_parent"
+	        android:layout_width="0dp" />
+	    <LinearLayout android:orientation="vertical" android:layout_width="245dp" android:layout_height="wrap_content" android:paddingRight = "10dp">
+		    <TextView  
+			    android:id="@+id/item_title"  
+			    android:layout_width="wrap_content"   
+			    android:layout_height="wrap_content"    
+			    android:textColor="@color/style_white"  
+			    android:textSize="16sp"
+				android:textStyle="bold"
+			    android:textAppearance="?android:textAppearanceSmall"   
+		    />  
+		    <View
+		        android:layout_height="4px"
+		        android:layout_width="fill_parent" />
+		    <TextView  
+			    android:id="@+id/item_content"  
+			    android:layout_width="wrap_content"   
+			    android:layout_height="wrap_content"   
+			    android:textSize="14sp"
+				android:textStyle="normal" 
+			    android:textColor="#FF999999"  
+			    android:layout_gravity="left" 
+			    android:textAppearance="?android:textAppearanceSmall"   
+		    />  
+		</LinearLayout>   
+	    <ImageView android:layout_gravity="center_vertical" android:id="@+id/right_arrow" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+	    <View
+	        android:layout_height="fill_parent"
+	        android:layout_width="0dp"
+	        android:layout_weight="50"
+	     />
+	</LinearLayout>
+	 <View
+	        android:layout_height="20dp"
+	        android:layout_width="fill_parent" />
+</LinearLayout>

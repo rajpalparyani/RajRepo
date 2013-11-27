@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recents_icon_nothing_unfocused" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/recent0EmptyFirstLineText"
+        android:textColor="@color/recent0EmptyFirstLineTextColor"
+        android:textSize="@dimen/recent0EmptyFirstLineTextSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/recent0EmptySecondLineText"
+        android:textColor="@color/recent0EmptySecondLineTextColor"
+        android:textSize="@dimen/recent0EmptySecondLineTextSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/recent0EmptyThirdLineText"
+        android:textColor="@color/recent0EmptyThirdLineTextColor"
+        android:textSize="@dimen/recent0EmptyThirdLineTextSize" />
+
+</LinearLayout>

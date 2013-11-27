@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FF00"
+    >
+
+    <LinearLayout
+        android:id="@+id/dashboard0placeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/dashboard0PlaceLinearLayoutLayoutMargin"
+        android:layout_marginRight="@dimen/dashboard0PlaceLinearLayoutLayoutMargin"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dashboard0PlaceCoffeeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_button_background_left"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:tag="241">
+
+            <ImageView
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceCoffee"
+                android:duplicateParentState="true"
+                android:src="@drawable/dashboard_poi_icon_coffee" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="@string/dashboardPlaceCoffee"
+                android:textColor="@color/dashboard_places_font"
+                android:textSize="@dimen/dashboard0PlaceTextSize"
+                android:textStyle="bold">
+            </TextView>
+            
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>

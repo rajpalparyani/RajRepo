@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="dwfMargin">10dp</dimen>
+    <dimen name="dwfButtonLayoutWidth">224dp</dimen>
+    <dimen name="dwfButtonLayoutHeight">43dp</dimen>
+    <dimen name="dwfButtonDrawablePadding">6dp</dimen>
+    <dimen name="dwfButtonMarginTop">24dp</dimen>
+    <dimen name="dwfDriveWithFriendTipMarginBottom">16dp</dimen>
+    <dimen name="dwfDriveWithFriendTipMarginTop">30dp</dimen>
+    <dimen name="dwfSeparator2MarginBottom">15dp</dimen>
+    <dimen name="dwfContactButtonLayoutHeight">21dp</dimen>
+    <dimen name="dwfContactAutoCompleteTextViewMinHeight">38dp</dimen>
+    <dimen name="dwfContactAutoCompleteTextViewMinWidth">100dp</dimen>
+    <dimen name="dwfContactAutoCompleteTextViewDropDownWidth">220dp</dimen>
+    <dimen name="dwfReceiverGridItemLayoutWidth">21dp</dimen>
+    <dimen name="dwfReceiverGridItemPopupLayoutWidth">52dp</dimen>
+    <dimen name="dwfReceiverGridItemPadding">6dp</dimen>
+    <dimen name="dwfReceiverGridItemPopupPadding">8dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="dwfTipTextSize">17sp</dimen>
+	<dimen name="dwfTip2TextSize">24sp</dimen>
+	<dimen name="dwfEditTextSize">16sp</dimen>
+	<dimen name="dwfButtonTextSize">19sp</dimen>
+	<dimen name="dwfButton2TextSize">15sp</dimen>
+    <!-- color -->
+    <color name="dwfBackground">#ffe4e4e4</color>
+    <color name="dwfBackground2">#fff7f7f7</color>
+	<color name="dwfTipForegroundColor">#ffa2abb6</color>
+	<color name="dwfTip2ForegroundColor">#ff505c67</color>
+	<color name="dwfSeparatorColor">#ffcecece</color>
+	<color name="dwfSeparator2Color">#ffe8e8e8</color>
+	<color name="dwfLocationTextColor">#ff333333</color>
+</resources>

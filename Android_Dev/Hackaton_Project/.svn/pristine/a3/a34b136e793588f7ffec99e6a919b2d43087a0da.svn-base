@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_shelf"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dwf0ListDrivePaddingBottom"
+    android:paddingTop="@dimen/dwf0ListDrivePaddingTop" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="34" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="652"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dwfListDriveLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingRight="@dimen/dwf0ListDriveDistancePaddingRight"
+                android:singleLine="true"
+                android:textColor="@color/placeList0MiniPoiBarFirstLineTextColor"
+                android:textSize="@dimen/placeList0NormalItemBrandNameTextSize" />
+
+            <TextView
+                android:id="@+id/dwfListDriveStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingRight="@dimen/dwf0ListDriveDistancePaddingRight"
+                android:singleLine="true"
+                android:textColor="@color/placeList0MiniPoiBarSecondTextColor"
+                android:textSize="@dimen/placeList0NormalItemAddressTextSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/dwfListDriveCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/placeList0MiniPoiBarSecondTextColor"
+                    android:textSize="@dimen/placeList0NormalItemAddressTextSize" />
+
+                <TextView
+                    android:id="@+id/dwfListDriveDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dwf0ListDriveDistancePaddingLeft"
+                    android:paddingRight="@dimen/dwf0ListDriveDistancePaddingRight"
+                    android:textColor="@color/placeList0MiniPoiBarLastLineTextColor"
+                    android:textSize="@dimen/placeList0NormalItemDistanceTextSize"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dwfListDriveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/common_mini_poi_bar_driverto_background"
+            android:clickable="true"
+            android:paddingLeft="@dimen/dwf0ListDriveButtonPaddingLeft"
+            android:paddingRight="@dimen/dwf0ListDriveButtonPaddingRight" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/list_expand_icon_car_unfocused"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/dwf0ListDriveButtonText"
+                android:textColor="@color/dwf0ListDriveButtonTextColor"
+                android:textSize="@dimen/dwfButton2TextSize"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="34" />
+
+</LinearLayout>

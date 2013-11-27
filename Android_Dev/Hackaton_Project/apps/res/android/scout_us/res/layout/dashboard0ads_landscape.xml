@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/dashboard0adButton_landscape"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dashboard0AdsLinearLayoutLayoutHeightLandscape"
+        android:layout_marginLeft="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+    	android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/dashboard0AdsLinearLayoutLayoutMargin"
+        android:background="@color/dashboard_ads_button_background"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:padding="0dp"
+        android:visibility="visible">
+        
+        
+    </LinearLayout>
+
+</merge>

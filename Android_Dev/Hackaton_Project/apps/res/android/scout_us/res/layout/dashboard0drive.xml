@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.telenav.app.android.scout_us"
+    android:id="@+id/dashboard0DriveHomeWorkContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+    android:layout_marginRight="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/dashboard0DriveHomeButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3"
+        android:background="@drawable/dashboard_button_background_left"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:orientation="vertical" >
+
+        <com.telenav.ui.android.TnTextView
+            android:id="@+id/dashboard0HomeDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardHomeDescText"
+            android:textSize="@dimen/dashboard0DriveHomeButtonDescTextSize"
+            app:autoResize="true" />
+
+        <TextView
+            android:id="@+id/dashboard0HomeMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardHomeMainText"
+            android:textColor="@color/dashboard_drive_static_string_font"
+            android:textSize="@dimen/dashboard0DriveHomeButtonMainTextSize"
+            android:textStyle="bold" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dashboard0DriveWorkButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3"
+        android:background="@drawable/dashboard_button_background_right"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:orientation="vertical" >
+
+        <com.telenav.ui.android.TnTextView
+            android:id="@+id/dashboard0WorkDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardWorkDescText"
+            android:textSize="@dimen/dashboard0DriveWorkButtonDescTextSize"
+            app:autoResize="true" />
+
+        <TextView
+            android:id="@+id/dashboard0WorkMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardWorkMainText"
+            android:textColor="@color/dashboard_drive_static_string_font"
+            android:textSize="@dimen/dashboard0DriveWorkButtonMainTextSize"
+            android:textStyle="bold" >
+        </TextView>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+        android:layout_height="@dimen/dashboard0DriveLinearLayoutLayoutMargin" />
+
+    <LinearLayout
+        android:id="@+id/dashboard0DriveRecentsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/dashboard_button_recent_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:contentDescription="@string/dashboardRecentTip"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="@dimen/dashboard0DriveRecentsButtonImageLayoutWidth"
+            android:layout_height="@dimen/dashboard0DriveRecentsButtonImageLayoutHeight"
+            android:contentDescription="@string/dashboardRecents"
+            android:duplicateParentState="true"
+            android:src="@drawable/dashboard_recent_icon_car" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardRecents"
+            android:textColor="@color/dashboard_places_font"
+            android:textSize="@dimen/dashboard0DriveRecentsButtonTextSize"
+            android:textStyle="bold" >
+        </TextView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dashboard0DriveRecentsButtonLineImageLayoutHeight"
+            android:contentDescription="@string/dashboardRecents"
+            android:src="@drawable/dashboard_recent_icon_line_unfocused" />
+    </LinearLayout>
+
+</LinearLayout>

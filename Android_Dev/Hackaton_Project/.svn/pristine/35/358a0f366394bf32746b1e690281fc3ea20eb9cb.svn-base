@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_repeat_background"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.8"
+            android:orientation="vertical" >
+
+            <include layout="@layout/dashboard0title_landscape" />
+
+            <ScrollView
+			    android:id="@+id/scrollview_landscape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <include layout="@layout/dashboard0location_landscape" />
+
+                    <include layout="@layout/dashboard0drive_landscape" />
+
+                    <include layout="@layout/dashboard0resume_landscape" />
+
+                    <include layout="@layout/dashboard0ads_landscape" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+            android:layout_height="@dimen/dashboard0DriveLinearLayoutLayoutMargin" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            
+            <include layout="@layout/dashboard0place_landscape" />
+            
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

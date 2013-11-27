@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentlayout"
+    style="@style/layoutfillparent"
+    android:orientation="vertical" >
+    
+    <View
+        style="@style/weightbyheight"
+        android:layout_weight="46" />
+
+    <com.telenav.ui.android.RatioSolidImageView
+        android:id="@+id/splashlogo"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="400"
+        style="@style/layoutcenter"/>
+
+    <View
+        style="@style/weightbyheight"
+        android:layout_weight="15" />
+
+    <com.telenav.ui.android.ImageIndicator
+        android:id="@+id/imageindexer"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        style="@style/layoutcenter" 
+        android:visibility="invisible"/>
+      
+   	    <View
+	        style="@style/weightbyheight"
+	        android:layout_weight="60" />
+	
+	    <Button
+	        android:id="@+id/createaccout"
+	        style="@style/ftuebtn"
+	        android:layout_width="fill_parent"
+        	android:visibility="invisible"/>
+	
+	    <View
+	        style="@style/weightbyheight"
+	        android:layout_weight="40" />
+	
+	    <Button
+	        android:id="@+id/login"
+	        style="@style/ftuebtn"
+	        android:layout_width="fill_parent"
+	        android:layout_height="53dp" 
+	        android:layout_marginLeft="38dp"
+        	android:layout_marginRight="38dp"
+        	android:visibility="invisible"/>
+	
+	    <View
+	        style="@style/weightbyheight"
+	        android:layout_weight="25" />
+
+    <TextView
+        android:id="@+id/later"
+        style="@style/ftuelink" 
+		android:padding="10dp"
+        android:visibility="invisible"/>
+
+    <View
+       style="@style/weightbyheight"
+        android:layout_weight="55" />
+
+    <TextView
+        android:id="@+id/tos"
+        android:textSize="13sp"
+        style="@style/ftuelable" 
+        android:visibility="invisible"/>
+
+    <View
+        style="@style/weightbyheight"
+        android:layout_weight="35" />
+
+</LinearLayout>

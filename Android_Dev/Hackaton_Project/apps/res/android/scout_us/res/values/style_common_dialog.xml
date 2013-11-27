@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <color name="CommonDialogBackground">#ffe9e9e9</color>
+    <style name="CommonDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+         <item name="android:windowTitleStyle">@style/CommonDialogWindowTitle</item>
+         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+    <style name="CommonDialogWindowTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+
+</resources>

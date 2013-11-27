@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="oneboxSearchHint">e.g. sushi, 123 main street &#8230;</string>
+    <string name="oneboxDsrDesc">DSR</string>
+    <string name="oneboxSearchContentDesc">oneboxSearch</string>
+    
+</resources>

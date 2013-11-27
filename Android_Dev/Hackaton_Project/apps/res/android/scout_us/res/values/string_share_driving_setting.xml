@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string name="homeworkEtaSubTitle">HOME/WORK ETA</string>
+    <string name="realTimeEtaSubTitle">REAL-TIME ETA</string>
+    <string name="shareRealTimeEta">Share real-time ETA</string>
+    <string name="shareRealTimeEtaDetail">Include a link with each shared ETA which allows friends to follow your progress in real time.</string>
+    <string name="shareRealTimeEtaSplitLineDescription">SpiltLine</string>
+
+</resources>

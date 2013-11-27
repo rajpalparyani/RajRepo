@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip">
+
+    <TextView
+        android:id="@+id/set_up"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="left|center_vertical"
+        android:layout_weight="0.3"
+        android:paddingTop="2dip"
+        android:inputType="none"
+        android:paddingLeft="10dip"
+        android:singleLine="true"
+        android:text="set up"
+        android:textColor="#ff7b7b7b"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:clickable="true"
+        android:gravity="left|center_vertical"
+        android:inputType="none"
+        android:paddingLeft="10dip"
+        android:singleLine="true"
+        android:text="Home"
+        android:textColor="@color/widget_addr_text_color"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold" >
+    </TextView>
+
+</LinearLayout>

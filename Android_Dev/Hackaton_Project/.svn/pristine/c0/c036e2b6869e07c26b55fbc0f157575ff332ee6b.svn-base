@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard0place_landscape_fake"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginTop="11dp"
+    android:layout_marginRight="11dp"
+    android:layout_marginBottom="10dp"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/dashboard0PlaceCoffeeButton_landscape_fake"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_button_top_landscape"
+        android:clickable="true"
+        android:gravity="center"
+        android:tag="241" >
+
+        <ImageView
+            android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+            android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+            android:contentDescription="@string/dashboardPlaceCoffee"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/dashboard_poi_icon_coffee" />
+    </LinearLayout>
+</LinearLayout>

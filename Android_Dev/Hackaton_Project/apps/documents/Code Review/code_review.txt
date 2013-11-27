@@ -1,0 +1,177 @@
+-----------------  Frank Dong  -----------------------
+
+*) com.telenav.app
+	BackgroundSyncResourceManager.java
+		line 92 http://jira.telenav.com:8080/browse/TN-2545
+		line 212 isAllowNetworkRequest(proxy) why sleep 2000? [DuanBo]
+	CommManager.java
+		line 110 the usage of apacheComm and ThreadManager.TYPE_APP_ACTION has risks.[DuanBo]
+		line 123 shall we still use http://m.telenav.com/att/nav/7_0_01/en_US/legal.html ?
+	TeleNavDelegate.java
+		line 163 why we need this line?
+		
+*) com.telenav.app.android
+	AndroidContactProvider.java 
+   		line 112 no need catch [DongZhen]
+   		line 172 no need catch [DongZhen]
+   	AndroidExceptionFileLogger.java
+   		AndroidExceptionFileLogger.java is never used at all.
+   		line 60 stackTraces never be cleaned.
+   		line 93 if two exception throws at the same time, the 1st exception will be lost.
+
+*) com.telenav.app.android.jni
+	FastJniPreloader.java [Was deleted already]
+	GLEngineException.java
+		do we need them?
+	JniGLMapEngine.java
+		line 73 isCachePreloaderStarted can not protect startPreloader() from being started twice.
+		line 732 will we disable preloader for ever?
+		line 93 if isCachePreloaderStarted always be false, how about remove this function?
+		line 580, 620 how about delete setRoute and setRouteColor? [Xu JianYong]
+		line 630 low efficiency, shall find a better algorithm? [Xu JianYong]
+		line 679 the getClientSupport() will be invoked frequently, why new JniTnMapClientSupport() each time?  [Xu JianYong]
+	NativeSpeexEncoder.java
+		line 69 we can reset the current buffer while not create new. more gc.
+		
+*) com.telenav.data.cache
+	ImageCacheManager.java
+		line 19~21 is NormalImageCache.java and MutableImageCache.java necessary?
+		[Enhancement] LRUCache will be low efficiency for static caches, for example imageCache, ninePatchImageCache, Hashtable will be better. [FangQuan]
+					public synchronized Object get(Object key) 
+					{
+						Entry tab[] = table;
+						int hash = key.hashCode();
+						int index = (hash & 0x7FFFFFFF) % tab.length;
+						for (Entry e = tab[index] ; e != null ; e = e.next) 
+						{
+						    if ((e.hash == hash) && e.key.equals(key)) 
+						    {
+						        e.recordAccess(this);  // performance?
+						        return e.value;
+						    }
+						}
+						return null;
+					}
+
+*) com.telenav.data.dao.misc
+	ApacheResourceSaver.java
+		line 35 INSTANCE or instance? [XueJing]
+		line 44 any protection for io error handling? what will happen is error happens in the middle of the saveFiles()? If it is not an important module, let it be. [XueJing]
+	DaoManager.java
+		line 367 ~ 389 synchronized [XueJing]
+	PreferenceDao.java
+		line 92 will it be dangrous we set prefGroups null while it is referenced in other thread?
+		line 201,220 ... is not formal format. [LiQiang][Done]
+
+*) com.telenav.data.dao.serverproxy
+	AddressDao.java [XueJing]
+		line 66 isaddressSynchronized never used
+		line 74 favoritesSize,recentSize never used
+		line 98 airportTextFieldMaxLength never used
+		line 230 shall we remove formatString too?
+	MandatoryNodeDao.java [XueJing]
+		line 24 isLoaded never used	
+	MisLogDao.java [DuanBo]
+		line 119 why remove?
+		line 140 why sort?		
+	NearCitiesDao.java
+		// line 38 isCityFar never used
+		line 58 getNearCities() is invoked at AcModel.java line 48 twice, it deserialized twice. [GuiBing]
+		line 108 getNearCityChanged or isNearCityChanged? BTW,this method never used.[GuiBing]
+	ServerDrivenParamsDao.java
+		line 292 clearRAM() never used, how about remove it? [DongFang]
+
+*) com.telenav.data.datatypes.address
+	Address.java [DongZhen]
+		line 291 if the address is a billboard AD, the getBizPoi().getPoiId() will be a dynamic number, how to handle this?
+	Stop.java [DongZhen]
+		" at " should use const AT instead
+		
+*) com.telenav.data.datatypes.mandatory
+	MandatoryProfile.java
+		line 54 should be gpsType [DuanBo]
+		what is eqpin/ptnType/programCode/deviceCarrier/audioLevel/... stand for? [NingYang]
+		what is the optional values? will be better to have java docs. [the same to other data types] [NingYang]
+
+*) com.telenav.data.serverproxy.impl
+	IMissingAudioProxy.java
+		clear() never used, how about remove it? [GuiBing]
+		
+		
+*) com.telenav.data.serverproxy.impl.protobuf
+	ProtoBufAddressProxy.java
+		line 60 lastRecentStopSyncTime never used [XueJing]
+	ProtoBufBatchProxy.java
+		line 104 why change action inside for(...) ? [GuiBing]
+		line 142 status==-1? is it ok? [ok, batch status meaningless]
+	ProtoBufLoginProxy.java
+		sso_token,soc_code,account_type ? [DongFang]
+	ProtoBufNavigationProxy.java [LiQiang][Done]
+		line 73 NODE_SCREEN_TYPE never used
+		line 76 TYPE_GET_ROUTE never used
+		line 151 is requestCommuteRoute() needed? [keep it]
+		line 452,461 is requestAvoidSegment() needed?
+		line 523,532 is requestMinimizeDelay() needed?
+		line 619,627 is requestStaticAvoidSegment() needed?
+		line 683,691 is requestStaticMinimizeDelay() needed?
+		... and other @deprecated functions, how about remove them all?
+	ProtoBufOneBoxSearchProxy.java [DuanBo]
+		line 341 should use Logger
+	ProtoBufServerProxyUtil.java  [DuanBo]
+		line 409 don't eat exception
+	ProtoBufServiceLocatorProxy.java [DuanBo]
+		line 49 should use Logger
+	ProtoBufShareAddressProxy.java [DuanBo]
+		line 58 should use Logger [DuanBo]
+	ProtoBufStartupProxy.java [DuanBo]
+		line 54 should use Logger
+	ProtoBufSyncCombinationResProxy.java [XueJing]
+		line 60 requestNumber never used
+		line 129 should use Logger
+		line 646 will it be better moving out side of recycle?
+		line 377 if status != IServerProxyConstants.SUCCESS, we still treat it as STEP_SYNC_FINISH, is there any problem if we ignore sync error?
+	ProtoBufSyncPurchaseProxy.java [DuanBo]
+		line 56 should use Logger
+	ProtoBufToolsProxy.java [LiQiang][Done]
+		line 47 SEPARATE_TOKEN never used
+		line 51 guideTones never used?
+		line 72,120 should use Logger
+		line 285 syncBillingAccount() never used
+	ProtoBufTrafficProxy.java [DongZhen]
+		FAKE_DATA never used
+		lastUpdateDurationTime, isCameraAlertOn, isSpeedTrapOn never used
+	ProtoBufValidateAddressProxy.java [XueJing]
+		line 69 elementAt(2) or elementAt(3)?
+
+*) com.telenav.dsr [DongZhen]
+	Why we need two thread for EncodingJob and EndpointerJob? Is one thread enough?
+	
+*) com.telenav.dsr.util [DongZhen]
+	DsrUtil.java
+		line 58,87 we don't need threadPool.start() everytime
+		
+*) com.telenav.log.mis
+	MisLogManager.java [TODO ???]
+		line 278 is misLogDao.store() invoked too frequently? in poi list page, everytime scroll down list, it stores twice.
+		line 351 if we removeMisLog() is a short time, why must we store it before? in general, there is too much misLogDao.store(), it might affect performance
+		line 290 do we need getOutgoingEventCount()?
+		line 377 why PRIORITY_2? why not PRIORITY_1?
+
+*) com.telenav.module.about [DongFang]
+	AboutController.java
+		line 22 ACTION_ABOUT_INIT could be ACTION_NONE
+	AboutModel.java
+		line 57 is GPS timeout 4 seconds too short?
+	AboutUiDecorator.java
+		line 61 why PrimitiveTypeCache.valueOf(height - 40)?
+	AboutViewTouch.java
+		line 116 will be better to have break
+
+*) com.telenav.module.ac [XueJing]
+	AcController.java
+		line 58 EVENT_MODEL_UPDATE_MAIN never used
+	AcModel.java
+		line 48 should not invoke DaoManager.getInstance().getNearCitiesDao().getNearCities() twice
+	ParseAirportJob.java
+		never used
+	

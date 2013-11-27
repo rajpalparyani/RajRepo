@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="dwf0contactSuggestItemPaddingLeftRight">11dp</dimen>
+    <dimen name="dwf0contactSuggestItemPaddingTopBottom">5dp</dimen>
+    <dimen name="dwf0contactSuggestItemGroupPaddingTopBottom">16dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="dwf0contactSuggestItemNameTextSize">17sp</dimen>
+	<dimen name="dwf0contactSuggestItemPhoneTextSize">12sp</dimen>
+	<dimen name="dwf0contactSuggestItemTypeTextSize">10sp</dimen>
+    <!-- color -->
+	<color name="dwf0contactSuggestItemNameTextColor">#ff333333</color>
+    <color name="dwf0contactSuggestItemPhoneTextColor">#ff777777</color>
+    <color name="dwf0contactSuggestItemTypeTextColor">#ff777777</color>
+</resources>

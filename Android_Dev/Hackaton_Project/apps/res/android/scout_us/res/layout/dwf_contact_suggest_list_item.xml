@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dwf0contactSuggestItemPaddingLeftRight"
+    android:paddingRight="@dimen/dwf0contactSuggestItemPaddingLeftRight"
+    android:paddingTop="@dimen/dwf0contactSuggestItemPaddingTopBottom"
+    android:paddingBottom="@dimen/dwf0contactSuggestItemPaddingTopBottom"
+    android:background="@drawable/dwf_dropdown_item_background">"
+
+    <TextView
+        android:id="@+id/dwf0contactSuggestItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/dwf0contactSuggestItemNameTextColor"
+        android:textSize="@dimen/dwf0contactSuggestItemNameTextSize" />
+
+    <TextView
+        android:id="@+id/dwf0contactSuggestItemPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dwf0contactSuggestItemName"
+        android:textColor="@color/dwf0contactSuggestItemPhoneTextColor"
+        android:textSize="@dimen/dwf0contactSuggestItemPhoneTextSize" />
+
+    <TextView
+        android:id="@+id/dwf0contactSuggestItemType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/dwf0contactSuggestItemPhone"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/dwf0contactSuggestItemTypeTextColor"
+        android:textSize="@dimen/dwf0contactSuggestItemTypeTextSize" />
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dwfSlider0ItemMainContainer"
+    android:layout_width="@dimen/dwf0SliderItemWidth"
+    android:layout_height="wrap_content"
+    android:background="@color/dwf0SliderArrivedItemBackground"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dwf0SliderItemPaddingLeft"
+    android:paddingRight="@dimen/dwf0SliderItemPaddingRight" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dwfSlider0ItemNameView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:paddingBottom="@dimen/dwf0SliderItemNamePaddingBottom"
+            android:singleLine="true"
+            android:textColor="@color/dwf0SliderItemNameTextColor"
+            android:textSize="@dimen/dwf0SliderItemNameTextSize"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/dwf_nav_dotted_line_repeat" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/dwfSlider0ItemImageView"
+            android:layout_width="@dimen/dwf0SliderItemImageWidth"
+            android:layout_height="@dimen/dwf0SliderItemImageHeight"
+            android:contentDescription="@string/dwfDriveTo"
+            android:paddingTop="@dimen/dwf0SliderItemImagePaddingTop"
+            android:scaleType="fitXY"
+            android:src="@drawable/drive_with_friends_default_portrait_icon_unfocused" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="3dp" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/dwf_nav_line_repeat" />
+
+            <TextView
+                android:id="@+id/dwfSlider0ItemEtaView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/dwf0SliderItemEtaPaddingTop"
+                android:textColor="@color/dwf0SliderArrivedItemEtaTextColor"
+                android:textSize="@dimen/dwf0SliderItemEtaTextSize"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/dwfSlider0ItemStatusIndicator"
+                android:layout_width="@dimen/dwf0SliderItemStatusIndicatorWidth"
+                android:layout_height="@dimen/dwf0SliderItemStatusIndicatorHeight"
+                android:background="@color/dwf_status_indicator" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="28dp"
+                android:background="@drawable/dwf_nav_dotted_line_repeat" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

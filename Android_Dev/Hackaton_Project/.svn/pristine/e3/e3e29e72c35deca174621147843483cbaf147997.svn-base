@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- width, height, margin and padding -->
+    <dimen name="dashboard0AdsLinearLayoutLayoutHeight">70dp</dimen>
+    <dimen name="dashboard0AdsLinearLayoutLayoutHeightLandscape">50dp</dimen>
+    <dimen name="dashboard0AdsLinearLayoutLayoutMargin">11dp</dimen>
+    <dimen name="dashboard0AdsArrowImageLayoutWidth">11dp</dimen>
+    <dimen name="dashboard0AdsArrowImageLayoutHeight">21dp</dimen>
+    
+    <dimen name="dashboard0DriveLinearLayoutLayoutMargin">8dp</dimen>
+    <dimen name="dashboard0DriveRecentsButtonImageLayoutWidth">69dp</dimen>
+    <dimen name="dashboard0DriveRecentsButtonImageLayoutHeight">40dp</dimen>
+    <dimen name="dashboard0DriveDWFButtonImageLayoutWidth">56dp</dimen>
+    <dimen name="dashboard0DriveDWFButtonImageLayoutHeight">52dp</dimen>
+    <dimen name="dashboard0DriveDWFButtonImageLandscapeLayoutHeight">42dp</dimen>
+    <dimen name="dashboard0DriveRecentsButtonLineImageLayoutHeight">10dp</dimen>
+    <dimen name="dashboard0LocationLinearLayoutLayoutMargin">11dp</dimen>
+    <dimen name="dashboard0LocationLinearLayoutLayoutAddressMargin">12dp</dimen>
+    <dimen name="dashboard0LocationLinearLayoutLayoutAddressMarginLandscape">14dp</dimen>
+    <dimen name="dashboard0LocationLinearLayoutLayoutHeight">80dp</dimen>
+    <dimen name="dashboard0LocationLinearLayoutLayoutHeightLandscape">45dp</dimen>
+    <dimen name="dashboard0LocationWeatherImageLayoutWidth">50dp</dimen>
+    <dimen name="dashboard0LocationWeatherImageLayoutHeight">37dp</dimen>
+    <dimen name="dashboard0LocationWeatherImageMarginLeft">30dp</dimen>
+    
+    <dimen name="dashboard0PlaceLinearLayoutLayoutMargin">11dp</dimen>
+    <dimen name="dashboard0PlaceImageLayoutWidth">56dp</dimen>
+    <dimen name="dashboard0PlaceImageLayoutHeight">56dp</dimen>
+    
+    <dimen name="dashboard0DropdownItemWidthLandscape">165dp</dimen>
+    <dimen name="dashboard0DropdownItemHeightLandscape">72dp</dimen>
+    
+    <dimen name="dashboard0TitleLinearLayoutLayoutMargin">6dp</dimen>
+    <dimen name="dashboard0TitlePersonalButtonLayoutWidth">42dp</dimen>
+    <dimen name="dashboard0TitlePersonalButtonLayoutHeight">42dp</dimen>
+    <dimen name="dashboard0TitlePersonalButtonMarginLeft">10dp</dimen>
+    <dimen name="dashboard0TitlePersonalButtonMarginRight">10dp</dimen>
+    <dimen name="dashboard0TitleFavoriteButtonLayoutWidth">42dp</dimen>
+    <dimen name="dashboard0TitleFavoriteButtonLayoutHeight">42dp</dimen>
+    <!-- weight -->
+    <string name="dashboard0LocationAddressButtonLayoutWeight">8</string>
+    <string name="dashboard0TitleOneboxLayoutWeight">8</string>
+    <!-- text size -->
+    <dimen name="dashboard0AdsMainTextSize">20sp</dimen>
+    <dimen name="dashboard0AdsDescTextSize">15sp</dimen>
+    
+    <dimen name="dashboard0DriveHomeButtonMainTextSize">16sp</dimen>
+    <dimen name="dashboard0DriveHomeButtonDescTextSize">34sp</dimen>
+    <dimen name="dashboard0DriveWorkButtonMainTextSize">16sp</dimen>
+    <dimen name="dashboard0DriveWorkButtonDescTextSize">34sp</dimen>
+    <dimen name="dashboard0DriveRecentsButtonTextSize">16sp</dimen>
+    <dimen name="dashboard0DriveDWFTextSize">13sp</dimen>
+    
+    <dimen name="dashboard0DriveResumeMainTextSize">10sp</dimen>
+    <dimen name="dashboard0DriveResumeDescTextSize">34sp</dimen>
+    <dimen name="dashboard0DriveResumeLabelTextSize">16sp</dimen>
+    <dimen name="dashboard0DriveResumeButtonImageLayoutWidth">35dp</dimen>
+    <dimen name="dashboard0DriveResumeButtonImageLayoutHeight">35dp</dimen>
+    
+    <dimen name="dashboard0LocationCityTextSize">34sp</dimen>
+    <dimen name="dashboard0LocationCityTextSizeLandscape">30sp</dimen>
+    <dimen name="dashboard0LocationAddressActionButtonSize">17dp</dimen>
+    <dimen name="dashboard0LocationStreetTextSize">14sp</dimen>
+    <dimen name="dashboard0LocationWeatherTextSize">22.5sp</dimen>
+    <dimen name="dashboard0LocationWeatherTextSizeLandscape">16sp</dimen>
+    
+    <dimen name="dashboard0PlaceTextSize">16sp</dimen>
+    <!-- color -->
+    <color name="dashboard0AdsMainTextColor">#ffffffff</color>
+	<color name="dashboard0AdsDescTextColor">#ffffffff</color>
+	
+	<color name="dashboard0DriveHomeButtonDescTextColor">#ffffffff</color>
+	<color name="dashboard0DriveWorkButtonDescTextColor">#ffffffff</color>
+	<color name="dashboard0DriveHomeButtonDescTransparentTextColor">#40ffffff</color>
+	<color name="dashboard0DriveWorkButtonDescTransparentTextColor">#40ffffff</color>
+	
+	<color name="dashboard0MapProviderNightTextColor">#676767</color>
+	<color name="dashboard0MapProviderDayTextColor">#676767</color>
+	
+	<color name="dashboard0MiniMapBackgroundColor">#CCCCCC</color>
+	<color name="dashboard0LocationCityTextColor">#231f20</color>
+	<color name="dashboard0LocationStreetTextColor">#231f20</color>
+	<color name="dashboard0LocationWeatherTextColor">#505c67</color>
+	
+	<color name="dashboard0DropdownTextColor">#505c67</color>
+	<color name="dashboard0DropdownTextColorDisabled">#939fab</color>
+	
+	<!-- config -->
+    <!-- The duration (in milliseconds) of the mini dropdown animation. -->
+    <integer name="dashboard0AnimTime">300</integer>
+</resources>

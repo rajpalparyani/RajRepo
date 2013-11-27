@@ -1,0 +1,138 @@
+{
+    "type": "object",
+    "properties": {
+        "mipmap": {
+            "type": "string",
+            "options": [
+                {"value":"disable", "label":"Disable mipmap generation"},
+                {"value":"hardware", "label":"Enable hardware mipmap generation"},
+                {"value":"software", "label":"Enable software mipmap generation"},
+                {"value":"software_on_update", "label":"Enable softare mipmap generation for updates, otherwise hardware"}
+            ],
+            "description": "Should engine generate mip-maps?"
+        },
+        "enable_cull_face": {
+            "type": "bool",
+            "description": "Should engine enable cull face?"
+        },
+        "mercator_table_size_kb": {
+            "type": "number",
+            "description": "The size of table for fast Mercator projection in kilo-bytes.     0 for not using the table for Mercator projection."
+	    },
+        "use_polygon_offset": {
+            "type": "bool",
+            "description": "Should billboard icon render with glPolygonOffset?"
+        },
+        "renderers" : {
+            "type": "object",
+            "properties": {
+                "alpha_test_tile_annotation": {
+                    "type": "number"
+                },
+                "alpha_test_annotation_3d": {
+                    "type": "number"
+                },
+                "alpha_test_annotation_model": {
+                    "type": "number"
+                },
+                "alpha_test_billboard_icon": {
+                    "type": "number"
+                },
+                "alpha_test_billboard_icon_text": {
+                    "type": "number"
+                },
+                "alpha_test_billboard_label": {
+                    "type": "number"
+                },
+                "alpha_test_billboard_label_text": {
+                    "type": "number"
+                },
+                "alpha_test_group_icon": {
+                    "type": "number"
+                },
+                "alpha_test_landmark": {
+                    "type": "number"
+                },
+                "description" : "Alpha test values for renderers"
+            }
+        },
+        "hardcodes" : {
+            "type": "object",
+            "properties": {
+                "max_vbo_vertex": {
+                    "type": "integer",
+                    "description" : "The maximum number of vertices a single VBO is allowed to have. VBOs greater than this size are rejected."
+                },
+                "max_vbo_vertex_per_frame": {
+                    "type": "integer",
+                    "description" : "If the number of vertices contained in VBOs created this frame exceeds this number, stop building VBOs this frame and start again next frame."
+                }, 
+                "vbo_min_vertex_count": {
+                    "type": "integer",
+                    "description" : "For geometry sets with fewer vertices than this, don't bother creating a VBO. Just use vertex attribute arrays directly."
+                },
+                "base_tile_size": {
+                    "type": "integer",
+                    "description" : "Server-specific tile size. Don't mess with this."
+                }
+            }
+        },
+        "text" : {
+            "type": "object",
+            "properties": {
+                "glyph_bucket_size": {
+                    "type": "integer",
+                    "description" : "DO NOT CHANGE"
+                }, 
+                "glyph_bucket_glyphs_per_row": {
+                    "type": "integer",
+                    "description" : "DO NOT CHANGE"
+                }, 
+                "glyph_loads_per_frame": {
+                    "type": "integer",
+                    "description" : "DO NOT CHANGE"
+                },
+                "enable_fast_halo": {
+                    "type": "boolean",
+                    "description" : "True to use fast convolution algorithm to generate halo."
+                }
+            }
+        },
+        "debug" : {
+            "type": "object",
+            "properties": {
+                "bounding_box" : {
+                    "type": "object",
+                    "properties": {
+                        "show_bounding_box_for_flat_feature" : {
+                            "type": "boolean",
+                            "description" : "True to display bounding box for flat feature label."
+                        },
+                        "projected_bounding_box_color": {
+                            "type": "string",
+                            "description" : "The projected bounding box color and opacity expressed in Internet style RGBA, e.g., #0000FFFF."
+                        },
+                        "flat_feature_bounding_box_color": {
+                            "type": "object",
+                            "description" : "Specify colors for bounding box display, use alpha 0 to turn it off individually",
+                            "properties": {
+                                "label": {
+                                    "type": "string",
+                                    "description": "The color of glyph label in Internet style RGBA, e.g., #FFDDCCAA."
+                                }, 
+                                "orthogonal": {
+                                    "type": "string",
+                                    "description": "The color of orthogonal bounding box in Internet style RGBA, e.g., #FFDDCCAA."
+                                }, 
+                                "optimized": {
+                                    "type": "string",
+                                    "description": "The color of optimized bounding box in Internet style RGBA, e.g., #FFDDCCAA."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

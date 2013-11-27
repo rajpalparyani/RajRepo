@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dimensions -->
+    <!-- Height and width of app icons in the share item list -->
+    <dimen name="share0AppIconSize">32dip</dimen>
+    <dimen name="share0ListItemMinHeight">48dip</dimen>
+    
+    <!-- colors -->
+    <color name="share0TitleDivider">#5B7788</color>
+    <color name="share0Backgroud">#E9E9E9</color>
+    <color name="share0Text">#333333</color>
+    <color name="share0BackgroundFocus">#DCDBDB</color>
+</resources>

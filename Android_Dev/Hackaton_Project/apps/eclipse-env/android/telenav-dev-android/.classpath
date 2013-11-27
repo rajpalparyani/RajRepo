@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="gen"/>
+	@stub_src@
+	<classpathentry excluding="com/telenav/app/j2me/|com/telenav/app/j2se/|com/telenav/app/rim/|com/telenav/ui/frogui/widget/j2se/|com/telenav/ui/frogui/widget/rim/@classpath_exclude@" kind="src" path="src"/>
+	<classpathentry kind="src" path="mvc"/>
+	<classpathentry kind="src" path="cache"/>
+	<classpathentry kind="src" path="threadpool"/>
+	<classpathentry kind="src" path="util"/>
+	<classpathentry kind="src" path="logger"/>
+	<classpathentry kind="src" path="ui_graphics"/>
+	<classpathentry kind="src" path="widgetSrc"/>
+	<classpathentry excluding="com/telenav/backlight/j2me/|com/telenav/backlight/j2se/|com/telenav/backlight/rim/" kind="src" path="backlight"/>
+	<classpathentry excluding="com/telenav/io/j2me/|com/telenav/io/j2se/|com/telenav/io/rim/|com/telenav/nio/j2se/|com/telenav/nio/rim/" kind="src" path="io"/>
+	<classpathentry excluding="com/telenav/location/j2me/|com/telenav/location/j2se/|com/telenav/location/rim/" kind="src" path="location"/>
+	<classpathentry excluding="com/telenav/media/j2me/|com/telenav/media/j2se/|com/telenav/media/rim/" kind="src" path="media"/>
+	<classpathentry excluding="com/telenav/network/j2me/|com/telenav/network/j2se/|com/telenav/network/rim/" kind="src" path="network"/>
+	<classpathentry excluding="com/telenav/persistent/j2me/|com/telenav/persistent/j2se/|com/telenav/persistent/rim/" kind="src" path="persistent"/>
+	<classpathentry excluding="com/telenav/radio/j2me/|com/telenav/radio/j2se/|com/telenav/radio/rim/" kind="src" path="radio"/>
+	<classpathentry excluding="com/telenav/telephony/j2me/|com/telenav/telephony/j2se/|com/telenav/telephony/rim/" kind="src" path="telephony"/>
+	<classpathentry kind="src" path="audio"/>
+	<classpathentry kind="src" path="comm"/>
+	<classpathentry kind="src" path="datatypes"/>
+	<classpathentry kind="src" path="gps"/>
+	<classpathentry kind="src" path="i18n"/>
+	<classpathentry kind="src" path="navservice"/>
+	<classpathentry kind="src" path="json"/>
+	<classpathentry excluding="com/telenav/map/opengl/java/|com/telenav/map/opengl/java/es10render/|com/telenav/map/opengl/java/math/|com/telenav/map/opengl/java/proxy/" kind="src" path="map"/>
+	<classpathentry excluding="com/telenav/tnui/core/j2me/|com/telenav/tnui/core/j2se/|com/telenav/tnui/core/rim/|com/telenav/tnui/widget/j2me/|com/telenav/tnui/widget/j2se/|com/telenav/tnui/widget/rim/" kind="src" path="ui_core"/>
+	<classpathentry exported="true" kind="lib" path="lib/EventManager.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/foundation.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/NavigationSDK.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/NavigationSDKBase.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pusu.jar"/>	
+	<classpathentry exported="true" kind="lib" path="lib/Tnlink.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/NavigationSDKCodecs.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/CarConnectProtocols.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Protobuf.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FordApplinkAdapter.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FordApplinkSDK.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/com.kontagent.android.sdk.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/crashlytics.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/google-play-services.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

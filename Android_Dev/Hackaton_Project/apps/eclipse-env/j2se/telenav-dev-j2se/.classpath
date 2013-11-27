@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/platform"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/services"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/coreui"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/frogui"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/utility"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/graphics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/logger"/>
+	<classpathentry excluding="com/telenav/app/android/|com/telenav/app/j2me/|com/telenav/app/rim/" kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

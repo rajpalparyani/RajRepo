@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/share0Backgroud" >
+
+    <LinearLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@android:id/title"
+            style="?android:attr/windowTitleStyle"
+            android:textColor="@color/share0Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="60dp"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip" />
+
+        <View
+            android:id="@+id/titleDivider"
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:background="@color/share0TitleDivider" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/select_dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/myplacelist0ListViewColor"
+        android:listSelector="#00000000"
+        android:divider="@drawable/divider_horizontal_bright"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

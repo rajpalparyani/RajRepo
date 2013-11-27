@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="placeListAdsIndicatorDesc">AD</string>
+    <string name="placeListResult">Search Results</string>
+    <string name="placeList0Feedback">Not what you expected?&#160;&#160;</string>
+    <string name="placeList0FeedbackLink"><u>FeedBack</u></string>
+
+</resources>

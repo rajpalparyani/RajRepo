@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:id="@+id/myplaceList0searchFilterContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbox_bg_unfocused"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/myplacelist0BottomButtonMarginTopBottom"
+        android:paddingLeft="@dimen/myplacelist0BottomButtonMargin"
+        android:paddingRight="@dimen/myplacelist0BottomButtonMargin"
+        android:paddingTop="@dimen/myplacelist0BottomButtonMarginTopBottom" >
+    </LinearLayout>
+
+    <com.telenav.ui.android.TnListView
+        android:id="@+id/myplaceList0ListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@color/myplacelist0ListViewColor"
+        android:listSelector="#00000000"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" 
+        android:overScrollFooter="@null"/>
+
+    <LinearLayout
+        android:id="@+id/myplaceList0BottomButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbox_bg_unfocused"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/placeList0BottomDivider" />
+
+            <com.telenav.ui.android.CommonBottom
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/myplacelist0BottomButtonMarginTopBottom"
+                    android:layout_marginTop="@dimen/myplacelist0BottomButtonMarginTopBottom"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="22" />
+
+                    <LinearLayout
+                        android:id="@+id/myplaceList0AddButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="212"
+                        android:background="@drawable/myplace_bottom_button"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/commonBottomButtonPadding"
+                        android:paddingTop="@dimen/commonBottomButtonPadding" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/my_places_icon_add_unfocused"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/myplacelist0BottomButtonDrawablePadding"
+                            android:text="@string/myplaceAdd"
+                            android:textColor="@color/bottom_control_text_color"
+                            android:textSize="@dimen/commonBottomButtonTextSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="22" />
+
+                    <LinearLayout
+                        android:id="@+id/myplaceList0EditButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="212"
+                        android:background="@drawable/myplace_bottom_button"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/commonBottomButtonPadding"
+                        android:paddingTop="@dimen/commonBottomButtonPadding" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/my_places_icon_edit_unfocused"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/myplacelist0BottomButtonDrawablePadding"
+                            android:text="@string/myplaceEdit"
+                            android:textColor="@color/bottom_control_text_color"
+                            android:textSize="@dimen/commonBottomButtonTextSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="22" />
+
+                    <LinearLayout
+                        android:id="@+id/myplaceList0SortButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="212"
+                        android:background="@drawable/myplace_bottom_button"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/commonBottomButtonPadding"
+                        android:paddingTop="@dimen/commonBottomButtonPadding" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/my_places_icon_sort_unfocused"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/myplacelist0BottomButtonDrawablePadding"
+                            android:text="@string/myplaceSort"
+                            android:textColor="@color/bottom_control_text_color"
+                            android:textSize="@dimen/commonBottomButtonTextSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="22" />
+                </LinearLayout>
+            </com.telenav.ui.android.CommonBottom>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

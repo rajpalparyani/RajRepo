@@ -1,0 +1,5 @@
+{
+	"EnableLog":	"1",
+	"SimulateNav":	"1",
+	"MapEngineResourcePath":	"/sdcard/opengl_map_engine/Resources/"
+}

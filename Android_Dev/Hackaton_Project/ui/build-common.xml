@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<project name="build-common" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<!-- 
+	<property name="jar.file" value="${jar.file}" />
+	<property name="ivy.settings" value="${ivy.settings}" />
+	<property name="ivy.file" value="${ivy.file}" />
+	 -->
+	<path id="OpenSourceLib.taskdef.classpath">
+		<fileset dir="../OpenSourceLib">
+			<include name="ant-contrib-1.0b3.jar" />
+            		<include name="antenna-bin-0.9.13.jar" />
+            		<include name="findbugs-1.3.9\lib\findbugs-ant.jar" />
+            		<include name="apache-ivy-2.2.0\ivy-2.2.0.jar" />
+           		<include name="javancss-32.53\lib\*.jar" />
+		</fileset>
+	</path>
+	<!-- =============================================== task definition =============================================== -->
+	<taskdef resource="antenna.properties" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="OpenSourceLib.taskdef.classpath"/>
+	<path id="findbugs.taskdef.classpath">
+		<fileset dir="${findbugs_home}/lib">
+			<include name="findbugs-ant.jar" />
+		</fileset>
+	</path>
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs.taskdef.classpath" />
+
+	<path id="cobertura.taskdef.classpath">
+		<fileset dir="..\OpenSourceLib\cobertura-1.9.4.1">
+			<include name="cobertura.jar"/>
+			<include name="lib\**.*"/>
+		</fileset>
+	</path>
+	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="OpenSourceLib.taskdef.classpath"/>
+
+	<!-- ============================================== target ============================================== -->
+	<target name="resolve" description="--> resolve and retrieve dependencies with ivy">
+		<mkdir dir="${lib.dir}" />
+		<!-- not usually necessary, ivy creates the directory IF there are dependencies -->
+		<mkdir dir="${retrieve.dir}" />
+
+		<ivy:settings file="${ivy.settings}" />
+		<!-- the call to resolve is not mandatory, retrieve makes an implicit call if we don't -->
+		<ivy:cleancache />
+		<ivy:resolve file="${ivy.file}" />
+		<ivy:retrieve pattern="${retrieve.dir}/[artifact]-[revision].[ext]" />
+	</target>
+
+	<target name="compile" depends="resolve" description="--> compile the project">
+		<echo message="compile..." />
+
+		<copy todir="${lib.dir}" verbose="true">
+			<fileset dir="${retrieve.dir}"/>
+		</copy>
+
+		<available file="${extra.lib.dir}" type="dir" property="extra.lib.present" />
+
+		<if>
+			<equals arg1="true" arg2="${extra.lib.present}" />
+			<then>
+				<path id="compile.classpath">
+					<fileset dir="${lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+					<fileset dir="${extra.lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</then>
+			<else>
+				<path id="compile.classpath">
+					<fileset dir="${lib.dir}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</else>
+		</if>
+
+		<mkdir dir="${classes.dir}" />
+
+		<condition property="mobile.method">
+			<or>
+				<equals arg1="j2me" arg2="${platform}" />
+				<equals arg1="rim" arg2="${platform}" />
+			</or>
+		</condition>
+
+		<if>
+			<equals arg1="true" arg2="${mobile.method}" />
+			<then>
+				<wtkbuild 
+					target="${class.version}" 
+					source="${source.version}" 
+					destdir="${classes.dir}" 
+					classpathref="compile.classpath" 
+					fork="true" 
+					debug="true" 
+					optimize="true" 
+					deprecation="false" 
+					preverify="false" 
+					excludes="${compile.excludes}" 
+					bootclasspathref="${platform}.boot.classpath">
+
+					<src path="${src.dir}" />
+				</wtkbuild>
+			</then>
+			<else>
+				<!-- compile android code -->
+				<javac 
+					encoding="ascii" 
+					target="${class.version}" 
+					source="${source.version}" 
+					destdir="${classes.dir}" 
+					classpathref="compile.classpath" 
+					fork="true" 
+					debug="true" 
+					optimize="true" 
+					deprecation="false" 
+					excludes="${compile.excludes}" 
+					bootclasspathref="${platform}.boot.classpath">
+
+					<src path="${src.dir}" />
+				</javac>
+			</else>
+		</if>
+	</target>
+
+	<target name="findbugs">
+		<echo message="is findbugs disable: ${findbugs.enable}" />
+		<if>
+			<equals arg1="true" arg2="${findbugs.enable}" />
+			<then>
+				<findbugs home="${findbugs_home}" output="xml" excludeFilter="${findbugs.filter}" jvmargs="-Xmx512m" outputFile="${publish.dir}/${findbugs.file}.xml" errorProperty="isFindbugsError" warningsProperty="isFindbugsWarning">
+					<!-- auxClasspath refid="compile.classpath" /-->
+					<class location="${classes.dir}" />
+					<sourcePath path="${src.dir}" />
+				</findbugs>
+			</then>
+		</if>
+	</target>
+
+	<target name="jar" depends="compile" description="--> make a jar file for this project">
+		<mkdir dir="${publish.dir}" />
+		<jar destfile="${publish.dir}/${jar.file}.jar">
+			<fileset dir="${classes.dir}" />
+			<manifest>
+				<attribute name="Built-By" value="telenav" />
+				<attribute name="Build-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+
+		<zip destfile="${publish.dir}/${jar.file}.zip">
+			<fileset dir="${src.dir}" />
+		</zip>
+	</target>
+
+	<target name="publish" depends="init, clean, jar, findbugs" description="--> publish this project in the ivy repository">
+		<ivy:publish resolver="${ivy.default.publish.resolver}" pubrevision="${product.version}" overwrite="true">
+			<artifacts pattern="${publish.dir}/[artifact].[ext]" />
+		</ivy:publish>
+
+		<fail message=".                              $$$$$$$$$  Find some bugs at the codes by findbugs tool.  $$$$$$$$$">
+			<condition>
+				<or>
+					<isset property="isFindbugsError" />
+					<isset property="isFindbugsWarning" />
+				</or>
+			</condition>
+		</fail>
+
+		<echo message="project ${ant.project.name} released with version ${product.version}" />
+	</target>
+
+	<target name="clean-lib" description="--> clean the project libraries directory (dependencies)">
+		<delete includeemptydirs="true" dir="${lib.dir}" />
+	</target>
+
+	<target name="clean-publish" description="--> clean the project publish files">
+		<delete includeemptydirs="true" dir="${publish.dir}" />
+	</target>
+
+	<target name="clean-retrieve" description="--> clean the project retrieve files">
+		<delete includeemptydirs="true" dir="${retrieve.dir}" />
+	</target>
+
+	<target name="clean-classes" description="--> clean the project retrieve files">
+		<delete includeemptydirs="true" dir="${classes.dir}" />
+	</target>
+
+	<target name="clean" depends="clean-publish, clean-lib, clean-retrieve, clean-classes" description="--> clean the project" />
+
+	<target name="init" description="--> init the properties">
+		<property name="lib.dir" value="${base.dir}/lib" />
+		<property name="classes.dir" value="${base.dir}/classes" />
+		<property name="src.dir" value="${base.dir}/src" />
+		<property name="jar.file" value="${jar.file}" />
+		<property name="findbugs.file" value="findbugs-${jar.file}" />
+		<property name="findbugs.filter" value="${findbugs.filter}" />
+		<property name="findbugs.enable" value="${findbugs.enable}" />
+
+		<property name="publish.dir" value="${base.dir}/build" />
+		<property name="retrieve.dir" value="${base.dir}/retrieve" />
+	</target>
+</project>

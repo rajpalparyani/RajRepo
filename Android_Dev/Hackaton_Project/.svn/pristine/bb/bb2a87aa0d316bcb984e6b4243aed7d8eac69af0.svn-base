@@ -1,0 +1,16 @@
+10001=Contact has no phone number entered, please select a different contact.
+10002=Contact has no address entered, please select a different contact.
+10003=was not found. Would you like to use 
+10004=instead?
+10005=Yes
+10006=No
+10007=Not found, please try again.
+10008=Which address?
+10009=Which number?
+10010=Home:
+10011=Work:
+10012=Fax home:
+10013=Fax work:
+10014=Mobile:
+10015=Unable to get address for this contact.
+10016=Unable to get phone number for this contact.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/telenav-dev-android"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/asm-3.0.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/asm-tree-3.0.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/cobertura-1.9.4.1.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/easymock-3.0.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/json-lib-j2me-1.0.0.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/junit-4.8.1.jar"/>
+	<classpathentry kind="lib" path="@app_path@/android/android-sdk/13/android.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/log4j-1.2.9.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/objenesis-1.2.jar"/>
+	<classpathentry kind="lib" path="@app_path@/apps/lib/unittest-lib/powermock-easymock-1.4.8-full.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- width, height, margin and padding -->
+    <dimen name="commonTitle0ContainerLayoutHeight">53dp</dimen>
+    <dimen name="commonTitle0ContainerLayoutHorizontalHeight">38dp</dimen>
+    <dimen name="commonTitle0TextViewLayoutHeight">46dp</dimen>
+    <dimen name="commonTitle0SeparatorLayoutHeight">5dp</dimen>
+    <dimen name="commonTitle0IconButtonLayoutWidth">43dp</dimen>
+    <dimen name="commonTitle0TextViewMargin">53dp</dimen>
+    <dimen name="commonTitle0IconButtonLayoutHeight">32dp</dimen>
+    <dimen name="commonTitle0IconButtonLayoutHorizontalHeight">29dp</dimen>
+    <dimen name="commonTitle0IconButtonPadding">8dp</dimen>
+    <dimen name="commonTitle0IconButtonLayoutWidth1">108dp</dimen>
+      <dimen name="commonTitle0IconButtonLayoutHeight1">40dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+    <dimen name="commonTitle0TextViewTextSize">21sp</dimen>
+    <!-- color -->
+    <color name="commonTitle0TextViewForeground">#ffffffff</color>
+
+    <!-- style -->
+    <style name="commonTitleTextButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/commonTitle0IconButtonLayoutHeight</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

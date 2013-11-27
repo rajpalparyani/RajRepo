@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/place_list_item_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dwf0ListItemPaddingBottom"
+    android:paddingTop="@dimen/dwf0ListItemPaddingTop" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="34" />
+
+    <View
+        android:id="@+id/dwfListListItemIndicatorView"
+        android:layout_width="@dimen/dwf0ListItemIndicatorWidth"
+        android:layout_height="@dimen/dwf0ListItemIndicatorHeight"
+        android:background="@color/dwf_status_indicator" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="16" />
+
+    <ImageView
+        android:id="@+id/dwfListListItemImageView"
+        android:layout_width="@dimen/dwfReceiverGridItemLayoutWidth"
+        android:layout_height="@dimen/dwfReceiverGridItemLayoutWidth"
+        android:clickable="true"
+        android:contentDescription="@string/dwfDriveTo"
+        android:scaleType="fitXY"
+        android:src="@drawable/drive_with_friends_default_portrait_icon_unfocused" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="16" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="540"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/dwfListListItemEtaView"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dwfListListItemNameView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/dwf0ListItemNameTextColor"
+                android:textSize="@dimen/dwf0ListItemNameTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dwfListListItemStatusView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/dwf0ListItemStatusTextColor"
+                android:textSize="@dimen/dwf0ListItemStatusTextSize" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dwfListListItemEtaView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/dwf0ListItemEtaTextColor"
+            android:textSize="@dimen/dwf0ListItemEtaTextSize"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="34" />
+
+</LinearLayout>

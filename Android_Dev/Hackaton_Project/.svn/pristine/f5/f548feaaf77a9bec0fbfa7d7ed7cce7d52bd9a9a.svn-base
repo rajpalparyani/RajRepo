@@ -1,0 +1,8 @@
+app_name=@5000@
+searchwidget_mini_name=@5001@
+searchwidget_half_name=@5002@
+searchwidget_full_name=@5003@
+package_name=com.telenav.app.android.@ACTIVITY_PACKAGE@
+activity_name=@ACTIVITY_NAME@
+app_version=@APPLICATION_VERSION@
+build_number=@version@

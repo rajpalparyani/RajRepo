@@ -1,0 +1,16 @@
+platform=android
+api_version=13
+
+# compile version
+source_version=1.5
+class_version=1.5
+
+precomp_symbols=ANDROID,DEBUG,EMULATOR
+proguard_file=proguard_config-android.pro
+
+# exclude specfic packages and files here
+compile_excludes=\
+	**/rim/**, \
+	**/j2se/**, \
+	**/j2me/**, \
+	**/test/**, \

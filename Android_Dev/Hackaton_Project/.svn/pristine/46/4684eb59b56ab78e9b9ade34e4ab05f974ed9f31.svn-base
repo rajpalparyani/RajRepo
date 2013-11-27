@@ -1,0 +1,153 @@
+{
+    "vehicle" :
+    {
+        "model_scale" : 34
+    },
+    "view" :
+    {
+        "default_declination_3d" : -30.0
+    },
+    "screen_annotations" :
+    {
+        "poipopup_screen_annotation" :
+        {
+            "comment" : "Poi popup",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 241,
+            "icon_y" : 0,
+            "icon_w" : 482,
+            "icon_h" : 266,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0
+        },
+        "poipin_screen_annotation" :
+        {
+            "comment" : "Poi pin",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 25,
+            "icon_y" : 0,
+            "icon_w" : 50,
+            "icon_h" : 62,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0
+        },
+        "addresspin_screen_annotation" :
+        {
+            "comment" : "address pin",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 25,
+            "icon_y" : 0,
+            "icon_w" : 50,
+            "icon_h" : 62,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0
+        },
+        "flag_screen_annotation" :
+        {
+            "comment" : "origin or destination flags",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 13,
+            "icon_y" : 0,
+            "icon_w" : 26,
+            "icon_h" : 37,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0,
+	    "always_visible" : true
+        },
+        "address_screen_annotation" :
+        {
+            "comment" : "address popup",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 171,
+            "icon_y" : 0,
+            "icon_w" : 343,
+            "icon_h" : 266,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0
+        },
+        "dot_screen_annotation" :
+        {
+            "comment" : "dot",
+            "style" : "screen_icon",
+            "priority" : 25,
+            "font_face" : "DroidSansPro",
+            "font_size" : 30,
+            "render_size" : 20,
+            "text_color" : "#aaffaaff",
+            "outline_color" : "#115511ff",
+            "icon_x" : 18,
+            "icon_y" : 18,
+            "icon_w" : 36,
+            "icon_h" : 36,
+            "text_x" : 0,
+            "text_y" : 25,
+            "texcoord_left" : 0,
+            "texcoord_bottom" : 0,
+            "texcoord_right" : 1,
+            "texcoord_top" : 1,
+            "text_alignment" : "center",
+            "animation_time" : 0.0,
+            "always_visible" : true  
+        }
+    }
+}

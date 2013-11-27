@@ -1,0 +1,31 @@
+
+=============ValidateEnv=============
+
+1. What's ValidateEnv
+It's created for validate the environment prior to testing.
+
+
+
+2. How to use
+The script command line is: 
+validateEnv [option] 
+
+url:
+The service locator url address.Note:The url should be start with "http://". 
+Option:
+-h          print help information.
+-l          show the environment id and name.
+-e [id]     execute the selected id environment.
+-v [id]     execute the selected id environment,displays each test as it happens. 
+
+Use example:
+    show the environment list.
+    example: validateEnv -l
+
+    select the id number before environment.
+    example: validateEnv -e 0
+
+
+
+3. Maintainers
+Li Qiang(Jansen)    qli@telenav.cn

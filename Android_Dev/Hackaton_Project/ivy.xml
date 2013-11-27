@@ -1,0 +1,43 @@
+<ivy-module version="1.0">
+	<info organisation="mobile/apps/branches/7.2.0" module="telenav-global" />
+	<configurations>
+	       <!--app lib contains all jars for compile purpose, plese don't incluse those jars which are not reference in compile-->
+       	       <conf name="app_lib" description="libs packaged to app" />
+       	       <!--contains serchvpl reltaed jars -->
+       	       <conf name="searchvpl_lib" description="libs for searchVPL (widget)" />
+       	       <!--contains ant, unit test jars which are not referenced for compile purpose-->
+    	       <conf name="support_lib" description="libs not packaged to app" />
+    	       <!--contains tnview and car connect related jars-->
+               <conf name="tnview-lib" description="libs used for TnView" />
+	</configurations>
+
+	<dependencies>
+
+		<dependency org="/telenav/client/trunk" name="Foundation" rev="1.1.98548" conf="app_lib->default">
+			<artifact name="Foundation-android" ext="zip" /> 
+		</dependency>
+		
+		<!--======================= Event Manager =======================-->
+		<dependency org="/telenav/client/trunk" name="EventManager" rev="1.4.99417" conf="app_lib->default">
+			<artifact name="EventManager-android" ext="zip" /> 
+		</dependency>
+		<!--======================= NavigationSDKBase=======================-->
+		<dependency org="/telenav/client/trunk" name="NavigationSDKBase" rev="2.1.100005" conf="app_lib->default">
+			<artifact name="NavigationSDKBase-android" ext="zip" /> 
+		</dependency>			
+		<!--=======================Tnlink =======================-->
+		<dependency org="/telenav/client/trunk" name="CarConnectSDK" rev="2.004.16957" conf="app_lib->default">
+			<artifact name="CarConnectSDK-android" ext="zip" /> 
+		</dependency>
+		<!--======================= NavigationSDK =======================-->
+		<dependency org="/telenav/client/trunk" name="NavigationSDK" rev="2.1.100141" conf="app_lib->default">
+			<artifact name="NavigationSDK-android" ext="zip" /> 
+		</dependency>
+		
+		<!--======================= Protobuf =======================-->
+		<dependency org="/telenav/client/trunk" name="Protobuf" rev="2.4.1.94716" conf="app_lib->default">
+			<artifact name="Protobuf-android" ext="zip" /> 
+		</dependency>
+		
+	</dependencies>
+</ivy-module>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard0DriveHomeWorkContainer_landscape"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+   <LinearLayout
+        android:id="@+id/dashboard0DriveRecentsButton_landscape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dashboard_button_recent_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:duplicateParentState="true"
+            android:layout_width="@dimen/dashboard0DriveRecentsButtonImageLayoutWidth"
+            android:layout_height="@dimen/dashboard0DriveRecentsButtonImageLayoutHeight"
+            android:contentDescription="@string/dashboardRecents"
+            android:src="@drawable/dashboard_recent_icon_car" />
+
+        <TextView
+            android:duplicateParentState="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/dashboardRecents"
+            android:textColor="@color/dashboard_places_font"
+            android:textSize="@dimen/dashboard0DriveRecentsButtonTextSize"
+            android:textStyle="bold" >
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

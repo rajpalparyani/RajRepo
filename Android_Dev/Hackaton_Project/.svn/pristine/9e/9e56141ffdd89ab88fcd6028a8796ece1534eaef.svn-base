@@ -1,0 +1,2207 @@
+<?xml version="1.0"?>
+
+<project name="build-android">
+	<!-- ============================================== import build_common.xml ======================================== -->
+	<import file="build-common.xml" />
+	<import file="./lib/crashlytics/crashlytics_build_base.xml"/>
+	<if>
+		<not>
+			<isset property="api_version"/>
+		</not>
+		<then>
+			<property name="api_version" value="8" />
+		</then>
+	</if>
+	<if>
+		<not>
+			<isset property="TARGET_API_VERSION"/>
+		</not>
+		<then>
+			<property name="TARGET_API_VERSION" value="10" />
+		</then>
+	</if>
+	<condition property="os.path" value="windows">  
+		<os family="windows" />  
+	</condition>  
+	<condition property="os.path" value="mac">  
+		<os family="mac" />  
+	</condition>		
+	<!--<condition property="os.path" value="unix">  
+		<os family="unix" />  
+	</condition>-->
+	<property name="app_path" value="${basedir}" />
+	<property name="android-base" value="${basedir}/../android" />
+	<property name="sdk-base-folder" value="${android-base}/android-sdk" />
+	<property name="android-tools-folder" value="${android-base}/tools/${os.path}" />
+	<property name="sdk-folder-version" value="${sdk-base-folder}/${api_version}" />
+	<property name="sdk-folder" value="${sdk-base-folder}/17" />	
+	<property name="map-lib" value="map-lib" />
+	<property name="widget-res" value="widget-res" />
+	<property name="encoder-lib" value="encoder-lib" />
+	<property name="carconnect-lib" value="carconnect-lib" />
+	<property name="locales-list" value="${MD_locales-list}" />
+	<property name="MD_minSdkVersion" value="${api_version}" />
+	<property name="eventmanager-lib" value="eventmanager-lib" />
+	<property name="navigationsdkbase-lib" value="navigationSDKBase-lib" />
+	<property name="navigationsdk-lib" value="navigationSDK-lib" />
+	<property name="tnlink-lib" value="tnlink-lib" />
+	<property name="foundation-lib" value="foundation-lib" />
+	<property name="protobuf-lib" value="protobuf-lib" />	
+	<property name="crashlytics.project.path" location="${basedir}"/>
+	
+	<!-- load environment variables -->
+	<property environment="env"/>
+	<property name="jdk" value="${env.JAVA_HOME}" />
+	
+	<!-- ============================================== path properties ================================================ -->
+	<path id="android.boot.classpath">
+		<fileset dir="${sdk-folder}">
+			<include name="android.jar" />
+		</fileset>
+	</path>
+
+	<path id="j2me.boot.classpath">
+		<!-- XXXX -->
+	</path>
+
+	<path id="j2se.boot.classpath">
+		<!-- XXXX -->
+	</path>
+	
+	<path id="europa.path" location="../" />
+
+	<!-- ============================================== target ============================================== -->
+	<target name="build_dev" depends="preload_dev,setup_android_env">
+		<antcall target="create_project_dev">
+			<!-- run conf -->
+			<param name="base.dir" value="${subproject_name}" />
+			<param name="module.name" value="${jar_name}" />
+			<param name="jar.file" value="${jar_name}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="true" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy-${platform}.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/lib/.ivy-cache" />
+			<!-- add the flag isdev to make the process of building dev env faster and replace the jars which were put in the pusu.jar with linked source codes-->
+			<param name="isdev" value="true" />
+			<param name="localCache" value="true" />
+			<param name="widget.src.dir" value="${basedir}/${subproject_name}/widgetSource" />
+		</antcall>		
+	</target>
+
+	<!--<target name="merge-android-jar">
+		<concat destfile="${sdk-folder}/android.jar" force="no" binary="yes">
+    		<filelist dir="${sdk-folder}"
+         		files="android.jar.001,android.jar.002"/>
+  		</concat>
+	</target>-->
+	
+	<target name="publish-platform" depends="preload_rel">
+		<!--<antcall target="merge-android-jar" />-->
+		<antcall target="build_project_rel">
+			<!-- run conf -->
+			<param name="base.dir" value="${subproject_name}" />
+			<param name="module.name" value="${jar_name}" />
+			<param name="jar.file" value="${jar_name}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="${findbugs.enable}" />
+			<param name="unittest.enable" value="${unittest.enable}" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy-${platform}.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/lib/.ivy-cache" />
+			<param name="widget.src.dir" value="${basedir}/${subproject_name}/widgetSource" />
+		</antcall>		
+	</target>
+
+	<target name="copy_libs">
+	        <antcall target="copy_libs_delegate" />
+	</target>
+	
+	<target name="copy_carconnect_real_delegate">
+		<copy todir="${subproject_name}/${tnlink-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${tnview-lib}">
+			 	<include name="CarConnectAdapters-android*.zip" />
+			 </fileset>
+		</copy>
+		<delete quiet="true" dir="${retrieve.dir}/${tnview-lib}">
+			<include name="CarConnectAdapters-android*.zip" />
+		</delete>
+		<unzip dest="${subproject_name}/${tnlink-lib}">
+			<fileset dir="${subproject_name}/${tnlink-lib}">
+				<include name="CarConnectAdapters-android*.zip" />
+			</fileset>
+		</unzip>
+		<delete quiet="true" dir="${subproject_name}/${tnlink-lib}">
+		 	<include name="CarConnectAdapters-android*.zip" />
+		</delete>
+		
+		<copy todir="${subproject_name}/${tnlink-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${tnview-lib}">
+			 	<include name="FordApplinkSDK-android*.zip" />
+			 </fileset>
+		</copy>
+		<delete quiet="true" dir="${retrieve.dir}/${tnview-lib}">
+			<include name="FordApplinkSDK-android*.zip" />
+		</delete>
+		<unzip dest="${subproject_name}/${tnlink-lib}">
+			<fileset dir="${subproject_name}/${tnlink-lib}">
+				<include name="FordApplinkSDK-android*.zip" />
+			</fileset>
+		</unzip>
+		<delete quiet="true" dir="${subproject_name}/${tnlink-lib}">
+		 	<include name="FordApplinkSDK-android*.zip" />
+		</delete>
+	</target>
+	
+	<target name="copy_libs_delegate">
+		<delete quiet="true" dir="${ant.lib.dir}" />
+		<copy todir="${ant.lib.dir}" overwrite="true">
+			<fileset dir="${retrieve.dir}/${support_lib}">
+				<include name="ant-project*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${unittest.lib.dir}" />
+		<!-- copy unit test related jars into lib/unittest-lib, and then delete them from retrieve dir -->
+		<copy todir="${unittest.lib.dir}" overwrite="true">
+			<fileset dir="${retrieve.dir}/${support_lib}">
+				<include name="junit*.jar" />
+				<include name="easymock*.jar" />
+				<include name="objenesis*.jar" />
+				<include name="powermock-easymock*.jar" />
+				<include name="javassist*.jar" />
+				<include name="asm*.jar" />
+				<include name="asm-tree*.jar" />
+				<include name="cobertura*.jar" />
+				<include name="cglib*.jar" />
+				<include name="jakarta-oro*.jar" />
+				<include name="log4j*.jar" />
+				<include name="json-lib-j2me*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${findbugs.plugin.dir}" />
+		<copy todir="${findbugs.plugin.dir}" overwrite="true">
+			<fileset dir="${retrieve.dir}/${support_lib}">
+				<include name="findbugs-project*.jar" />
+			</fileset>
+		</copy>
+		<!-- copy map libs -->
+		<delete quiet="true" dir="${subproject_name}/${map-lib}" />
+		<delete quiet="true" dir="eclipse-env/${platform}_workspace/${subproject_name}/libs" />
+		<!--<if>
+			<equals arg1="${localCache}" arg2="true"/>
+			<then>
+				<copy todir="${subproject_name}/libs/armeabi" overwrite="true">
+					<fileset dir="${basedir}/lib/openGL">
+						<include name="libGLEngineJNI.so" />
+					</fileset>
+				</copy>	
+			</then>
+			<else>
+				<copy todir="${subproject_name}/libs/armeabi" overwrite="true">
+					<fileset dir="${basedir}/modules/android/lib/armv5te">
+						<include name="libGLEngineJNI.so" />
+					</fileset>
+				</copy>	
+			</else>
+		</if>	
+		<copy todir="src/com/telenav/app/android/jni" overwrite="true">
+			<fileset dir="${subproject_name}/${map-lib}/android/src/OpenGLMapEngine/com/telenav/app/android/jni">
+				<include name="GLEngineException.java" />
+				<include name="GLEngineJNI.java" />
+				<include name="TnMapClientSupportJNI.java" />
+			</fileset>
+		</copy>-->	
+		<delete quiet="true" dir="${subproject_name}/${map-lib}" />
+		
+		<!-- copy audio encoder -->
+		<copy todir="${subproject_name}/${encoder-lib}" overwrite="true">
+			<fileset dir="${retrieve.dir}/${app_lib}">
+				<include name="SpeexEncoderJNI*.zip" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+			<include name="SpeexEncoderJNI*.zip" />
+		</delete>
+		<unzip dest="${subproject_name}/${encoder-lib}">
+			<fileset dir="${subproject_name}/${encoder-lib}">
+				<include name="SpeexEncoderJNI*.zip" />
+			</fileset>
+		</unzip>
+		<copy todir="${subproject_name}/libs/armeabi-v7a" overwrite="true">
+			<fileset dir="${subproject_name}/${encoder-lib}">
+				<include name="**/*.so" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${retrieve.dir}/${app_lib}" overwrite="true">
+			<fileset dir="../apps/lib/kontagent">
+			    <include name="*.jar" />
+		    </fileset>
+		</copy>
+		
+		<copy todir="${retrieve.dir}/${app_lib}" overwrite="true">
+			<fileset dir="../apps/lib/crashlytics">
+			    <include name="*.jar" />
+		    </fileset>
+		</copy>
+		
+		<copy todir="${retrieve.dir}/${app_lib}" overwrite="true">
+			<fileset dir="../apps/lib/google-play-services">
+			    <include name="*.jar" />
+		    </fileset>
+		</copy>
+		
+		<copy todir="${retrieve.dir}/${app_lib}" overwrite="true">
+			<fileset dir="../apps/lib/ads-tracking">
+			    <include name="*.jar" />
+		    </fileset>
+		</copy>
+				
+		<fileset dir="${subproject_name}/${encoder-lib}" id="libs">
+			<include name="**/SpeexEncoderJNI*.zip"/>
+		</fileset>  
+		<property name="SpeedxEncode" refid="libs" />
+		<propertyregex property="speedxEncorder_version" input="${SpeedxEncode}" regexp="-(.*).zip" select="\1"/> 
+
+		<move tofile="${subproject_name}/libs/armeabi-v7a/libSpeexEncoderJNI_${speedxEncorder_version}.so">
+			<fileset dir="${subproject_name}/libs/armeabi">
+				<include name="**/libSpeexEncoderJNI.so"/>
+			</fileset>
+		</move>
+		
+		<delete quiet="true" dir="${subproject_name}/${encoder-lib}" />
+		<!-- copy pusu libs -->
+		<delete quiet="true" dir="${lib.dir}" />
+		<!-- if is dev, exclude the jars of pusu, instead we link the source codes of them by changing .classpath and .project -->
+		<if>
+			<equals arg1="${isdev}" arg2="true"/>
+			<then>
+				<copy todir="${lib.dir}" overwrite="true">
+					<fileset dir="${retrieve.dir}/${app_lib}">
+						<exclude name="searchVpl-*.*" />
+						<exclude name="Protocol-Java-trunk*.*" />
+						<exclude name="CarConnectSDK-*.*" />
+						<exclude name="TnView_Stub_Jar-trunk*.*" />
+						<exclude name="TnView_Jar*.*" />
+						<exclude name="JNIConnector-*.*" />
+						<exclude name="CarConnectAdapters-android*.*" />
+						<exclude name="platform-*.*" />
+						<exclude name="audio-*.*" />
+						<exclude name="comm-*.*" />
+						<exclude name="datatypes-*.*" />
+						<exclude name="gps-*.*" />
+						<exclude name="i18n-*.*" />
+						<exclude name="map-*.*" />
+						<exclude name="nav-*.*" />
+						<exclude name="tn-tracking-*.*" />
+						<exclude name="coreui-*.*" />
+						<exclude name="graphics-*.*" />
+						<exclude name="cache-*.*" />
+						<exclude name="json-*.*" />
+						<exclude name="logger-*.*" />
+						<exclude name="mvc-*.*" />
+						<exclude name="threadpool-*.*" />
+						<exclude name="util-*.*" />
+						<exclude name="EventManager-*.*" />
+						<exclude name="NavigationSDK-*.*" />
+						<exclude name="NavigationSDKBase-*.*" />
+						<exclude name="CarConnectSDK-*.*" />
+						<exclude name="Foundation-*.*" />
+						<exclude name="Protobuf-*.*" />
+						<exclude name="*kontagent*" />
+						<exclude name="*ads-tracking*" />
+						<exclude name="*crashlytics*" />
+						<exclude name="*google-play-services*.*"/>
+					</fileset>
+				</copy>
+				<!--for output protobuffer request and response  -->
+				<copy todir="${lib.dir}" overwrite="true">
+			                <fileset dir="${unittest.lib.dir}">
+				                <include name="json-lib-j2me*.jar" />
+			                </fileset>
+		                </copy>
+			</then>
+			<else>
+				<copy todir="${lib.dir}" overwrite="true">
+					<fileset dir="${retrieve.dir}/${app_lib}"/>
+				</copy>
+			</else>
+		</if>
+		
+		<if>
+			<equals arg1="${needwidget}" arg2="true"/>
+			<then>
+				<delete quiet="true" dir="${widget.src.dir}" />
+				<unzip dest="${widget.src.dir}">
+					<fileset dir="${retrieve.dir}/${searchvpl_lib}">
+						<include name="${WIDGET_CARRIER}-pure-*.jar" />
+					</fileset>
+				</unzip>
+				<unzip dest="${subproject_name}/${widget-res}">
+					<fileset dir="${retrieve.dir}/${searchvpl_lib}">
+						<include name="${WIDGET_CARRIER}-res-${platform}-*.zip" />
+					</fileset>
+				</unzip>
+			</then>
+		</if>
+		
+		<!-- copy CarConnect (for Ford Applink) -->
+		<if>
+			<equals arg1="${CarConnectBuildType}" arg2="real" />
+			<then>
+				<antcall target="copy_carconnect_real_delegate" />
+			</then>
+		</if>
+		
+		<antcall target="unzip_navsdk_libs"/>
+		<delete quiet="true" dir="${retrieve.dir}" />
+		
+		<delete quiet="true" dir="${subproject_name}/libs/armeabi" />
+	</target>
+
+	<target name="create_project_dev" depends="init, resolve, copy_libs, load_ant_project, propertiesLoader">
+		<property name="app_debugable" value="true" />
+
+		<antcall target="generate_android_res_package" />
+
+		<antcall target="copy_app_res" />
+		
+		<antcall target="delete_i18n_gz_file"/>		
+
+		<antcall target="copy_android_res" />
+
+		<antcall target="copy_app_src_dev" />
+
+
+		<delete quiet="true" dir="eclipse-env/${platform}_workspace/${subproject_name}/assets" />
+
+		<if>
+			<equals arg1="windows" arg2="${os.path}" />
+			<then>
+				<antcall target='remove_dev_res_link'>
+					<param name="dev.res.path" value="eclipse-env\${platform}_workspace\${subproject_name}\res"/>
+				</antcall>
+			</then>
+			<else>
+				<delete quiet="true" dir="eclipse-env/${platform}_workspace/${subproject_name}/res" />			
+			</else>
+		</if>
+
+		<delete quiet="true" dir="eclipse-env/${platform}_workspace/${subproject_name}/lib" />		
+		<copy toDir="eclipse-env/${platform}_workspace/${subproject_name}" filtering="true" overwrite="yes">
+			<fileset dir="${subproject_name}">
+				<include name="**/**" />
+				<exclude name="**/ant-lib/**" />
+				<exclude name="**/eventmanager-lib/**" />
+				<exclude name="**/navigationSDK*-lib/**" />
+				<exclude name="**/tnlink-lib/**" />
+				<exclude name="**/foundation-lib/**" />
+				<exclude name="**/protobuf-lib/**" />
+				<exclude name="**/widgetSource/**" />
+			</fileset>
+		</copy>
+		
+		<if>
+			<equals arg1="scout_us" arg2="${ACTIVITY_PACKAGE}" />
+			<then>
+				<property name="eclipse_classpath_exclude_1" value="" />
+			</then>
+			<else>
+				<property name="eclipse_classpath_exclude_1" value="|com/telenav/app/android/scout_us/" />
+			</else>
+		</if>
+		<!-- added for car connect -->
+		<if>
+			<not>
+				<equals arg1="real" arg2="${CarConnectBuildType}" />
+			</not>
+			<then>
+				<property name="eclipse_classpath_exclude" value="${eclipse_classpath_exclude_1}|com/telenav/carconnect/" />
+				<property name="eclipse_stub_src" value='&lt;classpathentry kind="src" path="stub_src"/&gt;'/>
+			</then>
+			<else>
+				<if>
+					<equals arg1="${ENABLE_TNLINK}" arg2="true" />
+					<then>
+						<property name="eclipse_classpath_exclude" value="${eclipse_classpath_exclude_1}" />
+						<property name="eclipse_stub_src" value=""/>
+					</then>
+					<else>
+						<property name="eclipse_classpath_exclude" value="${eclipse_classpath_exclude_1}|com/telenav/carconnect/provider/tnlink/|com/telenav/carconnect/host/TnLinkProviderManager.java" />
+						<property name="eclipse_stub_src" value='&lt;classpathentry kind="src" path="stub_src"/&gt;'/>
+					</else>
+				</if>
+			</else>
+		</if> 		
+		<ant antfile="build.xml" target="setup" dir="eclipse-env">
+			<property name="europa_path" refid="europa.path"/>
+			<property name="widget.src.tmp.dir" value="${widget.src.dir}" />
+			<property name="os.path" value="${os.path}" />
+		</ant>
+		<antcall target='copy_navsdk_libs'/>
+		<antcall target='copy_kontagent_lib'/>
+		<antcall target='copy_crashlytics_lib'/>
+		<antcall target='copy_google-play-services_lib'/>
+		<antcall target='copy_ads_lib'/>
+		
+		<if>
+			<equals arg1="windows" arg2="${os.path}" />
+			<then>
+				<antcall target='link_dev_res_folder'>
+					<param name="dev.res.path" value="eclipse-env/${platform}_workspace/${subproject_name}/res"/>
+				</antcall>
+			</then>
+		</if>
+
+		<delete quiet="true" dir="${subproject_name}" />
+	</target>
+	
+    <target name='copy_navsdk_libs'>  
+    	<property name="navsdklib.dir" value="eclipse-env/${platform}_workspace/${subproject_name}/lib/"/>
+	
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${eventmanager-lib}/android/lib/java/">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${subproject_name}/${eventmanager-lib}" />
+	 	 
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${navigationsdkbase-lib}/android/lib/java">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${subproject_name}/${navigationsdkbase-lib}" />
+
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${navigationsdk-lib}/android/lib/java">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${subproject_name}/${navigationsdk-lib}" />
+	 
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${tnlink-lib}/android/lib/java">
+				<include name="*.jar" />
+			</fileset>
+		</copy>			 
+		<delete quiet="true" dir="${subproject_name}/${tnlink-lib}" /> 
+	  
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${foundation-lib}/android/lib/java">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${subproject_name}/${foundation-lib}" /> 		  
+	 
+		<copy todir="${navsdklib.dir}" overwrite="true">
+			<fileset dir="${subproject_name}/${protobuf-lib}/android/lib/java">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<delete quiet="true" dir="${subproject_name}/${protobuf-lib}" /> 	 	 	 	 	  
+    </target>
+  
+    <target name='copy_kontagent_lib'> 
+		<copy todir="eclipse-env/${platform}_workspace/${subproject_name}/lib/" overwrite="true">
+				<fileset dir="${basedir}/lib/kontagent">
+					<include name="*.jar" />
+				</fileset>	
+		</copy>	
+	</target>
+       <target name='copy_crashlytics_lib'> 
+		<copy todir="eclipse-env/${platform}_workspace/${subproject_name}/lib/" overwrite="true">
+				<fileset dir="${basedir}/lib/crashlytics">
+					<include name="*.jar" />
+				</fileset>	
+		</copy>	
+	</target>	
+	<target name='copy_google-play-services_lib'> 
+		<copy todir="eclipse-env/${platform}_workspace/${subproject_name}/lib/" overwrite="true">
+				<fileset dir="${basedir}/lib/google-play-services">
+					<include name="*.jar" />
+				</fileset>	
+		</copy>	
+	</target>	
+	<target name='copy_ads_lib'> 
+		<copy todir="eclipse-env/${platform}_workspace/${subproject_name}/lib/" overwrite="true">
+				<fileset dir="${basedir}/lib/ads-tracking">
+					<include name="*.jar" />
+				</fileset>	
+		</copy>	
+	</target>
+    <target name="unzip_navsdk_libs">
+		 <!--Event Manager-->
+		 <copy todir="${subproject_name}/${eventmanager-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="EventManager-android*.zip" />
+			 </fileset>
+		 </copy>
+		 
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="EventManager-android*.zip" />
+		 </delete>
+		 
+		 <unzip dest="${subproject_name}/${eventmanager-lib}">
+		 	<fileset dir="${subproject_name}/${eventmanager-lib}">
+		 		<include name="EventManager-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${eventmanager-lib}">
+		 	<include name="EventManager-android*.zip" />
+		 </delete>
+		 
+
+		 
+		 <!--Foundation-->
+		 <copy todir="${subproject_name}/${foundation-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="Foundation-android*.zip" />
+			 </fileset>
+		 </copy>
+		 
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="Foundation-android*.zip" />
+		 </delete>
+		 
+		 <unzip dest="${subproject_name}/${foundation-lib}">
+		 	<fileset dir="${subproject_name}/${foundation-lib}">
+		 		<include name="Foundation-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${foundation-lib}">
+		 	<include name="Foundation-android*.zip" />
+		 </delete>
+
+		 <!--NavigationSDKBase-->
+		 <copy todir="${subproject_name}/${navigationsdkbase-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="NavigationSDKBase-android*.zip" />
+			 </fileset>
+		 </copy>
+		 
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="NavigationSDKBase-android*.zip" />
+		 </delete>
+		 
+		 <unzip dest="${subproject_name}/${navigationsdkbase-lib}">
+		 	<fileset dir="${subproject_name}/${navigationsdkbase-lib}">
+		 		<include name="NavigationSDKBase-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${eventmanager-lib}">
+		 	<include name="NavigationSDKBase-android*.zip" />
+		 </delete>		 
+
+		 <!--NavigationSDK-->
+		 <copy todir="${subproject_name}/${navigationsdk-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="NavigationSDK-android*.zip" />
+			 </fileset>
+		 </copy>
+		 
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="NavigationSDK-android*.zip" />
+		 </delete>
+		 
+		 <unzip dest="${subproject_name}/${navigationsdk-lib}">
+		 	<fileset dir="${subproject_name}/${navigationsdk-lib}">
+		 		<include name="NavigationSDK-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${eventmanager-lib}">
+		 	<include name="NavigationSDK-android*.zip" />
+		 </delete>			 
+
+		 <copy todir="${subproject_name}/libs/armeabi-v7a" overwrite="true">
+			 <fileset dir="${subproject_name}/${navigationsdk-lib}/android/lib/armv7a">
+			 	<include name="**/*.so" />
+			 </fileset>			 
+		 </copy>
+		 
+		<condition property="arm-linux-androideabi-strip" value="${android-tools-folder}/arm-linux-androideabi-strip.exe" else="${android-tools-folder}/arm-linux-androideabi-strip">
+			<os family="windows" />
+		</condition>
+
+		<exec executable="${arm-linux-androideabi-strip}" failonerror="true">         
+			<arg line="${subproject_name}/libs/armeabi-v7a/libnavigationsdk.so" />
+		</exec> 
+		 
+		 <!--Tnlink-->
+		 <copy todir="${subproject_name}/${tnlink-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="CarConnectSDK-android*.zip" />
+			 </fileset>
+		 </copy>
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="CarConnectSDK-android*.zip" />
+		 </delete>		 
+		<unzip dest="${subproject_name}/${tnlink-lib}">
+		 	<fileset dir="${subproject_name}/${tnlink-lib}">
+		 		<include name="CarConnectSDK-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${tnlink-lib}">
+		 	<include name="TnlinkCarConnectSDK-android*.zip" />
+		 </delete>
+		 
+		 <!--ProtoBuf-->
+		 <copy todir="${subproject_name}/${protobuf-lib}" overwrite="true">
+			 <fileset dir="${retrieve.dir}/${app_lib}">
+			 	<include name="Protobuf-android*.zip" />
+			 </fileset>
+		 </copy>
+		 
+		 <delete quiet="true" dir="${retrieve.dir}/${app_lib}">
+		 	<include name="Protobuf-android*.zip" />
+		 </delete>
+		 
+		 <unzip dest="${subproject_name}/${protobuf-lib}">
+		 	<fileset dir="${subproject_name}/${protobuf-lib}">
+		 		<include name="Protobuf-android*.zip" />
+		 	</fileset>
+		 </unzip>
+		 
+		 <delete quiet="true" dir="${subproject_name}/${protobuf-lib}">
+		 	<include name="Protobuf-android*.zip" />
+		 </delete>		 			 
+	 </target>
+	
+        <target name="unit_test" depends="preload_rel">
+			<antcall target="unit_test_delegate">
+			<!-- run conf -->
+			<param name="base.dir" value="${subproject_name}" />
+			<param name="module.name" value="${jar_name}" />
+			<param name="jar.file" value="${jar_name}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="true" />
+			<param name="unittest.enable" value="${unittest.enable}" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy-${platform}.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/lib/.ivy-cache" />
+		</antcall>
+	</target>
+	
+	<target name="unit_test_delegate" depends="create_project_rel, compile, unittest, findbugs, test_coverage">	        
+	        <delete quiet="true" dir="${app_path}/test-reports-summary" />
+	        <if>
+			<equals arg1="true" arg2="${unittest.enable}" />
+			<then>
+				<copy toDir="${app_path}/test-reports-summary/junitReport" overwrite="true">
+			                <fileset dir="${junit.xml.dir}" />
+		                </copy> 
+			</then>
+		</if>
+		<if>
+			<equals arg1="true" arg2="${findbugs.enable}" />
+			<then>
+				<copy toDir="${dist.dir}" overwrite="true">
+					<fileset dir="${publish.dir}">
+							<include name="*.xml" />
+					</fileset>
+		        </copy> 
+			</then>
+		</if>
+		<if>
+			<equals arg1="true" arg2="${test_coverage}" />
+			<then>
+				<copy toDir="${app_path}/test-reports-summary/cobertura" overwrite="true">
+			                <fileset dir="${coberturareport.dir}" />
+		                </copy>
+			</then>
+		</if>
+		<fail message=".                              $$$$$$$$$  Find some bugs at the codes by findbugs tool.  $$$$$$$$$">
+			<condition>
+				<or>
+					<isset property="isFindbugsError" />
+					<isset property="isFindbugsWarning" />
+				</or>
+			</condition>
+		</fail>
+
+		<fail message=".                              $$$$$  Unit test fails.  $$$$$">
+			<condition>
+				<or>
+					<isset property="isJunitError" />
+					<isset property="isJunitFailure" />
+				</or>
+			</condition>
+		</fail>
+		<delete quiet="true" dir="${subproject_name}" />
+        </target>
+  
+ 
+	<target name="build_project_rel" depends="create_project_rel, compile">		
+		<antcall target="jar" inheritAll="true" inheritRefs="true" />
+		<!--<antcall target="build_test" inheritAll="true" inheritRefs="true" />-->
+		
+		<!-- obfuscate both main jar and test jar -->
+		<!--<antcall target="obfuscate_test" inheritAll="true" inheritRefs="true" />-->
+		<antcall target="obfuscate" inheritAll="true" inheritRefs="true" />
+		
+		<property name="apk_name" value="${jar_name}-${version}" />
+		
+		<!--<antcall target="post_android_build_test" inheritAll="true" inheritRefs="true" />	-->	
+		<antcall target="post_android_build" inheritAll="true" inheritRefs="true" />
+		<antcall target="crashlytics-post-package" inheritAll="true" inheritRefs="true"/>
+
+                <!--
+		<move file="${publish.dir}/${apk_name}.apk" tofile="${publish.dir}/${jar_name}.apk" />
+		<move file="${publish.dir}/${apk_name}-unsigned.apk" tofile="${publish.dir}/${jar_name}-unsigned.apk" />
+		
+		
+		<move file="${publish.dir}/${apk_name}-test.apk" tofile="${publish.dir}/${jar_name}-test.apk" />
+		<move file="${publish.dir}/${apk_name}-test-unsigned.apk" tofile="${publish.dir}/${jar_name}-test-unsigned.apk" />-->
+
+		
+		<copy toDir="${dist.dir}" overwrite="true">
+					<fileSet dir="${publish.dir}">
+						<include name="**/**" />
+					</fileSet>
+		</copy>
+		
+		<copy toDir="${dist.dir}" overwrite="true">
+			<fileSet dir="${output}/mobile/apps/trunk/SearchVpl/${version}">
+				<include name="**/*.apk" />
+			</fileSet>
+		</copy>
+		
+		<!--antcall target="publish" inheritAll="true" inheritRefs="true" /-->
+
+		<delete quiet="true" dir="${subproject_name}" />
+	</target>
+
+	<target name="zip_i18n_ota_resource">
+		<caseStringTask property="${platform}" outProperty="TMP_UPPER_PLATFORM" caseType="Upper" />
+		<property name="temp_i18n_dir" value="temp_i18n/${MD_MANDATORY_PROGRAM_CODE}/i18n" />
+		<echo message="i18n dir: ${temp_i18n_dir}" />
+		<delete quiet="true" dir="${publish.dir}/${temp_i18n_dir}" />
+		<mkdir dir="${publish.dir}/${temp_i18n_dir}" />
+		<copy toDir="${publish.dir}/${temp_i18n_dir}" overwrite="true">
+			<fileSet dir="${subproject_name}/assets/i18n" casesensitive="false">
+				<include name="**/*" />
+				<exclude name="**/Thumbs.db" />
+				<exclude name="**/*.index" />
+			</fileSet>
+		</copy>
+		<antcall target="delete_i18n_gz_file"/>		
+		<antcall target="convert_unicode">
+			<param name="unicode_path" value="${publish.dir}/${temp_i18n_dir}" />
+		</antcall>
+		<zip destfile="${publish.dir}/${MD_MANDATORY_PROGRAM_CODE}-i18n-ota.zip" basedir="${publish.dir}/temp_i18n" />
+		<delete quiet="true" dir="${publish.dir}/temp_i18n" />
+	</target>
+	
+	<target name="delete_i18n_gz_file">
+		<delete quiet="true" dir="${subproject_name}/assets/i18n">
+			<include name="*.gz" />
+		</delete>
+	</target>
+
+	<target name="create_project_rel" depends="init, resolve, copy_libs, load_ant_project, propertiesLoader">
+		<echo message="the subproject name is: ${subproject_name}" />
+		<echo message="the sdk folder is: ${sdk-folder}" />				
+		<property name="app_debugable" value="false" />
+
+		<antcall target="generate_android_res_package" />
+
+		<antcall target="copy_app_res" />
+		
+		<antcall target="zip_i18n_ota_resource" inheritAll="true" inheritRefs="true" />
+
+		<antcall target="copy_android_res" />
+
+		<antcall target="copy_app_src" />
+
+		<antcall target="copy_test_src" />				
+
+		<property name="project_path" value="${basedir}/${subproject_name}" />
+		<antcall target="post_generate-R" inheritAll="true" inheritRefs="true" />
+		<antcall target='copy_navsdk_libs'>
+			 <param name="navsdklib.dir" value="${subproject_name}/lib/"/>
+		</antcall>
+	</target>
+
+	<target name="generate_android_res_package">
+		<delete quiet="true" dir="${subproject_name}/assets" />
+		<mkdir dir="${subproject_name}/assets" />
+
+		<delete quiet="true" dir="${subproject_name}/res" />
+		<mkdir dir="${subproject_name}/res" />
+		<mkdir dir="${subproject_name}/res/drawable" />
+		<mkdir dir="${subproject_name}/res/layout" />
+		<mkdir dir="${subproject_name}/res/raw" />
+		<mkdir dir="${subproject_name}/res/values" />
+		<mkdir dir="${subproject_name}/res/values-large" />
+		<mkdir dir="${subproject_name}/res/values-normal" />
+		<mkdir dir="${subproject_name}/res/values-small" />
+		<mkdir dir="${subproject_name}/res/values-xlarge" />
+	</target>
+
+	<target name="copy_app_res">
+		<!--copy app icons-->
+		<property name="app_icons_path" value="res/${platform}/${BRAND_NAME}/app-icons" />
+		<property name="android_drawable_path" value="${subproject_name}/res" />
+		<antcall target="copy_resource">
+			<param name="from_dir_path" value="${app_icons_path}" />
+			<param name="to_dir_path" value="${android_drawable_path}" />
+		</antcall>
+
+		<!--<copy toDir="${subproject_name}/assets" overwrite="true">
+			<fileSet dir="res" casesensitive="false">
+				<include name="*.bin" />
+				<include name="*.json" />
+			</fileSet>
+		</copy>
+		
+	    <copy toDir="${subproject_name}/assets/OpenGLMapEngine" overwrite="true">
+			<fileSet dir="res/OpenGLMapEngine" casesensitive="false">
+				<exclude name="**/Thumbs.db" />
+				<exclude name="AndroidManifest.xml" />
+			</fileSet>
+		</copy>
+		<copy toDir="${subproject_name}/assets/cache" overwrite="true">
+			<fileSet dir="res/cache" casesensitive="false">
+				<exclude name="**/Thumbs.db" />
+			</fileSet>
+		</copy>-->
+		
+		<copy toDir="${subproject_name}/assets/i18n" overwrite="true">
+			<fileSet dir="res/${platform}/${BRAND_NAME}/i18n" casesensitive="false">
+				<include name="**/generic/**" />
+				<include name="**/*.index" />
+				<exclude name="**/Thumbs.db" />
+				<exclude name="**/*.index.gz" />
+			</fileSet>
+		</copy>
+
+
+		<copy toDir="${subproject_name}/assets/ttsparser" overwrite="true">
+			<fileSet dir="res/${platform}/${BRAND_NAME}/ttsparser" casesensitive="false">
+				<include name="**/**" />
+				<exclude name="**/Thumbs.db" />
+				<exclude name="**/*.index.gz" />
+			</fileSet>
+		</copy>
+
+
+		<copy toDir="${subproject_name}/assets" overwrite="true">
+			<fileSet dir="res/${platform}/${BRAND_NAME}" casesensitive="false">
+				<include name="**/*.mmd" />
+				<include name="**/*.json" />
+				<include name="**/*.bin" />
+			</fileSet>
+		</copy>
+
+		<!--generate ResourceUtil.java from template file by adding general image file lists-->
+		<resourceUtilGeneratorTask inputDir="${subproject_name}/assets/i18n/generic" 
+		outputJavaFile="src/com/telenav/res/ResourceUtil.java" templateFile="res/${platform}/ResourceUtil.template"/>
+	
+		<!-- copy common res-->
+		<foreach list="${locales-list}" target="copy_locale_res" param="locale_name" inheritall="true" inheritrefs="true">
+			<param name="parent_path" value="res/${platform}/common" />
+		</foreach>
+
+		<!--copy local res-->
+		<foreach list="${locales-list}" target="copy_locale_res" param="locale_name" inheritall="true" inheritrefs="true">
+			<param name="parent_path" value="res/${platform}/${BRAND_NAME}/i18n" />
+		</foreach>
+
+		<antcall target="convert_unicode">
+			<param name="unicode_path" value="${subproject_name}/assets/i18n" />
+		</antcall>
+
+		<!-- generate app name-->
+		<foreach list="${locales-list}" target="generate_app_strings" param="locale_name" inheritall="true" inheritrefs="true" />
+		
+		<antcall target="generate_index_file"/>
+	</target>
+
+	<!-- generate index file -->
+	<target name="generate_index_file">
+		<ant antfile="build.xml" target="index_all" dir="tools/IndexFile" inheritall="false">
+			<property name="carrier_list" value="${BRAND_NAME}"/>
+			<property name="dirpath" value="${subproject_name}/assets/i18n"/>
+		</ant>
+	</target>
+	
+	<target name="copy_locale_res">
+		<property name="android_assets_path" value="${subproject_name}/assets/i18n" />
+		<antcall target="copy_resource">
+			<param name="from_dir_path" value="${parent_path}/${locale_name}" />
+			<param name="to_dir_path" value="${android_assets_path}/${locale_name}" />
+		</antcall>
+		<!--append ResourceUtil.java with local image file lists-->
+		<resourceUtilGeneratorTask inputDir="${subproject_name}/assets/i18n/${locale_name}" outputJavaFile="src/com/telenav/res/ResourceUtil.java" />
+	</target>
+
+	<target name="generate_app_strings">
+		<filter token="ACTIVITY_PACKAGE" value="${ACTIVITY_PACKAGE}" />
+		<filter token="APP_NAME" value="${MD_APP_NAME}" />	
+		<filter token="MAPS_SHORTCUT_NAME" value="${MD_MAPS_SHORTCUT_NAME}" />	
+		<filter token="NAV_SHORTCUT_NAME" value="${MD_NAV_SHORTCUT_NAME}" />	
+		<filter token="PLACES_SHORTCUT_NAME" value="${MD_PLACES_SHORTCUT_NAME}" />	
+		<filter token="ACTIVITY_NAME" value="${ACTIVITY_NAME}" />
+		<filter token="APPLICATION_VERSION" value="${MD_APPLICATION_VERSION}" />
+		<filter token="NAVSERVICE_NAME" value="${NAVSERVICE_NAME}" />
+		<filter token="api_version" value="${api_version}" />
+		<filter token="TARGET_API_VERSION" value="${TARGET_API_VERSION}" />
+		<filter token="version" value="${version}" />
+		<filter filtersfile="${subproject_name}/assets/i18n/${locale_name}/strings/common.properties" />
+		<propertyregex property="new_locale_name" input="${locale_name}" regexp="_" replace="-r" casesensitive="false" />
+		<propertyregex property="new_locale_name_common" input="${locale_name}" regexp="(.*)_" select="\1" casesensitive="false" />
+		<property name="new_locale_name_path" value="${subproject_name}/res/values-${new_locale_name}" />
+		<property name="new_locale_name_common_path" value="${subproject_name}/res/values-${new_locale_name_common}" />
+
+		<if>
+			<equals arg1="${MD_DEFAULT_LOCALE}" arg2="${locale_name}" />
+			<then>
+				<copy file="res/${platform}/strings.properties" tofile="${subproject_name}/res/values/strings.properties" filtering="true" overwrite="yes" encoding="UTF-8" />
+				<replace file="${subproject_name}/res/values/strings.properties" token="&amp;" value="&amp;amp;" />
+				<antcall target="convert_unicode">
+					<param name="unicode_path" value="${subproject_name}/res/values" />
+				</antcall>
+				<stringsGeneratorTask stringsPropertyFile="${subproject_name}/res/values/strings.properties" stringsOutputPath="${subproject_name}/res/values/strings.xml" />
+			</then>
+		</if>
+
+		<copy file="res/${platform}/strings.properties" tofile="${new_locale_name_path}/strings.properties" filtering="true" overwrite="yes" encoding="UTF-8"/>
+		<replace file="${new_locale_name_path}/strings.properties" token="&amp;" value="&amp;amp;" />
+		<antcall target="convert_unicode">
+			<param name="unicode_path" value="${new_locale_name_path}" />
+		</antcall>
+		<stringsGeneratorTask stringsPropertyFile="${new_locale_name_path}/strings.properties" stringsOutputPath="${new_locale_name_path}/strings.xml" />
+		<delete quiet="true" file="${new_locale_name_path}/strings.properties" />
+		
+		<copy file="${new_locale_name_path}/strings.xml" tofile="${new_locale_name_common_path}/strings.xml" filtering="true" overwrite="yes" encoding="UTF-8"/>
+		
+	</target>
+
+	<target name="convert_unicode">
+		<mkdir dir="${unicode_path}/tmpunicode" />
+		<native2ascii src="${unicode_path}" dest="${unicode_path}/tmpunicode" includes="**/*.properties" encoding="UTF-8"/>
+
+		<copy todir="${unicode_path}" overwrite="true">
+			<fileset dir="${unicode_path}/tmpunicode" includes="**/*.properties" />
+		</copy>
+		<delete quiet="true" dir="${unicode_path}/tmpunicode" />
+	</target>
+	
+	<target name="create_junction_link">
+		<echo message="mklink /j ${mklink.link} ${mklink.juction}" />
+		<exec  executable="../OpenSourceLib/junction.exe" failonerror="true">      
+			<!--arg line="/c mklink /J '${mklink.link}' '${mklink.juction}'"/-->
+			<arg line="'${mklink.link}' '${mklink.juction}'"/>
+		</exec>
+	</target>
+
+	<target name="remove_dev_res_link">
+		<echo message="rd ${dev.res.path}" />
+		<exec  executable="cmd.exe" failonerror="false">      
+			<arg line="/c rd /q /s ${dev.res.path}"/>
+		</exec>
+	</target>
+	
+	<target name="link_dev_res_folder">
+	
+		<!-- 'suffix -ldltr is at the end' -->
+		<!-- just rename wiget resource folder 'color-ldltr' 'drawable-ldltr' 'layout-ldltr' 'raw-ldltr' 'values-ldltr' 'values-en-ldltr''values-en-rUS-ldltr' 'xml-ldltr' -->
+		<move todir="${dev.res.path}" includeEmptyDirs="true">
+			<fileset dir="${dev.res.path}" />
+			<mapper type="regexp" from="^([^-]*)(-en.*|[^-]+)\\(.*)" to="\1\2-ldltr\\\3"/>
+		</move>
+		
+		<!-- 'suffix -ldltr is in the middle' -->
+		<!-- just rename wiget resource folder 'drawable-ldltr-hdpi' 'drawable-ldltr-ldpi' 'drawable-ldltr-mdpi' 'xml-ldltr-v11' -->
+		<move todir="${dev.res.path}" includeEmptyDirs="true">
+			<fileset dir="${dev.res.path}" />
+			<mapper type="regexp" from="^(.*)(-v\d{1,2}|-\w{1}dpi)\\(.*)" to="\1-ldltr\2\\\3"/>
+		</move>
+				
+		<delete quiet="true" includeEmptyDirs="true">
+			<fileSet dir="${dev.res.path}">
+				<exclude name="*ldltr*\*" />
+			</fileSet>
+		</delete>
+
+		<antcall target="create_junction_link">
+			<param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable"/>
+		</antcall>
+	
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable-nodpi"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable-nodpi"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable-xhdpi"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable-xhdpi"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable-hdpi"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable-hdpi"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable-ldpi"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable-ldpi"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\drawable-mdpi"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\drawable-mdpi"/>
+		</antcall>
+		
+
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\anim"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\anim"/>
+		</antcall>
+		
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\color"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\color"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\layout"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\layout"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\raw"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\raw"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values-large"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values-large"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values-normal"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values-normal"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values-small"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values-small"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values-xlarge"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values-xlarge"/>
+		</antcall>
+		
+		<antcall target="create_junction_link">
+            <param name="mklink.link" value="eclipse-env\${platform}_workspace\${subproject_name}\res\values-v11"/>
+			<param name="mklink.juction" value="${basedir}\res\${platform}\${BRAND_NAME}\res\values-v11"/>
+		</antcall>
+		
+	</target>
+	
+	
+	
+	<target name="copy_android_res">
+
+		<!-- <copy file="res/${platform}/main.xml" tofile="${subproject_name}/res/layout/main.xml" overwrite="yes" /> -->
+	
+		<condition property="isNeedCopyRes">
+			<or>
+				<os family="mac"/>
+				<equals arg1="${app_debugable}" arg2="false"/>
+			</or>
+		</condition>
+	
+		<echo message="isNeedCopyRes : ${isNeedCopyRes}" />
+	
+		<if>
+			<equals arg1="${isNeedCopyRes}" arg2="true"/>
+			<then>
+				<copy toDir="${subproject_name}/res/layout/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/layout">
+						<include name="**/*.xml" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable-nodpi/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable-nodpi">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable-xhdpi/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable-xhdpi">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable-hdpi/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable-hdpi">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable-ldpi/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable-ldpi">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/drawable-mdpi/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/drawable-mdpi">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/color/" overwrite="true" filtering="true">
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/color">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/values/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+				
+				<copy toDir="${subproject_name}/res/values-large/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values-large">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+				
+				<copy toDir="${subproject_name}/res/values-normal/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values-normal">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+				
+				<copy toDir="${subproject_name}/res/values-small/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values-small">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+				
+				<copy toDir="${subproject_name}/res/values-xlarge/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values-xlarge">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/values-v11/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/values-v11">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+		
+				<copy toDir="${subproject_name}/res/anim/" overwrite="true" filtering="true">		
+					<fileSet dir="res/${platform}/${BRAND_NAME}/res/anim">
+						<include name="**/*.*" />
+					</fileSet>
+				</copy>
+			</then>
+		</if>
+				
+		<antcall target="copy_android_manifest" />
+		
+		<property file="res/${platform}/common/audio_meta.properties" />
+		<propertycopy name="MD_AUDIO_FILE_TIMESTAMP" from="${MD_DEFAULT_LOCALE}_AUDIO_FILE_TIMESTAMP"/>
+	
+		<fileset dir="${subproject_name}/libs/armeabi-v7a" id="libs">
+			<include name="**/libSpeexEncoderJNI*.so"/>
+		</fileset>  
+		<property name="SpeedxEncode" refid="libs" />
+		<propertyregex property="MD_speedxEncorderLib" input="${SpeedxEncode}" regexp="lib(.*).so" select="\1"/> 
+
+		<appConfigGeneratorTask outputDir="${subproject_name}/assets" buildNumber="${version}" isPreload="${isPreload}" />
+		
+		<available file="${subproject_name}/${widget-res}" type="dir" property="res.widget.dir" />
+		<if>
+			<and>
+				<equals arg1="${needwidget}" arg2="true"/>
+				<equals arg1="${res.widget.dir}" arg2="true"/>
+			</and>
+			<then>
+				<mergeArgumentsTask
+					mergeType="property"
+					srcPath="${subproject_name}/${widget-res}/assets/appConfig.dat"
+					destPath="${subproject_name}/assets/appConfig.dat"/>
+				<copy todir="${subproject_name}" overwrite="false">
+					<fileset dir="${subproject_name}/${widget-res}" />
+				</copy>
+				<delete quiet="true" dir="${subproject_name}/${widget-res}" />
+				
+			</then>
+		</if>
+	</target>
+
+	<target name="copy_android_manifest">
+		<echo message="------app_debugable: ${app_debugable}" />
+		<delete quiet="true" file="${subproject_name}/AndroidManifest.xml" />
+		<filter token="app_version" value="${app_version}" />
+		<filter token="version" value="${version}" />
+		<filter token="api_version" value="${api_version}" />
+		<filter token="navservice_name" value="${navservice_name}" />
+		<filter token="app_debugable" value="${app_debugable}" />
+		<filter filtersfile="${subproject_name}/res/values/strings.properties" />
+		<if>
+			<equals arg1="${IS_NEED_SHORTCUT}" arg2="true"/>
+			<then>
+				<copy file="res/${platform}/AndroidManifestWithShortcut.xml" tofile="${subproject_name}/AndroidManifest.xml" filtering="true" />
+			</then>
+			<else>
+				<copy file="res/${platform}/AndroidManifest.xml" tofile="${subproject_name}/AndroidManifest.xml" filtering="true" />
+			</else>
+		</if>
+
+		<if>
+			<or>
+				<equals arg1="1" arg2="${api_version}" />
+				<equals arg1="2" arg2="${api_version}" />
+				<equals arg1="3" arg2="${api_version}" />
+			</or>
+			<then>
+				<replaceregexp file="${subproject_name}/AndroidManifest.xml" match=".*supports-screens.*" replace="" flags="g" byline="true" />
+			</then>
+		</if>
+		<if>
+			<equals arg1="${api_version}" arg2="11"/>
+			<then>
+				<replaceregexp file="${subproject_name}/AndroidManifest.xml" match="android:theme=&quot;.*?&quot;" replace="" flags="g" byline="true"/>
+			</then>
+		</if>
+		
+		<if>
+			<equals arg1="true" arg2="${IS_TABLET}" />
+			<then>
+				<replaceregexp file="${subproject_name}/AndroidManifest.xml" match="^\s+.uses-permission android:name=.android.permission.(CALL_PHONE|RECEIVE_SMS|SEND_SMS).*$" replace="" flags="g" byline="true" />
+				<replaceregexp file="${subproject_name}/AndroidManifest.xml" match="android:screenOrientation=&quot;unspecified&quot;" replace="android:screenOrientation=&quot;landscape&quot;" flags="g" byline="true" />
+			</then>
+		</if>
+		
+		<available file="${subproject_name}/${widget-res}" type="dir" property="res.widget.dir" />
+		<if>
+			<and>
+				<equals arg1="${needwidget}" arg2="true"/>
+				<equals arg1="${res.widget.dir}" arg2="true"/>
+			</and>
+			<then>
+				<mergeArgumentsTask
+					mergeType="xml"
+					srcPath="${subproject_name}/${widget-res}/AndroidManifest.xml"
+					destPath="${subproject_name}/AndroidManifest.xml"/>
+				
+				<mergeArgumentsTask
+					mergeType="xml-android-string-dir"
+					xmlName="strings"
+					tagName="string"
+					srcPath="${subproject_name}/${widget-res}/res"
+					destPath="${subproject_name}/res"/>
+					
+				<mergeArgumentsTask
+					mergeType="xml-android-string-dir"
+					xmlName="color"
+					tagName="color"
+					srcPath="${subproject_name}/${widget-res}/res"
+					destPath="${subproject_name}/res"/>
+				
+				<mergeArgumentsTask
+					mergeType="xml-android-string-dir"
+					xmlName="dimens"
+					tagName="dimen"
+					srcPath="${subproject_name}/${widget-res}/res"
+					destPath="${subproject_name}/res"/>
+			</then>
+		</if>
+		
+		<!-- added for car connect -->
+		<if>
+			<equals arg1="${CarConnectBuildType}" arg2="real"/>
+			<then>
+				<mergeArgumentsTask
+					mergeType="xml"
+					srcPath="res/${platform}/AndroidManifest.carconnect"
+					destPath="${subproject_name}/AndroidManifest.xml"/>
+			</then>
+		</if>
+		
+		<!-- added for mdotm -->
+		<if>
+			<equals arg1="${MdotmEnable}" arg2="true"/>
+			<then>
+				<mergeArgumentsTask
+					mergeType="xml"
+					srcPath="res/${platform}/AndroidManifest.mdotm"
+					destPath="${subproject_name}/AndroidManifest.xml"/>
+			</then>
+		</if>
+			
+		<delete quiet="true" file="${subproject_name}/res/values/strings.properties" />
+	</target>
+
+	<target name="copy_app_src">
+		<delete quiet="true">
+			<fileSet dir="${app_path}/src/com/telenav/app/android/">
+				<exclude name="*.java" />
+				<exclude name="**/scout_us/*" />
+				<exclude name="**/jni/*" />
+				<exclude name="**/c2dm/*" />
+				<exclude name="**/constant/*" />
+			</fileSet>
+		</delete>
+		<filter token="platform" value="${platform}" />
+
+		<copy toDir="${subproject_name}/src" overwrite="true" filtering="true">
+			<fileSet dir="src">
+				<include name="**/*.java" />
+				<include name="**/*.aidl" />
+				<!--exclude name="com/telenav/carconnect/*" /-->
+			</fileSet>
+		</copy>
+
+		<if>
+			<equals arg1="scout_us" arg2="${ACTIVITY_PACKAGE}" />
+			<then>
+				<!-- nothing need handle -->
+			</then>
+			<else>
+				<propertyregex property="activity.package.path.name" input="${ACTIVITY_PACKAGE}" regexp="\." replace="/" defaultValue="${ACTIVITY_PACKAGE}"/> 
+				<copy toDir="${subproject_name}/src/com/telenav/app/android/${activity.package.path.name}" overwrite="true" filtering="true">
+					<fileSet dir="${subproject_name}/src/com/telenav/app/android/scout_us">
+						<include name="**/*.java" />
+					</fileSet>
+				</copy>
+				<delete quiet="true" dir="${subproject_name}/src/com/telenav/app/android/scout_us" />
+				<replace dir="${subproject_name}/src/com/telenav" value="com.telenav.app.android.${ACTIVITY_PACKAGE}" token="com.telenav.app.android.scout_us" />
+			</else>
+		</if>
+		
+		<!-- added for Car Connect -->
+		<if>
+			<not>
+				<equals arg1="${CarConnectBuildType}" arg2="real"/>
+			</not>
+			<then>
+				<copy  file="${app_path}/src/com/telenav/carconnect/host/CarConnectHostManager.stub"
+					toFile="${subproject_name}/src/com/telenav/carconnect/host/CarConnectHostManager.java" overwrite="true"/>
+				<delete quiet="true">
+					<fileset dir="${subproject_name}/src/com/telenav/carconnect">
+						<include name="**/*.java"/>
+						<exclude name="host/CarConnectHostManager.java" />
+					</fileset>
+				</delete>
+			</then>
+			<else>
+				<if>
+					<not>
+						<equals arg1="${ENABLE_TNLINK}" arg2="true"/>
+					</not>
+					<then>
+						<copy  file="${app_path}/src/com/telenav/carconnect/host/TnLinkProviderManager.stub"
+							toFile="${subproject_name}/src/com/telenav/carconnect/host/TnLinkProviderManager.java" overwrite="true"/>
+						<delete quiet="true">
+							<fileset dir="${subproject_name}/src/com/telenav/carconnect/provider/tnlink">
+								<include name="**/*.java"/>
+							</fileset>
+						</delete>
+					</then>
+				</if>
+				<copy toDir="${subproject_name}/src/com/telenav/carconnect/provider/abbrev" overwrite="true">
+					<fileset dir="${app_path}/src/com/telenav/carconnect/provider/abbrev">
+						<include name="**/*.properties"/>
+					</fileset>
+				</copy>
+			</else>
+		</if>
+		
+		<if>
+			<equals arg1="true" arg2="${needwidget}" />
+			<then>
+			<copy toDir="${subproject_name}/src" overwrite="true">
+				<fileSet dir="${widget.src.dir}">
+					<include name="**/*.java" />
+					<exclude name="**/R.java" />
+					<exclude name="**/TeleNav.java" />
+				</fileSet>
+			</copy>
+			
+			<delete quiet="true" dir="${widget.src.dir}" />
+			</then>
+		</if>
+	</target>
+
+	<target name="copy_app_src_dev">
+		<if>
+			<equals arg1="scout_us" arg2="${ACTIVITY_PACKAGE}" />
+			<then>
+				<delete quiet="true">
+					<fileSet dir="${app_path}/src/com/telenav/app/android/">
+						<exclude name="*.java" />
+						<exclude name="**/scout_us/*" />
+						<exclude name="**/jni/*" />
+						<exclude name="**/c2dm/*" />
+						<exclude name="**/widget/*" />
+						<exclude name="**/constant/*" />
+					</fileSet>
+				</delete>
+			</then>
+			<else>
+				<delete quiet="true">
+					<fileSet dir="${app_path}/src/com/telenav/app/android/">
+						<exclude name="*.java" />
+						<exclude name="**/scout_us/*" />
+						<exclude name="**/jni/*" />
+						<exclude name="**/c2dm/*" />
+						<exclude name="**/widget/*" />
+						<exclude name="**/constant/*" />
+					</fileSet>
+				</delete>
+				
+				<propertyregex property="activity.package.path.name" input="${ACTIVITY_PACKAGE}" regexp="\." replace="/" defaultValue="${ACTIVITY_PACKAGE}"/>
+				<copy toDir="${app_path}/src/com/telenav/app/android/${activity.package.path.name}" overwrite="true" filtering="true">
+					<fileSet dir="${app_path}/src/com/telenav/app/android/scout_us">
+						<include name="**/*.java" />
+					</fileSet>
+				</copy>
+				<replace dir="${app_path}/src/com/telenav/app/android/${activity.package.path.name}" value="com.telenav.app.android.${ACTIVITY_PACKAGE}" token="com.telenav.app.android.scout_us" />
+			</else>
+		</if>
+		<if>
+			<not>
+				<equals arg1="${api_version}" arg2="11"/>
+			</not>
+			<then>
+				<replaceregexp file="${app_path}\src\com\telenav\app\android\${activity.package.path.name}\TeleNav.java" match="\/\/Comment onOptionsItemSelected Start" replace="/*" flags="g" byline="true"/>	
+				<replaceregexp file="${app_path}\src\com\telenav\app\android\${activity.package.path.name}\TeleNav.java" match="\/\/Comment onOptionsItemSelected end" replace="*/" flags="g" byline="true"/>
+				<replaceregexp file="${app_path}\src\com\telenav\app\android\${activity.package.path.name}\TeleNav.java" match="\/\/Comment setContentView start" replace="/*" flags="g" byline="true"/>
+				<replaceregexp file="${app_path}\src\com\telenav\app\android\${activity.package.path.name}\TeleNav.java" match="\/\/Comment setContentView end" replace="*/" flags="g" byline="true"/>
+			</then>
+		</if>
+		
+			<antcall target="replace_import_src"/>
+	</target>
+	
+	<target name="replace_import_src">
+	    <echo message="compile test ...  ${activity.package.path.name}" />
+	    <echo message="app path ...  ${app_path}\src\com" />
+		<propertyregex property="activity.package.path.name" input="${ACTIVITY_PACKAGE}" regexp="\." replace="/" defaultValue="${ACTIVITY_PACKAGE}"/>
+     	<replaceregexp match="import com.telenav.app.android.*.R;" replace="import com.telenav.app.android.${activity.package.path.name}.R;" flags="g" byline="true">
+          <fileset dir="${app_path}\src\com" includes="**\*Touch.java"/>		   
+        </replaceregexp>
+	</target>
+	
+	<target name="copy_test_src">
+		<filter token="platform" value="${platform}" />
+		<copy toDir="${subproject_name}/unit_test" overwrite="true" filtering="true">
+			<fileSet dir="unit_test">
+				<include name="**/*.java" />
+			</fileSet>
+		</copy>
+	</target>
+	
+	<target name="build_test" depends="setup_android_env">
+		<mkdir dir="${subproject_name}/regression-test" />
+		<copy toDir="${subproject_name}/regression-test/src" overwrite="true" filtering="true">
+			<fileSet dir="${regression_project_path}/src">
+				<include name="**/*.java" />
+			</fileSet>
+		</copy>
+		
+		<copy toDir="${subproject_name}/regression-test/res" overwrite="true" filtering="true">
+			<fileSet dir="${regression_project_path}/res">
+				<include name="**" />
+			</fileSet>
+		</copy>
+		<copy toDir="${subproject_name}/regression-test/assets" overwrite="true" filtering="true">
+			<fileSet dir="${regression_project_path}/assets">
+				<include name="**" />
+			</fileSet>
+		</copy>
+		<copy toDir="${subproject_name}/regression-test/lib" overwrite="true" filtering="true">
+			<fileSet dir="${regression_project_path}/lib">
+				<include name="**" />
+			</fileSet>
+		</copy>
+		<copy toDir="${subproject_name}/regression-test" overwrite="true" filtering="true">
+			<fileSet dir="${regression_project_path}">
+				<include name="AndroidManifest.xml" />
+			</fileSet>
+		</copy>
+		
+		<if>
+			<equals arg1="scout_us" arg2="${ACTIVITY_PACKAGE}" />
+			<then>
+				<!-- nothing need handle -->
+			</then>
+			<else>
+				<replace dir="${subproject_name}/regression-test/src/com/telenav/test" value="com.telenav.app.android.${ACTIVITY_PACKAGE}" token="com.telenav.app.android.scout_us" />
+				<replace file="${subproject_name}/regression-test/AndroidManifest.xml" value="com.telenav.app.android.${ACTIVITY_PACKAGE}" token="com.telenav.app.android.scout_us" />
+			</else>
+		</if>
+		
+		<copy toDir="${subproject_name}/regression-test/lib" overwrite="true" filtering="true">
+			<fileSet dir="${publish.dir}">
+				<include name="${jar.file}.jar" />
+			</fileSet>
+		</copy>
+		
+		<antcall target="generate-test-R" inheritAll="true" inheritRefs="true" />
+		
+		<antcall target="compile_test" inheritAll="true" inheritRefs="true" />
+		<antcall target="jar_test" inheritAll="true" inheritRefs="true" />
+		
+	</target>
+	
+	<target name="compile_test">
+		<echo message="compile test ..." />
+		<path id="compile.test.classpath">
+			<fileset dir="${subproject_name}/regression-test/lib">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+		<mkdir dir="${subproject_name}/regression-test/classes" />
+		<javac encoding="ascii" target="${class.version}" source="${source.version}" destdir="${subproject_name}/regression-test/classes" classpathref="compile.test.classpath" fork="true" debug="true" optimize="true" deprecation="false" bootclasspathref="${platform}.boot.classpath">
+			<src path="${subproject_name}/regression-test/src" />
+		</javac>
+	</target>	
+	
+	<target name="jar_test">
+		<mkdir dir="${subproject_name}/regression-test/build" />
+		<jar destfile="${subproject_name}/regression-test/build/${jar.file}_test.jar">
+			<fileset dir="${subproject_name}/regression-test/classes" />
+			<manifest>
+				<attribute name="Built-By" value="telenav" />
+				<attribute name="Build-Version" value="${product.version}" />
+			</manifest>
+		<zipgroupfileset dir="${subproject_name}/regression-test/lib" includes="*.jar"/>
+		</jar>
+	</target>
+
+	<target name="post_android_build_test" depends="setup_android_env">
+		<mkdir dir="${subproject_name}/regression-test/bin/classes" />
+		<unzip src="${subproject_name}/regression-test/build/${jar.file}_test.jar" dest="${subproject_name}/regression-test/bin/classes">
+			<patternset>
+				<include name="**/*.class" />
+			</patternset>
+		</unzip>
+		<if>
+			<and>
+				<isset property="signkey" />
+				<equals arg1="android" arg2="${signkey}" />
+			</and>
+			<then>
+				<echo message="=========== compile test with debug sign key, not implemented yet" />
+				<!--antcall target="debug_test" inheritAll="true" inheritRefs="true" /-->
+			</then>
+			<else>
+				<echo message="=========== compile test with release sign key" />
+				<antcall target="release_test" inheritAll="true" inheritRefs="true" />
+			</else>
+		</if>
+		<copy file="${basedir}/${subproject_name}/regression-test/bin/${apk_name}-test-unsigned.apk" 
+			tofile="keystore/${apk_name}-test-unsigned.apk" overwrite="true" filtering="true" />
+		<copy file="${basedir}/${subproject_name}/regression-test/bin/${apk_name}-test-unsigned.apk" 
+			tofile="${publish.dir}/${apk_name}-test-unsigned.apk" overwrite="true" filtering="true" />
+	</target>
+	
+	<target name="post_android_build" depends="setup_android_env">
+		<mkdir dir="${subproject_name}/${android-outdir-classes}" />
+		<unzip src="${publish.dir}/${jar.file}.jar" dest="${subproject_name}/${android-outdir-classes}">
+			<patternset>
+				<include name="**/*.class" />
+			</patternset>
+		</unzip>
+
+		<delete quiet="true" dir="${subproject_name}/lib" />
+		<delete quiet="true" dir="${subproject_name}/${bin}" />
+		<if>
+			<and>
+				<isset property="signkey" />
+				<equals arg1="android" arg2="${signkey}" />
+			</and>
+			<then>
+				<echo message="=========== compile with debug sign key" />
+				<antcall target="debug" inheritAll="true" inheritRefs="true" />
+			</then>
+			<else>
+				<echo message="=========== compile with release sign key" />
+				<antcall target="release" inheritAll="true" inheritRefs="true" />
+			</else>
+		</if>
+
+		<property name="subproject_dist" value="${publish.dir}" />
+		<move todir="${subproject_dist}">
+			<fileset dir="${subproject_name}/${android-outdir}">
+				<include name="*.apk" />
+			</fileset>
+		</move>
+
+		<if>
+			<and>
+				<isset property="signkey" />
+				<equals arg1="android" arg2="${signkey}" />
+			</and>
+			<then>
+				<echo message="=========== android: with debug sign key" />
+			</then>
+			<else>
+				<echo message="=========== android: with release sign key" />
+				<copy file="${publish.dir}/${apk_name}-unsigned.apk" tofile="keystore/${apk_name}-unsigned.apk" overwrite="true" filtering="true" />				
+				
+				<antcall target="sign_apk_file_delegate" />
+
+				<copy file="keystore/${apk_name}.apk" tofile="${publish.dir}/${apk_name}.apk" overwrite="true" filtering="true" />
+				<!--<copy file="keystore/${apk_name}-test.apk" tofile="${publish.dir}/${apk_name}-test.apk" overwrite="true" filtering="true" /> -->
+
+				<delete quiet="true" file="keystore/${apk_name}.apk" />
+				<delete quiet="true" file="keystore/${apk_name}-unsigned.apk" />
+				
+				 
+				<!--<delete quiet="true" file="keystore/${apk_name}-test.apk" />
+				<delete quiet="true" file="keystore/${apk_name}-test-unsigned.apk" />-->
+			</else>
+		</if>
+	</target>
+
+	<target name="obfuscate">
+		<filter token="ACTIVITY_PACKAGE" value="${ACTIVITY_PACKAGE}" />
+		<copy file="${proguard_file}" tofile="${subproject_name}/proguard_config_temp.pro" overwrite="true" filtering="true" />
+		<exec executable="java">
+			<arg line=" -Xmx512m" />
+			<arg line=" -jar lib/proguard/proguard4.5.1.jar" />
+			<!-- Ignor warnings-->
+			<arg line=" -ignorewarnings" />
+			<!--
+			<arg value=" -dontobfuscate " />
+			-->
+			<arg line=" -libraryjars ${sdk-folder-version}/android.jar;${unittest.lib.dir}" />
+
+			<arg line=" -injar ${publish.dir}/${jar.file}.jar" />
+			<arg line=" -outjar ${publish.dir}/${jar.file}_temp.jar" />
+			<arg line=" -keepattributes SourceFile,LineNumberTable"/>
+			<!--
+			<arg line=" -injar ${subproject_name}/regression-test/build/${jar.file}_test.jar" />
+			<arg line=" -outjar ${subproject_name}/regression-test/build/${jar.file}_test_temp.jar" />
+			-->
+			
+			<arg line=" @${subproject_name}/proguard_config_temp.pro" />
+			<arg line=" -printmapping ${publish.dir}/proguard-${jar.file}.map" />
+		</exec>
+		<copy file="${publish.dir}/${jar.file}_temp.jar" tofile="${publish.dir}/${jar.file}.jar" overwrite="true" />
+		<!--<copy file="${subproject_name}/regression-test/build/${jar.file}_test_temp.jar" tofile="${subproject_name}/regression-test/build/${jar.file}_test.jar" overwrite="true" />-->
+		<delete quiet="true" file="${publish.dir}/${jar.file}_temp.jar" />
+		<!--<delete quiet="true" file="${subproject_name}/regression-test/build/${jar.file}_test_temp.jar" />-->
+		<delete quiet="true" file="${subproject_name}/proguard_config_temp.pro" />
+	</target>
+	
+	<target name="post_generate-R" depends="crashlytics-pre-build, setup_android_env, crashlytics-code-gen">
+		<antcall target="generate-R" inheritAll="true" inheritRefs="true" />
+		<antcall target="aidl" inheritAll="true" inheritRefs="true" />
+	</target>
+
+
+	<target name="sign_apk_file" depends="setup_android_env">
+		<antcall target="sign_apk_file_delegate" />
+	</target>
+
+	<target name="sign_apk_file_delegate">
+		<fail unless="version">
+			.
+			-------------------------Error---------------------------
+			Please set the build version!
+			------------------------@TeleNav--------------------------
+		</fail>
+		<property name="run_path" value="keystore" />
+		<property name="unsigned_apk" value="${basedir}/keystore/${apk_name}-unsigned.apk" />
+		<property name="signed_apk" value="${basedir}/keystore/${apk_name}-signed.apk" />
+		<property name="zipped_apk" value="${basedir}/keystore/${apk_name}.apk" />
+		
+		
+		<!--<property name="unsigned_apk_test" value="${basedir}/keystore/${apk_name}-test-unsigned.apk" />
+		<property name="signed_apk_test" value="${basedir}/keystore/${apk_name}-test-signed.apk" />
+		<property name="zipped_apk_test" value="${basedir}/keystore/${apk_name}-test.apk" />-->
+		
+		<exec executable="jarsigner" failonerror="true" dir="${run_path}">
+			<arg value="-keystore" />
+			<arg value="tn.keystore" />
+			<arg value="-verbose" />
+			<arg value="-signedjar" />
+			<arg value="${signed_apk}" />
+			<arg value="-keypass" />
+			<arg value="telenav_navigator_go" />
+			<arg value="-storepass" />
+			<arg value="telenav_navigator_go" />
+			<arg value="${unsigned_apk}" />
+			<arg value="tn.keystore" />
+		</exec>
+
+		<exec executable="${zipalign}" failonerror="true" dir="${run_path}">
+			<arg value="-f" />
+			<arg value="-v" />
+			<arg value="4" />
+			<arg value="${signed_apk}" />
+			<arg value="${zipped_apk}" />
+		</exec>		
+		
+		<!--<exec executable="jarsigner" failonerror="true" dir="${run_path}">
+			<arg value="-keystore" />
+			<arg value="tn.keystore" />
+			<arg value="-verbose" />
+			<arg value="-signedjar" />
+			<arg value="${signed_apk_test}" />
+			<arg value="-keypass" />
+			<arg value="telenav_navigator_go" />
+			<arg value="-storepass" />
+			<arg value="telenav_navigator_go" />
+			<arg value="${unsigned_apk_test}" />
+			<arg value="tn.keystore" />
+		</exec>-->
+
+		<!--<exec executable="${zipalign}" failonerror="true" dir="${run_path}">
+			<arg value="-f" />
+			<arg value="-v" />
+			<arg value="4" />
+			<arg value="${signed_apk_test}" />
+			<arg value="${zipped_apk_test}" />
+		</exec>-->		
+
+		<delete quiet="true" file="${signed_apk}" />
+		<delete quiet="true" file="${signed_apk_test}" />
+	</target>
+	<!-- ============================================================== Please don't define your target below ======================================================== -->
+	<!-- ============================================================== XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ======================================================== -->
+	<!-- ============================================================== XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ======================================================== -->
+	<!-- ============================================================== XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ======================================================== -->
+	<!-- ============================================================== XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ======================================================== -->
+	<!-- =================================================================== Android Kernel Build Script ============================================================= -->
+
+	<!-- init property -->
+	<target name="setup_android_env">
+		<!--<antcall target="merge-android-jar" />-->
+		<property name="android-tools" value="${android-tools-folder}" />
+		<property name="android-framework" value="${android-tools-folder}/framework.aidl" />
+		<property name="android-jar" value="${sdk-folder}/android.jar" />
+		<property name="android-outdir" value="bin" />
+		<property name="android-outdir-classes" value="${android-outdir}/classes" />
+
+
+		<!-- Tools -->
+		<condition property="aapt" value="${android-tools}/aapt.exe" else="${android-tools}/aapt">
+			<os family="windows" />
+		</condition>
+		<condition property="aidl" value="${android-tools}/aidl.exe" else="${android-tools}/aidl">
+			<os family="windows" />
+		</condition>
+		<condition property="adb" value="${android-tools}/adb.exe" else="${android-tools}/adb">
+			<os family="windows" />
+		</condition>
+		<condition property="dx" value="${android-tools}/dx.bat" else="${android-tools}/dx">
+			<os family="windows" />
+		</condition>
+		<condition property="apk-builder" value="${android-tools}/apkbuilder.bat" else="${android-tools}/apkbuilder">
+			<os family="windows" />
+		</condition>
+		<condition property="zipalign" value="${android-tools}/zipalign.exe" else="${android-tools}/zipalign">
+			<os family="windows" />
+		</condition>
+		
+		<property name="outdir" value="${project_path}/${android-outdir}" />
+		<!-- Input directories -->
+		<property name="resource-dir" value="res" />
+		<property name="resource-dir-ospath" value="${project_path}/${resource-dir}" />
+
+		<property name="asset-dir" value="assets" />
+		<property name="asset-dir-ospath" value="${project_path}/${asset-dir}" />
+
+		<property name="srcdir" value="src" />
+		<property name="srcdir-ospath" value="${project_path}/${srcdir}" />
+
+		<property name="nativedir" value="libs" />
+		<property name="nativedir-ospath" value="${project_path}/${nativedir}" />
+
+		<property name="external-libs" value="libs" />
+		<property name="external-libs-ospath" value="${project_path}/${external-libs}" />
+
+		<!-- Output directories -->
+		<property name="outdir-classes" value="classes" />
+		<property name="outdir-classes-ospath" value="${outdir}/${outdir-classes}" />
+
+		<!-- Intermediate files -->
+		<property name="dex-file" value="classes.dex" />
+		<property name="intermediate-dex-ospath" value="${outdir}/${dex-file}" />
+
+		<!-- The final package file to generate -->
+		<property name="resources-package" value="${apk_name}.ap_" />
+		<property name="resources-package-ospath" value="${outdir}/${resources-package}" />
+
+		<property name="out-debug-package" value="${apk_name}-debugsigned.apk" />
+		<property name="out-debug-package-ospath" value="${outdir}/${out-debug-package}" />
+
+		<property name="out-unsigned-package" value="${apk_name}-unsigned.apk" />
+		<property name="out-unsigned-package-ospath" value="${outdir}/${out-unsigned-package}" />
+	</target>
+
+	<target name="dirs">
+		<echo>Creating output directories if needed...</echo>
+		<mkdir dir="${external-libs-ospath}" />
+	</target>
+
+	<!-- Convert this project's .class files into .dex files. -->
+	<target name="dex" depends="dirs">
+		<echo>Converting compiled files and external libraries into...</echo>
+		<apply executable="${dx}" failonerror="true" parallel="true">
+			<arg value="--dex" />
+			<arg value="--output=${intermediate-dex-ospath}" />
+			<arg path="${outdir-classes-ospath}" />
+			<fileset dir="${external-libs-ospath}" includes="*.jar" />
+		</apply>
+	</target>
+	
+	<target name="dex_test" depends="dirs">
+		<echo>Converting compiled test files and external libraries into...</echo>	
+		<apply executable="${dx}" failonerror="true" parallel="true">
+			<arg value="--dex" />
+			<arg value="--output=${basedir}/${subproject_name}/regression-test/bin/${dex-file}" />
+			<arg path="${basedir}/${subproject_name}/regression-test/bin/classes" />	
+			<fileset dir="${external-libs-ospath}" includes="*.jar" />
+		</apply>
+	</target>
+
+	<!-- Put the project's resources into the output package file. -->
+	<target name="package-res-and-assets">
+		<echo>Packaging resources and assets...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-f" />
+			<arg value="-M" />
+			<arg value="${project_path}/AndroidManifest.xml" />
+			<arg value="-S" />
+			<arg value="${resource-dir-ospath}" />
+			<arg value="-A" />
+			<arg value="${asset-dir-ospath}" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+			<arg value="-F" />
+			<arg value="${resources-package-ospath}" />
+		</exec>
+	</target>
+	
+	<target name="package-test-res">
+		<echo>Packaging test resources and assets...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-f" />
+			<arg value="-M" />
+			<arg value="${project_path}/regression-test/AndroidManifest.xml" />
+			<arg value="-S" />
+			<arg value="${subproject_name}/regression-test/res" />
+			<arg value="-A" />
+			<arg value="${subproject_name}/regression-test/assets" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+			<arg value="-F" />
+			<arg value="${subproject_name}/regression-test/bin/${apk_name}-test.ap_" />
+		</exec>
+	</target>
+
+	<target name="generate-R">
+		<echo>Generate the R.java file for this project's resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-m" />
+			<arg value="-J" />
+			<arg file="${srcdir-ospath}" />
+			<!-- Create R.java in the source directory -->
+			<arg value="-M" />
+			<arg file="${project_path}/AndroidManifest.xml" />
+			<arg value="-S" />
+			<arg file="${resource-dir-ospath}" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+		</exec>
+	</target>
+	
+	<target name="aidl">
+                <apply executable="${aidl}" failonerror="true">
+                       <arg value="-p${android-framework}" />
+                       <arg value="-I${srcdir-ospath}" />
+                             <fileset dir="${srcdir-ospath}">
+                                   <include name="**/*.aidl"/>
+                             </fileset>
+               </apply>
+       </target>
+	
+	<target name="generate-test-R">
+		<echo>Generate the R.java file for this test project's resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-m" />
+			<arg value="-J" />
+			<arg file="${subproject_name}/regression-test/src" />
+			<!-- Create R.java in the source directory -->
+			<arg value="-M" />
+			<arg file="${subproject_name}/regression-test/AndroidManifest.xml" />
+			<arg value="-S" />
+			<arg file="${subproject_name}/regression-test/res" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+		</exec>
+	</target>
+	
+
+	<!-- Same as package-res-and-assets, but without "-A ${asset-dir}" -->
+	<target name="package-res-no-assets">
+		<echo>Packaging resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-f" />
+			<arg value="-M" />
+			<arg value="AndroidManifest.xml" />
+			<arg value="-S" />
+			<arg value="${resource-dir-ospath}" />
+			<!-- No assets directory -->
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+			<arg value="-F" />
+			<arg value="${resources-package-ospath}" />
+		</exec>
+	</target>
+
+	<!-- Invoke the proper target depending on whether or not
+         an assets directory is present. -->
+	<!-- TODO: find a nicer way to include the "-A ${asset-dir}" argument
+         only when the assets dir exists. -->
+	<target name="package-res">
+		<available file="${asset-dir-ospath}" type="dir" property="res-target" value="and-assets" />
+		<property name="res-target" value="no-assets" />
+		<antcall target="package-res-${res-target}" />
+	</target>
+
+	<!-- Package the application and sign it with a debug key.
+		 This is the default target when building. It is used for debug. -->
+	<target name="debug" depends="dex, package-res">
+		<echo>Packaging ${out-debug-package-ospath}, and signing it with a debug key...</echo>
+		<exec executable="${apk-builder}" failonerror="true">
+			<arg value="${out-debug-package-ospath}" />
+			<arg value="-z" />
+			<arg value="${resources-package-ospath}" />
+			<arg value="-f" />
+			<arg value="${intermediate-dex-ospath}" />
+			<arg value="-rf" />
+			<arg value="${srcdir-ospath}" />
+			<arg value="-nf" />
+			<arg value="${nativedir-ospath}" />
+			<arg value="-rj" />
+			<arg value="${external-libs-ospath}" />
+		</exec>
+	</target>
+
+	<!-- Package the application without signing it.
+    	 This allows for the application to be signed later with an official publishing key. -->
+	<target name="release" depends="dex, package-res">
+		<echo>Packaging ${out-unsigned-package-ospath} for release...</echo>
+		<exec executable="${apk-builder}" failonerror="true">
+			<arg value="${out-unsigned-package-ospath}" />
+			<arg value="-u" />
+			<arg value="-z" />
+			<arg value="${resources-package-ospath}" />
+			<arg value="-f" />
+			<arg value="${intermediate-dex-ospath}" />
+			<arg value="-rf" />
+			<arg value="${srcdir-ospath}" />
+			<arg value="-nf" />
+			<arg value="${nativedir-ospath}" />
+			<arg value="-rj" />
+			<arg value="${external-libs-ospath}" />
+		</exec>
+		<echo>It will need to be signed with jarsigner before being published.</echo>
+	</target>
+	
+	<target name="release_test" depends="dex_test, package-test-res">	
+		<exec executable="${apk-builder}" failonerror="true">
+			<arg value="${basedir}/${subproject_name}/regression-test/bin/${apk_name}-test-unsigned.apk" />
+			<arg value="-u" />
+			<arg value="-z" />
+			<arg value="${basedir}/${subproject_name}/regression-test/bin/${apk_name}-test.ap_" />
+			<arg value="-f" />
+			<arg value="${basedir}/${subproject_name}/regression-test/bin/${dex-file}" />
+			<arg value="-rf" />
+			<arg value="${basedir}/${subproject_name}/regression-test/src" />
+			<arg value="-rj" />
+			<arg value="${basedir}/${subproject_name}/regression-test/lib/velocity-1.7.jar" />
+		</exec>
+		<echo>It will need to be signed with jarsigner before being published.</echo>
+	</target>
+
+	<!-- Install the package on the default emulator -->
+	<target name="install" depends="debug">
+		<echo>Installing ${out-debug-package-ospath} onto default emulator...</echo>
+		<exec executable="${adb}" failonerror="true">
+			<arg value="install" />
+			<arg value="${out-debug-package-ospath}" />
+		</exec>
+	</target>
+
+	<target name="reinstall" depends="debug">
+		<echo>Installing ${out-debug-package} onto default emulator...</echo>
+		<exec executable="${adb}" failonerror="true">
+			<arg value="install" />
+			<arg value="-r" />
+			<arg value="${out-debug-package}" />
+		</exec>
+	</target>
+
+	<!-- Uinstall the package from the default emulator -->
+	<target name="uninstall">
+		<echo>Uninstalling ${application-package} from the default emulator...</echo>
+		<exec executable="${adb}" failonerror="true">
+			<arg value="uninstall" />
+			<arg value="${application-package}" />
+		</exec>
+	</target>
+
+	<!--  These tasks are only for dev -->
+
+	<target name="unittest_dev" depends="preload_rel">
+  	        <antcall target="unittest_dev_delegate">
+			<!-- run conf -->
+			<param name="base.dir" value="${subproject_name}" />
+			<param name="module.name" value="${jar_name}" />
+			<param name="jar.file" value="${jar_name}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="${findbugs.enable}" />
+			<param name="unittest.enable" value="${unittest.enable}" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy-${platform}.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/lib/.ivy-cache" />
+		</antcall>
+	</target>
+
+ <target name="unittest_dev_delegate" depends="create_project_rel, compile, unittest, test_coverage">	        
+	        <delete quiet="true" dir="${app_path}/test-reports-summary" />
+	        <if>
+			<equals arg1="true" arg2="${unittest.enable}" />
+			<then>
+				<copy toDir="${app_path}/test-reports-summary/junitReport" overwrite="true">
+			                <fileset dir="${junit.xml.dir}" />
+		                </copy> 
+			</then>
+		</if>
+		<if>
+			<equals arg1="true" arg2="${test_coverage}" />
+			<then>
+				<copy toDir="${app_path}/test-reports-summary/cobertura" overwrite="true">
+			                <fileset dir="${coberturareport.dir}" />
+		        </copy>
+			</then>
+		</if>
+   </target>
+
+	<target name="findbugs_dev" depends="preload_rel">
+  	        <antcall target="findbugs_dev_delegate">
+			<!-- run conf -->
+			<param name="base.dir" value="${subproject_name}" />
+			<param name="module.name" value="${jar_name}" />
+			<param name="jar.file" value="${jar_name}" />
+			<!-- findbugs conf -->
+			<param name="findbugs.filter" value="findbugs-filter.xml" />
+			<param name="findbugs.enable" value="${findbugs.enable}" />
+			<param name="unittest.enable" value="${unittest.enable}" />
+			<!-- compile conf -->
+			<param name="platform" value="${platform}" />
+			<param name="class.version" value="${class_version}" />
+			<param name="source.version" value="${source_version}" />
+			<param name="compile.excludes" value="${compile_excludes}" />
+			<!-- ivy conf files -->
+			<param name="ivy.settings" value="ivysettings.xml" />
+			<param name="ivy.file" value="ivy-${platform}.xml" />
+			<!-- resolver -->
+			<param name="ivy.default.retrieve.resolver" value="retrieve-file-resolver" />
+			<param name="retrieve.repository.url" value="http://tar1.telenav.com:8080/repository" />
+			<param name="retrieve.repository.file" value="${output}" />
+			<!-- cache -->
+			<param name="ivy.default.cache" value="${basedir}/lib/.ivy-cache" />
+		</antcall>
+	</target>
+	
+	  <target name="findbugs_dev_delegate" depends="create_project_rel, compile, find_bugs">
+		<fail message=".                              $$$$$$$$$  Find some bugs at the codes by findbugs tool.  $$$$$$$$$">
+			<condition>
+				<or>
+					<isset property="isFindbugsError" />
+					<isset property="isFindbugsWarning" />
+				</or>
+			</condition>
+		</fail>
+	  </target>	
+	  
+</project>

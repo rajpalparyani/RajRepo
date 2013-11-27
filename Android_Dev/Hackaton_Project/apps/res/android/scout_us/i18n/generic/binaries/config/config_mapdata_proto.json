@@ -1,0 +1,13 @@
+{
+    "view" :
+    {
+        "default_eye_distance" : 1.0,
+        "2d_scale_factor" : 1.03125
+    },
+    "map":
+    {
+        "base_tile_size": 256,
+        "cache_capacity": 4,
+        "max_vbo_vertex" : 131072
+    }
+}

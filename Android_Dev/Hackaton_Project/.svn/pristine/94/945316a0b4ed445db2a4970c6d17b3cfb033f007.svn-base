@@ -1,0 +1,73 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<title>MIDP Test Tools</title>
+</head>
+<body alink="#FF0000" bgcolor="#FFFFFF" link="#0000FF" text="#000000" vlink="#000080">
+<p>Google maps and geo test link</p>
+<p>----http://maps.google.com:--</p>
+<p><a href="http://maps.google.com/maps?q=37.351874,-121.996136">http://maps.google.com/maps?q=decimal (divide by ,)</a></p>
+<p><a href="http://maps.google.com/maps?q=37.351874+-121.996136">http://maps.google.com/maps?q=decimal (divide by +)</a></p>
+<p><a href="http://maps.google.com/maps?q=37.351874N,121.996136W">http://maps.google.com/maps?q=decimal with direction</a></p>
+<p><a href="http://maps.google.com/maps?q=37%2035%2018.7,-121%209%2096.1">http://maps.google.com/maps?q=degrees minutes seconds</a></p>
+<p><a href="http://maps.google.com/maps?q=37%2035%2018.7N,121%209%2096.1W">http://maps.google.com/maps?q=degrees minutes seconds with direction </a></p>
+<p><a href="http://maps.google.com/maps?q=37%2035.18,-121%209.36">http://maps.google.com/maps?q=degrees minutes </a></p>
+<p><a href="http://maps.google.com/maps?q=37%2035.18N,121%209.36W">http://maps.google.com/maps?q=degrees minutes with direction</a></p>
+<p><a href="http://maps.google.com/maps?q=37.351874,-121.996136&amp;z=3">http://maps.google.com/maps?q=decimal (divide by ,)&amp;z=3</a></p>
+<p><a href="http://maps.google.com/maps?q=37.351874,-121.996136&amp;z=3&amp;layer=t">http://maps.google.com/maps?q=decimal (divide by ,)&amp;z=3&amp;layer=t</a></p>
+<p><a href="http://maps.google.com/maps?ll=37.351874,-121.996136">http://maps.google.com/maps?ll=decimal (divide by ,)</a></p>
+<p><a href="http://maps.google.com/maps?saddr=618%20fremont%20ave,sunnyvale,ca&amp;daddr=655%20fair%20oaks,sunnyvale,ca">http://maps.google.com/maps?saddr=&amp;daddr=</a></p>
+<p><a href="http://maps.google.com/maps?saddr=sunnyvale+ca&amp;daddr=Santa+clara+ca&amp;z=1&amp;layer=t">http://maps.google.com/maps?saddr=&amp;daddr=&amp;z=1&amp;layer=t</a></p><p><a href="http://maps.google.com/maps?daddr=Santa+clara+ca">http://maps.google.com/maps?daddr=</a></p>
+<p></p>
+
+<br><p>--[Google Maps API]--http://maps.google.com/maps/api/staticmap---</p>
+<p><b>markers content divide by <font color="red">%7C</font></b></p>
+<ul>
+	<li>
+		<p>1. lat, lon for parameter</p>
+		<dl>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false">a. Multiple markers divide by ,</a></p></dd>
+      <dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&sensor=false">b. Single markers divide by ,</a></p></dd>
+    	<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7C40.702147+-74.015794&markers=color:green%7Clabel:G%7C40.711614+-74.012318&markers=color:red%7Clabel:C%7C40.718217+-73.998284&sensor=false">c. Multiple markers divide by +</a></p></dd>
+    	<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7C40.702147+-74.015794&sensor=false">d. Single markers dive by +</a></p></dd>
+    </dl>
+	</li>
+	<li>
+		<p>2. Address for parameter</p>
+		<dl>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7CBrooklyn Battery Tunnel Manhattan, NY 10004&markers=color:green%7Clabel:G%7CWorld Trade Center PATH station 70 Vesey St, Manhattan, NY 10006&markers=color:red%7Clabel:C%7C188 Hester St New York, NY 10013&sensor=false">a. Mutiple markers</a></p></dd>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue%7Clabel:S%7CBrooklyn Battery Tunnel Manhattan, NY 10004&sensor=false">b. Single markers</a></p></dd>
+		</dl>
+	</li>
+</ul>
+
+<p><b>markers content divide by <font color="red">|</font></b></p>
+<ul>
+	<li>
+		<p>1. lat, lon for parameter</p>
+		<dl>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|40.702147,-74.015794&markers=color:green|label:G|40.711614,-74.012318&markers=color:red|label:C|40.718217,-73.998284&sensor=false">a. Multiple markers divide by ,</a></p></dd>
+      <dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|40.702147,-74.015794&sensor=false">b. Single markers divide by ,</a></p></dd>
+    	<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|40.702147+-74.015794&markers=color:green|label:G|40.711614+-74.012318&markers=color:red|label:C|40.718217+-73.998284&sensor=false">c. Multiple markers divide by +</a></p></dd>
+    	<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|40.702147+-74.015794&sensor=false">d. Single markers divide by +</a></p></dd>
+    </dl>
+	</li>
+	<li>
+		<p>2. Address for parameter</p>
+		<dl>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|CBrooklyn Battery Tunnel Manhattan, NY 10004&markers=color:green|label:G|World Trade Center PATH station 70 Vesey St, Manhattan, NY 10006&markers=color:red|label:C|188 Hester St New York, NY 10013&sensor=false">a. Mutiple markers</a></p></dd>
+			<dd><p><a href="http://maps.google.com/maps/api/staticmap?size=512x512&markers=color:blue|label:S|CBrooklyn Battery Tunnel Manhattan, NY 10004&sensor=false">b. Single markers</a></p></dd>
+		</dl>
+	</li>
+</ul>
+<br>
+
+<p>----geo:--</p>
+<p><a href="geo:37.351874,-121.996136">geo:latitude,longitude</a></p>
+<p><a href="geo:37.351874,-121.996136?z=6">geo:latitude,longitude?z=zoom</a></p>
+<p><a href="geo:0,0?q=655%20fair%20oaks,sunnyvale,ca">geo:0,0?q=655 fair oaks, sunnyvale, ca</a></p>
+<p><a href="geo:0,0?q=618%20fremont%20ave,sunnyvale,ca">geo:0,0?q=kifer road, sunnyvale, ca</a></p>
+<p>----------</p>
+
+
+
+</body></html>

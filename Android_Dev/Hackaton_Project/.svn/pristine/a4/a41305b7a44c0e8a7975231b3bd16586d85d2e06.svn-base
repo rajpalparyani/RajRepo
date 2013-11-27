@@ -1,0 +1,87 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+        <script type="text/JavaScript">    
+            function captureInputFuction(){
+                var input = document.getElementsByName("fname")[0].value;
+                input += "\n";
+                input += document.getElementsByName("lname")[0].value;
+                input += "\n";
+                input += document.getElementsByName("psw")[0].value;
+                input += "\n";
+                input += document.getElementsByName("Sex")[0].value;
+
+                var boxes = document.getElementsByName("checkBoxName");
+                for (var i = 0; i < boxes.length; i++)
+                {
+                    if (boxes[i].checked)
+                    {
+                        input += "\n";
+                        input += boxes[i].value;
+                    }
+                }
+
+                input += "\n";
+                input += document.getElementsByName("cars")[0].value;
+                <!--alert(input);-->
+
+                console.log(input);
+            }
+        </script> 
+    </head>
+    <body>
+
+        <fieldset>
+            <legend>TextField</legend> 
+            <form>
+                First name: <input type="text" name="fname" value="test words?.,_!@#$%^&*()-+="/><br/>
+                Last name: <input type="text" name="lname" value="international 中文"/><br/> 
+                Password: <input type="password" name="psw" value="123456"/><br/> 
+            </form>
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Radio</legend> 
+            <form>
+                Male:
+                <input type="radio" checked="checked" name="Sex" value="male" />
+                <br />
+                Female
+                <input type="radio" name="Sex" value="female" />
+            </form>
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>CheckBox</legend> 
+            <form>
+                Do you like:
+                <br />
+                Water
+                <input type="checkbox" name="checkBoxName" value="Water">
+                <br />
+                Tea
+                <input type="checkbox" name="checkBoxName" value="Tea">
+                <br />
+                Milk
+                <input type="checkbox" name="checkBoxName" value="Milk">
+            </form>
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Option</legend> 
+            <form>
+                <select name="cars">
+                    <option value ="volvo">Volvo</option>
+                    <option value ="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+        </fieldset>
+
+        <br/><br/><input type="button" value="Submit" onclick="captureInputFuction()"/>
+    </body>
+</html>

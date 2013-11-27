@@ -1,0 +1,17 @@
+<ivy-module version="1.0">
+	<info organisation="/mobile/utility/trunk" module="${module.name}" />
+
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="jar" />
+		<artifact name="${module.name}" type="source" ext="zip" />
+	
+	</publications>
+
+	<dependencies>
+		<dependency org="org/easymock" name="easymock" rev="3.0" />
+		<dependency org="org" name="objenesis" rev="1.2" />
+		<dependency org="org/powermock" name="powermock-easymock" rev="1.4.8-full" />
+		<dependency org="org/javassist" name="javassist" rev="3.12.0.GA" />
+		<dependency org="net/sf" name="cglib" rev="2.2" />
+	</dependencies>
+</ivy-module>

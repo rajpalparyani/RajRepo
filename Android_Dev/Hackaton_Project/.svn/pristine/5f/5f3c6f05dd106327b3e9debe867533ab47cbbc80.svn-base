@@ -1,0 +1,31 @@
+<ivysettings>
+	<settings defaultResolver="${ivy.default.retrieve.resolver}"/>
+	<caches defaultCacheDir="${ivy.default.cache}" />
+	<resolvers>
+		<url name="retrieve-artifact-repository-url">
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[artifact]-[revision].[ext]"/>
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[revision]/[artifact]-[revision]-release.[ext]"/>
+			<artifact pattern="${retrieve.repository.url}/[organisation]/[module]/[artifact]-[revision]-trunk.[ext]"/>
+		</url>
+
+		<filesystem name="retrieve-artifact-repository-file">
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[artifact]-[revision].[ext]"/>
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision]-release.[ext]"/>
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[revision]/[artifact]-[revision]-trunk.[ext]"/>
+			<artifact pattern="${retrieve.repository.file}/[organisation]/[module]/[artifact]-[revision]-trunk.[ext]"/>
+		</filesystem>
+		
+		<chain name="retrieve-file-resolver" dual="true">
+			<resolver ref="retrieve-artifact-repository-file"/>
+			<resolver ref="retrieve-artifact-repository-url"/>
+			<ibiblio name="public"
+             root="http://hqb-nexus-01.telenav.com:8081/nexus/content" 
+			 m2compatible="true" 
+			 checksums=""
+             pattern="groups/public/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]" />
+		</chain>
+	</resolvers>
+</ivysettings>
+

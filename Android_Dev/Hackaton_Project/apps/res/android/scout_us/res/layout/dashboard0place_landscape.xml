@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard0placeContainer_landscape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="11dp"
+    android:layout_marginTop="11dp"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/dashboard0PlaceCoffeeButton_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_button_top_landscape"
+            android:clickable="true"
+            android:gravity="center"
+            android:tag="241" >
+
+            <ImageView
+                android:id="@+id/dashboard0PlacesCoffeeImage_landscape"
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceCoffee"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dashboard_poi_icon_coffee" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dashboard0PlaceFoodButton_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_button_middle_landscape"
+            android:clickable="true"
+            android:gravity="center"
+            android:tag="2041" >
+
+            <ImageView
+                android:id="@+id/dashboard0PlacesFoodImage_landscape"
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceFood"
+                android:duplicateParentState="true"
+                android:src="@drawable/dashboard_poi_icon_food" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dashboard0PlaceGasButton_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_button_middle_landscape"
+            android:clickable="true"
+            android:gravity="center"
+            android:tag="702" >
+
+            <ImageView
+                android:id="@+id/dashboard0PlacesGasImage_landscape"
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceGas"
+                android:duplicateParentState="true"
+                android:src="@drawable/dashboard_poi_icon_gas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dashboard0PlaceMoreButton_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_button_bottom_landscape"
+            android:clickable="true"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/dashboard0PlacesMoreImage_landscape"
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0PlaceImageLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceMore"
+                android:duplicateParentState="true"
+                android:src="@drawable/dashboard_poi_icon_more" />
+        </LinearLayout>
+    </LinearLayout>
+     <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/dashboard0DriveLinearLayoutLayoutMargin" />
+    <RelativeLayout
+        android:id="@+id/dashboard0DriveDWFButton"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@drawable/dashboard_button_recent_background"
+        android:clickable="true"
+        android:onClick="onClick" >
+
+        <ImageView
+            android:id="@+id/dashboard0DriveDWFActiveIcon_landscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/dashboardRecents"
+            android:duplicateParentState="true"
+            android:src="@drawable/dashboard_drive_with_friends_active_point_icon_unfocused"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:duplicateParentState="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_marginTop="-5dp"
+                android:id="@+id/dashboard0PlacesDWFImage_landscape"
+                android:layout_width="@dimen/dashboard0PlaceImageLayoutWidth"
+                android:layout_height="@dimen/dashboard0DriveDWFButtonImageLandscapeLayoutHeight"
+                android:contentDescription="@string/dashboardPlaceMore"
+                android:duplicateParentState="true"
+                android:src="@drawable/dashboard_dwf_icon" />
+
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:text="@string/dashboardDriveWithFriends"
+                android:textColor="@color/dashboard_places_font"
+                android:textSize="@dimen/dashboard0DriveRecentsButtonTextSize"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

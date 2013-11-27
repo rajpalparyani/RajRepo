@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="addplace_title_add">Add a Place</string>
+    <string name="addplace_title_edit">Edit My Places</string>
+    <string name="addplace_title_share">Share a Place</string>
+    <string name="addplace_prompt_add">What would you like to add?</string>
+    <string name="addplace_prompt_share">What would you like to share?</string>
+    
+    <string name="addplace_current_location_label">My Current Location</string>
+    <string name="addplace_current_location_loading">Loading...</string>
+    <string name="addplace_custom_done">Done</string>
+    <string name="addplace_category_new_category">New Folder</string>
+    <string name="addplace_category_label_none">None</string>
+	<string name="addplace_palce_added_prompt">Added %1$s.</string>
+	<string name="addplace_palce_shared_prompt">Shared %1$s.</string>
+	<string name="addplace_location_info">lat %1$.5f, lon %2$.5f</string>
+</resources>

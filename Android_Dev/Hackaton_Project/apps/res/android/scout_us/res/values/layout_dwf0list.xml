@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- width, height, margin and padding -->
+    <dimen name="dwf0ListPaddingBottom">4dp</dimen>
+    <dimen name="dwf0ListPaddingLeft">35dp</dimen>
+    <dimen name="dwf0ListPaddingRight">17dp</dimen>
+    <dimen name="dwf0ListPaddingTop">4dp</dimen>
+    <!-- weight -->
+    <!-- text size -->
+
+    <!-- color -->
+    
+    <!-- value -->
+    <string name="dwf0ListTitleName">Name</string>
+    <string name="dwf0ListTitleETA">ETA</string>
+</resources>

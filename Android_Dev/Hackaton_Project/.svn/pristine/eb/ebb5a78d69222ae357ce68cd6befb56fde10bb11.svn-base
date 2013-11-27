@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard0DriveResumeContainer_landscape"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dashboard0DriveLinearLayoutLayoutMargin"
+    android:layout_marginTop="10dp"
+    android:baselineAligned="false"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/dashboard0DriveResume_landscape"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.2"
+        android:background="@drawable/dashboard_button_recent_background"
+        android:duplicateParentState="true"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/dashboard0DriveResumeIcon_landscape"
+            android:layout_width="@dimen/dashboard0DriveResumeButtonImageLayoutWidth"
+            android:layout_height="@dimen/dashboard0DriveResumeButtonImageLayoutHeight"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="13dp"
+            android:contentDescription="@string/dashboardRecents"
+            android:duplicateParentState="false"
+            android:src="@drawable/dashboard_close_icon" />
+
+        <LinearLayout
+            android:id="@+id/dashboard0DriveResumeButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:gravity="center_vertical"
+            android:duplicateParentState="true">
+
+            <TextView
+                android:id="@+id/dashboardResumeMainText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/dashboardResumeMainText"
+                android:textColor="@color/dashboard_drive_static_string_font"
+                android:textSize="@dimen/dashboard0DriveResumeMainTextSize"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/dashboardResumeAddrLabel_landscape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/dashboardResumeAddrLabel"
+                android:textColor="@color/dashboard_places_font"
+                android:textSize="@dimen/dashboard0DriveResumeLabelTextSize"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+        
+         <TextView
+                android:id="@+id/dashboardResumeDescText_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+           		android:layout_marginRight="17dp"
+                android:duplicateParentState="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/dashboardResumeDescText"
+                android:textColor="@color/dashboard_drive_resume_time_font"
+                android:textSize="@dimen/dashboard0DriveResumeDescTextSize" >
+            </TextView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/dashboard0DriveRecentsButtonInresume_landscape"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_weight="1"
+        android:background="@drawable/dashboard_button_recent_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_marginTop="-5dp"
+            android:layout_width="@dimen/dashboard0DriveRecentsButtonImageLayoutWidth"
+            android:layout_height="@dimen/dashboard0DriveRecentsButtonImageLayoutHeight"
+            android:contentDescription="@string/dashboardRecents"
+            android:duplicateParentState="true"
+            android:src="@drawable/dashboard_recent_icon_car" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:layout_marginTop="-10dp"
+            android:text="@string/dashboardRecents"
+            android:textColor="@color/dashboard_places_font"
+            android:textSize="@dimen/dashboard0DriveRecentsButtonTextSize"
+            android:textStyle="bold" >
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

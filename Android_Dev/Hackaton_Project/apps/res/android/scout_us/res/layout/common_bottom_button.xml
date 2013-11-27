@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telenav.ui.android.CommonBottomButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/myplace_bottom_button"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/commonBottomButton0LeftTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/bottom_control_text_color"
+        android:textSize="@dimen/commonBottomButtonTextSize"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/commonBottomButton0RightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/myplacelist0BottomButtonDrawablePadding"
+        android:singleLine="true"
+        android:textColor="@color/bottom_control_text_color"
+        android:textSize="@dimen/commonBottomButtonTextSize"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</com.telenav.ui.android.CommonBottomButton>

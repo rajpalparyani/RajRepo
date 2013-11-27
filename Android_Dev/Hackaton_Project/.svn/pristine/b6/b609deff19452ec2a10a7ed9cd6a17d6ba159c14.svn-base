@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/list_item_unfocused" >
+
+    <LinearLayout
+        android:id="@+id/placeList0EditlItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <include
+            android:id="@+id/placeListItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="540"
+            layout="@layout/place_list0normalitem"/>        
+
+        <TextView
+            android:id="@+id/placeList0EditItemEditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/place_list_item_child_button_background"
+            android:drawableLeft="@drawable/button_icon_edit_unfocused"
+            android:gravity="center"
+            android:padding="@dimen/placeList0EditItemIconPadding"
+            android:clickable="true" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+
+        <TextView
+            android:id="@+id/placeList0EditItemDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/place_list_item_child_button_background"
+            android:drawableLeft="@drawable/button_icon_delete_unfocused"
+            android:gravity="center"
+            android:padding="@dimen/placeList0EditItemIconPadding"
+            android:clickable="true" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="22" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+1. Connect to 192.168.117.116 tnuser/tndev
+2. cd to /home/tnuser/ota/resources
+3. run "sh fpindexer_all.sh 7.0.1 701xxxx"
+
+The URL is like this: http://d-ota.telenav.com/resources/7.0.01/ANDROID/SNNAVPROG/i18n/i18n.index.gz

@@ -1,0 +1,11 @@
+app_name=@APP_NAME@
+package_name=com.telenav.app.android.@ACTIVITY_PACKAGE@
+activity_name=@ACTIVITY_NAME@
+app_version=@APPLICATION_VERSION@
+build_number=@version@
+navservice_name=@NAVSERVICE_NAME@
+api_version=@api_version@
+target_api_version=@TARGET_API_VERSION@
+maps_shortcut_name=@MAPS_SHORTCUT_NAME@
+nav_shortcut_name=@NAV_SHORTCUT_NAME@
+places_shortcut_name=@PLACES_SHORTCUT_NAME@

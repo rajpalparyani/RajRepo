@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- left and right margin for full, half and mini port-->
+	<dimen name="widget_port_marginLeft">4dip</dimen>
+	<dimen name="widget_port_marginRight">4dip</dimen>
+	<!-- left and right margin for full, half and mini land-->
+	<dimen name="widget_land_marginLeft">4dip</dimen>
+	<dimen name="widget_land_marginRight">4dip</dimen>
+	<!-- margin for full port -->
+	<dimen name="full_port_marginTop">18dip</dimen>
+	<dimen name="full_port_marginBottom">8dip</dimen>
+	<!-- margin for full land -->
+	<dimen name="full_land_marginTop">2dip</dimen>
+	<dimen name="full_land_marginBottom">2dip</dimen>
+	<!-- margin for half port -->
+	<dimen name="half_port_marginTop">2dip</dimen>
+	<dimen name="half_port_marginBottom">2dip</dimen>
+	<!-- margin for half land -->
+	<dimen name="half_land_marginTop">2dip</dimen>
+	<dimen name="half_land_marginBottom">2dip</dimen>
+	<!-- margin for mini port -->
+	<dimen name="mini_port_marginTop">2dip</dimen>
+	<dimen name="mini_port_marginBottom">2dip</dimen>
+	<!-- margin for mini land -->
+	<dimen name="mini_land_marginTop">2dip</dimen>
+	<dimen name="mini_land_marginBottom">2dip</dimen>
+  <!-- text size for home and work eta -->
+	<dimen name="text_size_small">12dip</dimen>
+	<dimen name="text_size_big">38dip</dimen>
+	<!-- padding for full & half -->
+	<dimen name="widget_port_paddingTop">10dip</dimen>
+	<dimen name="widget_port_paddingBottom">5dip</dimen>
+	<!-- margin for split line -->
+	<dimen name="split_line_marginTop">0dip</dimen>
+	<dimen name="split_line_marginBottom">6dip</dimen>
+</resources>

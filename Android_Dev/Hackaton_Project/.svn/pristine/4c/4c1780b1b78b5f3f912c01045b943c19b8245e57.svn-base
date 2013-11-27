@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/drivingshare0ContentBackgroundColor" >
+
+        <LinearLayout
+            android:id="@+id/drivingShare0Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/drivingshare0ContentBottomPadding"
+            android:paddingLeft="@dimen/drivingshare0ContentLeftPadding"
+            android:paddingRight="@dimen/drivingshare0ContentRigntPadding"
+            android:paddingTop="@dimen/drivingshare0ContentTopPadding" >
+
+            <LinearLayout
+                android:id="@+id/drivingShare0RealTimeEta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/drivingshare0SubTitleBottomPadding"
+                    android:paddingLeft="@dimen/drivingshare0SubTitleHorizontalMargin"
+                    android:paddingRight="@dimen/drivingshare0ContentRigntPadding"
+                    android:text="@string/realTimeEtaSubTitle"
+                    android:textColor="@color/drivingshare0SubTitleColor"
+                    android:textSize="@dimen/drivingshare0SubTitleSize"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drivingshare0SubTitleSplitLineHeight"
+                    android:background="@color/drivingshare0SubTitleSplitLine" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/drivingshare0ItemMargin"
+                    android:paddingLeft="@dimen/drivingshare0SubTitleHorizontalMargin"
+                    android:text="@string/shareRealTimeEta"
+                    android:textColor="@color/drivingshare0ItemFirstLineColor"
+                    android:textSize="@dimen/drivingshare0ItemFirstLineSize" />
+
+                <LinearLayout
+                    android:id="@+id/drivingShare0realTimeEtaSetup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="@dimen/drivingshare0SubTitleHorizontalMargin"
+                    android:paddingRight="@dimen/drivingshare0SubTitleHorizontalMargin" >
+
+                    <TextView
+                        android:id="@+id/drivingShare0TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shareRealTimeEtaDetail"
+                        android:textColor="@color/drivingshare0ItemSecondLineColor"
+                        android:textSize="@dimen/drivingshare0ItemSecondLineSize" />
+
+                    <LinearLayout
+                        android:id="@+id/drivingShare0switcherContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/drivingshare0SwitcherMarginTop"
+                        android:layout_marginLeft="@dimen/drivingshare0TextViewSwitcherGap">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/drivingshare0ContentTopPadding"
+                    android:background="@drawable/profile_sharing_eta_unfocused" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

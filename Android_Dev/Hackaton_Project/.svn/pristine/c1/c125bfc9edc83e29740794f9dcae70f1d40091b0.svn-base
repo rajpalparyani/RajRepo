@@ -1,0 +1,20 @@
+log4j.rootLogger=WARN, stdout, F
+log4j.logger.com.crashlytics=DEBUG
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
+# Pattern to output the caller's file name and line number.
+log4j.appender.stdout.layout.ConversionPattern=%5p - %m%n
+log4j.appender.stdout.threshold=INFO
+
+log4j.appender.F=org.apache.log4j.RollingFileAppender
+log4j.appender.F.File=.crashlytics_data/crashlytics.log
+
+log4j.appender.F.MaxFileSize=128KB
+# Keep one backup file
+log4j.appender.F.MaxBackupIndex=1
+
+log4j.appender.F.layout=org.apache.log4j.PatternLayout
+log4j.appender.F.layout.ConversionPattern=%p %d %c (%F:%L) - %m%n
+

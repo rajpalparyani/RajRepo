@@ -1,0 +1,104 @@
+<ivy-module version="1.0">
+	<info organisation="mobile/apps/trunk" module="SearchVpl" />
+
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="apk" />
+		<artifact name="${module.name}-unsigned" type="jar" ext="apk" />
+		<artifact name="${module.name}-pure-${platform}" type="jar" ext="jar" />
+		<artifact name="${module.name}-res-${platform}" type="source" ext="zip" />
+		<!--
+		<artifact name="${module.name}-test" type="jar" ext="apk" />
+		<artifact name="${module.name}-test-unsigned" type="jar" ext="apk" />
+		<artifact name="findbugs-${module.name}" type="source" ext="xml" />
+		<artifact name="proguard-${module.name}" type="source" ext="map" />
+		<artifact name="${module.name}-i18n-ota" type="source" ext="zip" />
+		-->
+	</publications>
+
+	<dependencies>
+		<!-- ==================== unit test ====================== -->
+		
+		<!--dependency org="org/easymock" name="easymock" rev="3.0" />
+		<dependency org="org" name="objenesis" rev="1.2" />
+		<dependency org="org/powermock" name="powermock-easymock" rev="1.4.8-full" />
+		<dependency org="org/javassist" name="javassist" rev="3.12.0.GA" />
+		<dependency org="net/sf" name="cglib" rev="2.2" /-->
+	
+		
+		<!--======================= utility =======================-->
+		<dependency org="mobile/utility/trunk" name="logger" rev="+">
+			<artifact name="logger" type="jar" ext="jar" />
+			<artifact name="logger" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="cache" rev="+">
+			<artifact name="cache" type="jar" ext="jar" />
+			<artifact name="cache" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="threadpool" rev="+">
+			<artifact name="threadpool" type="jar" ext="jar" />
+			<artifact name="threadpool" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="util" rev="+">
+			<artifact name="util" type="jar" ext="jar" />
+			<artifact name="util" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="json" rev="+">
+			<artifact name="json" type="jar" ext="jar" />
+			<artifact name="json" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/utility/trunk" name="mvc" rev="+">
+			<artifact name="mvc" type="jar" ext="jar" />
+			<artifact name="mvc" type="source" ext="zip" />
+		</dependency>
+		<!--======================= platform =======================-->
+		<dependency org="mobile/platform/trunk" name="platform" rev="+">
+			<artifact name="platform" type="jar" ext="jar" />
+			<artifact name="platform" type="source" ext="zip" />
+			<artifact name="platform-${platform}" type="jar" ext="jar" />
+			<artifact name="platform-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= ui =======================-->
+		<dependency org="mobile/ui/trunk" name="graphics" rev="+">
+			<artifact name="graphics" type="jar" ext="jar" />
+			<artifact name="graphics" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/ui/trunk" name="coreui" rev="+">
+			<artifact name="coreui-${platform}" type="jar" ext="jar" />
+			<artifact name="coreui-${platform}" type="source" ext="zip" />
+		</dependency>
+		<!--======================= services =======================-->
+		<dependency org="mobile/services/trunk" name="datatypes" rev="+">
+			<artifact name="datatypes" type="jar" ext="jar" />
+			<artifact name="datatypes" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/services/trunk" name="audio" rev="+">
+			<artifact name="audio" type="jar" ext="jar" />
+			<artifact name="audio" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/services/trunk" name="comm" rev="+">
+			<artifact name="comm" type="jar" ext="jar" />
+			<artifact name="comm" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/services/trunk" name="gps" rev="+">
+			<artifact name="gps" type="jar" ext="jar" />
+			<artifact name="gps" type="source" ext="zip" />
+		</dependency>
+		<dependency org="mobile/services/trunk" name="i18n" rev="+">
+			<artifact name="i18n" type="jar" ext="jar" />
+			<artifact name="i18n" type="source" ext="zip" />
+		</dependency>
+		<!--======================= ant =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/mobile/apps/trunk" name="ant-project" rev="+">
+			<artifact name="ant-project" type="jar" ext="jar" />
+		</dependency>
+		<!--======================= findbugs =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/mobile/apps/trunk" name="findbugs-project" rev="+">
+			<artifact name="findbugs-project" type="jar" ext="jar" />
+		</dependency>
+		<!--======================= maitai =======================-->
+		<dependency org="/telenav/tnclient/TNStudio/release/j2me/core-apps" name="MaiTaiAdapter-android" rev="+">
+			<artifact name="MaiTaiAdapter-${platform}" type="jar" ext="jar" />
+			<artifact name="MaiTaiAdapter-${platform}" type="source" ext="zip" />
+		</dependency>
+	</dependencies>
+</ivy-module>

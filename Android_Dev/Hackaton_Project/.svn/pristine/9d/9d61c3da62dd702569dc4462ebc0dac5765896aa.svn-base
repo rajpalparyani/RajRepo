@@ -1,0 +1,6 @@
+Enter the telenav-global directory such as D:\svn\mobile\apps\trunk\telenav-global\tools\IndexFile, and then run ant command as below:
+ant createIndexFile -Ddirpath=src
+src is the directory which points to the i18n resources.
+
+Eg:  
+ant createIndexFile -Ddirpath=D:\SVN\mobile\apps\trunk\telenav-global\res\android\cingular\i18n

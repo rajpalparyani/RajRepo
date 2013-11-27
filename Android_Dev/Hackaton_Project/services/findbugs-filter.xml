@@ -1,0 +1,18 @@
+<FindBugsFilter>
+	<Match>
+       <Bug code="IM, IS" />
+    </Match>
+
+	<Match>
+       <Bug category="MALICIOUS_CODE" />
+     </Match>
+	 <Match>
+       <Bug pattern="URF_UNREAD_FIELD" />
+     </Match>
+	 <Match>
+       <Bug pattern="DLS_DEAD_LOCAL_STORE" />
+     </Match>
+	 <Match>
+       <Bug pattern="UUF_UNUSED_FIELD" />
+     </Match>
+</FindBugsFilter>

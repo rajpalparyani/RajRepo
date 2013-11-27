@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telenav.ui.android.CommonTitle xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/commonTitle0Container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/commonTitle0ContainerLayoutHeight"
+        android:background="@drawable/background_shelf" >
+
+        <TextView
+            android:id="@+id/commonTitle0TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/commonTitle0TextViewMargin"
+            android:layout_marginRight="@dimen/commonTitle0TextViewMargin"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/commonAppName"
+            android:textColor="@color/commonTitle0TextViewForeground"
+            android:textSize="@dimen/commonTitle0TextViewTextSize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/commonTitle0IconButton"
+            android:layout_width="@dimen/commonTitle0IconButtonLayoutWidth"
+            android:layout_height="@dimen/commonTitle0IconButtonLayoutHeight"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_side_margin"
+            android:background="@drawable/title_icon_button_background"
+            android:clickable="true"
+            android:contentDescription="@string/commonAppName"
+            android:onClick="onClick"
+            android:padding="@dimen/commonTitle0IconButtonPadding"
+            android:scaleType="center"
+            android:src="@drawable/title_icon_map_unfocused"
+            android:visibility="gone" />
+        
+         <Button
+            android:id="@+id/commonTitle0IconButton1"
+            android:layout_width="@dimen/commonTitle0IconButtonLayoutWidth1"
+            android:layout_height="@dimen/commonTitle0IconButtonLayoutHeight1"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:layout_marginLeft="@dimen/common_side_margin"
+            android:contentDescription="@string/commonAppName"
+            android:padding="@dimen/commonTitle0IconButtonPadding"
+            android:scaleType="center"
+            android:src="@drawable/title_icon_map_unfocused"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/commonTitle0TextButton"
+            style="@style/commonTitleTextButton"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_side_margin"
+            android:background="@drawable/title_icon_button_background"
+            android:clickable="true"
+            android:contentDescription="@string/commonAppName"
+            android:paddingLeft="@dimen/commonTitle0IconButtonPadding"
+            android:paddingRight="@dimen/commonTitle0IconButtonPadding"
+            android:scaleType="center"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</com.telenav.ui.android.CommonTitle>

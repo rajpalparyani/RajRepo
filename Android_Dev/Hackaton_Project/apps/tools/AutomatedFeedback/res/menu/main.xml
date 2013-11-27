@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_report_issue"
+        android:orderInCategory="100"
+        android:title="@string/action_report"/>
+    <item
+        android:id="@+id/action_read_logs"
+        android:orderInCategory="101"
+        android:title="@string/activity_read_log"/>
+    <item
+        android:id="@+id/action_screen_shot"
+        android:orderInCategory="102"
+        android:title="@string/activity_screen_shot"/>
+    <item
+        android:id="@+id/action_send_mail"
+        android:orderInCategory="103"
+        android:title="@string/activity_send_mail"/>
+
+</menu>

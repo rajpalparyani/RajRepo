@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<project name="env_setup" default="setup">
+	<!-- =============================================== task definition =============================================== -->
+	<taskdef resource="antenna.properties" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<property name="preverify_classpath" value="../lib/${platform}/${api_version}/net_rim_api.jar;" />
+
+	<target name="setup">
+		<propertyregex property="root" input="${app_path}" regexp="\\" replace="/" casesensitive="false" />
+		<filter token="app_path" value="${root}" />
+		<filter token="classpath_exclude" value="${eclipse_classpath_exclude}" />
+		<copy toDir="${platform}_workspace" filtering="true" overwrite="yes">
+			<fileset dir="${platform}">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<antcall target="copy_jars" />
+	</target>
+
+	<target name="copy_jars">
+		<mkdir dir="${platform}_workspace\tmp_bin" />
+		<unzip dest="${platform}_workspace\tmp_bin">
+			<fileset dir="${platform}_workspace\telenav-dev-${platform}\lib">
+				<include name="*.jar" />
+				<include name="*.zip" />
+			</fileset>
+		</unzip>
+		<delete quiet="true" dir="${platform}_workspace\telenav-dev-${platform}\lib" />
+		<mkdir dir="${platform}_workspace\telenav-dev-${platform}\lib" />
+		<jar destfile="${platform}_workspace\telenav-dev-${platform}\lib\pusu.jar">
+			<fileset dir="${platform}_workspace\tmp_bin" />
+		</jar>
+		
+		<delete quiet="true" dir="${platform}_workspace\tmp_bin" />
+
+		<if>
+			<equals arg1="rim" arg2="${platform}" />
+			<then>
+				<antcall target="preverify_jar" />
+			</then>
+		</if>
+	</target>
+
+	<target name="preverify_jar">
+		<echo message="preverifying.... " />
+		<property name="out_lib" value="preverify" />
+		<exec dir="${platform}_workspace\\telenav-dev-${platform}\lib" executable="${rim_sdk}/bin/preverify">
+			<arg line=" -classpath ${preverify_classpath}" />
+			<arg line=" -d tmp" />
+			<arg line=" pusu.jar" />
+		</exec>
+		<delete quiet="true" dir="${platform}_workspace\\telenav-dev-${platform}\lib\pusu.jar" />
+		<copy file="${platform}_workspace\\telenav-dev-${platform}\lib\tmp\pusu.jar" tofile="${platform}_workspace\\telenav-dev-${platform}\lib\pusu.jar" />
+		<delete quiet="true" dir="${platform}_workspace\\telenav-dev-${platform}\lib\tmp" />
+	</target>
+</project>

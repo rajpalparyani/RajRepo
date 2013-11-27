@@ -1,0 +1,37 @@
+Script for Data dump of projects and groups -:
+
+./ectool export /tmp/Group_Dump/UserService_Group_Dump1.xml --path "/groups/User_Dev_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/UserService_Group_Dump2.xml --path "/groups/User_Dev_Manager_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/UserService_Group_Dump3.xml --path "/groups/User_QA_Group" --relocatable true --withAcls true --withNotifiers true
+cat /tmp/Group_Dump/UserService_Group_Dump1.xml /tmp/Group_Dump/UserService_Group_Dump2.xml /tmp/Group_Dump/UserService_Group_Dump3.xml >>  /tmp/Group_Dump/UserService_Group_Dump.xml
+rm -fr /tmp/Group_Dump/UserService_Group_Dump1.xml
+rm -fr /tmp/Group_Dump/UserService_Group_Dump2.xml
+rm -fr /tmp/Group_Dump/UserService_Group_Dump3.xml
+./ectool export /tmp/Group_Dump/AdService_Group_Dump1.xml --path "/groups/Ads_Dev_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/AdService_Group_Dump2.xml --path "/groups/Ads_Dev_Manager_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/AdService_Group_Dump3.xml --path "/groups/Ads_QA_Group" --relocatable true --withAcls true --withNotifiers true
+cat /tmp/Group_Dump/AdService_Group_Dump1.xml /tmp/Group_Dump/AdService_Group_Dump2.xml /tmp/Group_Dump/AdService_Group_Dump3.xml >>  /tmp/Group_Dump/AdService_Group_Dump.xml
+rm -fr /tmp/Group_Dump/AdService_Group_Dump1.xml
+rm -fr /tmp/Group_Dump/AdService_Group_Dump2.xml
+rm -fr /tmp/Group_Dump/AdService_Group_Dump3.xml
+./ectool export /tmp/Group_Dump/MapService_Group_Dump1.xml --path "/groups/MapService_Dev_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/MapService_Group_Dump2.xml --path "/groups/MapService_Dev_Manager_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/MapService_Group_Dump3.xml --path "/groups/MapService_QA_Group" --relocatable true --withAcls true --withNotifiers true
+cat /tmp/Group_Dump/MapService_Group_Dump1.xml /tmp/Group_Dump/MapService_Group_Dump2.xml /tmp/Group_Dump/MapService_Group_Dump3.xml >>  /tmp/Group_Dump/MapService_Group_Dump.xml
+rm -fr /tmp/Group_Dump/MapService_Group_Dump1.xml
+rm -fr /tmp/Group_Dump/MapService_Group_Dump2.xml
+rm -fr /tmp/Group_Dump/MapService_Group_Dump3.xml
+./ectool export /tmp/Group_Dump/EntityService_Group_Dump1.xml --path "/groups/Search_Dev_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/EntityService_Group_Dump2.xml --path "/groups/Search_Dev_Manager_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/EntityService_Group_Dump3.xml --path "/groups/Search_QA_Group" --relocatable true --withAcls true --withNotifiers true
+cat /tmp/Group_Dump/EntityService_Group_Dump1.xml /tmp/Group_Dump/EntityService_Group_Dump2.xml /tmp/Group_Dump/EntityService_Group_Dump3.xml >>  /tmp/Group_Dump/EntityService_Group_Dump.xml
+rm -fr /tmp/Group_Dump/EntityService_Group_Dump1.xml
+rm -fr /tmp/Group_Dump/EntityService_Group_Dump2.xml
+rm -fr /tmp/Group_Dump/EntityService_Group_Dump3.xml
+./ectool export /tmp/Group_Dump/SpeechService_Group_Dump1.xml --path "/groups/Speech_Dev_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/SpeechService_Group_Dump2.xml --path "/groups/Speech_Dev_Manager_Group" --relocatable true --withAcls true --withNotifiers true
+./ectool export /tmp/Group_Dump/SpeechService_Group_Dump3.xml --path "/groups/Speech_QA_Group" --relocatable true --withAcls true --withNotifiers true
+cat /tmp/Group_Dump/SpeechService_Group_Dump1.xml /tmp/Group_Dump/SpeechService_Group_Dump2.xml /tmp/Group_Dump/SpeechService_Group_Dump3.xml >>  /tmp/Group_Dump/SpeechService_Group_Dump.xml
+rm -fr /tmp/Group_Dump/SpeechService_Group_Dump1.xml
+rm -fr /tmp/Group_Dump/SpeechService_Group_Dump2.xml
+rm -fr /tmp/Group_Dump/SpeechService_Group_Dump3.xml

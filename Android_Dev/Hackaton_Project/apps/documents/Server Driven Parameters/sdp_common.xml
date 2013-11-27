@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="common" class="com.telenav.cserver.resource.common.server_driven.ServerDrivenMessagesItem">
+        <property name="properties">
+            <map>
+            		<!--****************************************************
+            		********************************************************
+            		************* Below is requirements by PRD *************
+            		********************************************************
+            		****************************************************-->
+            		
+            		<!-- If enable DSR or not -->
+            		<entry key="ATT_NAV...FE_DSR" value="1"/>
+            		
+            		<!-- If display these icons in Map Layer Panel -->
+								<entry key="ATT_NAV...MAP_LAYER_TRAFFIC" value="1"/>
+								<entry key="ATT_NAV...MAP_LAYER_CAMERA" value="1"/>
+								<entry key="ATT_NAV...MAP_LAYER_SATELLITE" value="1"/>
+																
+								<!-- If enable speed limit sign in 3D Nav -->
+								<entry key="ATT_NAV...NAV_SPEED_LIMIT" value="1"/>
+            		
+            		<!-- If enable route planning view -->
+								<entry key="ATT_NAV...ROUTE_PLANNING_MULTI_ROUTE" value="1"/>
+								
+								<!-- If enable lane assist -->
+				        <entry key="ATT_NAV...NAV_LANE_ASSIST" value="1"/>
+				        
+				        <!-- If enable junction view -->
+								<entry key="ATT_NAV...NAV_JUNCTION_VIEW" value="1"/>
+								
+								<!-- splash screen duration time -->
+								<entry key="SPLASH_SCREEN_TIMEOUT" value="2000"/>
+								
+								<!-- If enable map caching -->
+								<entry key="MAP_DATA_CACHING" value="1"/>
+								
+								<!-- If disable traffic, remove Traffic optimize routing,
+								traffic button on layer, traffic summary, Traffic in Drive to,
+								and traffic alert audio -->
+				        <entry key="ATT_NAV...TRAFFIC" value="1"/>
+				        
+				        <!-- If enable GPS probe -->
+								<entry key="GPS_PROBE" value="1"/>
+								
+                                                                <!-- If enable map caching, 0->disable, 1->enable -->
+								<entry key="ONEBOX_SEARCH_TAB_FEATURE" value="1"/>
+								
+								 
+            		<!--****************************************************
+            		********************************************************
+            		********** Below is requirements by Technical **********
+            		********************************************************
+            		****************************************************-->
+            		
+            		<!-- This parameter is the threshold for display over speed sign. 
+                For example, if this parameter's value is 15, 
+                and current road speed limit is 100, so we will display over speed alarm 
+                while user's speed is over 100 * ( 1 + 15% ) = 115. Attention, 
+                it is a proportion, not an absolute value.-->
+                <entry key="SPEED_LIMIT_THRESHOLD" value="15"/>
+                
+                
+                <!--
+                below 5 params is for cell location request setting
+                -->
+                
+                <!-- It is the mark of if permit cell location search to work. -->
+                <entry key="CELL_LOCATION_ENABLE" value="1"/>
+                
+                <!-- If cell location is permit, and there's no GPS available, 
+                it will send out cell location request after N seconds waiting GPS. 
+                Please notice that, the unit is second. -->
+                <entry key="CELL_LOCATION_FIRST_WAITTIME" value="0"/>
+                
+                <!-- Since parlay x server is not strong enough, 
+                it can't bear over load requests from clients. 
+                So client will add protection to avoid too many hits to parlay X server. 
+                The CELL_LOCATION_REQUEST_TIMES means client 
+                can send no more requests than its value for one launch. 
+                The counter will be refreshing while client exit and restart.  -->
+                <entry key="CELL_LOCATION_REQUEST_TIMES" value="0"/>
+                
+                <!-- With the same reason of last parameter, 
+                this parameter limit the request frequency 
+                by set the request interval for parlay X. 
+                The unit is second. . -->
+                <entry key="CELL_LOCATION_REQUEST_INTERVAL" value="0"/>
+                
+                <!-- It points out how long the cell location 
+                can be seen as fresh location. 
+                Or how long it will be expired, and can't be used anymore. 
+                The unit is second.  -->
+                <entry key="CELL_LOCATION_LIVE_TIME" value="300"/>
+                
+                
+                <!--While exit app, it will send a series request for sync res, 
+                and it may take rather long time. This parameter is protection 
+                for this process. If it is set to 30s, the app will dead after 30s
+                no matter the sync process is finish or not. -->
+                <entry key="APP_BACKGROUND_LIVE_TIME_WHILE_EXIT" value="-1"/>
+                
+                <!-- For DSR endpoint check -->
+                <entry key="DSR_SPEECH_END_THRESHOLD" value="0$27::50$27::110$0"/>
+                
+                <!-- Below 3 params is for mislog reporting. -->
+                <entry key="MISREPORTING_ATT_NAV" value="700;701;702;703;704;705;706;707;708;400;401;402;403;408;720;721;722;730;731;740;741;751;710"/>
+                <entry key="MISHELPERS.710.POISEARCHR" value="91929394;201;#U;poi_service;touch/queryPoi.do"/>
+                <entry key="MISHELPERS.710.ROUTER" value="2;10;#U;nav-map-cserver;telenav-server"/>
+                
+                <!-- Below 4 params is for network warm up. -->
+                <entry key="NETWORK_WARM_REQUEST_URL" value="ota.telenav.com"/>
+                <entry key="NETWORK_WARM_HTTP_REQUEST_METHOD" value="OPTIONS"/>
+                <entry key="MAX_NETWORK_WARM_REQUEST_INTERVAL" value="2000"/>
+                <entry key="NETWORK_WARM_REQUEST_DURATION" value="40000"/>
+                
+                <!-- The account to impl C2DM mechanism. -->
+                <entry key="C2DM_SENDER_GOOGLE_ACCOUNT" value="telenav.c2dm@gmail.com"/>
+                
+                <!-- Default car icon  -->
+								<entry key="DEFAULT_CAR_ICON" value="arrow_blue"/>
+								
+								<!-- Default guide tone  -->
+								<entry key="DEFAULT_GUIDE_TONE" value="female"/>
+							
+								<!-- If Speed trap enable in 3D Nav View.   -->
+				        <entry key="ATT_NAV...NAV_SPEED_TRAP" value="0"/>
+				        
+				        <!-- If camera enable in 3D Nav View. .   -->
+				        <entry key="ATT_NAV...NAV_TRAFFIC_CAMERA" value="1"/>
+				        
+				        <!-- Polling billboard ad interval, Unit seconds, -1 means never polling ad. -->
+				        <entry key="ATT_NAV...BILLBOARD_AD_POLLING_INTERVAL" value="300"/>
+				        
+				        <!-- Terms and Conditions -->
+				        <entry key="ATT_NAV...TERMS_AND_CONDITIONS_URL" value="http://m.telenav.com/att/nav/7_0_01/en_US/legal.html"/>
+				        
+				        <!-- Support Page -->
+				        <entry key="ATT_NAV...SUPPORT_URL" value="http://m.telenav.com/att/nav/7_0_01/en_US/support.html"/>
+
+												
+            </map>
+        </property>
+    </bean>
+</beans>
