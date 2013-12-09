@@ -18,7 +18,7 @@
 		<link>
 			<name>src</name>
 			<type>2</type>
-			<location>@app_path@/apps/unit_test</location>
+			<locationURI>@app_path@/apps/unit_test</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

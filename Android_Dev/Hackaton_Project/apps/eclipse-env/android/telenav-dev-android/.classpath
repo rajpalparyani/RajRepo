@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="src" path="gen"/>
-	@stub_src@
 	<classpathentry excluding="com/telenav/app/j2me/|com/telenav/app/j2se/|com/telenav/app/rim/|com/telenav/ui/frogui/widget/j2se/|com/telenav/ui/frogui/widget/rim/@classpath_exclude@" kind="src" path="src"/>
 	<classpathentry kind="src" path="mvc"/>
 	<classpathentry kind="src" path="cache"/>
@@ -32,7 +31,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/foundation.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/NavigationSDK.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/NavigationSDKBase.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/pusu.jar"/>	
+	<classpathentry exported="true" kind="lib" path="lib/pusu.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/Tnlink.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/NavigationSDKCodecs.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/CarConnectProtocols.jar"/>
@@ -42,5 +41,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/com.kontagent.android.sdk.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/crashlytics.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/google-play-services.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

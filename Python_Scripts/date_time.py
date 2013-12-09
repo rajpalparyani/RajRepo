@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import time;  # This is required to include time module.
 import datetime;
 
 ticks = datetime.datetime.now().strftime('%H:%M:%S_%m-%d')
